@@ -7,52 +7,84 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom, #fdfcfb, #e2d1c3);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #f5efe6;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      padding: 3rem;
       text-align: center;
-      color: #333;
     }
-    .container {
-      padding: 2rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
+
     h1 {
-      margin-bottom: 0.5rem;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
     }
+
     p {
-      margin-top: 0;
-      font-size: 1.2rem;
-      color: #555;
+      font-size: 1.3rem;
+      margin: 0.5rem 0;
     }
-    a.button {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      color: white;
-      background-color: #4a90e2;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-    a.button:hover {
-      background-color: #357abd;
+
+    footer {
+      background-color: #f0e9e0;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Bienvenue sur Oracle Trium</h1>
-    <p>Explorez une trilogie divinatoire unique entre Heka, Sia et Seshat.</p>
-    <a href="#" class="button">Explorer les oracles</a>
-  </div>
+  <header>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">À propos</a>
+      <a href="#">Méthodes de Tirages</a>
+      <a href="#">Oracle Heka</a>
+      <a href="#">Oracle Sia</a>
+      <a href="#">Oracle Seshat</a>
+    </nav>
+  </header>
+
+  <main>
+    <div>
+      <h1>Bienvenue dans la Trilogie Oraculaire</h1>
+      <p>Trois oracles. Trois regards sur soi. Une voie intérieure.</p>
+      <p>Heka éclaire l’ego, Sia révèle l’âme, Seshat trace le chemin.</p>
+    </div>
+  </main>
+
+  <footer>
+    Produit par OracleHeka – Mentions légales – Contact
+  </footer>
 </body>
 </html>
