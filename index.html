@@ -1,0 +1,54 @@
+# Recréation après reset : création d'une page d'accueil HTML simple
+
+html_accueil = """
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Oracle Trium</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            color: #222;
+        }
+        p {
+            max-width: 600px;
+            margin: 20px auto;
+            line-height: 1.6;
+            color: #444;
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: #2e8b57;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenue dans la trilogie oraculaire</h1>
+    <p>
+        Trois oracles. Trois regards sur soi. Une voie intérieure.<br>
+        Heka éclaire l’ego, Sia révèle l’âme, Seshat trace le chemin.
+    </p>
+    <a href="tirage_oracle_heka.html" class="button">🔮 Accéder au tirage Heka</a>
+</body>
+</html>
+"""
+
+# Enregistrer en tant que index.html
+output_file = "/mnt/data/index.html"
+with open(output_file, "w", encoding="utf-8") as f:
+    f.write(html_accueil)
+
+output_file
