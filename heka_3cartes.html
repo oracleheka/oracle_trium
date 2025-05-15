@@ -89,6 +89,7 @@ button:hover {
   <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
 </div>
+  <div id="resultats" style="margin-top: 2rem;"></div>
   <p>Ce tirage permet une lecture rapide et efficace d’une situation ou d’une question simple. Il est particulièrement adapté aux demandes à trois volets, comme :</p>
   <ul>
     <li>Passé / Présent / Futur</li>
@@ -107,6 +108,7 @@ button:hover {
   // Exemple fictif de jeu (à remplacer par tes vraies cartes)
   const cartes = ['001', '002', '003', '004', '005'];
   let cartesDisponibles = [];
+  let cartesTirees = [];
   let jeuPrepare = false;
 
   function shuffle(array) {
@@ -116,6 +118,8 @@ button:hover {
     }
   }
 
+function melangerEtCouper() {
+}
   function melangerEtCouper() {
     cartesDisponibles = [...cartes];
     shuffle(cartesDisponibles);
@@ -133,37 +137,33 @@ button:hover {
     return;
   }
 
-  if (cartesDisponibles.length < 3) {
-    alert("Pas assez de cartes disponibles.");
+  if (cartesTirees.length > 0) {
+    alert("Tirage déjà effectué. Utilisez 'Ajouter une carte'.");
     return;
   }
 
-  const tirage = cartesDisponibles.splice(0, 3); // tire les 3 premières cartes
-  const affichageZone = document.getElementById("resultats");
-  affichageZone.innerHTML = ""; // nettoyage
+  document.getElementById("resultats").innerHTML = ""; // reset visuel
+  cartesTirees = [];
 
-  let cartesInfos = [];
+  // Appelle directement la fonction spécifique à cette page
+  tirage3Cartes();
+}
+
+function tirage3Cartes() {
+  const tirage = cartesDisponibles.splice(0, 3);
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+  const affichage = document.getElementById("resultats");
 
   tirage.forEach(carte => {
     const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-    const nomCarte = carte; // tu pourras ajouter le vrai nom plus tard
-    const affichageTexte = `${nomCarte} (${sens})`;
+    cartesTirees.push({ nom: carte, sens: sens });
 
-    // Tu affiches ici en attendant le visuel + texte réel
+    const phrase = `${carte} (${sens}) → (message à venir)`;
     const p = document.createElement("p");
-    p.textContent = affichageTexte;
-    affichageZone.appendChild(p);
-
-    cartesInfos.push({ nom: nomCarte, sens: sens });
+    p.textContent = phrase;
+    affichage.appendChild(p);
   });
-
-  // Stockage temporaire si on veut générer la synthèse plus tard
-  window.cartesTirees = cartesInfos;
-
-  // Tu pourras ici ajouter un appel à une fonction comme :
-  // genererSynthese(cartesInfos, aspectChoisi)
 }
-
   function ajouterUneCarte(estTirageInitial = false) {
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
