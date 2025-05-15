@@ -164,13 +164,36 @@ button:hover {
   // genererSynthese(cartesInfos, aspectChoisi)
 }
 
-  function ajouterUneCarte() {
-    if (!jeuPrepare) {
-      alert("Veuillez d'abord mélanger le jeu.");
-      return;
-    }
-    alert("Carte supplémentaire tirée !");
+  function ajouterUneCarte(estTirageInitial = false) {
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
   }
+
+  const maxCartes = 6; // 3 de base + 3 couvertures
+  if (cartesTirees.length >= maxCartes) {
+    alert("Nombre maximum de cartes atteint (6).");
+    return;
+  }
+
+  if (cartesDisponibles.length === 0) {
+    alert("Le jeu est vide !");
+    return;
+  }
+
+  const carte = cartesDisponibles.shift(); // retire la première
+  const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+  cartesTirees.push({ nom: carte, sens: sens });
+
+  const affichageZone = document.getElementById("resultats");
+  const p = document.createElement("p");
+  p.textContent = `${carte} (${sens})`;
+  affichageZone.appendChild(p);
+
+  if (!estTirageInitial && cartesTirees.length === 6) {
+    alert("Tirage complet : 3 cartes initiales + 3 couvertures.");
+  }
+}
 
   function réinitialiser() {
     cartesDisponibles = [];
