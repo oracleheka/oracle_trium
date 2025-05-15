@@ -163,6 +163,10 @@ function tirage3Cartes() {
     const p = document.createElement("p");
     p.textContent = phrase;
     affichage.appendChild(p);
+    p.style.padding = "1rem";
+    p.style.border = "1px solid #ccc";
+    p.style.borderRadius = "8px";
+    p.style.backgroundColor = "#fdfdfd";
   });
 }
   function ajouterUneCarte(estTirageInitial = false) {
