@@ -200,7 +200,8 @@ function tirage7Cartes() {
   function réinitialiser() {
   location.reload(); // Recharge la page pour repartir de zéro
 }
-
+function tirerLesCartes() {
+  tirage7Cartes();
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
