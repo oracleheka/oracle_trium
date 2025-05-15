@@ -213,7 +213,9 @@ function ajouterUneCarte(estTirageInitial = false) {
   function réinitialiser() {
   location.reload(); // Recharge la page pour repartir de zéro
 }
-
+function tirerLesCartes() {
+  tirerParPrenom();
+}
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
