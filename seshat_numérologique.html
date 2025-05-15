@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Tirage numérologique – Oracle Heka</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
@@ -13,6 +13,15 @@
       flex-direction: column;
       min-height: 100vh;
     }
+     button {
+  padding: 0.7rem 1.5rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
     header {
       background-color: #f5efe6;
       padding: 1rem 2rem;
@@ -60,12 +69,28 @@
 
 <main>
   <h1>Tirage numérologique – Oracle Seshat</h1>
-  <fieldset style="border: none; margin-top: 1rem; margin-bottom: 2rem;">
+  <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
+  <fieldset style="border: none; margin: 0;">
     <legend><strong>Choisir l’aspect :</strong></legend>
     <label><input type="radio" name="aspect" value="personnalite" checked> Personnalité</label><br>
     <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
     <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
   </fieldset>
+
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
+</div>
+  <div style="margin-top: 2rem;">
+  <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
+  <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
+     <label for="prénom"><strong>Prénom :</strong></label><br>
+  <input type="text" id="champNom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">    
+  <div style="margin-top: 1.5rem;">
+  <label for="date_naissance"><strong>Date de naissance (JJ/MM/AAAA) :</strong></label><br>
+  <input type="text" id="champDate" name="date_naissance" placeholder="Exemple : 15/05/1990" pattern="\\d{2}/\\d{2}/\\d{4}" style="width: 100%; max-width: 200px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
+  </div>
   <p>Ce tirage est basé sur le nom complet (identité) et la date de naissance. Deux cartes majeures sont tirées :</p>
   <ul>
     <li>Carte d’Identité (valeur réduite du nom)</li>
@@ -80,6 +105,125 @@
 <footer>
   Produit par OracleHeka – Mentions légales – Contact
 </footer>
+<script>
+  // Exemple fictif de jeu (à remplacer par tes vraies cartes)
+  const cartes = ['001', '002', '003', '004', '005'];
+  let cartesDisponibles = [];
+  let cartesTirees = [];
+  let jeuPrepare = false;
 
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+  function melangerEtCouper() {
+    cartesDisponibles = [...cartes];
+    shuffle(cartesDisponibles);
+    jeuPrepare = true;
+
+    document.getElementById("tirerBtn").disabled = false;
+    document.getElementById("ajouterBtn").disabled = false;
+
+    alert("Le jeu a été mélangé et coupé !");
+  }
+function numerologieReduction(valeur) {
+  while (valeur > 9 && ![11, 22, 33].includes(valeur)) {
+    valeur = valeur.toString().split('').reduce((acc, digit) => acc + parseInt(digit), 0);
+  }
+  return valeur;
+}
+
+function valeurLettres(nom) {
+  const table = {
+    A:1, J:1, S:1, B:2, K:2, T:2, C:3, L:3, U:3,
+    D:4, M:4, V:4, E:5, N:5, W:5, F:6, O:6, X:6,
+    G:7, P:7, Y:7, H:8, Q:8, Z:8, I:9, R:9
+  };
+  nom = nom.toUpperCase().replace(/[^A-Z]/g, "");
+  let total = 0;
+  for (let c of nom) {
+    total += table[c] || 0;
+  }
+  return numerologieReduction(total);
+}
+
+function valeurDate(dateStr) {
+  const digits = dateStr.replace(/[^0-9]/g, "").split('').map(Number);
+  return numerologieReduction(digits.reduce((a, b) => a + b, 0));
+}
+
+function tirerNumerologique() {
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
+  }
+
+  const nom = document.getElementById("champNom").value.trim();
+  const date = document.getElementById("champDate").value.trim();
+  if (!nom || !date) {
+    alert("Veuillez remplir le nom et la date de naissance.");
+    return;
+  }
+
+  try {
+    const numNom = valeurLettres(nom);
+    const numDate = valeurDate(date);
+    const paquet = [...cartesDisponibles];
+    shuffle(paquet);
+
+    const indexCarte1 = numNom - 1;
+    const indexCarte2 = indexCarte1 + numDate;
+
+    if (indexCarte2 >= paquet.length) {
+      alert("Pas assez de cartes dans le paquet.");
+      return;
+    }
+
+    const carte1 = paquet[indexCarte1];
+    const carte2 = paquet[indexCarte2];
+
+    const aspect = document.querySelector('input[name="aspect"]:checked').value;
+    const zone = document.getElementById("resultats");
+    zone.innerHTML = "";
+
+    const div1 = document.createElement("div");
+    div1.innerHTML = `<strong>Identité (${nom})</strong><br>${carte1} (message à venir)`;
+    styleCarte(div1);
+    zone.appendChild(div1);
+
+    const div2 = document.createElement("div");
+    div2.innerHTML = `<strong>Chemin (${date})</strong><br>${carte2} (message à venir)`;
+    styleCarte(div2);
+    zone.appendChild(div2);
+
+    cartesTirees = [carte1, carte2];
+  } catch (err) {
+    alert("Erreur lors du calcul : " + err.message);
+  }
+}
+
+function styleCarte(element) {
+  element.style.padding = "1rem";
+  element.style.border = "1px solid #ccc";
+  element.style.borderRadius = "8px";
+  element.style.backgroundColor = "#fdfdfd";
+  element.style.minWidth = "120px";
+  element.style.textAlign = "center";
+  element.style.marginRight = "1rem";
+}
+
+   function réinitialiser() {
+  location.reload(); // Recharge la page pour repartir de zéro
+}
+function tirerLesCartes() {
+  tirerNumerologique();
+}
+window.onload = function () {
+  document.getElementById("tirerBtn").disabled = true;
+  document.getElementById("ajouterBtn").disabled = true;
+};
+</script>
 </body>
 </html>
