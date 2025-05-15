@@ -109,7 +109,8 @@ button:hover {
 <footer>
   Produit par OracleHeka – Mentions légales – Contact
 </footer>
- const cartes = ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012'];
+<script>
+const cartes = ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012'];
 let cartesDisponibles = [];
 let cartesTirees = [];
 let jeuPrepare = false;
@@ -131,14 +132,15 @@ function melangerEtCouper() {
 
   alert("Le jeu a été mélangé et coupé !");
 }
-  
+
 function tirerLesCartes() {
   const champ = document.getElementById("champPrenom");
-const nomSymbolique = champ.value.trim();
-if (!nomSymbolique) {
-  alert("Veuillez entrer un prénom (même symbolique).");
-  return;
-}
+  const nomSymbolique = champ.value.trim();
+  if (!nomSymbolique) {
+    alert("Veuillez entrer un prénom (même symbolique).");
+    return;
+  }
+
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
     return;
@@ -242,5 +244,6 @@ window.onload = function () {
   document.getElementById("ajouterBtn").disabled = true;
 };
 </script>
+
 </body>
 </html>
