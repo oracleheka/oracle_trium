@@ -89,7 +89,7 @@ button:hover {
   <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
 </div>
- <div id="resultats" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem;"></div>
+ <div id="resultats" style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto auto; gap: 1rem; justify-items: center; margin-top: 2rem;"></div>
   <p>Ce tirage permet une lecture en croix intérieure pour révéler ce qui soutient, ce qui bloque, ce qui est caché… et ce qui éclaire la voie.</p>
   <ul>
     <li>la carte de gauche, ce qui soutient</li>
@@ -159,16 +159,27 @@ button:hover {
     "Synthèse (centre)"
   ];
 
-  tirage.forEach((carte, i) => {
-    const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-    cartesTirees.push({ nom: carte, sens: sens });
+  const positionsGrille = [
+  { row: 2, col: 1 }, // Gauche
+  { row: 2, col: 3 }, // Droite
+  { row: 1, col: 2 }, // Haut
+  { row: 3, col: 2 }, // Bas
+  { row: 2, col: 2 }  // Centre
+];
 
-    const div = document.createElement("div");
-    div.innerHTML = `<strong>${labels[i]}</strong><br>${carte} (${sens})`;
-    styleCarte(div);
-    affichage.appendChild(div);
-  });
-}
+tirage.forEach((carte, i) => {
+  const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+  cartesTirees.push({ nom: carte, sens: sens });
+
+  const div = document.createElement("div");
+  div.innerHTML = `<strong>${labels[i]}</strong><br>${carte} (${sens})`;
+  styleCarte(div);
+
+  div.style.gridColumn = positionsGrille[i].col;
+  div.style.gridRow = positionsGrille[i].row;
+
+  affichage.appendChild(div);
+});
 
 function ajouterUneCarte() {
   if (!jeuPrepare) {
