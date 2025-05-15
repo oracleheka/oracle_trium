@@ -104,10 +104,60 @@ button:hover {
   Produit par OracleHeka – Mentions légales – Contact
 </footer>
   <script>
-  function melangerEtCouper() {
-    alert("Le jeu a été mélangé et coupé !");
-    // À remplacer plus tard par une vraie logique de mélange
+  // Exemple fictif de jeu (à remplacer par tes vraies cartes)
+  const cartes = ['001', '002', '003', '004', '005'];
+  let cartesDisponibles = [];
+  let jeuPrepare = false;
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   }
+
+  function melangerEtCouper() {
+    cartesDisponibles = [...cartes];
+    shuffle(cartesDisponibles);
+    jeuPrepare = true;
+
+    document.getElementById("tirerBtn").disabled = false;
+    document.getElementById("ajouterBtn").disabled = false;
+
+    alert("Le jeu a été mélangé et coupé !");
+  }
+
+  function tirerLesCartes() {
+    if (!jeuPrepare) {
+      alert("Veuillez d'abord mélanger le jeu.");
+      return;
+    }
+    alert("Tirage en cours…");
+  }
+
+  function ajouterUneCarte() {
+    if (!jeuPrepare) {
+      alert("Veuillez d'abord mélanger le jeu.");
+      return;
+    }
+    alert("Carte supplémentaire tirée !");
+  }
+
+  function réinitialiser() {
+    cartesDisponibles = [];
+    jeuPrepare = false;
+    document.getElementById("tirerBtn").disabled = true;
+    document.getElementById("ajouterBtn").disabled = true;
+    document.getElementById("question").value = "";
+    alert("Jeu réinitialisé.");
+  }
+
+  // Initialisation des boutons au chargement de la page
+  window.onload = function () {
+    document.getElementById("tirerBtn").disabled = true;
+    document.getElementById("ajouterBtn").disabled = true;
+  };
+</script>
 
 </body>
 </html>
