@@ -13,6 +13,18 @@
       flex-direction: column;
       min-height: 100vh;
     }
+    button {
+  padding: 0.7rem 1.5rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #357abd;
+}
     header {
       background-color: #f5efe6;
       padding: 1rem 2rem;
@@ -60,12 +72,25 @@
 
 <main>
   <h1>Tirage prénom – Oracle Sia</h1>
-  <fieldset style="border: none; margin-top: 1rem; margin-bottom: 2rem;">
+   <fieldset style="border: none; margin: 0;">
     <legend><strong>Choisir l’aspect :</strong></legend>
     <label><input type="radio" name="aspect" value="personnalite" checked> Personnalité</label><br>
     <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
     <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
   </fieldset>
+
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
+</div>
+  <div style="margin-top: 2rem;">
+  <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
+  <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
+    <label for="prénom"><strong>Prénom :</strong></label><br>
+  <input type="text" id="champPrenom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
+  <div id="resultats" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
+  </div>
   <p>Chaque lettre du prénom reçoit une carte. Ce tirage offre une lecture très personnelle, intime, en lien direct avec l’identité vibratoire du consultant.</p>
   <ul>
     <li>Passé / Présent / Futur</li>
@@ -81,6 +106,121 @@
 <footer>
   Produit par OracleHeka – Mentions légales – Contact
 </footer>
+<script>
+  // Exemple fictif de jeu (à remplacer par tes vraies cartes)
+  const cartes = ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010'];
+  let cartesDisponibles = [];
+  let cartesTirees = [];
+  let jeuPrepare = false;
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+  function melangerEtCouper() {
+    cartesDisponibles = [...cartes];
+    shuffle(cartesDisponibles);
+    jeuPrepare = true;
+
+    document.getElementById("tirerBtn").disabled = false;
+    document.getElementById("ajouterBtn").disabled = false;
+
+    alert("Le jeu a été mélangé et coupé !");
+  }
+function tirerParPrenom() {
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
+  }
+
+  const champ = document.getElementById("champPrenom");
+  let nom = champ.value.trim().toUpperCase();
+  if (!nom) {
+    alert("Veuillez entrer un prénom.");
+    return;
+  }
+
+  if (cartesDisponibles.length < nom.length) {
+    alert("Pas assez de cartes disponibles pour ce prénom.");
+    return;
+  }
+
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+  const affichage = document.getElementById("resultats");
+  affichage.innerHTML = "";
+  cartesTirees = [];
+
+  for (let lettre of nom) {
+    const carte = cartesDisponibles.shift();  // tire une carte unique
+    const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+    cartesTirees.push({ nom: carte, sens: sens, lettre: lettre });
+
+    const div = document.createElement("div");
+    div.innerHTML = `<strong>Lettre : ${lettre}</strong><br>${carte} (${sens})`;
+    div.style.padding = "1rem";
+    div.style.border = "1px solid #ccc";
+    div.style.borderRadius = "8px";
+    div.style.backgroundColor = "#fdfdfd";
+    div.style.minWidth = "100px";
+    div.style.textAlign = "center";
+    div.style.marginRight = "1rem";
+    affichage.appendChild(div);
+  }
+}    
+function ajouterUneCarte(estTirageInitial = false) {
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
+  }
+
+  const champ = document.getElementById("champPrenom");
+  let nom = champ.value.trim().toUpperCase();
+  if (!nom) {
+    alert("Veuillez entrer un prénom.");
+    return;
+  }
+
+  const maxCartes = nom.length + 3; // lettres + 3 couvertures
+
+  if (cartesTirees.length >= maxCartes) {
+    alert(`Nombre maximum de cartes atteint (${maxCartes}).`);
+    return;
+  }
+
+  if (cartesDisponibles.length === 0) {
+    alert("Le jeu est vide !");
+    return;
+  }
+
+  const carte = cartesDisponibles.shift();
+  const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+  cartesTirees.push({ nom: carte, sens: sens });
+
+  const affichageZone = document.getElementById("resultats");
+  const div = document.createElement("div");
+  div.innerHTML = `${carte} (${sens})`;
+  div.style.padding = "1rem";
+  div.style.border = "1px solid #ccc";
+  div.style.borderRadius = "8px";
+  div.style.backgroundColor = "#fdfdfd";
+  div.style.minWidth = "100px";
+  div.style.textAlign = "center";
+  div.style.marginRight = "1rem";
+  affichageZone.appendChild(div);
+}
+  function réinitialiser() {
+  location.reload(); // Recharge la page pour repartir de zéro
+}
+function tirerLesCartes() {
+  tirerParPrenom();
+}
+window.onload = function () {
+  document.getElementById("tirerBtn").disabled = true;
+  document.getElementById("ajouterBtn").disabled = true;
+};
+</script>
 
 </body>
 </html>
