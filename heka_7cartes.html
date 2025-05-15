@@ -106,7 +106,7 @@ button:hover {
 </footer>
  <script>
   // Exemple fictif de jeu (à remplacer par tes vraies cartes)
-  const cartes = ['001', '002', '003', '004', '005'];
+  const cartes = ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011'];
   let cartesDisponibles = [];
   let cartesTirees = [];
   let jeuPrepare = false;
@@ -174,7 +174,7 @@ function tirage7Cartes() {
 
   const maxCartes = 10; // 7 de base + 3 couvertures
   if (cartesTirees.length >= maxCartes) {
-    alert("Nombre maximum de cartes atteint (6).");
+    alert("Nombre maximum de cartes atteint (10).");
     return;
   }
 
@@ -192,8 +192,8 @@ function tirage7Cartes() {
   p.textContent = `${carte} (${sens})`;
   affichageZone.appendChild(p);
 
-  if (!estTirageInitial && cartesTirees.length === 6) {
-    alert("Tirage complet : 3 cartes initiales + 3 couvertures.");
+  if (!estTirageInitial && cartesTirees.length === 10) {
+    alert("Tirage complet : 7 cartes initiales + 3 couvertures.");
   }
 }
 
