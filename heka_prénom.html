@@ -168,17 +168,24 @@ function tirerParPrenom() {
     div.style.marginRight = "1rem";
     affichage.appendChild(div);
   }
-}
-    
+}    
 function ajouterUneCarte(estTirageInitial = false) {
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
     return;
   }
 
-  const maxCartes = 6; // 3 de base + 3 couvertures
+  const champ = document.getElementById("champPrenom");
+  let nom = champ.value.trim().toUpperCase();
+  if (!nom) {
+    alert("Veuillez entrer un prénom.");
+    return;
+  }
+
+  const maxCartes = nom.length + 3; // lettres + 3 couvertures
+
   if (cartesTirees.length >= maxCartes) {
-    alert("Nombre maximum de cartes atteint (6).");
+    alert(`Nombre maximum de cartes atteint (${maxCartes}).`);
     return;
   }
 
@@ -187,20 +194,22 @@ function ajouterUneCarte(estTirageInitial = false) {
     return;
   }
 
-  const carte = cartesDisponibles.shift(); // retire la première
+  const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
   cartesTirees.push({ nom: carte, sens: sens });
 
   const affichageZone = document.getElementById("resultats");
-  const p = document.createElement("p");
-  p.textContent = `${carte} (${sens})`;
-  affichageZone.appendChild(p);
-
-  if (!estTirageInitial && cartesTirees.length === 6) {
-    alert("Tirage complet : 3 cartes initiales + 3 couvertures.");
-  }
+  const div = document.createElement("div");
+  div.innerHTML = `${carte} (${sens})`;
+  div.style.padding = "1rem";
+  div.style.border = "1px solid #ccc";
+  div.style.borderRadius = "8px";
+  div.style.backgroundColor = "#fdfdfd";
+  div.style.minWidth = "100px";
+  div.style.textAlign = "center";
+  div.style.marginRight = "1rem";
+  affichageZone.appendChild(div);
 }
-
   function réinitialiser() {
   location.reload(); // Recharge la page pour repartir de zéro
 }
