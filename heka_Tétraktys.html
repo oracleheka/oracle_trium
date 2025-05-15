@@ -88,8 +88,8 @@ button:hover {
   <div style="margin-top: 2rem;">
   <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
-    <label for="prénom"><strong>Prénom :</strong></label><br>
-  <input type="text" id="Prénom" name="Prénom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
+   <label for="champPrenom"><strong>Prénom (symbolique) :</strong></label><br>
+<input type="text" id="champPrenom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
   <div id="resultats" style="margin-top: 2rem;"></div>
   </div>
   <p>Ce tirage repose sur une structure triangulaire composée de 10 cartes réparties en 4 niveaux, formant une pyramide énergétique ou un chemin d’évolution.</p>
@@ -131,8 +131,14 @@ function melangerEtCouper() {
 
   alert("Le jeu a été mélangé et coupé !");
 }
-
+  
 function tirerLesCartes() {
+  const champ = document.getElementById("champPrenom");
+const nomSymbolique = champ.value.trim();
+if (!nomSymbolique) {
+  alert("Veuillez entrer un prénom (même symbolique).");
+  return;
+}
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
     return;
