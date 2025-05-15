@@ -88,7 +88,9 @@ button:hover {
   <div style="margin-top: 2rem;">
   <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
-</div>
+  <label for="champPrenom"><strong>Prénom (symbolique) :</strong></label><br>
+<input type="text" id="champPrenom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
+  </div>
  <div id="resultats" style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto auto; gap: 1rem; justify-items: center; margin-top: 2rem;"></div>
   <p>Ce tirage permet une lecture en croix intérieure pour révéler ce qui soutient, ce qui bloque, ce qui est caché… et ce qui éclaire la voie.</p>
   <ul>
@@ -131,7 +133,12 @@ function melangerEtCouper() {
 
   alert("Le jeu a été mélangé et coupé !");
 }
-
+const champ = document.getElementById("champPrenom");
+const nomSymbolique = champ.value.trim();
+if (!nomSymbolique) {
+  alert("Veuillez entrer un prénom (même symbolique).");
+  return;
+}
 function tirerLesCartes() {
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
