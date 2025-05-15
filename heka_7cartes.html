@@ -117,9 +117,7 @@ button:hover {
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
-
-function melangerEtCouper() {
-}
+   
   function melangerEtCouper() {
     cartesDisponibles = [...cartes];
     shuffle(cartesDisponibles);
@@ -198,15 +196,6 @@ function tirage3Cartes() {
     alert("Tirage complet : 3 cartes initiales + 3 couvertures.");
   }
 }
-
-  function réinitialiser() {
-    cartesDisponibles = [];
-    jeuPrepare = false;
-    document.getElementById("tirerBtn").disabled = true;
-    document.getElementById("ajouterBtn").disabled = true;
-    document.getElementById("question").value = "";
-    alert("Jeu réinitialisé.");
-  }
 
   function réinitialiser() {
   location.reload(); // Recharge la page pour repartir de zéro
