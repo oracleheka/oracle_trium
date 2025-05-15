@@ -204,11 +204,14 @@ function tirage3Cartes() {
     alert("Jeu réinitialisé.");
   }
 
-  // Initialisation des boutons au chargement de la page
-  window.onload = function () {
-    document.getElementById("tirerBtn").disabled = true;
-    document.getElementById("ajouterBtn").disabled = true;
-  };
+  function réinitialiser() {
+  location.reload(); // Recharge la page pour repartir de zéro
+}
+
+window.onload = function () {
+  document.getElementById("tirerBtn").disabled = true;
+  document.getElementById("ajouterBtn").disabled = true;
+};
 </script>
 
 </body>
