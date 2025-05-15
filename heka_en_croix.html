@@ -13,6 +13,18 @@
       flex-direction: column;
       min-height: 100vh;
     }
+    button {
+  padding: 0.7rem 1.5rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #357abd;
+}
     header {
       background-color: #f5efe6;
       padding: 1rem 2rem;
@@ -60,12 +72,15 @@
 
 <main>
   <h1>Tirage en croix – Oracle Heka</h1>
-  <fieldset style="border: none; margin-top: 1rem; margin-bottom: 2rem;">
+   <fieldset style="border: none; margin: 0;">
     <legend><strong>Choisir l’aspect :</strong></legend>
     <label><input type="radio" name="aspect" value="personnalite" checked> Personnalité</label><br>
     <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
     <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
   </fieldset>
+
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+</div>
   <p>Ce tirage permet une lecture en croix intérieure pour révéler ce qui soutient, ce qui bloque, ce qui est caché… et ce qui éclaire la voie.</p>
   <ul>
     <li>la carte de gauche, ce qui soutient</li>
@@ -82,6 +97,11 @@
 <footer>
   Produit par OracleHeka – Mentions légales – Contact
 </footer>
+   <script>
+  function melangerEtCouper() {
+    alert("Le jeu a été mélangé et coupé !");
+    // À remplacer plus tard par une vraie logique de mélange
+  }
 
 </body>
 </html>
