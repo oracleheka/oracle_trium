@@ -128,12 +128,41 @@ button:hover {
   }
 
   function tirerLesCartes() {
-    if (!jeuPrepare) {
-      alert("Veuillez d'abord mélanger le jeu.");
-      return;
-    }
-    alert("Tirage en cours…");
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
   }
+
+  if (cartesDisponibles.length < 3) {
+    alert("Pas assez de cartes disponibles.");
+    return;
+  }
+
+  const tirage = cartesDisponibles.splice(0, 3); // tire les 3 premières cartes
+  const affichageZone = document.getElementById("resultats");
+  affichageZone.innerHTML = ""; // nettoyage
+
+  let cartesInfos = [];
+
+  tirage.forEach(carte => {
+    const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+    const nomCarte = carte; // tu pourras ajouter le vrai nom plus tard
+    const affichageTexte = `${nomCarte} (${sens})`;
+
+    // Tu affiches ici en attendant le visuel + texte réel
+    const p = document.createElement("p");
+    p.textContent = affichageTexte;
+    affichageZone.appendChild(p);
+
+    cartesInfos.push({ nom: nomCarte, sens: sens });
+  });
+
+  // Stockage temporaire si on veut générer la synthèse plus tard
+  window.cartesTirees = cartesInfos;
+
+  // Tu pourras ici ajouter un appel à une fonction comme :
+  // genererSynthese(cartesInfos, aspectChoisi)
+}
 
   function ajouterUneCarte() {
     if (!jeuPrepare) {
