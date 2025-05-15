@@ -90,7 +90,8 @@ button:hover {
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
     <label for="prénom"><strong>Prénom :</strong></label><br>
   <input type="text" id="Prénom" name="Prénom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
-</div>
+  <div id="resultats" style="margin-top: 2rem;"></div>
+  </div>
   <p>Ce tirage repose sur une structure triangulaire composée de 10 cartes réparties en 4 niveaux, formant une pyramide énergétique ou un chemin d’évolution.</p>
   <p>Chaque ligne représente un palier de conscience ou une phase intérieure, allant du fondement à l’épanouissement.</p>
   <ul>
@@ -108,10 +109,132 @@ button:hover {
 <footer>
   Produit par OracleHeka – Mentions légales – Contact
 </footer>
- <script>
-  function melangerEtCouper() {
-    alert("Le jeu a été mélangé et coupé !");
-    // À remplacer plus tard par une vraie logique de mélange
+ const cartes = ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012'];
+let cartesDisponibles = [];
+let cartesTirees = [];
+let jeuPrepare = false;
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
+}
+
+function melangerEtCouper() {
+  cartesDisponibles = [...cartes];
+  shuffle(cartesDisponibles);
+  jeuPrepare = true;
+
+  document.getElementById("tirerBtn").disabled = false;
+  document.getElementById("ajouterBtn").disabled = false;
+
+  alert("Le jeu a été mélangé et coupé !");
+}
+
+function tirerLesCartes() {
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
+  }
+
+  if (cartesTirees.length > 0) {
+    alert("Tirage déjà effectué. Utilisez 'Ajouter une carte'.");
+    return;
+  }
+
+  if (cartesDisponibles.length < 10) {
+    alert("Pas assez de cartes pour un tirage Tétraktys.");
+    return;
+  }
+
+  const tirage = cartesDisponibles.splice(0, 10);
+  cartesTirees = [];
+
+  const affichage = document.getElementById("resultats");
+  affichage.innerHTML = "";
+
+  const niveaux = [
+    { titre: "1. Origine", nb: 1 },
+    { titre: "2. Dualité", nb: 2 },
+    { titre: "3. Chemin", nb: 3 },
+    { titre: "4. Manifestation", nb: 4 }
+  ];
+
+  let idx = 0;
+  niveaux.forEach(niveau => {
+    const ligne = document.createElement("div");
+    ligne.style.display = "flex";
+    ligne.style.justifyContent = "center";
+    ligne.style.gap = "1rem";
+    ligne.style.marginBottom = "1rem";
+
+    const titre = document.createElement("h4");
+    titre.textContent = niveau.titre;
+    titre.style.textAlign = "center";
+    titre.style.width = "100%";
+    affichage.appendChild(titre);
+    affichage.appendChild(ligne);
+
+    for (let i = 0; i < niveau.nb; i++) {
+      const carte = tirage[idx];
+      const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+      cartesTirees.push({ nom: carte, sens: sens });
+
+      const div = document.createElement("div");
+      div.innerHTML = `${carte} (${sens})`;
+      styleCarte(div);
+      ligne.appendChild(div);
+      idx++;
+    }
+  });
+}
+
+function ajouterUneCarte() {
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
+  }
+
+  if (cartesTirees.length >= 13) {
+    alert("Nombre maximum de cartes atteint (10 + 3).");
+    return;
+  }
+
+  if (cartesDisponibles.length === 0) {
+    alert("Le jeu est vide !");
+    return;
+  }
+
+  const carte = cartesDisponibles.shift();
+  const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+  cartesTirees.push({ nom: carte, sens: sens });
+
+  const affichageZone = document.getElementById("resultats");
+  const div = document.createElement("div");
+  div.innerHTML = `Carte supplémentaire : ${carte} (${sens})`;
+  styleCarte(div);
+  affichageZone.appendChild(div);
+}
+
+function styleCarte(el) {
+  el.style.padding = "1rem";
+  el.style.border = "1px solid #ccc";
+  el.style.borderRadius = "8px";
+  el.style.backgroundColor = "#fdfdfd";
+  el.style.minWidth = "100px";
+  el.style.textAlign = "center";
+  el.style.marginTop = "0.5rem";
+}
+
+function réinitialiser() {
+  location.reload();
+}
+
+window.onload = function () {
+  document.getElementById("tirerBtn").disabled = true;
+  document.getElementById("ajouterBtn").disabled = true;
+};
+</script>
 </body>
 </html>
