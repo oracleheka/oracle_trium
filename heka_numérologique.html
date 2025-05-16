@@ -232,42 +232,6 @@ function tirerNumerologique() {
     alert("Erreur lors du calcul : " + err.message);
   }
 }
-function ajouterUneCarte() {
-  if (!jeuPrepare) {
-    alert("Veuillez d'abord mélanger le jeu.");
-    return;
-  }
-
-  const maxCartes = 5; // 2 initiales + 3 couvertures
-  if (cartesTirees.length >= maxCartes) {
-    alert("Nombre maximum de cartes atteint (2 + 3).");
-    return;
-  }
-
-  if (cartesDisponibles.length === 0) {
-    alert("Le jeu est vide !");
-    return;
-  }
-
-  const carte = cartesDisponibles.shift();
-  const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-  const aspect = document.querySelector('input[name="aspect"]:checked').value;
-
-  const texte = carte[sens][aspect]?.texte || "(Message manquant)";
-
-  cartesTirees.push({ carte: carte, sens: sens });
-
-  const affichageZone = document.getElementById("resultats");
-  const div = document.createElement("div");
-  div.innerHTML = `
-    <strong>Carte supplémentaire</strong><br>
-    <strong>${carte.nom}</strong> (${sens})<br>
-    <img src="${carte.image}" alt="${carte.nom}" style="width:100px"><br>
-    <p style="margin-top:0.5rem;">${texte}</p>
-  `;
-  styleCarte(div);
-  affichageZone.appendChild(div);
-}
    function réinitialiser() {
   location.reload(); // Recharge la page pour repartir de zéro
 }
