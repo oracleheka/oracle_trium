@@ -100,18 +100,25 @@
      Il révèle les perceptions subtiles, les mouvements internes, les ressentis que l’on ne sait pas toujours nommer mais que l’on porte en silence.</p>
 
   <p><em>(Contenu du tirage ou interaction à venir ici)</em></p>
+ <div id="resultats" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;"></div>
 </main>
+
 <footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
   Produit par <strong>OracleHeka</strong> —
   <a href="mentions-legales.html">Mentions légales</a> —
   <a href="mailto:contact@oracleheka.com">Contact</a>
 </footer>
-<script>
-  // Exemple fictif de jeu (à remplacer par tes vraies cartes)
-  const cartes = ['001', '002', '003', '004', '005'];
+ <script>
+  let toutesLesCartes = [];
   let cartesDisponibles = [];
   let cartesTirees = [];
   let jeuPrepare = false;
+
+  async function chargerCartes() {
+    const reponse = await fetch("https://oracleheka.github.io/oracle_trium/data/sia.json");
+    toutesLesCartes = await reponse.json();
+    cartesDisponibles = [...toutesLesCartes];
+  }
 
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -119,8 +126,13 @@
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
-  function melangerEtCouper() {
-    cartesDisponibles = [...cartes];
+
+  async function melangerEtCouper() {
+    if (toutesLesCartes.length === 0) {
+      await chargerCartes();
+    }
+
+    cartesDisponibles = [...toutesLesCartes];
     shuffle(cartesDisponibles);
     jeuPrepare = true;
 
@@ -186,26 +198,50 @@ function tirerNumerologique() {
     const carte2 = paquet[indexCarte2];
 
     const aspect = document.querySelector('input[name="aspect"]:checked').value;
+    const sens1 = Math.random() < 0.5 ? "endroit" : "inversé";
+    const sens2 = Math.random() < 0.5 ? "endroit" : "inversé";
+
+    const texte1 = carte1[sens1][aspect]?.texte || "(Message manquant)";
+    const texte2 = carte2[sens2][aspect]?.texte || "(Message manquant)";
+
     const zone = document.getElementById("resultats");
     zone.innerHTML = "";
 
     const div1 = document.createElement("div");
-    div1.innerHTML = `<strong>Identité (${nom})</strong><br>${carte1} (message à venir)`;
+    div1.innerHTML = `
+      <strong>Identité (${nom})</strong><br>
+      <strong>${carte1.nom}</strong> (${sens1})<br>
+      <img src="${carte1.image}" alt="${carte1.nom}" style="width:100px"><br>
+      <p style="margin-top:0.5rem;">${texte1}</p>
+    `;
     styleCarte(div1);
     zone.appendChild(div1);
 
     const div2 = document.createElement("div");
-    div2.innerHTML = `<strong>Chemin (${date})</strong><br>${carte2} (message à venir)`;
+    div2.innerHTML = `
+      <strong>Chemin (${date})</strong><br>
+      <strong>${carte2.nom}</strong> (${sens2})<br>
+      <img src="${carte2.image}" alt="${carte2.nom}" style="width:100px"><br>
+      <p style="margin-top:0.5rem;">${texte2}</p>
+    `;
     styleCarte(div2);
     zone.appendChild(div2);
 
-    cartesTirees = [carte1, carte2];
+    cartesTirees = [
+      { carte: carte1, sens: sens1 },
+      { carte: carte2, sens: sens2 }
+    ];
   } catch (err) {
     alert("Erreur lors du calcul : " + err.message);
   }
 }
-
-function styleCarte(element) {
+   function réinitialiser() {
+  location.reload(); // Recharge la page pour repartir de zéro
+}
+function tirerLesCartes() {
+  tirerNumerologique();
+}
+   function styleCarte(element) {
   element.style.padding = "1rem";
   element.style.border = "1px solid #ccc";
   element.style.borderRadius = "8px";
@@ -214,17 +250,10 @@ function styleCarte(element) {
   element.style.textAlign = "center";
   element.style.marginRight = "1rem";
 }
-
-   function réinitialiser() {
-  location.reload(); // Recharge la page pour repartir de zéro
-}
-function tirerLesCartes() {
-  tirerNumerologique();
-}
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
 };
-</script>
+ </script>
 </body>
 </html>
