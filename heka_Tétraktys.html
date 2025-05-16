@@ -110,30 +110,39 @@ button:hover {
   <a href="mentions-legales.html">Mentions légales</a> —
   <a href="mailto:contact@oracleheka.com">Contact</a>
 </footer>
-<script>
-const cartes = ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012'];
-let cartesDisponibles = [];
-let cartesTirees = [];
-let jeuPrepare = false;
+ <script>
+  let toutesLesCartes = [];
+  let cartesDisponibles = [];
+  let cartesTirees = [];
+  let jeuPrepare = false;
 
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+  async function chargerCartes() {
+    const reponse = await fetch("https://oracleheka.github.io/oracle_trium/data/heka.json");
+    toutesLesCartes = await reponse.json();
+    cartesDisponibles = [...toutesLesCartes];
   }
-}
 
-function melangerEtCouper() {
-  cartesDisponibles = [...cartes];
-  shuffle(cartesDisponibles);
-  jeuPrepare = true;
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
 
-  document.getElementById("tirerBtn").disabled = false;
-  document.getElementById("ajouterBtn").disabled = false;
+  async function melangerEtCouper() {
+    if (toutesLesCartes.length === 0) {
+      await chargerCartes();
+    }
 
-  alert("Le jeu a été mélangé et coupé !");
-}
+    cartesDisponibles = [...toutesLesCartes];
+    shuffle(cartesDisponibles);
+    jeuPrepare = true;
 
+    document.getElementById("tirerBtn").disabled = false;
+    document.getElementById("ajouterBtn").disabled = false;
+
+    alert("Le jeu a été mélangé et coupé !");
+  }
 function tirerLesCartes() {
   const champ = document.getElementById("champPrenom");
   const nomSymbolique = champ.value.trim();
@@ -163,6 +172,8 @@ function tirerLesCartes() {
   const affichage = document.getElementById("resultats");
   affichage.innerHTML = "";
 
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+
   const niveaux = [
     { titre: "1. Origine", nb: 1 },
     { titre: "2. Dualité", nb: 2 },
@@ -188,10 +199,16 @@ function tirerLesCartes() {
     for (let i = 0; i < niveau.nb; i++) {
       const carte = tirage[idx];
       const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-      cartesTirees.push({ nom: carte, sens: sens });
+      cartesTirees.push({ carte: carte, sens: sens });
 
+      const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
       const div = document.createElement("div");
-      div.innerHTML = `${carte} (${sens})`;
+      div.innerHTML = `
+        <strong>${carte.nom}</strong> (${sens})<br>
+        <img src="${carte.image}" alt="${carte.nom}" style="width:100px"><br>
+        <p style="margin-top:0.5rem;">${interpretation}</p>
+      `;
+
       styleCarte(div);
       ligne.appendChild(div);
       idx++;
@@ -217,11 +234,18 @@ function ajouterUneCarte() {
 
   const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-  cartesTirees.push({ nom: carte, sens: sens });
+  const aspect = document.querySelector('input[name="aspect"]:checked').value; // ✅ ICI
+  cartesTirees.push({ carte: carte, sens: sens });
+
+  const texte = carte[sens][aspect]?.texte || "(Message manquant)";
 
   const affichageZone = document.getElementById("resultats");
   const div = document.createElement("div");
-  div.innerHTML = `Carte supplémentaire : ${carte} (${sens})`;
+  div.innerHTML = `
+    <strong>Carte supplémentaire :</strong> ${carte.nom} (${sens})<br>
+    <img src="${carte.image}" alt="${carte.nom}" style="width:100px"><br>
+    <p style="margin-top:0.5rem;">${texte}</p>
+  `;
   styleCarte(div);
   affichageZone.appendChild(div);
 }
