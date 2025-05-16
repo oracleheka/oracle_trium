@@ -1,0 +1,2810 @@
+[
+    {
+        "id": 1,
+        "nom": "Lat",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_1_lat.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "Une âme nue, surgissant du silence cosmique. Elle existe sans repères, bercée par l'élan invisible de la pure conscience.",
+                    "meta": ["seuil"]
+                },
+                "affectif": {
+                    "texte": "Aucun lien ne pèse sur l'âme. Elle flotte librement, sans regret ni attachement, portée par l'état pur de l'Être.",
+                    "meta": ["seuil"]
+                },
+                "spirituel": { 
+                    "texte": "La lumière intérieure n'est pas encore reconnue. L'âme est simplement présence, en attente d'un premier mouvement spirituel.",
+                    "meta": ["seuil"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "Une âme figée dans le néant, incapable de reconnaître son existence nouvelle. Elle reste suspendue, coupée d'elle-même.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Le vide affectif est ressenti comme une perte intolérable. L'âme tente de se raccrocher aux ombres du passé.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Refus d'accepter l'état d'être pur. L'âme cherche des formes familières au lieu d'embrasser la vastitude de l'invisible.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 2,
+        "nom": "Densité",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_2_densite.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "Une âme frémissante, consciente du voile léger de la matière qui l’enveloppe encore sans l’enchaîner.",
+                    "meta": ["seuil"]
+                },
+                "affectif": {
+                    "texte": "Les attaches affectives n'ont pas encore repris forme. L'âme ressent un écho doux, sans désir ni regret.",
+                    "meta": ["seuil"]
+                },
+                "spirituel": { 
+                    "texte": "L'âme perçoit la densité du monde physique sans y céder. Elle commence à différencier matière et lumière.",
+                    "meta": ["seuil"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "Une âme tentée de se réancrer dans la matière, confondant sensation et nécessité.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "L’âme cherche à retenir les liens terrestres, perturbée par l'empreinte affective encore flottante.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "La matière exerce encore son influence, ralentissant la pleine reconnaissance de l'être spirituel.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 3,
+        "non": "Etincelle",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_3_etincelle.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "Une âme qui perçoit en elle un foyer silencieux. Elle pressent la lumière qui attend de s’épanouir, consciente de son pouvoir latent.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Une chaleur douce accompagne l’âme, libre de tout besoin extérieur. L’amour naît d’abord en elle-même.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "L’âme ressent la première vibration de son feu divin. Amon-Rê éclaire doucement la conscience de sa lumière originelle.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "Une âme qui cherche des lumières extérieures, oubliant la source silencieuse en son propre centre.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "L’âme attend que l’amour vienne de l’extérieur, ignorant la chaleur silencieuse déjà présente en elle.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Ignorant sa propre lumière, l’âme risque d’imiter au lieu d’incarner. La source divine reste voilée.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 4,
+        "nom": "Tension",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_4_tension.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "Une âme chargée d’une force non exprimée. Elle ressent un orage intérieur, une pression qui demande à être transformée.",
+                    "meta": ["tension"]
+                },
+                "affectif": {
+                    "texte": "Un inconfort émotionnel monte sans forme claire. L’âme ressent une gêne, une charge affective non reconnue.",
+                    "meta": ["tension"]
+                },
+                "spirituel": { 
+                    "texte": "L’âme est à la croisée entre destruction et libération. elle doit apprendre à canaliser ce feu naissant.",
+                    "meta": ["tension"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "Une âme fermée sur elle-même, incapable de libérer ce qui l’opprime. Elle refoule sa tension au lieu de l’écouter.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Une colère non dite se projette subtilement sur les autres. L’âme accuse sans s’en rendre compte.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "L’âme refuse la purification. Elle bloque la transformation nécessaire.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 5,
+        "nom": "Murmure",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_5_murmure.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme perçoit des pensées intérieures, comme des échos flous. Elle entend sans encore comprendre.",
+                    "meta": ["seuil"]
+                },
+                "affectif": {
+                    "texte": "Des souvenirs affectifs remontent sans forme claire. L’âme ressent sans jugement.",
+                    "meta": ["seuil"]
+                },
+                "spirituel": { 
+                    "texte": "Une voix commence à parler doucement. L’âme capte des traces de vérité encore voilée.",
+                    "meta": ["seuil"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme rejette ou confond les pensées qui montent. Elle n’écoute pas ce qui lui parle en profondeur.",
+                    "meta": ["Tension"]
+                },
+                "affectif": { 
+                    "texte": "Des voix du passé affectif brouillent sa clarté. Elle projette au lieu d'accueillir.",
+                    "meta": ["Tension"]
+                },
+                "spirituel": {
+                    "texte": "Le langage sacré reste confus. L’âme mélange savoir ancien et pensée humaine.",
+                    "meta": ["Tension"]
+                }
+            }
+        },
+        {
+        "id": 6,
+        "nom": "Caresse",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_6_caresse.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme ressent une douceur subtile. Une trace d’amour circule en elle, sans nom ni souvenir.",
+                    "meta": ["seuil"]
+                },
+                "affectif": {
+                    "texte": "Une sensation d’amour apaisant effleure le cœur de l’âme. Il n’y a pas de manque, juste un lien diffus.",
+                    "meta": ["seuil"]
+                },
+                "spirituel": { 
+                    "texte": "L’âme perçoit l’amour sacré au-delà des formes. Hathor murmure à son cœur silencieux.",
+                    "meta": ["seuil"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme se croit étrangère à toute douceur. Elle ne reconnaît pas l’amour discret qui l’enveloppe.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "L’âme sent un vide affectif. Elle interprète ce silence comme un abandon.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "L’âme rejette le lien sacré. Elle confond attachement terrestre et amour cosmique.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 7,
+        "nom": "Chambre",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_7_chambre.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme entre dans une pièce silencieuse. Elle attend dans l’inconnu, au seuil d’une révélation.",
+                    "meta": ["seuil"]
+                },
+                "affectif": {
+                    "texte": "Les liens affectifs s’éloignent doucement. L’âme ressent un détachement qui ne fait pas encore souffrir.",
+                    "meta": ["seuil"]
+                },
+                "spirituel": { 
+                    "texte": "L’âme entre dans l’antichambre d’Osiris. C’est un vide sacré, où rien ne bouge encore.",
+                    "meta": ["seuil"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme refuse l’attente. Elle cherche à fuir le silence, incapable d’être face à elle-même.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "L’âme s’accroche à ses anciens liens, incapable d’accepter le détachement nécessaire.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "L’âme résiste au processus de dépouillement. Elle refuse d’entrer dans le silence sacré d’Osiris.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 8,
+        "nom": "Nu",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_8_nu.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme est face à elle-même sans filtre. Tout en elle devient visible, sans défense ni justification.",
+                    "meta": ["seuil"]
+                },
+                "affectif": {
+                    "texte": "Aucun lien affectif ne persiste ici. L’âme est seule, dans sa vibration essentielle.",
+                    "meta": ["seuil"]
+                },
+                "spirituel": { 
+                    "texte": "Maât observe sans juger. L’âme est dévoilée dans sa vérité vibratoire.",
+                    "meta": ["seuil"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme refuse de se voir entièrement. Elle tente de se cacher à elle-même.",
+                    "meta": ["tension "]
+                },
+                "affectif": { 
+                    "texte": "L’âme cherche à réactiver des liens éteints. Elle ne supporte pas l’isolement nécessaire.",
+                    "meta": ["tension "]
+                },
+                "spirituel": {
+                    "texte": "L’âme rejette le dévoilement. Elle s’accroche au voile pour éviter la pesée.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 9,
+        "nom": "Nuit",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_9_nuit.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme s’efface doucement dans l’espace sacré. Elle devient présence sans identité.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Tous les liens ont disparu. L’âme est seule, mais sans manque, dans une paix absolue.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "L’âme entre dans la conscience cosmique sans nom. Elle rejoint Sia dans le mystère silencieux.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme refuse sa dissolution. Elle cherche encore à exister comme une forme.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Elle espère un lien qui n’existe plus. Elle refuse l’abandon total des attaches.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Elle rejette l’entrée dans le grand silence. Elle ne parvient pas à rejoindre Sia.",
+                    "meta": ["tension"]
+                }
+        }
+        },
+        {
+        "id": 10,
+        "nom": "Empreinte",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_10_empreinte.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme ressent la trace de son passage. La mémoire du corps persiste sans l’enchaîner.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Des élans affectifs ressurgissent sans image précise. L’âme sent qu’elle a aimé, souffert, vibré.",
+                    "meta": ["souvenir"]
+                },
+                "spirituel": { 
+                    "texte": "L’âme touche la mémoire vibratoire de la Terre. Son passage a laissé une empreinte qu’elle reconnaît.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme s’identifie trop à son ancienne forme, ou refuse d’y toucher. Elle reste bloquée entre rejet et confusion.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Des attaches affectives refont surface, troublant la paix. L’âme s’égare dans des ressentis non libérés.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "L’âme refuse de reconnaître ce qu’elle a laissé sur Terre. La mémoire vibratoire est niée ou rejetée.",
+                   "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 11,
+        "nom": "Regard",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_11_regard.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme observe le corps qu’elle vient de quitter. Le regard est silencieux, lucide, irrévocable.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Une émotion muette traverse l’âme. Elle reconnaît son ancien lien à la forme, sans y retourner.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "L’âme voit ce qu’elle n’est plus. Le regard posé sur le corps scelle la séparation.",
+                    "meta": ["ouverture"]
+                }  
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme refuse de voir ce qu’elle a quitté. Elle tente de se réattacher au corps.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Un lien fort empêche l’acceptation. L’âme souffre encore de ce détachement physique.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "L’âme ne reconnaît pas la rupture. Elle reste figée dans l’illusion de l’incarnation.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 12,
+        "nom": "Reflet",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_12_reflet.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme entre en résonance avec ce qu’elle a été. Elle capte une image vibratoire douce, sans la juger.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Un écho émotionnel affleure. L’âme ressent les empreintes affectives de son passage sans les analyser.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Une lueur ancienne revient à elle. Elle se reconnaît partiellement dans ce reflet venu de la matière.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "Le reflet est flou ou inexistant. L’âme ne distingue pas ce qu’elle a été.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Des émotions ressurgissent sans cohérence. L’âme ressent sans comprendre.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Le lien à la lumière est perdu. L’âme ne perçoit aucun écho de son essence.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 13,
+        "nom": "Brèche",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_13_breche.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "Quelque chose s’ouvre en l’âme sans qu’elle l’ait choisi. Une faille invisible laisse passer une onde vibratoire intense.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "L’âme sent remonter une mémoire vive, liée à la blessure, au feu, à l’attachement. L’émotion n’a pas encore de forme.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Sekhmet ouvre la voie. À travers la brèche, une lumière brûlante commence à révéler ce qui était caché.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme nie l’ouverture. La faille est là, mais rejetée. Le passage reste bloqué.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "La brèche fait mal, et l’âme s’y enferme. Attachement à la colère ou au rôle de victime.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "La lumière tente d’entrer, mais l’âme ferme l’accès. Sekhmet est tenue à distance.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 14,
+        "nom": "Livre de vie",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_14_livrevie.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme entre dans la mémoire de ce qu’elle a inscrit. Chaque pensée ou parole résonne encore.",
+                    "meta": ["sououverture"]
+                },
+                "affectif": {
+                    "texte": "Les liens affectifs passés apparaissent sous forme de schémas inscrits, visibles sans émotion.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Thot ouvre le Livre de Vie. L’âme reçoit ce qu’elle a écrit en vivant, sans jugement.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme rejette sa mémoire. Elle refuse de voir ce qu’elle a inscrit.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                   "texte": "Les liens anciens sont confus ou déformés. L’âme fuit leur vérité inscrite.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Le livre s’ouvre, mais l’âme détourne le regard. Le savoir est rejeté.",
+                    "meta": ["tension"]
+                }
+            }
+        
+        },
+        {
+        "id": 15,
+        "nom": "Vibration",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_15_vibration.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme sent l’écho d’un lien passé. Une vibration douce remonte, porteuse de tendresse.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Une onde affective traverse l’âme. Elle reconnaît la présence d’un amour vécu.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Un lien d’âme vibre encore. L’âme entre dans une fréquence sacrée de relation.",
+                    "meta": ["seuil"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "La vibration devient pesante. L’âme s’attache à une présence qu’elle ne veut pas quitter.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "L’âme reste liée par un amour non libéré. Elle confond attachement et amour véritable.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "L’âme cherche à rester reliée à un être incarné. Le lien devient un ancrage nocif.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 16,
+        "nom": "Appel",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_16_appel.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme sent l’appel intérieur. Elle perçoit qu’un passage commence.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Une présence la guide sans parler. L’âme ressent un amour austère mais sûr.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Osiris appelle sans parole. L’âme est invitée à avancer vers la vérité.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme entend l’appel mais le refuse. Elle reste figée dans la peur ou l’attente.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Elle ne sent que le vide, ou croit qu’elle n’est pas prête. L’appel devient absence.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Osiris est présent, mais l’âme ne le reconnaît pas. Elle repousse l’épreuve à venir.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 17,
+        "nom": "Révélation",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_17_revelation.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme est totalement visible. Elle ne peut rien cacher de ce qu’elle a été.",
+                    "meta": ["seuil"]
+                },
+                "affectif": {
+                   "texte": "Elle ressent l’amour juste de Maât, froid mais impartial.",
+                   "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Maât révèle l’âme dans sa totalité. Rien n’est encore dit, mais tout est su.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme résiste à se montrer telle qu’elle est. Elle craint d’être entièrement vue.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Elle se sent exposée sans y être prête, fragile sous le regard divin.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Elle détourne le regard de Maât. La vérité est là, mais elle ne veut pas la voir.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 18,
+        "nom": "Etoile",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_18_etoile.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "Une lumière douce veille dans la nuit. L’âme sent qu’elle n’est pas seule.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "L’étoile n’aime pas, elle éclaire. Une douceur impersonnelle apaise l’âme.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Une conscience veille dans l’invisible. L’étoile rappelle que l’âme existe encore.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme ne perçoit pas la lumière. Elle croit être seule dans le noir.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "L’étoile est là mais elle ne la touche pas. L’âme se sent abandonnée.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Elle nie qu’il y ait un après. L’étoile est invisible à sa conscience.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 19,
+        "nom": "Exposition",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_19_exposition.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme se sent visible dans la lumière. Elle perçoit que ses actes comptent.",
+                    "meta": ["seuil"]
+                },
+                "affectif": {
+                    "texte": "Elle n’est ni aimée ni rejetée. Elle est simplement vue telle qu’elle est.",
+                    "meta": ["seuil"]
+                },
+                "spirituel": { 
+                    "texte": "Râ éclaire sans juger. Cette lumière réveille la conscience de l’âme.",
+                     "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme refuse d’être vue. Elle fuit la lumière intérieure qui l’expose.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Elle se sent blessée d’être mise à nu. Elle perçoit la clarté comme une menace.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Elle détourne le regard de la lumière divine. L’exposition devient insupportable.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 20,
+        "nom": "Souvenir",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_20_souvenir.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme s’attarde sur ce qu’elle a vécu. Elle cherche à comprendre à travers ses souvenirs.",
+                    "meta": ["tension"]
+                },
+                "affectif": {
+                    "texte": "Des émotions passées ressurgissent. L’âme revit ce qui l’a marqué.",
+                    "meta": ["seuil"]
+                },
+                "spirituel": { 
+                    "texte": "Elle reste tournée vers la matière. Amon-Rê est là, mais elle ne le regarde pas encore.",
+                    "meta": ["tension"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme commence à lâcher prise. Elle sent que le passé ne détient plus le sens.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": { 
+                    "texte": "Elle accueille l’émotion sans s’y enfermer. Le souvenir se dissout doucement.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": {
+                    "texte": "Elle lève les yeux vers la lumière. Elle reconnaît que la vérité vient d’ailleurs.",
+                    "meta": ["ouverture"]
+                }
+            }
+        },
+        {
+        "id": 21,
+        "nom": "Evidence",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_21_evidence.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme voit son histoire révélée. Elle accepte d’en reconnaître chaque ligne.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Elle reste présente malgré la gêne. Elle accueille la clarté sans se défendre.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Amon-Rê ouvre le Livre. L’âme ne peut plus prétendre ignorer ce qu’elle a été.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme détourne le regard. Elle refuse de se reconnaître dans ce qui est révélé.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Elle se sent jugée. Elle rejette la lumière qui ne faisait que montrer.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Elle s’éloigne de la vérité offerte. Amon-Rê devient silence dans son obscurité.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 22,
+        "nom": "Déchirure",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_22_dechirure.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme ressent une cassure en elle. Une tension ancienne s’ouvre en douleur.",
+                    "meta": ["seuil"]
+                },
+                "affectif": {
+                    "texte": "l'âme ressent Une colère qui monte, sans cause claire. Elle révèle une zone non guérie.",
+                    "meta": ["tension"]
+                },
+                "spirituel": { 
+                    "texte": "L’âme sent que sa faille est mise en lumière. Un feu intérieur monte et la pousse à changer",
+                    "meta": ["tension"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme refuse de sentir la faille. Elle préfère se couper d’elle-même.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "l'âme se ferme au lieu d’exprimer sa colère. La douleur reste enfermée.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "L’âme refuse de voir ce qui s’éclaire en elle. Son feu intérieur se referme dans l’ombre.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 23,
+        "nom": "Histoire",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_23_histoire.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme lit le récit de ce qu’elle a été. Elle découvre son propre chemin sans commentaire.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Elle ressent la distance entre ce qu’elle a vécu et ce qu’elle croyait être.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Ce qu’elle a fait est inscrit. Elle voit l’ensemble de son histoire, sans y répondre encore.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme rejette le récit. Elle refuse de se reconnaître dans ce qui est montré.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Elle se sent coupée de ce qu’elle lit. Elle croit que cela ne la concerne pas.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Elle veut effacer l’histoire au lieu de la regarder. Elle nie le fil de sa mémoire.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 24,
+        "nom": "Sentiment",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_24_sentiment.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme sent quelque chose s’ouvrir en elle. Une émotion ancienne revient sans mot.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Elle perçoit un lien qui a compté. Elle ne sait pas s’il s’agissait d’amour, mais elle l’a ressenti.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Un sentiment persiste en elle. l'âme ne sait pas encore d’où il vient ni ce qu’il signifie.",
+                    "meta": ["seuil"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                   "texte": "L’âme se coupe de ce qu’elle sent. Elle préfère ne pas rouvrir l’émotion.",
+                   "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "l'âme rejette ce qu’elle a ressenti ou s’y attache encore malgré elle.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "L'âme confond sentiment et attente. Elle ne reconnaît pas encore ce qu’elle cherche vraiment.",
+                    "meta": ["illusion", "écart"]
+                }
+            }
+        },
+        {
+        "id": 25,
+        "nom": "Traversée",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_25_traversee.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme ressent qu’un passage commence. Elle ne peut plus rester en dehors.",
+                    "meta": ["seuil"]
+                },
+                "affectif": {
+                    "texte": "Elle pressent qu’elle devra se confronter à ses attachements et ses choix passés.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Un chemin intérieur s’ouvre. L’âme sent qu’elle devra aller jusqu’au bout.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme refuse d’avancer. Elle sent l’épreuve mais recule face à elle.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Elle ne veut pas revoir ce qu’elle a vécu. Elle espère encore l’éviter.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Elle refuse d’entrer dans la traversée. Elle repousse le face-à-face avec sa vérité.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 26,
+        "nom": "Silence",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_26_silence.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme reste immobile. Elle accepte de ne pas comprendre tout de suite.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Elle ne se défend pas. Elle ressent l’absence de réponse comme un appel intérieur.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Le silence l’enveloppe. Il contient la vérité sans l’expliquer.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme refuse le silence. Elle veut comprendre au lieu de ressentir.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Elle croit être abandonnée. Elle ne reconnaît pas la présence dans le silence.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Elle cherche une voix extérieure. Elle refuse d’écouter ce qui est déjà là.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 27,
+        "nom": "Suspension",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_27_suspension.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme entre dans un état de présence pure. Elle ne sait pas ce qui va suivre.",
+                    "meta": ["seuil"]
+                },
+                "affectif": {
+                    "texte": "Elle ressent tout ce qu’elle a été, sans s’y attacher. Elle est entre deux rives.",
+                    "meta": ["seuil"]
+                },
+                "spirituel": { 
+                    "texte": "Elle est tenue dans le regard du Tout. Elle ne fait rien, mais tout se joue ici.",
+                    "meta": ["seuil"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme veut agir trop tôt. Elle ne supporte pas le vide qu’elle traverse.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Elle rejette le calme intérieur. Elle cherche encore à contrôler.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Elle détourne le regard du Tout. Elle refuse d’entrer dans l’état suspendu.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 28,
+        "nom": "Moi",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_28_moi.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme accueille ce que la matière lui a permis d’être. Elle ne s’y accroche plus.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Elle remercie ses liens passés. Ils deviennent mémoire plutôt que désir.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "L’âme honore l’incarnation comme un passage. Elle n’a plus besoin de revenir.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme refuse de quitter ce qu’elle a été. Elle s’enferme dans la mémoire du corps.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Elle cherche à revivre ses liens d’avant. Elle s’accroche à l’affect terrestre.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Elle rejoue sans fin l’élan de revivre. Sekhmet consume ce qui ne se transforme pas.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 29,
+        "nom": "Incarnation",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_29_incarnation.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme se voit telle qu’elle est devenue. Elle accepte ce premier regard intérieur.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "Elle reconnaît ce qu’elle a porté dans ses liens. Elle ne cherche pas d’excuse.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Râ éclaire son être. L’âme accepte d’entrer dans sa propre vérité.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme refuse de se regarder. Elle détourne les yeux de ce qu’elle est devenue.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "Elle nie ce qu’elle a ressenti ou provoqué. Elle masque ce qui dérange.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "Elle se cache de la lumière de Râ. Elle repousse l’éveil de conscience.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 30,
+        "nom": "Lumière",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_30_lumiere.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme fait face à la lumière qu’elle a portée. Elle la reconnaît sans détour.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "L'âme voit les effets de son rayonnement dans ses liens. Elle les accepte.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "L’âme se tient face à Amon-Rê. Elle s’aligne à sa propre lumière.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme refuse de voir la lumière qu’elle a utilisée à contre-sens.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "L'âme nie ce qu’elle a réveillé ou brûlé chez l’autre. Elle se détourne la lumière.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "L’âme est mise à nu par une lumière qu’elle a détournée. Le feu intérieur la désaxe.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 31,
+        "nom": "Douleur",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_31_douleur.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme reconnaît une douleur profonde. Elle accepte de la regarder sans fuir.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "L’âme voit ce qu’elle a vécu et provoqué. Elle ne cherche ni coupable ni justification.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "La douleur devient un feu conscient. L’âme entre dans ce qui la consume.",
+                    "meta": ["seuil"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme reste prisonnière de ce qui l’a blessée. La douleur devient enfermement.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "L’âme s’accroche à sa blessure. Elle reste liée à un autre, dans la souffrance.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "L’âme rejette le feu intérieur. La douleur la pousse à revenir vers les vivants.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 32,
+        "nom": "Ecriture",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_32_ecriture.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme reconnaît ce qu’elle a pensé et affirmé. Elle accepte sa propre trace vibratoire.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "L’âme lit les intentions posées dans ses liens. Elle ne cherche ni à justifier ni à nier.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "L’âme relit son écriture intérieure. Ce qui a été inscrit peut maintenant être purifié.",
+                    "meta": ["ouverture"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme refuse de relire ce qu’elle a inscrit. Elle se coupe de sa propre vérité.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "L’âme nie les mots prononcés ou tus dans ses liens. La mémoire devient tension.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "L’âme fuit sa propre loi intérieure. Ce qu’elle a écrit reste actif, jusqu’à transmutation.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id" : 33,
+        "nom": "Beauté",
+        "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_33_beaute.png",
+            "endroit": {
+               "personnalité": {
+                   "texte": "L’âme reconnaît la lumière qu’elle a portée. Elle a cherché à rendre les liens plus beaux.",
+                    "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L’âme honore ce qu’elle a aimé. Elle voit la beauté dans ce qui a été vécu, même si c’est fini.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "L’âme reconnaît la beauté comme vibration sacrée. Elle accepte d’avoir aimé sans possession.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme se fixe sur ce qu’elle n’a pas eu. Elle refuse de voir la beauté qui était là.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "L’âme reste accrochée à une image idéale. Elle rejette ce qui ne correspondait pas.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme a blessé la beauté par attente ou exigence. Le lien au sacré s’est rompu.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 34,
+    "nom": "Epreuve",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_34_epreuve.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme entre dans la zone de vérité. Elle accepte de commencer l’épreuve.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L’âme voit ce qu’elle a tissé ou défait dans les liens. L’épreuve commence dans la relation.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "L’âme franchit la première porte vers Maât. Elle entre dans la traversée des limbes.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme refuse de traverser. Elle recule face à ce qu’elle doit reconnaître.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L’âme rejette l’épreuve affective. Elle reste figée sur ce qu’elle ne veut pas sentir.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme s’oppose à la vérité. Le feu monte, car la traversée ne peut être évitée.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 35,
+    "nom": "Doute",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_35_doute.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît un déséquilibre intérieur. Elle accepte de revoir sa position.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L’âme sent que quelque chose n’est pas aligné dans ses liens. Elle cherche à comprendre.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "L’âme entre dans un doute honnête. Elle cherche l’ajustement avant Maât.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme refuse de douter. Elle reste figée dans une certitude qui vacille.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Le doute devient reproche ou déni. L’âme projette au lieu de questionner.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme rejette l’interrogation. Le désalignement grandit en elle.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 36,
+    "non": "Faille",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_36_faille.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît ce qu’elle n’a jamais osé voir. Elle accueille ce vide sans le fuir.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L’âme perçoit la faille dans ses liens. Elle ne cherche pas à combler, juste à voir.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L’âme entre dans la faille cosmique. Ce qui était inconnu devient passage.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme refuse d’admettre ce point de fracture. Elle retient ce qu’elle ne peut affronter.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L’âme nie le manque. Elle rejette la faille au lieu de l’honorer.",
+               "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme recule devant la faille. Le retour dans le cycle devient inévitable.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 37,
+    "nom": "Voile",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_37_voile.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme perçoit ce qui agit encore en elle. Le voile n’est pas un obstacle, mais une clarté douce.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Un lien flotte encore dans la lumière. L’âme ne s’y accroche pas, elle observe.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L’âme sent qu’un seuil reste à franchir. Le voile est fin, mais réel.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme croit être totalement claire. Mais elle refuse de voir la fine couche qui persiste.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Elle rejette le dernier écho d’un lien. Ce rejet empêche la dissolution.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme force le passage. Le voile devient écran, faute de patience.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 38,
+    "nom": "Perception",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_38_perception.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme perçoit une forme ancienne en elle. Elle l’observe sans la suivre.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Un ancien besoin ressurgit. L’âme ne s’y oppose pas, elle le laisse se dissoudre.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L’âme reconnaît l’empreinte subtile de la Terre en elle. Elle l’intègre.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme croit avoir dépassé une forme. Mais elle reste agie par elle sans le voir.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Un ancien schéma se rejoue. L’âme y réagit sans en avoir conscience.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme nie l’empreinte de l’incarnation. Ce refus empêche la libération vibratoire.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 39,
+    "nom": "Ego",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_39_ego.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme observe les gestes de son ego. Elle ne s’y identifie plus.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Elle reconnaît le désir d’être vue ou aimée. Elle revient à l’authenticité.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L’âme distingue sa lumière de son besoin d’exister. Elle remet l’ego à sa place.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme agit encore depuis l’ego. Elle confond présence et affirmation.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Elle cherche la validation dans le lien. L’amour devient scène.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme croit rayonner, mais parle depuis le besoin de reconnaissance.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 40,
+    "nom": "Eclat",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_40_eclat.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme sent la tension monter. Elle choisit de regarder ce feu avant qu’il ne jaillisse.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Une parole intérieure brûle. L’âme attend d’en voir la source réelle.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Un éclat possible approche. L’âme sent qu’elle est sur un fil entre vérité et réaction.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme agit sans recul. Elle laisse éclater ce qui n’a pas été vu.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Un feu ancien prend le dessus. L’âme parle depuis la blessure, non depuis l’amour.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme projette sans discerner. Ce qu’elle croit vrai est encore chargé.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 41,
+    "nom": "Toi",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_41_toi.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît le mot qu’elle a porté. Elle sent qu’il agit encore.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme entend le mot adressé à l’autre. Elle l’observe sans l’attachement.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "Un mot ancien revient en elle. L'âme peut le reformuler ou le libérer.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme nie l’existence d’un mot non dissous. Il influence encore son centre.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme reste liée à une parole affective passée. Le lien persiste sans conscience.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme parle encore à partir de l’autre. Sa voix intérieure est troublée.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 42,
+    "nom": "Liens",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_42_liens.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme observe les liens qu’elle a créés. Elle voit là où elle s’est adaptée par amour.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme reconnaît les gestes qu’elle a faits pour maintenir l’unité. Elle revient à sa vérité.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme perçoit la forme vibratoire du lien. L’amour devient espace, non modèle.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme rejoue un lien ancien. Elle croit aimer, mais elle s’y perd.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme se conforme à un idéal de douceur. Elle s’oublie dans le lien.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme suit une forme d’amour sans l’interroger. Le lien devient limitation.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 43,
+    "nom": "Poids",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_43_poids.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme sent ce qu’elle porte encore. Elle regarde ce poids sans jugement.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme reconnaît ce qu’elle a traversé dans le lien. Ce poids devient conscience.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme porte la mémoire de ce qu’elle est devenue. Le poids devient stabilité.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme nie la trace de l’épreuve. Elle refuse de reconnaître ce qui l’habite.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme porte encore le poids du lien mais n’en voit pas la cause.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme rejette la densité de ce qu’elle est devenue. Le poids devient blocage.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 44,
+    "nom":" Projection",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_44_projection.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme voit ce qu’elle projette subtilement. Elle rectifie son regard.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme reconnaît l’image qu’elle a posée sur l’autre. Elle revient à la vérité du lien.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme comprend qu’une pensée peut créer une forme. Elle choisit la justesse.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme projette ses tensions sans s’en rendre compte. Elle confond pensée et réalité.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme reste dans une illusion affective. Le lien n’est plus vu tel qu’il est.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme parle à partir d’une image mentale. La projection remplace la conscience.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 45,
+    "nom": "Persistance",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_45_persistance.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme ressent une vibration ancienne. Elle l’observe sans s’y attacher.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Un lien résonne encore, mais l’âme ne le confond plus avec une vérité.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L’âme reconnaît ce qui persiste. Elle sait que cela n’appelle pas un retour.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme suit une trace ancienne comme si elle était réelle. Elle glisse dans l’écho.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Une mémoire affective attire encore l’âme. Le lien devient confusion.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme croit devoir répondre à une forme subtile. Elle risque de relancer un cycle.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+    "id": 46,
+    "nom": "Contradiction",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_46_contradiction.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît une incohérence entre ce qu’elle a voulu et ce qu’elle a fait.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme voit l’écart entre son amour déclaré et ses peurs non dites.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme éclaire un désalignement intérieur. La lumière commence à trancher.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme refuse de voir la contradiction. Elle protège une image fissurée.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme confond sentiment et projection. Le lien reste flou.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme croit avancer, mais évite de regarder ce qui divise sa vibration.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+    "id": 47,
+    "nom": "Désirs",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_47_desirs.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme voit ce qu’elle a réellement cherché. Elle reconnaît ses désirs essentiels.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme distingue l’amour du besoin. Elle comprend ce qui l’a liée.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L’âme reconnaît la source de ses désirs. Elle choisit avec plus de clarté.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme refuse de voir ce qui l’a guidée. Ses désirs restent inconscients.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme confond amour et attente. Elle agit depuis le manque.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Ses choix vibrent encore depuis un lieu non aligné. L'âme se laisse porter sans lucidité.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+    "id": 48,
+    "nom": "Justesse",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_48_justesse.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît ce qui, dans son affirmation, manquait d’équilibre.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme ajuste sa parole pour revenir à une vérité sensible.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme retrouve la vibration juste, au-delà de la posture ou du rôle.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme tient à une vérité qui sonne faux. Elle refuse encore l’ajustement.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme impose son regard affectif sans voir le déséquilibre sous-jacent.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "l'âme parle depuis une posture, pas depuis la vérité vibratoire.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+    "id": 49,
+    "nom": "Colère",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_49_colere.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît sa réactivité. Elle comprend ce que la colère recouvrait.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme voit comment sa colère a protégé une blessure. Elle s’ouvre à une autre force.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme distingue la colère de la puissance réelle. Elle réoriente son feu.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme agit encore depuis un lieu de tension. La colère parle à sa place.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme coupe au lieu d’écouter. La colère déforme le lien.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme confond action et défense. Son feu n’est pas encore aligné.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+    "id": 50,
+    "nom": "Parole", 
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_50_parole.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme regarde la forme qu’ont pris ses mots. Elle en cherche la cohérence.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme reconnaît ce qu’elle a dit depuis le manque. Elle revient à une parole vraie.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme comprend que seule la parole vibrante est juste. Elle choisit l’alignement.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme reste dans un discours mental. Elle confond logique et justesse.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Ses mots sonnent l’amour mais viennent de la peur. L'âme parle sans clarté.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme répète des formes anciennes. Sa parole ne porte plus de lumière.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+    "id": 51,
+    "nom": "Illusion",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_51_illusion.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme voit ce qu’elle a projeté. Elle revient à une image claire du lien.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme reconnaît qu’elle a aimé une illusion. L’amour devient plus vrai.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme distingue l’image de la vibration réelle. Elle choisit la clarté.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme reste dans une vision embellie. Elle ne veut pas voir ce qui est.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme confond amour et attente. Elle s’accroche à une forme irréelle.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme parle d’amour depuis un voile. L’illusion l’éloigne de la vérité.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+    "id": 52,
+    "nom": "Masque",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_52_masque.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme voit la posture qu’elle a tenue. Elle distingue forme et vérité.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme relâche le rôle affectif qu’elle jouait. Elle s’ouvre doucement.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme reconnaît ce qui vibrait faux dans sa posture. Elle dépose le masque.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme reste identifiée à son image. Elle confond forme et être.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme maintient un lien figé. L’émotion vraie est encore voilée.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme se cache derrière une posture spirituelle. La vibration est faussée.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 53,
+    "nom": "Posture",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_53_posture.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît la forme rigide qu’elle a tenue. Elle relâche la pression.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme voit qu’elle gardait sa posture au détriment du lien. Elle s’assouplit.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme comprend que la posture n’est pas la vérité. Elle revient à l’alignement.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme s’enferme dans une image juste. Elle confond solidité et fermeture.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme maintient une distance affective sous couvert de droiture.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme s’accroche à une vision raide du vrai. Elle perd le souffle de Maât.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 54,
+    "nom": "Narration",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_54_narration.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît le récit qu’elle s’est construit. Elle revient à ce qu’elle a vraiment vécu.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme voit ce qu’elle a cru pour aimer. Elle cherche maintenant un lien plus nu.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme lâche la forme de l’histoire. Elle touche le silence du réel.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme reste enfermée dans un récit mental. Elle ne sent plus la vérité.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme confond le lien vécu avec le lien raconté. Elle évite le réel.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme continue à dire le passage sans le vivre. Son récit masque l’expérience.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 55,
+    "nom" :" Clarté",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_55_clarte.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme distingue ce qu’elle a porté avec justesse de ce qui brillait sans racine.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme voit ce qu’elle a donné depuis la clarté, et ce qu’elle attendait en retour.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme laisse tomber les rôles lumineux. Elle revient à la lumière nue.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme tient encore à l’image. Elle fuit la lumière intérieure.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme croit avoir donné, mais attendait encore. La clarté n’est pas posée.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme refuse le poids du regard d’Osiris. Elle reste dans l’éclat de surface.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 56,
+    "nom" : "Rôle",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_55_role.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît le rôle qu’elle a tenu pour survivre. Elle revient à sa vérité.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme voit la forme qu’elle a incarnée dans le lien. Elle commence à se retirer du masque.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme comprend que le rôle n’était pas elle. Elle revient à sa vibration profonde.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme s’accroche à une image solide. Elle croit encore que c’est elle.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "l'âme reste dans un lien figé. La vibration affective n’y circule plus.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "l'âme confond mission et personnage. La forme prend toute la place.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 57,
+    "nom" : "Influence",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_57_influence.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît la portée de ce qu’elle a affirmé. Elle prend conscience de sa trace.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme voit ce qu’elle a transmis au sein du lien. Elle relâche ce qui pèse.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme ressent si sa lumière a guidé ou figé. Elle choisit un rayonnement vivant.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme continue à diriger subtilement. Elle influence sans écoute.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme pèse sur l’autre par une vibration ancienne. Le lien est faussé.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme transmet encore un modèle figé. Sa lumière n’inspire plus.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 58,
+    "nom": "Protection",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_58_protection.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît ce qu’elle a tenu pour se protéger. Elle honore cette force sans s’y attacher.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme voit les défenses qu’elle a posées dans le lien. Elle peut maintenant les relâcher.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "l'âme comprend que la colère pouvait étre un réflexe. Elle comprend que cela etait une forme de protection.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme agit encore depuis une peur ancienne. Elle croit devoir se défendre.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme coupe pour ne pas sentir. Elle se croit protégée, mais elle est fermée.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "l'âme impose sa vérité comme un bouclier. Le feu n’est plus relié.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 59,
+    "nom" :" Posture",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_59_posture.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme voit la forme qu’elle a tenue pour parler ou penser. Elle revient à ce qu’elle sent.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme reconnaît la posture prise dans le lien. Elle choisit une parole plus vraie.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme comprend que sa parole était une protection. Elle revient à l’essentiel.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme reste dans une forme mentale. Elle pense juste au lieu de sentir vrai.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme maintient une posture face à ses liens passés. Cela cache sa peur d’être vue.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme répète une parole figée. Il n’y a plus de lien vivant.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 60,
+    "nom": "Amour",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_60_amour.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît ce qu’elle a su aimer sincèrement. Elle honore cette ouverture.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme revient à ce qui vibrait dans ses liens. Elle se relie au cœur.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme comprend que l’amour ne se tient pas. Il circule, ou il s’éteint.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme a aimé depuis un besoin. Elle croyait protéger, elle se retenait.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme reste liée à une forme d’amour qui ne vibre plus. Elle s’y accroche encore.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme cherche à recevoir plus qu’à aimer. L’amour devient une attente.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 61,
+    "nom": "Chemin",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_61_chemin.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît la route qu’elle a tenue. Elle revient à ce qui la mettait en mouvement.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme voit le lien qu’elle a suivi comme une trajectoire. Elle choisit d’ouvrir.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme comprend que la mission n’est pas une forme à tenir. Elle retrouve l’élan vivant.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme s’est tenue à un chemin figé. Elle croyait devoir y rester.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme s’est accrochée à une voie relationnelle. Le cœur ne suivait plus.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme a confondu chemin et forme, cette confusion à créer un désalignement spirituel",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 62,
+    "nom": "Sincérité",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_62_sincerite.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme regarde ce qu’elle a dit et tenu. Elle reconnaît ce qui vibrait vrai.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme voit si elle a aimé avec justesse. Elle accepte ce qu’elle a retenu.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme ne cherche plus à paraître. Elle revient à la vérité intérieure.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme a cru à une image d’elle-même. Elle ne voulait pas voir l’écart.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme a tenu des liens sans y être. Elle confondait forme et amour.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme parlait de justesse sans l’habiter. Le rôle a remplacé l’alignement.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 63,
+    "nom" : "Schéma",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_63_schema.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît les choix répétés. Elle voit ce qu’elle a su transformer.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme comprend les mêmes liens rejoués. Elle honore ce qui a changé.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme perçoit la trame globale de ses vies. Elle sent si elle a tenu son engagement.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme rejoue les mêmes formes sous d’autres noms. Le schéma reste intact.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme revit les mêmes liens, sans déplacement intérieur.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme croit avoir évolué, mais la boucle ne s’est pas refermée.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 64,
+    "nom": "Engagement",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_64_engagement.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît ce qu’elle a tenu fidèlement. Elle n’a pas trahi son axe.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme a aimé sans se détourner d’elle-même. Elle a gardé l’essence du lien.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme a suivi son feu d’origine. Son engagement vibratoire était juste.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme s’est écartée sans le voir. Elle a oublié l’élan d’origine.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme s’est perdue dans les formes du lien. L’engagement s’est figé.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme a porté une lumière sans vibration. L’essence n’y était plus.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 65,
+    "nom": "Vie",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_65_vie.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme voit ce qu’elle a incarné. Elle reconnaît une vie tenue avec justesse.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme a aimé sans se fuir. Le lien a été vécu avec présence.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme a posé sa lumière dans la matière. Sa vie a vibré.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme a traversé cette vie sans se rencontrer. Elle est restée en surface.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme a fui l’incarnation du lien. L’amour n’a pas été vécu pleinement.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme est restée séparée de sa source. Sa vie n’a pas vibré juste.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 66,
+    "nom": "Alliance",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_66_alliance.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme voit ce qu’elle a lié. Elle reconnaît les alliances justes.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme a offert des liens vrais. Chaque promesse a laissé une trace claire.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme a agi dans le respect des contrats d’âme. Son rayonnement a été fidèle.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme a formé des alliances de façade. Elle voit ce qui n’était pas vrai.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme a promis sans présence. Certains liens ont été faussés et non respectés.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme a rompu des contrats d’âme. Le champ collectif porte encore cet écho.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 67,
+    "nom": "Libération",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_67_liberation.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît ce qui l’a fait brûler. Elle choisit de s’en délester.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme libère les autres de ses colères passées. Rien ne doit rester accroché.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme dépose ses blessures dans la balance. Elle ne veut plus les transmettre.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme s’accroche encore à ses colères. Elle n’est pas prête à les libérer.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme garde encore une rancune. Ses liens sont encore chargés de feu ancien.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme refuse de lâcher ce qui l’a blessée. Le feu continue à se propager.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 68,
+    "nom": "Rayonnement",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_68_rayonnement.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme voit l’effet réel de ce qu’elle a transmis. Elle a éclairé sans illusion.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme a porté une vibration claire. Ce qu’elle a offert a libéré.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "Le rayonnement de l'âme était aligné avec son essence. Rien n’a été forcé.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme découvre les effets distordus de son rayonnement. Elle n’avait pas vu l’impact.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme a blessé par ce qu’elle a imposé ou tu. Sa vibration était chargée.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme a transmis depuis une posture, non depuis l’âme. L’onde est faussée.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 69,
+    "nom": "Coeur",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_69_coeur.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme reconnaît ce qu’elle a donné avec vérité. Son cœur a été sincère.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme a aimé sans vouloir posséder. Son amour a apaisé.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "Son don venait de l’âme. Il n’y avait pas de masque.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme a donné pour être aimée. Elle voit l’attente derrière le geste.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme a aimé en exigeant, en possédant. C'est un coeur Lourd qu'elle pose dans la balance",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme a masqué son besoin d’amour sous des gestes d’apparence. Le don n’était pas pur.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 70,
+    "nom": "Âme",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_70_ame.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme se montre telle qu’elle est. Il n’y a plus de masque.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme ne cherche plus à être aimée. Elle s’offre en vérité.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "L'âme se dépose elle-même dans la balance. Elle est prête à être vue.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme cache encore une part d’elle. Elle a peur d’être vue en entier.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme cherche encore à être reconnue, au lieu de se poser vraiment.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme n’est pas prête à se déposer. Elle se retient de se remettre à la lumière.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 71,
+    "nom": "Equilibre",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_71_equilibre.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme est en accord avec ce qu’elle a été. Son cœur est juste.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme a aimé dans la vérité. La balance ne trouve pas de faute.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "L'âme atteint l’équilibre. Maât reconnaît sa vibration.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme n’a pas été fidèle à elle-même. Elle voit le déséquilibre posé.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme a faussé le lien. L’amour donné n’était pas juste.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "La balance penche encore. L’âme n’est pas en paix avec ce qu’elle est.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 72,
+    "nom": "Porte",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_72_porte.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme s’approche du seuil. Elle est prête à quitter le connu.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme ne s’attache plus. Elle entre dans l’espace sans forme.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "L'âme se tient devant la PORTE. Le choix ne dépend plus du mental.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme hésite encore. Elle garde un lien avec ce qui fut.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme redoute de perdre ce qu’elle a aimé. La séparation lui fait peur.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme ne peut pas franchir. La PORTE est là, mais elle n’y entre pas.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 73,
+    "nom": "Acceptation",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_73_acceptation.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme accueille ce qu’elle est devenue. Elle ne fuit plus sa vérité.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme s’accepte entièrement. L’amour n’est plus un besoin.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "L'âme s’ouvre à la fusion. La lumière peut la traverser sans obstacle.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme détourne le regard. Elle rejette encore une part d’elle-même.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme refuse de se reconnaître telle qu’elle est. L’ombre bloque l’union.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme ne peut pas encore fusionner. Râ montre le chemin du retour.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 74,
+    "nom": "Cycles",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_74_cycles.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme a vécu pleinement. Elle n’a fui aucun passage terrestre.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme a honoré ses liens à chaque vie. Tout est posé.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "Tous les cycles sont clos. L’âme est libre de la matière.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme a fui certaines incarnations. Elle n’a pas habité tout son parcours.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Des liens restent vibrants. Certaines vies n’ont pas été menées à terme.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Un cycle n’est pas clos. L’âme reviendra habiter ce qu’elle a laissé.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 75,
+    "nom": "Aura",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_75_aura.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme diffuse une présence claire. Son aura est stable et vraie.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme réchauffe par sa seule lumière. Elle ne retient pas son rayonnement.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "Son aura a traversé les mondes. Sa lumière a laissé une empreinte vibratoire.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme a contenu sa lumière. Elle a diffusé par intermittence.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Son aura a transmis confusion ou repli. Elle n’était pas claire pour l’autre.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Sa lumière ne s’est pas propagée. Elle n’a pas laissé de trace stable dans le Tout.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 76,
+    "nom": "Guérison",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_76_guerison.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme n’a plus besoin de s’imposer. Elle transforme la force en clarté.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme n’attaque plus. Elle a libéré les blessures qui faisaient mal aimer.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "L'âme transmute tous les feux anciens. La guérison est réelle.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme est encore tendue. Elle ne sait pas être sans combattre.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme réagit depuis sa blessure. La relation devient un champ de guerre.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme n’a pas encore traversé la colère ancienne. Le feu reste actif.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 77,
+    "nom": "Loi",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_77_loi.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme a suivi des lois justes. Sa rigueur a révélé sa lumière.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme n’a pas plié sa vérité. Elle est restée alignée dans le lien.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "L'âme a respecté la loi du vivant. Elle n’a pas confondu règle et vérité.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme a suivi des règles qui l’ont figée. Elle n’a pas toujours été libre.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme s’est adaptée pour être aimée. La loi n’était pas la sienne.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme a obéi à des vérités imposées. Il reste un texte à réécrire.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 78,
+    "nom" : "Ouverture",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_78_ouverture.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme s’est laissée toucher. Elle n’a pas eu peur d’aimer.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme a aimé sans attente. Elle a laissé l’amour traverser chaque lien.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme a laissé l’amour purifier ce qu’elle était. Elle ne s’est pas protégée de la douceur.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme s’est refermée souvent. Elle n’a pas su faire confiance au lien.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L'âme a donné en espérant un retour. Elle n’a pas aimé librement.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’amour n’a pas traversé tous ses corps. L'âme a gardé des verrous.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 79,
+    "nom" : "Echo",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_79_echo.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme porte encore l’écho des épreuves, mais elle ne s’y attache plus.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L'âme reconnaît les anciennes douleurs, sans les confondre avec le présent.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L'âme perçoit le dernier souffle des limbes, sans y répondre.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme est encore guidée par le bruit ancien. L’écho la dévie.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Une mémoire affective agit encore. L'âme n’est pas entièrement libérée.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L'âme pense avoir quitté l’épreuve, mais elle y répond encore sans s’en rendre compte.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 80,
+    "nom": "Passage",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_80_passage.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme est alignée avec elle-même. Rien ne retient le passage.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L'âme a tout offert sans attache. Le cœur est léger.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "Le seuil s’ouvre. L’âme peut fusionner dans le Tout.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Un reste d’illusion subsiste. L’âme n’est pas encore totalement vraie.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Une blessure non vue alourdit encore le cœur.L'âme ne peut franchir la passage",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Le passage se referme doucement. Une boucle doit être rejouée.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 81,
+    "nom": "Union",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_81_union.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme n’est plus séparée. Tout ce qu’elle est se fond dans l’unité.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L’âme ne cherche plus à aimer ni à être aimée. L’amour est devenu son état.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L’âme rejoint la conscience universelle. La fusion est complète.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme garde une dernière séparation. L’union ne peut encore se faire.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L’âme n’a pas encore aimé chaque part d’elle-même. Le lien au Tout est différé.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme demeure au seuil. Un nouveau cycle d’incarnation l’attend.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 82,
+    "nom": "Noun",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_82_noun.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme est portée par le champ universel. Elle reçoit un souffle vivant.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L’âme baigne dans une matrice aimante. Elle n’est jamais seule.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L’âme se laisse soutenir par la vibration cosmique. Tout est lien.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme rejette la matrice. Elle se replie dans une vision fermée d’elle-même.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L’âme refuse d’être portée. Elle se pense seule face à tout.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme se coupe du champ universel. Elle nie sa propre origine.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 83,
+    "nom": "L'homme",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_83_homme.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme est stable, droite, présente. La force n’a plus besoin de se justifier.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L’âme agit sans écraser. L’amour se pose dans la clarté.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L’âme a intégré la vibration masculine sacrée. L’axe est pur.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme a porté la dureté. La force est encore crispée.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L’âme confond amour et contrôle. La distance est une protection.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme rejette le masculin ou l’impose. L’axe n’est pas encore libre.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 84,
+    "nom": "La femme",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_84_lafemme.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme est ouverte et sensible. Elle ne cherche plus à séduire pour exister.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L’âme aime sans contrôle. L’amour est présence, non attachement.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L’âme a intégré la vibration féminine. Elle ressent sans se confondre.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme a porté la douceur comme masque. Elle a séduit pour ne pas perdre.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L’âme a aimé pour posséder. Le lien est encore teinté de peur.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme rejette ou déforme le féminin. Elle n’a pas encore guéri cette vibration.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 85,
+    "nom": "L'enfant",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_85_lenfant.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’âme est simple et entière. Elle n’a plus peur d’être vue dans sa clarté.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L’âme aime librement. La confiance est stable, profonde.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": {
+                "texte": "L’âme retrouve sa vibration d’origine. L’enfant intérieur est en paix.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’âme est encore guidée par une blessure d’enfance non reconnue.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "L’âme cherche à être rassurée. Le lien sert encore à combler un vide.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’âme projette encore son besoin d’amour. L’enfant intérieur attend.",
+                "meta": ["tension"]
+            }
+        }
+    }
+]
+
+
