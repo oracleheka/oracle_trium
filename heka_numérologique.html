@@ -106,11 +106,16 @@
   <a href="mailto:contact@oracleheka.com">Contact</a>
 </footer>
  <script>
-  // Exemple fictif de jeu (à remplacer par tes vraies cartes)
-  const cartes = ['001', '002', '003', '004', '005'];
+  let toutesLesCartes = [];
   let cartesDisponibles = [];
   let cartesTirees = [];
   let jeuPrepare = false;
+
+  async function chargerCartes() {
+    const reponse = await fetch("https://oracleheka.github.io/oracle_trium/data/heka.json");
+    toutesLesCartes = await reponse.json();
+    cartesDisponibles = [...toutesLesCartes];
+  }
 
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -118,8 +123,13 @@
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
-  function melangerEtCouper() {
-    cartesDisponibles = [...cartes];
+
+  async function melangerEtCouper() {
+    if (toutesLesCartes.length === 0) {
+      await chargerCartes();
+    }
+
+    cartesDisponibles = [...toutesLesCartes];
     shuffle(cartesDisponibles);
     jeuPrepare = true;
 
@@ -185,20 +195,39 @@ function tirerNumerologique() {
     const carte2 = paquet[indexCarte2];
 
     const aspect = document.querySelector('input[name="aspect"]:checked').value;
+    const sens1 = Math.random() < 0.5 ? "endroit" : "inversé";
+    const sens2 = Math.random() < 0.5 ? "endroit" : "inversé";
+
+    const texte1 = carte1[sens1][aspect]?.texte || "(Message manquant)";
+    const texte2 = carte2[sens2][aspect]?.texte || "(Message manquant)";
+
     const zone = document.getElementById("resultats");
     zone.innerHTML = "";
 
     const div1 = document.createElement("div");
-    div1.innerHTML = `<strong>Identité (${nom})</strong><br>${carte1} (message à venir)`;
+    div1.innerHTML = `
+      <strong>Identité (${nom})</strong><br>
+      <strong>${carte1.nom}</strong> (${sens1})<br>
+      <img src="${carte1.image}" alt="${carte1.nom}" style="width:100px"><br>
+      <p style="margin-top:0.5rem;">${texte1}</p>
+    `;
     styleCarte(div1);
     zone.appendChild(div1);
 
     const div2 = document.createElement("div");
-    div2.innerHTML = `<strong>Chemin (${date})</strong><br>${carte2} (message à venir)`;
+    div2.innerHTML = `
+      <strong>Chemin (${date})</strong><br>
+      <strong>${carte2.nom}</strong> (${sens2})<br>
+      <img src="${carte2.image}" alt="${carte2.nom}" style="width:100px"><br>
+      <p style="margin-top:0.5rem;">${texte2}</p>
+    `;
     styleCarte(div2);
     zone.appendChild(div2);
 
-    cartesTirees = [carte1, carte2];
+    cartesTirees = [
+      { carte: carte1, sens: sens1 },
+      { carte: carte2, sens: sens2 }
+    ];
   } catch (err) {
     alert("Erreur lors du calcul : " + err.message);
   }
@@ -213,7 +242,42 @@ function styleCarte(element) {
   element.style.textAlign = "center";
   element.style.marginRight = "1rem";
 }
+function ajouterUneCarte() {
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
+  }
 
+  const maxCartes = 5; // 2 initiales + 3 couvertures
+  if (cartesTirees.length >= maxCartes) {
+    alert("Nombre maximum de cartes atteint (2 + 3).");
+    return;
+  }
+
+  if (cartesDisponibles.length === 0) {
+    alert("Le jeu est vide !");
+    return;
+  }
+
+  const carte = cartesDisponibles.shift();
+  const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+
+  const texte = carte[sens][aspect]?.texte || "(Message manquant)";
+
+  cartesTirees.push({ carte: carte, sens: sens });
+
+  const affichageZone = document.getElementById("resultats");
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <strong>Carte supplémentaire</strong><br>
+    <strong>${carte.nom}</strong> (${sens})<br>
+    <img src="${carte.image}" alt="${carte.nom}" style="width:100px"><br>
+    <p style="margin-top:0.5rem;">${texte}</p>
+  `;
+  styleCarte(div);
+  affichageZone.appendChild(div);
+}
    function réinitialiser() {
   location.reload(); // Recharge la page pour repartir de zéro
 }
