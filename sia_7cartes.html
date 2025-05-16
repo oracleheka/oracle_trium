@@ -106,12 +106,17 @@ button:hover {
   <a href="mentions-legales.html">Mentions légales</a> —
   <a href="mailto:contact@oracleheka.com">Contact</a>
 </footer>
-<script>
-  // Exemple fictif de jeu (à remplacer par tes vraies cartes)
-  const cartes = ['001', '002', '003', '004', '005'];
+ <script>
+  let toutesLesCartes = [];
   let cartesDisponibles = [];
   let cartesTirees = [];
   let jeuPrepare = false;
+
+  async function chargerCartes() {
+    const reponse = await fetch("https://oracleheka.github.io/oracle_trium/data/sia.json");
+    toutesLesCartes = await reponse.json();
+    cartesDisponibles = [...toutesLesCartes];
+  }
 
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -120,8 +125,12 @@ button:hover {
     }
   }
 
-  function melangerEtCouper() {
-    cartesDisponibles = [...cartes];
+  async function melangerEtCouper() {
+    if (toutesLesCartes.length === 0) {
+      await chargerCartes();
+    }
+
+    cartesDisponibles = [...toutesLesCartes];
     shuffle(cartesDisponibles);
     jeuPrepare = true;
 
@@ -156,16 +165,24 @@ function tirage7Cartes() {
 
   tirage.forEach(carte => {
     const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-    cartesTirees.push({ nom: carte, sens: sens });
+    cartesTirees.push({ carte: carte, sens: sens });
 
-    const phrase = `${carte} (${sens}) → (message à venir)`;
-    const p = document.createElement("p");
-    p.textContent = phrase;
-    affichage.appendChild(p);
-    p.style.padding = "1rem";
-    p.style.border = "1px solid #ccc";
-    p.style.borderRadius = "8px";
-    p.style.backgroundColor = "#fdfdfd";
+    const texte = carte[sens][aspect]?.texte || "(Message manquant)";
+    const div = document.createElement("div");
+
+    div.innerHTML = `
+      <h3>${carte.nom} (${sens})</h3>
+      <img src="${carte.image}" alt="${carte.nom}" style="width:150px"><br>
+      <p>${texte}</p>
+    `;
+
+    div.style.padding = "1rem";
+    div.style.border = "1px solid #ccc";
+    div.style.borderRadius = "8px";
+    div.style.backgroundColor = "#fdfdfd";
+    div.style.marginBottom = "1rem";
+
+    affichage.appendChild(div);
   });
 }
   function ajouterUneCarte(estTirageInitial = false) {
@@ -176,7 +193,7 @@ function tirage7Cartes() {
 
   const maxCartes = 10; // 7 de base + 3 couvertures
   if (cartesTirees.length >= maxCartes) {
-    alert("Nombre maximum de cartes atteint (6).");
+    alert("Nombre maximum de cartes atteint (10).");
     return;
   }
 
@@ -185,24 +202,35 @@ function tirage7Cartes() {
     return;
   }
 
-  const carte = cartesDisponibles.shift(); // retire la première
+  const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-  cartesTirees.push({ nom: carte, sens: sens });
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
 
-  const affichageZone = document.getElementById("resultats");
-  const p = document.createElement("p");
-  p.textContent = `${carte} (${sens})`;
-  affichageZone.appendChild(p);
+  const interpretation = carte[sens][aspect]?.texte || "Interprétation manquante.";
+  cartesTirees.push({ carte: carte, sens: sens });
 
-  if (!estTirageInitial && cartesTirees.length === 6) {
-    alert("Tirage complet : 3 cartes initiales + 3 couvertures.");
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <h3>Carte supplémentaire : ${carte.nom} (${sens})</h3>
+    <img src="${carte.image}" alt="${carte.nom}" style="width:150px"><br>
+    <p>${interpretation}</p>
+  `;
+
+  div.style.padding = "1rem";
+  div.style.border = "1px solid #ccc";
+  div.style.borderRadius = "8px";
+  div.style.backgroundColor = "#fdfdfd";
+  div.style.marginBottom = "1rem";
+
+  document.getElementById("resultats").appendChild(div);
+
+  if (!estTirageInitial && cartesTirees.length === 10) {
+    alert("Tirage complet : 7 cartes initiales + 3 couvertures.");
   }
 }
-
   function réinitialiser() {
   location.reload(); // Recharge la page pour repartir de zéro
 }
-
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
