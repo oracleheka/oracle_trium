@@ -106,11 +106,16 @@ button:hover {
   <a href="mailto:contact@oracleheka.com">Contact</a>
 </footer>
  <script>
-  // Exemple fictif de jeu (à remplacer par tes vraies cartes)
-  const cartes = ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011'];
+  let toutesLesCartes = [];
   let cartesDisponibles = [];
   let cartesTirees = [];
   let jeuPrepare = false;
+
+  async function chargerCartes() {
+    const reponse = await fetch("https://oracleheka.github.io/oracle_trium/data/heka.json");
+    toutesLesCartes = await reponse.json();
+    cartesDisponibles = [...toutesLesCartes];
+  }
 
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -118,9 +123,13 @@ button:hover {
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
-   
-  function melangerEtCouper() {
-    cartesDisponibles = [...cartes];
+
+  async function melangerEtCouper() {
+    if (toutesLesCartes.length === 0) {
+      await chargerCartes();
+    }
+
+    cartesDisponibles = [...toutesLesCartes];
     shuffle(cartesDisponibles);
     jeuPrepare = true;
 
