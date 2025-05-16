@@ -266,6 +266,15 @@ function ajouterUneCarte() {
 function tirerLesCartes() {
   tirerParPrenom();
 }
+   function styleCarte(el) {
+  el.style.padding = "1rem";
+  el.style.border = "1px solid #ccc";
+  el.style.borderRadius = "8px";
+  el.style.backgroundColor = "#fdfdfd";
+  el.style.minWidth = "100px";
+  el.style.textAlign = "center";
+  el.style.marginTop = "0.5rem";
+}
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
