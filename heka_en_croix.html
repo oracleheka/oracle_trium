@@ -219,7 +219,7 @@ function ajouterUneCarte() {
 
   const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-  const aspect = document.querySelector('input[name="aspect"]:checked").value;
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
   cartesTirees.push({ carte: carte, sens: sens });
 
   const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
