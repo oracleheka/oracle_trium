@@ -1,0 +1,285 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tirage prénom – Oracle Sia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f5f2;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    button {
+  padding: 0.7rem 1.5rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #357abd;
+}
+    header {
+      background-color: #f5efe6;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      flex: 1;
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    footer {
+      background-color: #f0e9e0;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="methodes.html">Méthodes de Tirages</a>
+    <a href="heka.html">Oracle Heka</a>
+    <a href="sia.html">Oracle Sia</a>
+    <a href="seshat.html">Oracle Seshat</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Tirage prénom – Oracle Sia</h1>
+   <fieldset style="border: none; margin: 0;">
+    <legend><strong>Choisir l’aspect :</strong></legend>
+    <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
+    <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
+    <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
+  </fieldset>
+
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
+</div>
+  <div style="margin-top: 2rem;">
+  <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
+  <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
+    <label for="prénom"><strong>Prénom :</strong></label><br>
+  <input type="text" id="champPrenom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
+  <div id="resultats" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
+  </div>
+  <p>Chaque lettre du prénom reçoit une carte. Ce tirage offre une lecture très personnelle, intime, en lien direct avec l’identité vibratoire du consultant.</p>
+  <ul>
+    <li>Passé / Présent / Futur</li>
+    <li>Situation / Obstacle / Conseil</li>
+    <li>Conflit / Intention / Évolution</li>
+  </ul>
+  <p>Sia est l’oracle du dedans. Il n’éclaire pas ce qui se voit, mais ce qui murmure en profondeur.
+     Il révèle les perceptions subtiles, les mouvements internes, les ressentis que l’on ne sait pas toujours nommer mais que l’on porte en silence.</p>
+
+  <p><em>(Contenu du tirage ou interaction à venir ici)</em></p>
+</main>
+<footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
+  Produit par <strong>OracleHeka</strong> —
+  <a href="mentions-legales.html">Mentions légales</a> —
+  <a href="mailto:contact@oracleheka.com">Contact</a>
+</footer> 
+ <script>
+  let toutesLesCartes = [];
+  let cartesDisponibles = [];
+  let cartesTirees = [];
+  let jeuPrepare = false;
+
+  async function chargerCartes() {
+    const reponse = await fetch("https://oracleheka.github.io/oracle_trium/data/sia.json");
+    toutesLesCartes = await reponse.json();
+    cartesDisponibles = [...toutesLesCartes];
+  }
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  async function melangerEtCouper() {
+    if (toutesLesCartes.length === 0) {
+      await chargerCartes();
+    }
+
+    cartesDisponibles = [...toutesLesCartes];
+    shuffle(cartesDisponibles);
+    jeuPrepare = true;
+
+    document.getElementById("tirerBtn").disabled = false;
+    document.getElementById("ajouterBtn").disabled = false;
+
+    alert("Le jeu a été mélangé et coupé !");
+  }
+function tirerParPrenom() {
+  console.log("✅ Début tirerParPrenom");
+
+  if (!jeuPrepare) {
+    console.warn("❌ Le jeu n’a pas été préparé.");
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
+  }
+
+  const champ = document.getElementById("champPrenom");
+  if (!champ) {
+    console.error("❌ champPrenom introuvable !");
+    return;
+  }
+
+  let nom = champ.value.trim().toUpperCase();
+  console.log("→ Nom saisi :", nom);
+  if (!nom) {
+    alert("Veuillez entrer un prénom.");
+    return;
+  }
+
+  if (cartesDisponibles.length < nom.length) {
+    console.warn("❌ Pas assez de cartes :", cartesDisponibles.length);
+    alert("Pas assez de cartes disponibles pour ce prénom.");
+    return;
+  }
+
+  const aspectRadio = document.querySelector('input[name="aspect"]:checked');
+  if (!aspectRadio) {
+    console.error("❌ Aucun aspect sélectionné !");
+    alert("Veuillez sélectionner un aspect.");
+    return;
+  }
+
+  const aspect = aspectRadio.value;
+  console.log("→ Aspect sélectionné :", aspect);
+
+  const affichage = document.getElementById("resultats");
+  if (!affichage) {
+    console.error("❌ Zone d'affichage introuvable !");
+    return;
+  }
+
+  affichage.innerHTML = "";
+  cartesTirees = [];
+
+  for (let lettre of nom) {
+    const carte = cartesDisponibles.shift();
+    if (!carte) {
+      console.error("❌ Carte manquante à l'étape :", lettre);
+      continue;
+    }
+
+    const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+    const interpretation = carte[sens]?.[aspect]?.texte;
+
+    if (!interpretation) {
+      console.warn(`⚠️ Aucune interprétation pour la carte ${carte.nom} [${sens}] - [${aspect}]`);
+    }
+
+    const texte = interpretation || "(Message manquant)";
+    console.log(`✅ Carte pour ${lettre} :`, carte.nom, "|", sens, "|", texte);
+
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <strong>Lettre : ${lettre}</strong><br>
+      <strong>${carte.nom}</strong> (${sens})<br>
+      <img src="${carte.image}" alt="${carte.nom}" style="width:100px"><br>
+      <p style="margin-top:0.5rem;">${texte}</p>
+    `;
+    styleCarte(div);
+    affichage.appendChild(div);
+  }
+
+  console.log("✅ Fin du tirage prénom");
+  }   
+function ajouterUneCarte() {
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
+  }
+
+  const champ = document.getElementById("champPrenom");
+  let nom = champ.value.trim().toUpperCase();
+  if (!nom) {
+    alert("Veuillez entrer un prénom.");
+    return;
+  }
+
+  const maxCartes = nom.length + 3;
+
+  if (cartesTirees.length >= maxCartes) {
+    alert(`Nombre maximum de cartes atteint (${maxCartes}).`);
+    return;
+  }
+
+  if (cartesDisponibles.length === 0) {
+    alert("Le jeu est vide !");
+    return;
+  }
+
+  const carte = cartesDisponibles.shift();
+  const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+  const texte = carte[sens][aspect]?.texte || "(Message manquant)";
+
+  cartesTirees.push({ carte: carte, sens: sens });
+
+  const affichageZone = document.getElementById("resultats");
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <strong>Carte supplémentaire</strong><br>
+    <strong>${carte.nom}</strong> (${sens})<br>
+    <img src="${carte.image}" alt="${carte.nom}" style="width:100px"><br>
+    <p style="margin-top:0.5rem;">${texte}</p>
+  `;
+  styleCarte(div);
+  affichageZone.appendChild(div);
+}
+  function réinitialiser() {
+  location.reload(); // Recharge la page pour repartir de zéro
+}
+function tirerLesCartes() {
+  tirerParPrenom();
+}
+   function styleCarte(el) {
+  el.style.padding = "1rem";
+  el.style.border = "1px solid #ccc";
+  el.style.borderRadius = "8px";
+  el.style.backgroundColor = "#fdfdfd";
+  el.style.minWidth = "100px";
+  el.style.textAlign = "center";
+  el.style.marginTop = "0.5rem";
+}
+window.onload = function () {
+  document.getElementById("tirerBtn").disabled = true;
+  document.getElementById("ajouterBtn").disabled = true;
+};
+</script>
+
+</body>
+</html>
