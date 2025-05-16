@@ -231,17 +231,6 @@ function tirerNumerologique() {
   } catch (err) {
     alert("Erreur lors du calcul : " + err.message);
   }
-}
-
-function styleCarte(element) {
-  element.style.padding = "1rem";
-  element.style.border = "1px solid #ccc";
-  element.style.borderRadius = "8px";
-  element.style.backgroundColor = "#fdfdfd";
-  element.style.minWidth = "120px";
-  element.style.textAlign = "center";
-  element.style.marginRight = "1rem";
-}
 function ajouterUneCarte() {
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
@@ -283,6 +272,15 @@ function ajouterUneCarte() {
 }
 function tirerLesCartes() {
   tirerNumerologique();
+}
+   function styleCarte(element) {
+  element.style.padding = "1rem";
+  element.style.border = "1px solid #ccc";
+  element.style.borderRadius = "8px";
+  element.style.backgroundColor = "#fdfdfd";
+  element.style.minWidth = "120px";
+  element.style.textAlign = "center";
+  element.style.marginRight = "1rem";
 }
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
