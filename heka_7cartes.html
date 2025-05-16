@@ -201,35 +201,32 @@ function tirage7Cartes() {
     return;
   }
 
-  const carte = cartesDisponibles.shift(); // retire la première
+  const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-  cartesTirees.push({ nom: carte, sens: sens });
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
 
-  const affichageZone = document.getElementById("resultats");
-  const p = document.createElement("p");
-  p.textContent = `${carte.nom} (${sens})`;
   const interpretation = carte[sens][aspect]?.texte || "Interprétation manquante.";
-    const affichage = document.getElementById("resultats");
+  cartesTirees.push({ carte: carte, sens: sens });
 
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <h3>${carte.nom} (${sens})</h3>
-      <img src="${carte.image}" alt="${carte.nom}" style="width:150px"><br>
-      <p>${interpretation}</p>
-    `;
-    div.style.padding = "1rem";
-    div.style.border = "1px solid #ccc";
-    div.style.borderRadius = "8px";
-    div.style.backgroundColor = "#fdfdfd";
-    div.style.marginBottom = "1rem";
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <h3>Carte supplémentaire : ${carte.nom} (${sens})</h3>
+    <img src="${carte.image}" alt="${carte.nom}" style="width:150px"><br>
+    <p>${interpretation}</p>
+  `;
 
-    affichage.appendChild(div);
-    
+  div.style.padding = "1rem";
+  div.style.border = "1px solid #ccc";
+  div.style.borderRadius = "8px";
+  div.style.backgroundColor = "#fdfdfd";
+  div.style.marginBottom = "1rem";
+
+  document.getElementById("resultats").appendChild(div);
+
   if (!estTirageInitial && cartesTirees.length === 10) {
     alert("Tirage complet : 7 cartes initiales + 3 couvertures.");
   }
 }
-
   function réinitialiser() {
   location.reload(); // Recharge la page pour repartir de zéro
 }
