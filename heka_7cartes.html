@@ -164,16 +164,24 @@ function tirage7Cartes() {
 
   tirage.forEach(carte => {
     const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-    cartesTirees.push({ nom: carte, sens: sens });
+    cartesTirees.push({ carte: carte, sens: sens });
 
-    const phrase = `${carte} (${sens}) → (message à venir)`;
-    const p = document.createElement("p");
-    p.textContent = phrase;
-    affichage.appendChild(p);
-    p.style.padding = "1rem";
-    p.style.border = "1px solid #ccc";
-    p.style.borderRadius = "8px";
-    p.style.backgroundColor = "#fdfdfd";
+    const texte = carte[sens][aspect]?.texte || "(Message manquant)";
+    const div = document.createElement("div");
+
+    div.innerHTML = `
+      <h3>${carte.nom} (${sens})</h3>
+      <img src="${carte.image}" alt="${carte.nom}" style="width:150px"><br>
+      <p>${texte}</p>
+    `;
+
+    div.style.padding = "1rem";
+    div.style.border = "1px solid #ccc";
+    div.style.borderRadius = "8px";
+    div.style.backgroundColor = "#fdfdfd";
+    div.style.marginBottom = "1rem";
+
+    affichage.appendChild(div);
   });
 }
   function ajouterUneCarte(estTirageInitial = false) {
@@ -199,7 +207,7 @@ function tirage7Cartes() {
 
   const affichageZone = document.getElementById("resultats");
   const p = document.createElement("p");
-  p.textContent = `${carte} (${sens})`;
+  p.textContent = `${carte.nom} (${sens})`;
   affichageZone.appendChild(p);
 
   if (!estTirageInitial && cartesTirees.length === 10) {
