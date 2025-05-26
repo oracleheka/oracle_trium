@@ -1157,7 +1157,7 @@
     },
     {
     "id": 36,
-    "non": "faille",
+    "nom": "Faille",
     "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_36_faille.png",
         "endroit": {
             "personnalité": {
