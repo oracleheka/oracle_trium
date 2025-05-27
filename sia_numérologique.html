@@ -113,7 +113,7 @@
   let jeuPrepare = false;
 
   async function chargerCartes() {
-    const reponse = await fetch("https://oracleheka.github.io/oracle_trium/data/heka.json");
+    const reponse = await fetch("https://oracleheka.github.io/oracle_trium/data/sia.json");
     toutesLesCartes = await reponse.json();
     cartesDisponibles = [...toutesLesCartes];
   }
