@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://oracleheka.github.io/oracle_trium/sitemap.xml
