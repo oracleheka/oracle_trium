@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/apropos.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/methodes.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pages Heka -->
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/heka.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/heka_3cartes.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/heka_7cartes.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/heka_en_croix.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/heka_prenom.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/heka_numerologique.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/heka_tetraktys.html</loc>
+  </url>
+  </url>
+    <loc>https://oracleheka.github.io/oracle_trium/sia.html</loc>
+  </url>
+   <url>
+    <loc>https://oracleheka.github.io/oracle_trium/sia_3cartes.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/sia_7cartes.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/sia_en_croix.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/sia_prenom.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/sia_numerologique.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/sia_tetraktys.html</loc>
+  </url>
+</url>
+    <loc>https://oracleheka.github.io/oracle_trium/seshat.html</loc>
+  </url>
+   <url>
+    <loc>https://oracleheka.github.io/oracle_trium/seshat_3cartes.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/seshat_7cartes.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/seshat_en_croix.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/seshat_prenom.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/seshat_numerologique.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/seshat_tetraktys.html</loc>
+  </url>
+  
+</urlset>
