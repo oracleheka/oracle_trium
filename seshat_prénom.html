@@ -72,8 +72,7 @@ button:hover {
 
 <main>
   <h1>Tirage prénom – Oracle Seshat</h1>
- <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
-  <fieldset style="border: none; margin: 0;">
+   <fieldset style="border: none; margin: 0;">
     <legend><strong>Choisir l’aspect :</strong></legend>
     <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
     <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
@@ -101,19 +100,23 @@ button:hover {
   <p>Seshat est l’oracle du passage. Il n’éclaire ni ce que l’on montre, ni ce que l’on ressent : il montre où cela mène.
      Il trace des lignes, ouvre des directions, indique des carrefours intérieurs. Il ne prédit rien, mais il révèle les dynamiques qui traversent une situation, une période, un être.</p>
 
-  <p><em>(Contenu du tirage ou interaction à venir ici)</em></p>
 </main>
 <footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
   Produit par <strong>OracleHeka</strong> —
   <a href="mentions-legales.html">Mentions légales</a> —
   <a href="mailto:contact@oracleheka.com">Contact</a>
-</footer>
-<script>
-  // Exemple fictif de jeu (à remplacer par tes vraies cartes)
-  const cartes = ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010'];
+</footer> 
+ <script>
+  let toutesLesCartes = [];
   let cartesDisponibles = [];
   let cartesTirees = [];
   let jeuPrepare = false;
+
+  async function chargerCartes() {
+    const reponse = await fetch("https://oracleheka.github.io/oracle_trium/data/seshat.json");
+    toutesLesCartes = await reponse.json();
+    cartesDisponibles = [...toutesLesCartes];
+  }
 
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -121,8 +124,13 @@ button:hover {
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
-  function melangerEtCouper() {
-    cartesDisponibles = [...cartes];
+
+  async function melangerEtCouper() {
+    if (toutesLesCartes.length === 0) {
+      await chargerCartes();
+    }
+
+    cartesDisponibles = [...toutesLesCartes];
     shuffle(cartesDisponibles);
     jeuPrepare = true;
 
@@ -132,46 +140,83 @@ button:hover {
     alert("Le jeu a été mélangé et coupé !");
   }
 function tirerParPrenom() {
+  console.log("✅ Début tirerParPrenom");
+
   if (!jeuPrepare) {
+    console.warn("❌ Le jeu n’a pas été préparé.");
     alert("Veuillez d'abord mélanger le jeu.");
     return;
   }
 
   const champ = document.getElementById("champPrenom");
+  if (!champ) {
+    console.error("❌ champPrenom introuvable !");
+    return;
+  }
+
   let nom = champ.value.trim().toUpperCase();
+  console.log("→ Nom saisi :", nom);
   if (!nom) {
     alert("Veuillez entrer un prénom.");
     return;
   }
 
   if (cartesDisponibles.length < nom.length) {
+    console.warn("❌ Pas assez de cartes :", cartesDisponibles.length);
     alert("Pas assez de cartes disponibles pour ce prénom.");
     return;
   }
 
-  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+  const aspectRadio = document.querySelector('input[name="aspect"]:checked');
+  if (!aspectRadio) {
+    console.error("❌ Aucun aspect sélectionné !");
+    alert("Veuillez sélectionner un aspect.");
+    return;
+  }
+
+  const aspect = aspectRadio.value;
+  console.log("→ Aspect sélectionné :", aspect);
+
   const affichage = document.getElementById("resultats");
+  if (!affichage) {
+    console.error("❌ Zone d'affichage introuvable !");
+    return;
+  }
+
   affichage.innerHTML = "";
   cartesTirees = [];
 
   for (let lettre of nom) {
-    const carte = cartesDisponibles.shift();  // tire une carte unique
+    const carte = cartesDisponibles.shift();
+    if (!carte) {
+      console.error("❌ Carte manquante à l'étape :", lettre);
+      continue;
+    }
+
     const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-    cartesTirees.push({ nom: carte, sens: sens, lettre: lettre });
+    const interpretation = carte[sens]?.[aspect]?.texte;
+
+    if (!interpretation) {
+      console.warn(`⚠️ Aucune interprétation pour la carte ${carte.nom} [${sens}] - [${aspect}]`);
+    }
+
+    const texte = interpretation || "(Message manquant)";
+    console.log(`✅ Carte pour ${lettre} :`, carte.nom, "|", sens, "|", texte);
 
     const div = document.createElement("div");
-    div.innerHTML = `<strong>Lettre : ${lettre}</strong><br>${carte} (${sens})`;
-    div.style.padding = "1rem";
-    div.style.border = "1px solid #ccc";
-    div.style.borderRadius = "8px";
-    div.style.backgroundColor = "#fdfdfd";
-    div.style.minWidth = "100px";
-    div.style.textAlign = "center";
-    div.style.marginRight = "1rem";
+    div.innerHTML = `
+      <strong>Lettre : ${lettre}</strong><br>
+      <strong>${carte.nom}</strong> (${sens})<br>
+      <img src="${carte.image}" alt="${carte.nom}" style="width:100px"><br>
+      <p style="margin-top:0.5rem;">${texte}</p>
+    `;
+    styleCarte(div);
     affichage.appendChild(div);
   }
-}    
-function ajouterUneCarte(estTirageInitial = false) {
+
+  console.log("✅ Fin du tirage prénom");
+  }   
+function ajouterUneCarte() {
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
     return;
@@ -184,7 +229,7 @@ function ajouterUneCarte(estTirageInitial = false) {
     return;
   }
 
-  const maxCartes = nom.length + 3; // lettres + 3 couvertures
+  const maxCartes = nom.length + 3;
 
   if (cartesTirees.length >= maxCartes) {
     alert(`Nombre maximum de cartes atteint (${maxCartes}).`);
@@ -198,18 +243,20 @@ function ajouterUneCarte(estTirageInitial = false) {
 
   const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-  cartesTirees.push({ nom: carte, sens: sens });
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+  const texte = carte[sens][aspect]?.texte || "(Message manquant)";
+
+  cartesTirees.push({ carte: carte, sens: sens });
 
   const affichageZone = document.getElementById("resultats");
   const div = document.createElement("div");
-  div.innerHTML = `${carte} (${sens})`;
-  div.style.padding = "1rem";
-  div.style.border = "1px solid #ccc";
-  div.style.borderRadius = "8px";
-  div.style.backgroundColor = "#fdfdfd";
-  div.style.minWidth = "100px";
-  div.style.textAlign = "center";
-  div.style.marginRight = "1rem";
+  div.innerHTML = `
+    <strong>Carte supplémentaire</strong><br>
+    <strong>${carte.nom}</strong> (${sens})<br>
+    <img src="${carte.image}" alt="${carte.nom}" style="width:100px"><br>
+    <p style="margin-top:0.5rem;">${texte}</p>
+  `;
+  styleCarte(div);
   affichageZone.appendChild(div);
 }
   function réinitialiser() {
@@ -217,6 +264,15 @@ function ajouterUneCarte(estTirageInitial = false) {
 }
 function tirerLesCartes() {
   tirerParPrenom();
+}
+   function styleCarte(el) {
+  el.style.padding = "1rem";
+  el.style.border = "1px solid #ccc";
+  el.style.borderRadius = "8px";
+  el.style.backgroundColor = "#fdfdfd";
+  el.style.minWidth = "100px";
+  el.style.textAlign = "center";
+  el.style.marginTop = "0.5rem";
 }
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
