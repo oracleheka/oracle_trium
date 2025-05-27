@@ -1,0 +1,2810 @@
+[
+    {
+        "id": 1,
+        "nom": "Essence",
+        "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_1_essence.png",
+            "endroit": {
+                "personnalité": {
+                    "texte": "L’âme s’éveille sans forme ni histoire. Elle est pleinement là, consciente, mais sans tension ni attente. Elle existe, simplement.",
+                    "meta": ["ouverture"]
+                },
+                "affectif": {
+                    "texte": "L’âme n’a pas besoin de lien : elle se suffit à elle-même. Elle baigne dans une paix d’être, sans désir ni attachement.",
+                    "meta": ["ouverture"]
+                },
+                "spirituel": { 
+                    "texte": "Le divin ne parle pas encore. Il rayonne doucement depuis l’intérieur. C’est une révélation sans mots, une lumière nue.",
+                    "meta": ["Seuil"]
+                }
+            },
+            "inversé": {
+                "personnalité": {
+                    "texte": "L’âme cherche à être quelqu’un trop tôt. Elle tente de nommer ce qui doit rester pur, et risque de figer son identité dans l’image.",
+                    "meta": ["tension"]
+                },
+                "affectif": { 
+                    "texte": "La solitude est mal comprise. L’âme interprète l’unité comme un manque, et tente d’attirer à elle ce qui ne peut être saisi.",
+                    "meta": ["tension"]
+                },
+                "spirituel": {
+                    "texte": "L’âme veut recevoir un message avant d’être prête. Elle force l’apparition du sens au lieu de se laisser pénétrer par la lumière.",
+                    "meta": ["tension"]
+                }
+            }
+        },
+        {
+        "id": 2,
+        "nom": "Naissance",
+        "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_2_naissance.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "L’esprit entre dans la forme sans rôle ni objectif. Il apprend à être là, simplement. L’ego doit sentir son poids, sa densité, sans chercher encore à définir qui il est.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "L’amour de soi est à l’état brut, comme une chaleur intérieure sans direction. Rien n’est encore construit, mais tout est possible. La tendresse précède même le visage.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "L’esprit descend sans chute : il s’offre à la matière. Le divin devient silence intérieur. La lumière ne se montre pas, elle pénètre lentement la densité.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "L’ego cherche à aller trop vite. Il veut forcer une forme, imposer une identité. Mais la matière se dérobe à la précipitation. Ce qui devait naître s’éparpille.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "L’ego refuse de s’accueillir tel qu’il est. Il projette des attentes sur lui-même, avant même d’avoir appris à se sentir. Le lien intérieur ne peut pas naître sous pression.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "L’ego cherche une révélation sans laisser la matière l’imprégner. La lumière ne se montre pas à celui qui l’appelle trop tôt. Il faut laisser le silence faire place.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 3,
+    "nom": "Ouverture",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_3_ouverture.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu entres dans la lumière sans l’avoir cherchée. Tu n’as pas à savoir quoi montrer : seulement à laisser ton être devenir visible, doucement.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu t’ouvres sans attente. Ce n’est pas encore un lien, mais une perméabilité tranquille. Tu offres une présence, pas une promesse.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Le rayonnement naît sans appel. Il ne dépend pas du regard extérieur. Tu t’ouvres à toi-même en présence du monde, sans te forcer.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux contrôler ce que tu montres. Tu t’enfermes dans une image par peur d’être perçu autrement. Mais cela te coupe de ton propre mouvement.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu verrouilles l’accès à ton intimité, tout en espérant un lien. Mais sans ouverture réelle, rien ne peut naître.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu attends un feu vert extérieur pour rayonner. Mais ce signal doit venir de l’intérieur. Tant que tu retiens ta lumière, elle ne circule pas.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+    "id": 4,
+    "nom": "Eveil",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_4_eveil.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Une tension monte. Ce n’est pas encore une réaction, mais un frémissement intérieur. Tu sens que quelque chose cherche à naître en toi.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu ressens avant d’aimer. Ce n’est pas un lien, c’est une onde. Une chaleur légère, un appel discret à te laisser toucher.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Ton feu intérieur s’éveille doucement. Il n’éclaire pas encore le sens, mais il signale qu’un passage est là. Ce n’est pas le moment d’expliquer, mais de sentir.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses de sentir ce qui monte. Tu cherches à garder le calme en surface, mais l’intérieur te parle. L’émotion non reconnue peut devenir violence sourde.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu bloques la sensation avant qu’elle ne devienne émotion. Tu veux éviter le trouble, mais en fuyant, tu le renforces. Il faut accepter d’être touché.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux garder le contrôle. Tu refuses que l’énergie circule sans que tu l’aies comprise. Mais ce qui vient ici ne demande pas d’être saisi — juste accueilli.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 5,
+    "nom": "Présence",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_5_presence.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu es là, et cela suffit. Ce que tu es parle avant toi. Tu n’as pas besoin de faire pour être reconnu.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Ta présence crée un lien avant le mot, avant l’intention. Tu n’as rien à offrir d’autre que ta vérité silencieuse.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Ta lumière intérieure ne cherche pas à briller. Elle existe dans l’état de présence pure. Rien ne presse, tout est déjà là.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux justifier ta place. Tu doutes de ta simple valeur d’être. Mais en fuyant la présence, tu effaces ta vérité.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu crois que pour exister, il faut attirer. Mais ce que l’autre perçoit d’authentique, c’est ton être présent, sans calcul.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux capter la lumière comme un savoir. Mais elle vient quand tu es simplement là, sans chercher à comprendre.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 6,
+    "nom": "Frisson",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_6_frisson.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Une sensation t’effleure. Elle ne demande pas à être expliquée, seulement accueillie. C’est le début d’un lien intérieur.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu ressens sans encore aimer. Tu es touché sans t’attacher. Ce frisson est la première preuve que tu peux recevoir sans te perdre.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "La douceur s’infiltre dans ton être. Elle ne vient pas de toi, mais elle t’appartient dès que tu l’acceptes. Tu es prêt à vibrer.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses la sensation naissante. Tu veux comprendre au lieu de ressentir. Mais ce que tu bloques devient un murmure pesant.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu crains d’être touché. Tu mets une distance entre toi et toi-même. Mais l’amour commence dans la perméabilité, pas dans la maîtrise.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu doutes de ce que tu ressens parce que c’est subtil. Mais le frisson n’a pas besoin de force pour être vrai. Accueille sans chercher à comprendre.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 7,
+    "nom": "Fissure",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_7_fissure.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Une tension monte en toi. Tu reconnais que quelque chose ne peut plus tenir comme avant. Ce n’est pas encore une chute, mais un appel à l’authenticité.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu ressens une fragilité que tu ne peux plus cacher. Ce frémissement intérieur est la première vérité du lien, celle qui ouvre sans parole.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Une faille se dessine dans ce que tu croyais être ton chemin. Elle ne détruit pas : elle prépare un passage. Ne retiens pas ce qui tremble.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses de reconnaître la fissure intérieure. Tu veux préserver une image, mais cela t’éloigne de toi-même. Ce que tu retiens finit par te bloquer.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu caches ta sensibilité derrière une armure affective. Mais l’autre ne peut pas aimer ce qui ne se laisse pas toucher.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux que la lumière passe sans ouvrir la voie. Mais l’esprit réclame une faille sincère. La fissure est le seul chemin d’entrée.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 8,
+    "nom": "Conscience",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_8_conscience.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu sais. Et tu sais que tu sais. La conscience ne te demande pas d’agir, mais de reconnaître ce qui est là.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Ce que tu ressens ne peut plus être ignoré. L’amour commence là où tu ne te caches plus à toi-même.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "La conscience n’est pas une quête. Elle est déjà là, posée en toi, silencieuse. Elle éclaire sans appel.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu détournes le regard de toi-même. Mais la conscience, même refusée, continue d’éclairer en silence. Elle devient alors pesante.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu fais semblant d’aimer, ou de ne pas aimer. Mais l’autre sent que tu n’es pas clair avec toi-même. La relation s’embrouille.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu attends un signe, une lumière, une réponse. Mais la conscience ne vient pas de l’extérieur. Elle est déjà là, et elle te regarde.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 9,
+    "nom": "Vide",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_9_vide.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Ce que tu étais s’efface. Rien ne reste, et c’est juste. Ce vide n’est pas une perte : c’est l’espace nécessaire à ce que tu ignores encore.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu n’attends rien. Tu n’es plus en lien. Et pourtant, c’est là que tu reviens à toi. L’amour n’a pas encore de visage, mais il naît déjà du silence.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Le silence est la première forme du divin. Ce vide n’est pas vide : il est la seule chose réelle qu’il te reste.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux remplir ce qui s’est retiré. Mais chaque tentative te rend plus confus. Accepte l’effacement. Il est déjà fait.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu refuses la fin. Tu maintiens un lien qui n’a plus d’ancrage. Ce vide n’est pas un manque : c’est la fin d’un cycle affectif. Accepte de ne plus savoir.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu réclames un signe, une présence, une main. Mais l’esprit n’envoie rien dans le vide : il y attend ton silence.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 10,
+    "nom": "Emergence",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_10_emergence.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu sens que tu es là, même si tu ne sais pas encore comment l’être. Ton centre s’élève, sans bruit, sans besoin d’être vu.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu ressens une chaleur intérieure qui ne va vers personne. Elle est pour toi, en toi, sans direction. Ce n’est pas encore de l’amour : c’est la naissance d’un sentiment de présence sensible.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "La lumière ne descend pas : elle monte doucement depuis ton corps. Elle te cherche à travers ta densité, pas à travers ton attente.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses que le soi prenne forme. Tu veux rester dans le flou. Mais quelque chose pousse malgré toi, et tu risques de le faire naître en tension.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu refuses de sentir ce que ton corps commence à dire. Tu veux des sentiments clairs, définis, tournés vers l’extérieur. Mais ici, il ne s’agit pas d’aimer quelqu’un — il s’agit de t’éprouver vivant.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu regardes vers le ciel, alors que le divin monte en toi depuis la racine. Si tu n’honores pas ta propre naissance, tu ne verras rien d’en haut.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 11,
+    "nom": "Limite",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_11_limite.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu te heurtes à ta propre densité. Ce n’est pas un blocage : c’est un rappel. Tu tiens dans une forme. Et cela suffit pour aujourd’hui.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Un ressenti sans émotion prend place.Tu ne sais pas ce que c’est, mais tu sais que c’est là.Une densité intérieure cherche à être simplement habitée.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "La matière ne t’empêche pas de grandir. Elle t’oblige à devenir vrai. Ta lumière ne passera qu’en passant par elle.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses la contrainte. Tu veux aller plus vite que ton corps, plus loin que ta densité. Mais c’est elle qui te construit.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu refuses ce calme intérieur.Tu cherches un ressenti clair, mais tout est encore dense.Le rejet de cette pesanteur te coupe de toi-même.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux t’élever, mais tu refuses l’incarnation. Tant que tu rejettes la matière, l’esprit restera muet.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 12,
+    "nom": "Posture",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_12_posture.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu es là, et l’autre le sent. Ce n’est pas ce que tu dis qui compte, mais comment tu tiens ta place dans l’espace partagé.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Le lien n’est pas intime. Il est énergétique. Ce qui passe entre toi et l’autre, c’est la façon dont ta présence se déploie ou se rétracte.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Ta présence est déjà une offrande. Tu n’as rien à faire. Juste à être, avec clarté, dans ce qui t’entoure.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu regardes l’autre à travers ton propre masque. Tu veux plaire ou disparaître. Mais la vraie posture ne joue aucun rôle.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu cherches à provoquer une réponse, mais ta présence n’est pas claire. Elle s’efface ou déborde. Le rapport reste flou parce que ta posture ne tient pas.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux trouver ta place dans la relation spirituelle. Mais elle ne s’impose pas. Elle te trouve quand tu cesses de te montrer.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 13,
+    "nom": "Tension",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_13_tension.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Une pression intérieure monte sans issue. Tu n’as pas à la contrôler. Tu dois d’abord la laisser exister.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu ressens quelque chose de fort, mais tu ne sais pas quoi. Ce n’est pas fait pour être dit : c’est là pour être traversé.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Ce que tu sens n’est pas un message. C’est une force qui monte pour t’obliger à rester dans ton feu intérieur.",
+                "meta": ["tension"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux fuir ce qui monte en toi. Mais cette tension ne partira pas tant que tu ne la reconnais pas.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu projettes ton inconfort sur l’autre, mais cette densité vient de toi. Tu dois retrouver ton espace intérieur.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu refuses l’inconfort comme chemin. Tu veux du sens, alors qu’il faut juste rester là, avec la force brute.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 14,
+    "nom": "Voix",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_14_voix.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu prends la parole. Pas pour convaincre, mais pour exister dans ce que tu dis, même si c’est encore brut.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu commences à exprimer ce que tu ressens. Ce n’est pas encore fluide, mais c’est juste.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu donnes voix à ton être intérieur. Peu importe la forme : c’est l’acte de dire qui te relie à toi-même.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu retiens ta voix, de peur d’être mal compris. Mais ne pas parler, c’est déjà te nier.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu refoules ce que tu pourrais dire. Pourtant, le silence pèse plus lourd que les mots imparfaits.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux que les mots soient parfaits avant de les dire. Mais la vérité parle dans l’élan, pas dans la forme.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 15,
+    "nom": "Contact",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_15_contact.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Un lien naît en toi. Tu ressens une présence, un frémissement. Ce n’est pas encore défini, mais c’est réel.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu es touché. Ce n’est pas encore de l’amour, mais une résonance douce que ton corps reconnaît.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "L’autre commence à exister à travers toi. Ce n’est pas une idée : c’est une sensation ancrée dans la matière.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses d’ouvrir à ce que tu ressens. Mais ce contact, même fragile, peut t’enraciner.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu bloques un élan naissant. Pourtant, il n’a pas besoin d’être compris pour être vécu.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu cherches à comprendre avant de ressentir. Mais l’amour commence par le corps, pas par le sens.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 16,
+    "nom": "Incarné",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_16_incarne.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ressens ce que tu es devenu. Ce n’est pas à juger : c’est à reconnaître, dans ta forme, dans ton corps.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Ce que tu portes s’est enraciné en toi. Il ne s’agit pas d’en sortir, mais d’en prendre conscience.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Ta clarté viendra du fait d’habiter ce que tu es, non d’en débattre. C’est dans la matière que ta vérité se tient.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses de voir ce que tu es devenu. Mais ta forme parle, même si tu ne l’écoutes pas.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu ressens une densité, mais tu détournes le regard. Ce que tu vis, c’est le reflet de ce que tu portes.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu cherches des réponses mentales. Mais c’est ton propre corps qui dit la vérité, si tu l’acceptes.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 17,
+    "nom": "Alignement",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_17_alignement.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu es en accord avec toi-même si ce que tu fais résonne avec ce que tu sais vrai. Tu n’as rien à justifier.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu n’as pas à chercher l’amour : sois simplement entier, et le lien se tisse sur cette base.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "La vérité ne s’impose pas. Elle vibre. Si ton être résonne avec le monde, tu es dans la voie juste.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux avancer, mais tu n’es pas encore droit en toi. Ce que tu vis est le reflet de cette tension.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu espères que les liens extérieurs te stabilisent. Mais l’harmonie commence dans ton axe intérieur.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu as vu ce qui est vrai, mais tu ne le vis pas encore. C’est cette distance qui t’écarte du réel.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 18,
+    "nom": "Pulsation",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_18_pulsation.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Quelque chose en toi recommence à battre. Ce n’est pas une décision, c’est un fait. Accueille ce mouvement sans lui chercher de sens.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Ce que tu ressens est brut, sans nom. C’est plus profond qu’un sentiment : c’est un retour du vivant, et tu n’as pas à le comprendre.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "La vibration intérieure revient, après le Vide. Elle ne t’explique rien, mais elle est là. Reste avec elle.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu sens une force intérieure, mais tu la refuses parce qu’elle n’est pas claire. Pourtant, ce qui vibre en toi est déjà vivant.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux nommer ce qui t’ébranle. Mais cela ne se nomme pas encore. Tu dois seulement ressentir le battement.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "Tu t’accroches au silence, mais la matière te rappelle. Tu ne choisis pas de revenir : tu ressens que tu y es déjà.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 19,
+    "nom": "Projection",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_19_projection.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu émets une image, que tu as construite ou laissée naître. Elle rayonne, mais ce n’est pas forcément toi. Observe ce que tu projettes, et pourquoi.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu cherches à être vu sous un certain jour, parce que tu ne te vois pas encore pleinement toi-même. Tant que tu n’habites pas ton image avec douceur, elle te domine.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu t’identifies à ta lumière, à ton éclat. Mais ce que tu rayonnes n’est qu’une part de toi. Reviens au centre.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu es attaché à une image de toi. Elle te précède partout, mais elle t’éloigne de ton axe. Cesse d’agir pour être vu.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu espères exister à travers le regard des autres, parce que ton propre regard sur toi reste dur ou vide. L’image devient alors une fuite.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu confonds l’éclat avec la source. Le rayonnement n’est pas l’être. Replonge dans la chaleur centrale.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 20,
+    "nom": "Friction",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_20_friction.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ressens une tension constante dans ton corps. Même sans violence, ta manière d’habiter l’espace crée un inconfort autour de toi. C’est une pression que tu subis, et que tu transmets sans le vouloir.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu vis ta propre densité comme une charge. Ce n’est pas contre les autres, mais c’est en toi que la dureté se forme. Et ton rapport à toi devient coupant.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tant que tu rejettes ce corps, tu seras en conflit avec le monde. La friction est le seuil à traverser, pas un défaut. Il faut le reconnaître pour le transformer.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux retenir cette pression, mais elle grandit. Tu te contractes. Ton corps devient un vecteur de débordement. Tu dois te donner de l’espace, avant qu’il éclate.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu crois subir les autres, mais c’est ta propre tension qui parle. Elle colore tout. Tu as besoin d’un contact plus doux avec toi-même, pas d’un repli sur toi.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux échapper à la matière, mais c’est ici que tu dois passer. La friction est une épreuve, pas un piège. Elle peut devenir ton seuil d’incarnation.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 21,
+    "nom": "Prestance",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_21_prestance.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu tiens ton rôle avec force. Mais ce que tu montres n’est pas toujours ce que tu ressens. La forme devient façade si tu ne l’habites pas vraiment.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu veux être vu comme solide, digne. Mais ce besoin peut cacher un doute plus profond. Tu ne peux pas recevoir si tu n’es pas vraiment présent.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu veux incarner un rôle ou une fonction. Mais la forme n’est pas la vérité. Reste relié à ce qui précède ton image.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu t’es enfermé dans une image. Elle te précède, mais elle t’assèche. Ce que tu montres n’est plus vivant.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu t’appuies sur une posture pour être reconnu. Mais cette prestance devient mur. Tu dois revenir à ton axe, pas à ton reflet.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu confonds rôle et présence. Tu incarnes une fonction, mais elle est vide si tu n’y mets pas ton feu intérieur.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 22,
+    "nom": "Exigence",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_22_exigence.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu vis avec une tension sourde. Tu veux bien faire, mais tu ne te laisses aucun droit à l’erreur. Et cette pression que tu vis, tu la fais peser sur les autres, sans t’en rendre compte.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu es dur avec toi-même. Tu veux être irréprochable, mais cette exigence t’épuise. Elle t’empêche de ressentir autrement que par jugement.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu crois que la voie passe par le contrôle, par l’effort. Mais le feu que tu retiens ne demande pas à être maîtrisé : il demande à être entendu.",
+                "meta": ["tension"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu craques parce que tu as trop tenu. Ta colère n’est pas contre le monde : elle est contre toi. Il est temps de relâcher cette tension.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu demandes à toi-même ce que tu ne demanderais à personne. Et quand tu n’y arrives pas, tu te rejettes. C’est cette sévérité qui alimente ta colère.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "Tu veux être fort, juste, aligné. Mais tu confonds droiture et tension. Tu dois laisser ton feu circuler, pas le retenir au nom d’une rigueur inventée.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 23,
+    "nom": "Autoritaire",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_23_autoritaire.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu affirmes des vérités, mais sans toujours vérifier si elles sont encore vivantes en toi. Tu veux cadrer, guider, mais ta parole peut devenir forme vide.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu crois bien faire, mais ta manière d’exprimer le vrai peut blesser. Tu imposes sans écouter, et le lien se ferme autour de ta parole.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu transmets un message, mais as-tu encore le feu qui l’a porté ? Parler sans vibrer, c’est transmettre une coquille.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu as fait de ta voix une autorité, mais elle ne vient plus de toi. Ce n’est pas ton être qui parle : c’est ton masque.",
+                "meta": ["seuil"]
+            },
+            "affectif": { 
+                "texte": "Tu veux être écouté, mais ta parole tranche. Tu dis sans recevoir. Tu guides sans t’ouvrir. Et tu t’éloignes de ceux que tu crois élever.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu confonds transmission et domination. Ce que tu portes comme savoir est devenu injonction. Reviens à la parole vraie, celle qui t’ouvre aussi.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 24,
+    "nom" :"Attente",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_24_attente.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu es présent, aimant, mais tu espères un retour. Ton amour contient une attente silencieuse. Et cela t’expose à l’incompréhension.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu veux combler un vide par le lien. Ce n’est pas une faute. Mais ce que tu offres est aussi une demande. C’est cette attente qu’il faut voir.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu crois donner librement, mais tu cherches à être validé. Tant que tu attends une image aimable de toi, tu n’es pas pleinement dans l’amour.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu te retires, déçu de ne pas recevoir comme tu veux. Mais tu ne vois pas que ton attente pèse sur le lien, même quand tu donnes.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu attends de l’autre qu’il remplisse un manque. Mais ce vide ne vient pas de lui. Il vient d’un amour que tu ne t’es pas encore offert.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "Ton besoin d’être aimé bloque le feu de l’amour vrai. Tu donnes pour recevoir. Et cela crée une tension dans ce qui devrait circuler librement.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 25,
+    "nom": "Inflexible",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_25_inflexible.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu es présent, aimant, mais tu espères un retour. Ton amour contient une attente silencieuse. Et cela t’expose à l’incompréhension.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu veux combler un vide par le lien. Ce n’est pas une faute. Mais ce que tu offres est aussi une demande. C’est cette attente qu’il faut voir.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu crois donner librement, mais tu cherches à être validé. Tant que tu attends une image aimable de toi, tu n’es pas pleinement dans l’amour.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu te retires, déçu de ne pas recevoir comme tu veux. Mais tu ne vois pas que ton attente pèse sur le lien, même quand tu donnes.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu attends de l’autre qu’il remplisse un manque. Mais ce vide ne vient pas de lui. Il vient d’un amour que tu ne t’es pas encore offert.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "Ton besoin d’être aimé bloque le feu de l’amour vrai. Tu donnes pour recevoir. Et cela crée une tension dans ce qui devrait circuler librement.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 26,
+    "nom": "Désaligné",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_26_desaligne.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu te crois en accord avec tes principes, mais tu as figé ton image. Tu montres une cohérence qui ne vient plus du cœur.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu veux paraître juste dans tes relations. Mais tu filtres ta présence à travers une image. Ce que tu ressens vraiment reste en arrière-plan.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu crois porter une lumière, mais elle ne traverse plus ton être. Tu es en écart entre le vrai et le visible.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses de voir que ton image n’est plus nourrie de l’intérieur. Tu vibres une forme qui ne te correspond plus.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu ne t’accordes pas le droit d’être flou, contradictoire, vivant. Tu imposes à l’autre une image de toi “stable”, mais tu te caches derrière elle.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "Tu parles d’alignement, mais ta voie est désynchronisée. Ton feu intérieur ne suit plus la forme que tu énonces.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 27,
+    "nom": "Orgeuil",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_27_orgeuil.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu veux montrer que tu as traversé l’épreuve, que tu es revenu transformé. Mais ce que tu montres est encore une image. Le vrai feu n’est pas encore remonté.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu présentes une nouvelle version de toi, plus forte, plus claire. Mais tu veux qu’on y croie. Tu veux qu’on te voie tenir. Ce n’est pas encore un don : c’est un besoin de reconnaissance.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu portes la posture du sage, mais la traversée n’est pas finie. L’orgueil veut déjà bâtir sur ce que l’âme est encore en train de dissoudre.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses d’être encore dans le vide. Tu veux déjà donner forme, parole, structure. Mais le processus n’est pas fini. Ce n’est pas de la renaissance : c’est une résistance.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux qu’on t’aime dans ce que tu es devenu. Mais tu ne sais pas encore qui tu es. Tu cherches à exister dans le regard de l’autre pour éviter de te perdre en toi.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux incarner une lumière nouvelle, mais elle est encore une idée. Ce que tu nommes transformation est un masque de survie. Laisse le feu continuer son œuvre.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 28,
+    "nom" : "Abandon",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_28_abandon.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ne veux plus te porter. Tu refuses le feu, tu éteins ton élan. Ce n’est pas une chute : c’est une démission intérieure.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu t’éloignes, tu te retires. Pas pour te protéger, mais parce que tu ne crois plus mériter d’être là. Tu t’effaces de ton propre lien.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu renonces à ta lumière. Tu crois qu’elle ne sert plus, ou qu’elle n’est pas tienne. Mais ce feu ne t’a pas quitté.",
+                "meta": ["tension"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu te retires de toi-même. Tu laisses ta place vide, en pensant que ce sera plus simple. Mais cette absence te ronge plus que la douleur.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu refuses le contact, la présence, le regard. Pas par colère, mais parce que tu t’es déjà effacé. Et personne ne peut te rejoindre là où tu t’es mis.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "Tu penses que ton feu est mort. Mais il est là, dans ce que tu refuses encore d’habiter. Tant que tu abandonnes ta source, rien ne peut renaître.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 29,
+    "nom": "Douleur",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_29_douleur.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu fais semblant de tenir, mais ton corps ne suit plus. Ce que tu retiens devient tension. Ton énergie se fige au lieu de circuler.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu retiens ce que tu ressens. Ta peine, ta colère, ton besoin s’accumulent. Ce n’est pas un manque d’amour : c’est un manque d’écoute de toi.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Ton feu intérieur s’épuise à force de ne pas être reconnu. Ce n’est pas un blocage : c’est un signal. Il est temps d’écouter ce qui brûle.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu nies ta souffrance. Tu avances comme si de rien n’était, mais cette absence d’écoute t’abîme. Ce que tu refuses d’admettre te consume.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu dis que tout va bien, mais ton cœur est en feu. Cette douleur, tu ne la dis pas, et tu restes seul dedans. Elle grandit en silence.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu crois qu’accepter ta douleur est une faiblesse. Mais c’est l’inverse : c’est une porte. Ce que tu refuses de sentir t’éloigne de toi.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 30,
+    "nom" : "Reproche",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_30_reproche.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu accuses l’autre, mais ce que tu ressens vient de toi. C’est ton propre feu que tu refuses de regarder. Le reproche te protège de ta vérité.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu transformes ta douleur en attente, puis ton attente en reproche. Ce n’est pas le lien qui fait mal : c’est ta colère face à ce que tu crois devoir recevoir.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu détournes la lumière de toi-même. Tu juges pour ne pas voir. Mais ce que tu refuses de reconnaître est la clef de ta guérison.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu ne veux pas sentir ce qui te blesse, alors tu le projettes. Tu accuses pour ne pas regarder. Mais tant que tu refuses ton propre feu, tu restes en guerre.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu exiges, tu blâmes, tu frappes le lien pour ne pas entendre ce qu’il révèle. C’est ta blessure que tu entends dans le silence de l’autre.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu crois que l’autre est l’obstacle, mais c’est ta résistance à traverser ce que tu vis. Ce passage est pour toi seul.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 31,
+    "nom": "Phoenix",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_31_phoenix.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu as laissé la forme s’effondrer. Tu as choisi la fin, non par faiblesse, mais pour revenir à toi. Ce feu était nécessaire.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu as mis fin à un lien qui ne nourrissait plus rien. C’était un acte d’amour pour toi-même. Le feu a rendu la place vide.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu as laissé le feu agir. Ce n’est pas la chute : c’est une élévation par la cendre. Ce que tu es naît de ce que tu as osé brûler.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu sens que tout doit s’arrêter, mais tu retiens encore. Tu prolonges une structure qui t’abîme. Tant que tu ne brûles pas, tu ne renaîtras pas.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu restes dans un lien mort, de peur de faire mal. Mais ce silence détruit lentement. Il est temps de trancher, ou tout s’effondrera.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu refuses le feu. Tu veux renaître sans traverser la destruction. Mais sans cendres, il n’y a pas de retour. Le passage est devant toi.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 32,
+    "nom": "Emprise",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_32_emprise.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu reconnais la colère de l’autre, mais tu ne l’intègres pas. Tu sais que ce qu’il projette ne t’appartient pas. Tu restes centré.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu refuses le rapport de force. Tu entends l’injustice, tu la nommes, mais tu ne la laisses pas entrer en toi. C’est une libération.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu discernes ce qui est vrai pour toi, même quand le monde t’en impose une autre. Tu t’extrais de l’image imposée.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu crois ce qu’on te renvoie. Tu intègres les mots de l’autre comme une vérité. Tu te plies sans voir que c’est une emprise.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu restes dans un lien injuste par peur du conflit. Tu acceptes la domination pour ne pas perdre. Mais c’est toi que tu perds.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu confonds autorité et vérité. Tu te tais devant la force. Mais c’est une foi faussée, fondée sur la peur, pas sur toi.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 33,
+    "nom": "Jalousie",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_33_jalousie.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ressens la jalousie, tu la reconnais. Tu as peur de perdre, peur d’être remplacé. Mais tu nommes enfin ce qui te brûle.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu veux retenir, resserrer, garder. Mais tu sais que l’amour ne se force pas. Tu vois que tu étouffes ce que tu crois protéger.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu prends conscience de ton besoin, de ta dépendance affective. Ce feu peut t’éclairer, si tu choisis de l’écouter au lieu de le cacher.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses de voir ta jalousie. Alors tu accuses, tu te compares, tu contrôles. Mais ce feu non reconnu consume tout en silence.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu es pris dans une relation toxique. L’autre t’enferme sous prétexte d’amour. Tu n’as plus ta place : il ne reste que la peur.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "Tu te laisses envahir par une énergie qui n’est pas juste. L’amour ne possède pas. Ce lien t’éloigne de toi au lieu de t’y ramener.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 34,
+    "nom" :"Lâcher-prise",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_34_lacherprise.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu arrives au bout de ta tension. Tu choisis de ne plus tenir. Ce n’est pas une faiblesse : c’est la fin d’une illusion de contrôle.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu poses ce lien devenu poids. Tu comprends que vouloir n’est pas aimer. Le relâchement ouvre l’espace pour redevenir vrai.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Tu lâches ce que tu ne peux pas contrôler. Tu entres dans le vide, dans l’abandon. Ce n’est pas la chute : c’est la liberté.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses de céder. Tu crois que tout repose sur toi. Mais cette tension te détruit. Il est temps de déposer le fardeau.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux maintenir un lien qui ne tient plus. Tu le forces, tu le figes. Mais ce n’est plus de l’amour : c’est de la peur.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux encore comprendre, diriger, éviter la chute. Mais tant que tu retiens, tu n’accèdes pas au passage. Le vrai dépouillement commence là où tu lâches.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 35,
+    "nom": "Arme",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_35_arme.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu sais que tu tiens l’arme. Tu reconnais la tension, la dureté. Et tu es prêt à la déposer. C’est le début d’une autre force.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu vois que ta parole a coupé. Tu prends conscience de ce que tu imposais. Et tu ouvres la main. Le lien peut respirer.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Tu reconnais la lame que tu appelais vérité. Tu n’as plus besoin de frapper pour être juste. Tu rends l’arme, et Maât se révèle.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses de voir que tu frappes. Tu crois être lucide, mais tu attaques. Cette arme te brûle sans que tu le reconnaisses.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu condamnes sans mot. Tu tiens le lien à distance par peur de sentir. Ce que tu appelles clarté est une violence non nommée.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu te crois au service de la vérité. Mais c’est ta peur qui parle, et ton feu qui tranche. Maât ne parle jamais avec colère.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 36,
+    "nom": "Résurgence",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_36_resurgence.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ressens un feu ancien en toi. Ce n’est pas une mémoire : c’est ta forme neuve qui cherche à passer. Tu ne peux plus l’arrêter.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu n’es plus celui qui pouvait tenir ce lien. Tu changes. Ce feu en toi t’oblige à dire vrai, même si cela blesse.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu ressurgis depuis un point plus profond que toi. Ce n’est pas un retour. C’est une naissance. Tu n’as plus à retenir ce que tu es.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses de changer. Tu t’accroches à ce que tu étais. Mais ce feu monte. Et plus tu résistes, plus il te consume.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu gardes une image morte, un lien figé. Tu as peur de ce que tu deviendrais si tu t’en libérais. Tu restes, mais tu te renies.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "Tu bloques le passage. Tu étouffes ta propre lumière. Mais ce feu n’attendra pas ton accord. Il naîtra — avec ou sans toi.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 37,
+    "nom": "Mirage",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_37_mirage.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu commences à voir que l’image que tu portes ne te correspond plus. Ce que tu appelais toi glisse. Et tu es prêt à regarder.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu reconnais que tu t’étais protégé derrière une image. Tu veux te voir vrai, même si c’est inconfortable. Tu veux te rejoindre.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu discernes les couches de toi. Ce n’était pas faux, juste figé. Tu veux que la lumière en toi ne masque plus la source.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu tiens à l’image. Tu te racontes encore l’histoire de ce que tu es. Mais ce rôle devient une cage. Et tu refuses d’en sortir.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu préfères croire à ce que tu montres. Tu te rassures avec ce que tu veux être, au lieu d’écouter ce que tu es. Tu te fuis.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu préfères l’éclat du masque à la nudité de ta lumière. Tu le sais. Mais tu n’oses pas encore l’abandonner.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 38,
+    "nom": "Entrave",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_38_entrave.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu sens le blocage. Il ne vient pas de l’extérieur. Ce que tu ressens est un seuil. Et tu peux le traverser si tu t’y autorises.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu retiens ce que tu ressens. Tu crois que c’est pour rester fort. Mais cette tension t’empêche de te rejoindre vraiment.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu refuses de descendre dans le corps. Mais c’est là que le feu passe. Tu n’es pas séparé : tu es retenu par ta propre peur de sentir.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu expliques ce que tu ressens, au lieu de le vivre. Tu restes à distance. Et tant que tu ne traverses pas, rien ne bougera.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu fais comme si tu étais là. Mais tu es absent à ton propre corps. Tu refuses d’écouter la gêne. Et tu te déconnectes de toi.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux t’élever sans ancrage. Tu nies le passage incarné. Mais toute lumière passe par la densité. Et tu refuses encore de la porter.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 39,
+    "nom": "Notoriété",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_39_notoriete.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu veux occuper ta place, être visible. Tant que tu restes aligné, ce rayonnement est juste. Tu peux briller sans te trahir.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu veux être reconnu pour vrai. Pas pour séduire, mais pour être. Tu offres ta forme, pas une version. Et ça t’aligne.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu apprends à exister dans le regard du monde. Tu affirmes ta voix, même dans le bruit. Et ça te recentre.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu ajustes ton image pour plaire. Mais tu t’éloignes de toi. Tu veux qu’on t’aime, et tu ne sais plus qui on regarde.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux être accepté. Alors tu contrôles, tu séduis, tu t’effaces. Mais tu attends d’être aimé pour ce que tu n’es plus.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu confonds lumière et visibilité. Tu veux briller, mais tu ne regardes plus la source. Et tu te perds dans l’écho.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 40,
+    "nom": "Domination",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_40_domination.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu veux tenir les choses en place. Tu imposes ta volonté, peut-être pour protéger. Mais c’est souvent la peur de perdre qui gouverne.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu imposes les conditions du lien. Tu veux que tout passe par ta forme, ta volonté, ton rythme. Ce n’est pas un échange : c’est une emprise.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu dis que ta voie est juste. Mais tu parles d’une vérité que tu refuses de remettre en cause. Tu n’enseignes plus : tu imposes.",
+                "meta": ["tension"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu manipules pour garder le contrôle. Tu veux que tout obéisse à ton cadre. Mais ce pouvoir que tu crois maîtriser t’éloigne de toi.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu verrouilles la relation pour garder la main. Ce que tu appelles cadre est une contrainte. Et personne ne peut respirer là où tu tiens tout.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu parles fort. Tu sais. Tu imposes. Mais tu as cessé d’écouter. Et ce n’est plus la lumière que tu transmets, mais ton besoin de garder le dessus.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 41,
+    "nom": "Isolement",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_41_isolement.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu t’es retiré pour te retrouver. Mais ce silence devient coupure si tu refuses de revenir. L’écart te montre ce qu’il manque.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu as coupé le lien pour ne plus ressentir. Tu crois te protéger, mais tu t’effaces aussi. Ce retrait t’éloigne de toi.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Le silence peut éclairer, mais pas s’il enferme. Tu es entre deux battements. Et rien ne passe tant que tu refuses de t’ouvrir.",
+                "meta": ["tension"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu tiens par le mental, mais tu ne vis plus. Tu observes, tu analyses, mais plus rien ne touche. Tu es dehors de toi.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu n’es plus dans le lien. Tu es ailleurs, fermé, suspendu. Tu ne parles plus vraiment : tu tiens une façade.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu penses t’élever en t’éloignant. Mais l’isolement que tu choisis n’éclaire plus. Tu es figé, non centré.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 42,
+    "nom": "Offrande",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_42_offrande.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ouvres, tu tends, tu offres. Même sans retour, ce geste te relie à toi. Il est juste, même s’il reste sans écho.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu poses ton cœur sans garantie. Ce que tu offres est vrai. Et c’est cela qui compte, plus que la réponse de l’autre.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu fais un geste sans attendre. Tu poses une lumière sans exigence. Et c’est là que le lien devient pur.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux que ce que tu donnes revienne. Tu offres, mais tu attends. Et tu te blesses à ne pas être payé en retour.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu donnes pour être aimé. Tu tends la main avec l’attente d’un retour. Ce n’est pas un don : c’est un besoin camouflé.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu crois que ce que tu donnes te sera rendu. Mais une offrande réelle ne dépend pas du retour. Elle s’accomplit en elle-même.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 43,
+    "nom": "Echo",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_43_echo.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu vois les effets de tes actes. Ce n’est pas une attaque : c’est un miroir. Tu peux choisir de le regarder, ou de t’en détourner.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Ce que tu ressens, c’est le retour de ce que tu as mis dans le lien. Tu ne voulais peut-être pas blesser. Mais l’écho est là.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu entends ce que tu as semé. L’écho est juste. Ce n’est pas une punition. C’est une réponse. Et elle t’appartient.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses d’entendre. Tu nies ce qui revient vers toi. Mais tant que tu refuses de répondre, l’écho s’amplifie.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux ignorer ce que tu as provoqué. Tu dis que ce n’était pas toi. Mais tu fuis le miroir. Et le lien ne peut plus parler.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux avancer sans voir ce que tu as laissé derrière. Mais l’écho t’appelle. Tant que tu ne réponds pas, tu restes suspendu.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 44,
+    "nom": "Certitude",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_44_certitude.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu affirmes avec force. Tu tiens ta parole. Mais si tu n’écoutes plus, tu transformes ta clarté en posture.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu poses ce que tu crois être juste. Mais l’autre se ferme. Et ce silence est une réponse que tu refuses d’entendre.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu tiens ta vérité. Mais toute vérité, si elle ne s’ajuste plus, cesse d’être vivante. Écoute ce qui te dérange.",
+                "meta": ["tension"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses de bouger. Tu répètes sans entendre. Ce que tu nommes force est une peur de perdre ta place.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu n’entends pas ce que l’autre te renvoie. Tu restes sur ton idée. Et tu perds le lien en croyant tenir le cadre.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu te figes dans ta croyance. Tu veux être juste, mais tu refuses le doute. Et tu fermes la porte à l’ajustement.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 45,
+    "nom": "Lutte",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_45_lutte.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu veux incarner une nouvelle version de toi. Mais l’ancienne résiste. Ce tiraillement est normal. Il fait partie de la naissance.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu veux être vu pour ce que tu es devenu. Mais l’autre ne le perçoit pas encore. Peut-être qu’en toi aussi, tout n’est pas clair.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu t’opposes à ton propre passage. Tu veux forcer le changement. Mais la vraie mutation se fait en déposant, pas en luttant.",
+                "meta": ["tension"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses encore de laisser tomber l’ancienne forme. Tu veux aller vite, mais la lutte te retient. Rien ne pousse dans la tension.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu dis vouloir être vrai. Mais ce que tu montres est encore brouillé. Ce n’est pas l’autre qui ne voit pas : c’est toi qui n’es pas limpide.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu es entre deux terres. L’une t’appelle, l’autre te retient. Ce combat intérieur n’est pas à gagner : il est à déposer.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 46,
+    "nom": "Clarté",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_46_clarte.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu veux exprimer ce que tu es sans forcer. Ta vérité ne cherche pas à briller — elle cherche à exister, simplement.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu veux qu’on t’aime pour ce que tu es. Mais cela commence par le regard tendre que tu poses sur toi-même.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu avances vers un centre paisible. La clarté vient quand tu déposes ce qui brille, et que tu laisses paraître ce qui est vrai.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux être toi, mais tu te regardes encore à travers le miroir des autres. Et ta lumière s’éparpille dans ce reflet.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu réclames un amour juste, mais tu ne t’es pas encore accordé cette justice-là. Et cela brouille le lien.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu confonds éveil et démonstration. Mais la vraie lumière ne se contrôle pas. Elle se révèle quand tu n’imposes plus rien.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 47,
+    "nom": "Peau",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_47_peau.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu apprends à habiter ta forme. Tu cesses de fuir ton corps, non par fierté, mais parce qu’il est temps d’exister en entier.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu redécouvres ton corps. Tu ne le tiens plus à distance. Il cesse d’être un obstacle ou une faute. Il devient un lieu où tu peux revenir.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Ton corps n’est pas un obstacle. C’est par lui que passe ta lumière. Ton seuil d’éveil commence là où tu t’acceptes tout entier.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu vis dans le rejet de ta forme. Tu veux t’incarner sans accepter ton enveloppe. Et ce décalage crée la tension que tu ressens.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux t’accepter, mais tu resistes encore à ta forme. Ton regard juge ton corps plus qu’il ne l’habite. Et ce rejet t’éloigne de toi-même.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux la lumière, mais refuses la matière. Or il n’y a pas de passage sans enracinement. Ta peau est ton seuil : pas ton frein.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 48,
+    "nom": "Don",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_48_don.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu offres ce que tu es, sans chercher à convaincre. Tu n’as rien à prouver. Ta présence suffit.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu laisses l’amour circuler sans vouloir le contrôler. Ce que tu donnes est sincère, entier, libre.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Tu ne cherches pas la lumière : tu la rayonnes. Ton don est un passage, pas un effort.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu donnes pour être reconnu. Mais ce besoin bloque l’élan. Et ce que tu offres devient attente.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu donnes, mais tu espères qu’on te rende. Ce déséquilibre affaiblit ton geste. Il n’est plus fluide.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu retiens ce qui pourrait circuler. Tu as peur de disparaître si tu te donnes. Mais c’est l’inverse : c’est ainsi que tu deviens entier.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 49,
+    "nom": "Flamme",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_49_flamme.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu sens le feu en toi, mais tu ne le crains plus. Tu commences à comprendre qu’il ne vient pas te détruire, mais te révéler.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu n’as plus peur d’être intense. Ton feu n’éloigne pas. Il éclaire. Il rend le lien plus vrai.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu tiens ton feu avec lucidité. Et dans cette flamme, tu retrouves ton axe. Ce n’est pas la paix qui t’apaise, c’est la vérité de ton feu.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux rester calme, mais tu retiens une force vive. Et ce que tu caches se transforme en tension, en blocage, en fuite.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu crois devoir être doux pour être aimé. Mais en refusant ta propre intensité, tu perds aussi ta vérité.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu nies ton feu, et tu cherches une élévation sans racines. Mais c’est en embrassant ta flamme que ton chemin devient vrai.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 50,
+    "nom": "Engagement",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_50_engagement.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu choisis maintenant de parler vrai. Tes mots ne couvrent plus : ils révèlent. Ils te relient à ton axe.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu n’as plus besoin de séduire avec des mots doux. Tu préfères la justesse à l’adhésion. Et c’est ce qui rend ta parole fiable.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Chaque mot que tu poses t’engage. Ne cherche pas à convaincre : dis depuis ton centre, et laisse la vérité circuler.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux plaire, alors tu modifies ton discours. Mais ce que tu gagnes en acceptation, tu le perds en solidité intérieure.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu tais ce qui compte pour maintenir le lien. Mais un lien nourri de non-dits finit par se rompre en silence.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu parles sans t’aligner. Ou tu te tais par peur de poser une direction. Mais ta parole est un acte : elle mérite ta conscience entière.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 51,
+    "nom": "Grâce",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_51_grace.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu t’acceptes enfin tel que tu es. Tu ne corriges plus. Et dans cette paix, ta lumière se pose sans bruit.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu laisses l’amour circuler. Tu ne veux plus le contrôler, ni le retenir. Tu accueilles ce qui vient, simplement.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu ne poursuis plus la lumière. Tu t’ouvres à ce qui est là. Et cette ouverture devient grâce.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux mériter l’amour. Tu te juges, tu t’ajustes. Mais cette lutte t’éloigne de toi-même.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu balances entre retenue et excès. Tu ne sais pas doser, car tu doutes encore de ta valeur.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu demandes à être aimé sans t’être accueilli. Mais c’est en posant un regard doux sur toi que le lien s’ouvre.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 52,
+    "nom": "Regard",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_52_regard.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu poses un regard sincère sur toi. Ce n’est pas confortable, mais c’est le début de ton alignement.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu acceptes de ne plus attendre d’être parfait pour t’aimer. Et cette douceur change tout.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Tu vois clair en toi. Tu ne détournes plus les yeux. Et cette lucidité te rend libre.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu évites ce que tu ne veux pas voir. Mais tant que tu détournes le regard, rien ne peut bouger.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux être aimé, mais tu ne te regardes qu’avec sévérité. Ce regard crée une distance que rien ne comble.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu refuses encore de voir ce qui te dérange. Mais c’est dans cette reconnaissance que ton chemin commence.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 53,
+    "nom": "Silence",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_53_silence.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu n’as plus besoin d’avoir raison. Tu t’ouvres au réel sans tension. Et dans ce silence, tu trouves ta paix.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu cesses de combler. Tu laisses le lien respirer. Et c’est dans ce vide que l’amour devient vrai.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu ne parles plus à la vie. Tu l’écoutes. Et dans cette écoute silencieuse, quelque chose de plus grand peut passer.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux tout comprendre, tout expliquer. Mais cette agitation t’éloigne du réel. Il ne demande rien, sauf ton consentement.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu t’agites pour ne pas sentir le vide. Mais ce vide est un seuil, pas une punition.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "Tu crois que le silence est vide. Mais il est plein. Tu n’as rien à dire : tu as à recevoir.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 54,
+    "nom": "Seuil",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_54_seuil.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu n’es plus ce que tu étais, et tu ne sais pas encore ce que tu deviens. Ce flottement n’est pas un problème : c’est le passage.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu n’aimes plus comme avant. Tu n’as pas encore appris à aimer autrement. Laisse ce vide se poser. Il est juste.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu es sur un seuil invisible. Le silence y est total. Mais ce silence prépare une renaissance.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses de perdre l’ancien. Tu veux avancer sans lâcher. Mais c’est en acceptant ce vide que tu franchis vraiment le seuil.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu es suspendu entre hier et demain. Et cette attente devient douleur. Mais le seuil n’est pas fait pour qu’on s’y attarde.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux renaître sans passer par le silence. Mais tant que tu n’es pas entré dans ce vide, rien ne peut te porter.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 55,
+    "nom": "Révélation",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_55_revelation.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu vois clair en toi. Ce que tu pensais être un rôle était un masque. Et ce qui reste, maintenant, est vrai.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu ne joues plus un personnage. Tu ressens ce que tu ressens. Et c’est cette vérité nue qui ouvre le lien.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Tu es traversé par une lumière qui dérange, mais qui révèle. Elle ne te détruit pas : elle t’aligne.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu continues à te raconter une version acceptable de toi. Mais ce que tu vis contredit ton récit.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux rester dans une version de toi plus confortable. Mais ce que tu caches te coupe de ta propre vérité",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu as peur de voir ce que la lumière révèle. Mais ce n’est qu’en cessant de te fuir que tu peux commencer.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 56,
+    "nom": "Chair",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_56_chair.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ressens fortement ce que ton corps veut te dire. Tu n’as pas à l’apaiser : tu as à l’écouter.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu ressens plus que tu ne l’acceptes. Ce que ton corps exprime t’enseigne comment t’aimer — depuis ce que tu vis, pas depuis ce que tu crois.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Ta chair est la porte. Tu ne t’élèveras pas sans descendre d’abord dans ce sol vivant.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses ce que ton corps exprime. Mais à force de fuir cette intensité, tu perds ton axe.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu retiens ce que ton corps veut dire. Et à force de te contenir, tu t’éloignes de ce qui pourrait t’apaiser vraiment.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux monter sans t’enraciner. Mais c’est ta chair qui t’oriente, si tu acceptes de l’écouter.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 57,
+    "nom": "Centre",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_57_centre.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ne dépends plus du regard extérieur. Tu tiens ton axe, et cette posture rayonne sans forcer.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu entres dans le lien sans te déformer. Et c’est cette fidélité à toi-même qui rend le lien vrai.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu n’as rien à prouver. Ta place existe dès que tu reviens à ton centre.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu cherches à exister dans les yeux des autres. Mais ce regard t’éloigne de ce que tu es vraiment.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu t’adaptes pour être accepté. Mais à force de t’ajuster, tu disparais.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux être perçu, mais pas encore habité. Tant que tu ne reviens pas à ton centre, ta lumière reste floue.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 58,
+    "nom": "Volonté",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_58_volonte.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu veux agir. Mais ce feu n’est pas pour réagir : il est là pour t’aligner. Ta volonté trace la ligne.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu poses ta volonté sans forcer. Ce respect de toi-même rend le lien plus clair, plus juste.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu tiens ton feu. Tu ne l’éteins pas. Tu l’orientes. Et c’est cette direction qui ouvre le chemin.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu retiens ce que tu ressens. Et cette tension devient dureté ou blocage. Ce feu veut juste t’orienter.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu ne dis pas ce que tu veux. Tu espères être compris sans te montrer. Mais sans expression, il n’y a pas de lien.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux avancer, mais ta volonté est floue. Tant que tu ne choisis pas ta ligne, tout s’embrouille.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 59,
+    "nom": "Promesse",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_59_promesse.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu veux être fidèle à ce que tu as dit. Mais la fidélité vraie, c’est oser ajuster sans trahir.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu avais promis. Mais ce que tu ressens a changé. Dis-le avec respect — et clarté.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Tu veux honorer ta parole. Mais ton chemin t’appelle à dire autrement. Reformule sans renier.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu répètes une parole qui ne vibre plus. Ce n’est pas tenir : c’est t’oublier.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu continues à faire semblant d’y croire. Mais ce silence ment. Tu ne te respectes plus.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu t’accroches à un engagement passé. Mais l’âme te parle autrement. Il est temps d’écouter à nouveau.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 60,
+    "nom": "Absence",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_60_absence.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu avances, mais une partie de toi reste absente. Tu veux être là, mais tu ne ressens pas encore ce que tu espérais.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Le lien semble réel, mais il ne vibre pas. Ce n’est pas une erreur : c’est un signe que quelque chose, en toi, n’est pas encore là.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "L’absence ne ment pas. Elle montre simplement ce qui ne résonne pas. Accueille-la comme un début.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu fais semblant d’être là, mais ton cœur est ailleurs. L’absence que tu refuses te dicte pourtant tes pas.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux maintenir le lien, mais tu ne sens plus rien. Et tu fais semblant. Ce silence en toi mérite d’être entendu.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux que l’amour remplisse un vide. Mais il révèle, il n’efface pas. Le manque te parle : écoute-le.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 61,
+    "nom": "Masque",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_61_masque.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu veux être vrai, mais tu portes encore un rôle. Ce masque t’a servi. Mais il ne t’aide plus. Il est temps de le déposer.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu cherches un lien sincère. Mais tu ne te montres pas encore tel que tu es. Le masque crée la distance.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Le masque est ce que tu crois devoir être. L’âme, elle, ne joue pas. Pour avancer, il faut oser tomber le rôle.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu te caches derrière ce que tu crois être. Mais tu te perds dans ce rôle. Le masque finit par prendre ta place.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux être vu, mais tu refuses de te montrer. Le lien est flou, car tu restes à distance derrière une image.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu refuses le dépouillement. Tu crois que tu peux évoluer sans perdre l’image. Mais la foi commence là : quand il n’y a plus rien à jouer.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 62,
+    "nom" : "Epreuve",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_62_epreuve.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Ce moment est une vérification. L’univers ne te teste pas : il te montre où tu en es. Ta réponse sera un choix de cohérence.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Ce que tu vis dans le lien n’est pas un échec. C’est une tension qui révèle ce que tu es prêt à incarner ou à lâcher.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "L’épreuve est la forme que prend la vérité quand elle touche ton chemin. Elle ne juge pas — elle révèle.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses l’épreuve. Tu la prends pour un rejet. Mais elle te demande juste une réponse vraie. Sans masque.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu crois que l’autre est injuste. Mais c’est ta propre incohérence qui provoque le déséquilibre. Le lien te met face à toi.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux franchir la porte sans déposer ce qui est faux. L’épreuve revient — tant que tu n’as pas répondu par ta vérité.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 63,
+    "nom": "Effacement",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_63_effacement.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Ce que tu croyais être est en train de s’éteindre. Tu n’as pas à résister. Tu as à t’effacer, pour laisser advenir.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu ressens une distance, une perte. Mais ce lien ne tenait plus. Son effacement te rend à toi-même.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu traverses une disparition intérieure. Elle n’est pas une fin : elle est la dernière mue. Bientôt, tu redeviens.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux retenir ce que tu n’es déjà plus. Mais cette image de toi s’efface, et tu dois la laisser partir.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu crois que tu perds un lien. Mais c’est une illusion qui s’efface. Et cela libère une autre vérité.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu refuses le vide. Mais il est sacré. Il prépare le passage. Tu ne peux renaître sans te retirer de l’ancien toi.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 64,
+    "nom": "Eclipse",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_64_eclipse.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu vis un retrait de clarté. Ce n’est pas une perte : c’est un moment d’ajustement entre toi et ce qui t’entoure.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu ressens un flottement dans le lien. Mais cette pause invite à réévaluer, pas à fuir. Le silence parle aussi.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Ta lumière est voilée, pas absente. L’éclipse enseigne l’alignement entre ton être et l’ordre plus vaste.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses l’ombre. Mais ce moment d’éclipse est nécessaire. Il corrige ta lumière — il ne l’éteint pas.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu interprètes le silence comme un rejet. Mais c’est un espace de réajustement. La relation peut y gagner.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu confonds disparition et transformation. L’éclipse ne détruit pas. Elle enseigne la patience du réel.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 65,
+    "nom": "Coquille",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_65_coquille.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu continues d’avancer, mais ton élan n’y est plus. Tu habites encore la forme — mais ta présence, elle, s’est retirée.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Le lien tient encore, mais il n’est plus nourri. Tu restes, mais tu n’y es plus. Il est temps d’écouter ce vide.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Ton corps agit, mais il n’est plus porté par la vérité de ton être. C’est le signe d’un changement intérieur profond.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses de reconnaître que tu n’es plus là. Tu forces la forme, mais elle sonne creux. Il est temps de revenir ou de lâcher.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux sauver le lien, mais tu n’y mets plus d’âme. Ce que tu offres n’est qu’un geste vide. L’autre le ressent.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu continues d’habiter un espace intérieur déserté. Mais ce silence n’est pas vide : il appelle autre chose. Écoute-le.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 66,
+    "nom": "Décalage",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_66_decalage.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu prends ta place, tu joues ton rôle. Mais ce que tu montres n’est plus pleinement aligné avec ce que tu ressens.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu es dans le lien, mais tu n’y es pas entier. Une part de toi se retient — et cela crée une distance invisible.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu exprimes, tu affirmes, tu agis. Mais tu n’es pas aligné dans ton axe profond. La vérité demande à revenir au centre.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu t’es écarté de toi pour tenir une image. Et cette image a fini par prendre toute la place. Tu peux revenir. Mais il faut oser lâcher.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Le lien repose sur une version de toi qui n’est plus là. Ce n’est pas un mensonge — mais c’est une fuite.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux briller. Mais la lumière n’est pas là où tu l’as placée. Ta parole ne portera plus tant qu’elle ne partira pas du vrai.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 67,
+    "nom": "Débordement",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_67_debordement.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ressens une tension intérieure. Ce n’est pas une faiblesse : c’est un feu qui n’a plus d’espace. Il est temps d’écouter ce qui pousse.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu veux dire, mais tu te heurtes. Ce n’est pas la colère qui parle : c’est un lien qui ne te contient plus. Reviens à toi.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Ce débordement n’est pas un danger. C’est une énergie en trop dans un cadre trop petit. C’est une transition.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu te forces à rester calme. Mais ce calme est un masque. Ce feu cherche à sortir — pas pour blesser, mais pour t’aligner.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Le lien vacille parce que tu ne dis pas tout. Et ce que tu contiens devient poison. Le vrai lien commence là où tu oses.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu dépasses ta propre contenance. Et tu veux faire comme si tout allait bien. Mais ce débordement est un passage, pas une erreur.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 68,
+    "nom" : "Mensonge",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_68_mensonge.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu parles, tu expliques, tu promets. Mais les mots ne vibrent plus. Ce que tu dis n’est plus relié à ce que tu vis.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu veux croire à ce lien. Mais tu entends ce que tu veux entendre. Le vrai n’est pas dans les paroles — mais dans leur résonance.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Le mensonge n’est pas dans les faits, mais dans l’écart entre la parole et l’alignement. Il t’appelle à revenir à ton axe.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu continues à t’exprimer. Mais tu sens que tu te perds. Le verbe que tu utilises ne te contient plus.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux que ça tienne, alors tu parles. Mais plus tu parles, plus le lien se fragilise. Il est temps d’écouter.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux que la parole guide. Mais elle ment quand elle n’est pas alignée. Il te faut le silence pour retrouver la vérité.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 69,
+    "nom": "Appel",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_69_appel.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu veux le lien. Et tu l’appelles de toutes tes forces. Mais ce cri ne sera entendu que s’il part d’un lieu vrai.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "L’appel est noble. Mais il doit venir d’un centre aligné. Sinon, il se perd dans le bruit intérieur.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "L’appel est noble. Mais il doit venir d’un centre aligné. Sinon, il se perd dans le bruit intérieur.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu crois vouloir aimer, mais c’est un manque que tu projettes. Ce que tu ressens n’est pas un lien, c’est un appel de toi à toi.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu demandes de l’amour, mais tu n’es pas clair sur ce que tu offres. Le lien ne peut répondre à une demande floue.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux recevoir. Mais tu n’as pas encore reconnu ce que tu cherches vraiment. C’est cela que Maât vient peser.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 70,
+    "nom": "Fermeture",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_70_fermeture.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu veux avancer. Mais tu rencontres un seuil. Ce n’est pas un mur : c’est une question intérieure que tu n’as pas encore posée.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu veux ouvrir le lien. Mais il y a en toi une limite encore vivante, que tu refuses de nommer. Elle ne s’effacera pas par la force.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "La limite est juste. Elle ne t’écrase pas : elle t’appelle à t’aligner. Quand tu seras prêt, elle cédera d’elle-même.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux dépasser cette étape. Mais ce que tu ignores en toi pèse encore. La limite se durcit tant que tu l’évites.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu insistes. Mais cette distance n’est pas à combler : elle est à écouter. Le lien ne se construit pas dans la précipitation.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux franchir une porte sans t’être allégé. Mais ce seuil exige vérité et humilité. Il ne s’ouvre pas sous la contrainte.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 71,
+    "nom": "Pesée",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_71_pesee.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu es dans un moment suspendu. Ce n’est pas un blocage : c’est une pesée. Et ce qui n’est pas vrai ne passera pas.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu veux avancer. Mais le lien est pesé — pas pour punir, pour ajuster. Ce qui ne sonne pas juste se tait.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu es face à toi-même. La pesée n’est pas là pour juger, mais pour t’aligner. Il ne reste que ce qui est vrai.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu ressens un arrêt. Mais c’est une mise en balance de ton propre axe. La précipitation ne servira à rien.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux une réponse immédiate. Mais le lien est encore en cours de rééquilibrage. Accueille le silence.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu as peur de la vérité. Mais elle est déjà là. Elle ne frappe pas : elle attend que tu sois prêt à l’incarner.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 72,
+    "nom": "Chute",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_72_chute.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ne peux plus te retenir. La chute est inévitable. Ce n’est pas une fin : c’est une libération silencieuse.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu perds un lien, ou tu crois le perdre. Mais ce qui tombe, c’est l’illusion d’une sécurité. Le vrai commence dans le vide.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu es dépouillé. Rien ne te retient. Mais c’est dans cette chute que ta vérité se révèle. Tu ne peux pas tricher ici.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses de tomber. Mais tu ne tiens déjà plus. La résistance ne te sauvera pas : elle t’alourdit.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux préserver un lien, mais tu t’écroules en dedans. Ce n’est pas l’autre qu’il faut sauver. C’est toi qu’il faut laisser tomber.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu crois être suspendu. Mais tu es déjà en chute intérieure. Accueille le vide. Il ne t’engloutit pas. Il te prépare.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 73,
+    "nom": "Transparence",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_73_transparence.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ne cherches plus à briller. Ta lumière ne passe plus par l’image, mais par ta clarté intérieure.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Le lien devient limpide quand tu n’as plus rien à défendre. C’est ta vérité nue qui touche, pas ton rôle.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu ne portes plus la lumière : tu la laisses passer. Et dans cette transparence, tu redeviens origine.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux encore être vu. Mais cette envie te coupe de ce que tu es vraiment. Le rayonnement n’a pas besoin de témoin.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux plaire. Mais ce que l’autre attend, c’est ta justesse nue. Pas ta mise en scène.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu confonds lumière et éclat. La transparence commence quand tu acceptes de ne plus être celui qui montre.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 74,
+    "nom": "Ancrage",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_74_ancrage.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu es revenu en toi. Le corps n’est plus un poids : il devient espace d’habitation. Tu es là, vraiment.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu ne fuis plus le lien. Tu t’y poses, sans attachement, sans attente. C’est là que naît la vraie présence.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu es de retour dans la matière. Ce n’est pas une chute — c’est un alignement. L’esprit s’incarne ici.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux bouger, mais tu n’as pas encore accepté d’être là. Ce corps, ce moment, sont ta porte. Pas ton obstacle.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux bâtir du lien, mais tu n’as pas posé tes racines. Reviens à toi. Reviens ici.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu rejettes encore la forme. Mais la forme est ton temple. Et tant que tu ne l’honores pas, rien ne passe.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 75,
+    "nom": "Justesse",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_75_justesse.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu es à ta place. Tu ne sur-joues plus, tu ne retiens plus. Ce que tu es, dans cet état, est exactement ce qu’il faut.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu ne cherches plus à convaincre. Tu es dans la clarté du lien. Et c’est cette posture qui rend la relation vraie.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu as quitté le masque. Ce que tu incarnes maintenant est simple, nu, silencieusement aligné.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux encore être validé. Mais la vraie posture commence quand tu n’as plus rien à prouver.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux faire juste, mais tu n’es pas encore revenu à ton centre. C’est le retour à toi qui rétablit le lien.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu joues encore un rôle. Mais c’est le silence en toi qui appelle la vérité. Pas le masque.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 76,
+    "nom" : "Trêve",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_76_treve.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu n’es plus en lutte. Tu ne réagis plus. Et c’est dans ce silence que tu peux enfin t’écouter.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu ne veux plus gagner. Tu veux respirer. Le lien a besoin d’une trêve pour retrouver sa vérité.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Tu poses les armes. Et dans ce geste, tu ouvres un espace que le feu ne pouvait atteindre.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu restes sur le qui-vive. Tu crois que la tension te protège. Mais elle t’empêche d’être en lien.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu attends encore la réponse de l’autre — mais sans créer le silence qui pourrait la faire venir.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux aller plus loin, mais tu n’as pas encore fait place. La trêve n’est pas un arrêt. C’est une préparation.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 77,
+    "nom": "Retenue",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_77_retenue.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu pourrais répondre, mais tu ne le fais pas. Cette retenue n’est pas une faiblesse : c’est une force claire.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu retiens ta parole, ton jugement, ton attente. Et c’est cette pause qui permet au lien de respirer.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Tu retiens ta vérité, non par peur, mais par respect du rythme sacré. Le silence prépare le mot juste.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu réagis trop vite. Tu veux dire pour ne pas sentir. Mais ta parole est trouble, car elle fuit le silence.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu crois devoir parler pour tenir le lien. Mais le lien n’a pas besoin de mots — il a besoin d’espace.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu n’as pas encore écouté. Et tant que tu n’as pas plongé dans ce vide, la parole ne peut venir de l’alignement.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 78,
+    "nom" : "Sacrifice",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_78_sacrifice.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu renonces à plaire. Tu ne donnes plus pour être aimé. Tu offres ce que tu es, et cela suffit.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu ne demandes plus. Tu ne retiens plus. Et dans cette clarté nue, l’amour peut apparaître.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Tu abandonnes la quête d’un amour qui te prouve quelque chose. Tu aimes, parce que tu es devenu espace.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu continues à donner pour être reconnu. Mais cet amour n’est pas libre. Il est enchaîné à ton manque.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu t’oublies pour garder le lien. Mais tu ne peux plus tricher. Ce n’est pas de toi que tu te retires — c’est de l’amour.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu confonds don et effacement. Ce qu’on te demande n’est pas de t’annuler. C’est de rester debout en aimant.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 79,
+    "nom": "Dépouillement",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_79_depouillement.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu fais face à toi sans détour. Ce n’est pas un échec, c’est un seuil. Ce que tu vois maintenant est fondamental.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu n’attends plus d’être aimé. Tu regardes ce que tu as été, sincèrement. Et tu choisis de ne plus trahir ton cœur.",
+                "meta": ["tension"]
+            },
+            "spirituel": { 
+                "texte": "Tu laisses tomber le superflu. Tu ne t’élèves pas : tu te délestes. C’est cela, renaître.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu refuses encore de te voir. Tu veux garder la façade. Mais ce n’est pas toi qu’elle protège — c’est ce que tu crains de rencontrer.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu portes encore des attentes qui ne te ressemblent pas. Le lien juste commence avec la lucidité nue.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux progresser, mais tu ne lâches rien. Et c’est cela qui t’alourdit. Le sacrifice ici, c’est l’inutile.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 80,
+    "nom": "Equité",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_80_equite.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ne veux plus faire semblant. Tu sais ce qui sonne juste, et tu ne peux plus tricher avec toi-même.",
+                "meta": ["tension"]
+            },
+            "affectif": {
+                "texte": "Tu ne veux plus de demi-vérités. Ce que tu donnes est entier — ou tu préfères le silence.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu cherches la lumière juste, sans détour. Tu ne veux plus avancer si tu ne t’es pas entièrement regardé.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu dis vouloir la vérité, mais tu évites encore le point de bascule. Rien ne changera sans cette sincérité-là.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu attends une reconnaissance que tu n’oses pas vraiment appeler. Tant que tu restes flou, le lien le sera aussi.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu caches encore une part de toi. La lumière n’exclut pas : elle révèle. Et c’est cette révélation qui t’est demandée.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 81,
+    "nom": "Origine",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_81_origine.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu ne portes plus rien. Tu ne prouves plus rien. Tu es juste là. Et cela suffit.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu n’as plus de masque à offrir. Si lien il y a, il viendra de ce lieu nu en toi.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Tu es arrivé au bord du silence. C’est là que le vrai chemin commence.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux du neuf, mais tu n’as pas encore lâché l’ancien. Rien ne vient si tu n’abandonnes pas le rôle.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu dis vouloir un lien vrai, mais tu ramènes encore ton histoire. Tu n’es pas encore disponible.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu touches le seuil, mais tu n’oses pas t’y déposer. Ce que tu es n’a pas besoin d’être raconté.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 82,
+    "nom": "Akh",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_81_akh.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu n’as rien à jouer. Rien à défendre. Tu es. Et cela suffit.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu ne t’accroches plus. Tu entres en lien sans attente, sans besoin.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Tu ne cherches plus la lumière. Tu l’habites.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux la paix, mais tu la joues encore. Ce n’est pas un état qu’on imite. C’est un dépouillement.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu dis être libre, mais tu espères encore. L’Akh n’espère rien. Il est.",
+                "meta": ["seuil"]
+            },
+            "spirituel": {
+                "texte": "Tu cherches à devenir lumière. Mais c’est ton attente qui t’en éloigne. Dépose-toi.",
+                "meta": ["tension"]
+            }
+        }
+    },
+    {
+        "id": 83,
+    "nom": "L'homme",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_83_homme.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu es là pour être clair. Ta posture n’a pas besoin d’être parfaite, mais elle doit être tenue.",
+                "meta": ["seuil"]
+            },
+            "affectif": {
+                "texte": "Tu offres un lien solide, pas une attente. C’est ta cohérence qui crée la confiance.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Tu n’es pas là pour flotter. Tu es là pour incarner l’axe, par tes choix et ta manière d’être.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu parles de force, mais tu évites les prises de position. La clarté demande du courage.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux un lien stable, mais tu ne tiens pas ta place. On ne peut pas s’appuyer sur l’indécision.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux grandir, mais tu refuses encore de t’enraciner. Rien ne pousse hors sol.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 84,
+    "nom": "La Femme",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_84_lafemme.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu n’as pas besoin d’expliquer. Ce que tu es se perçoit dans ton silence.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu n’attends pas qu’on te voie. Tu offres un espace vrai, sans prendre, sans fuir.",
+                "meta": ["seuil"]
+            },
+            "spirituel": { 
+                "texte": "Ce que tu es suffit. C’est par ta manière de contenir que la lumière descend.",
+                "meta": ["ouverture"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu veux qu’on te reconnaisse, mais tu doutes encore de ton silence. Ne te réduis pas pour être aimée.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu retires ta présence avant qu’elle ait eu lieu. Tu n’offres pas d’espace : tu crées du manque.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu crois te taire, mais tu es pleine de bruit intérieur. Le silence ne vient pas du retrait : il vient de l’accord.",
+                "meta": ["seuil"]
+            }
+        }
+    },
+    {
+        "id": 85,
+    "nom": "L'enfant",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_85_lenfant.png",
+        "endroit": {
+            "personnalité": {
+                "texte": "Tu n’as pas de masque. Ce que tu es sort sans détour. Et c’est ta vérité.",
+                "meta": ["ouverture"]
+            },
+            "affectif": {
+                "texte": "Tu n’as pas peur d’aimer. Tu donnes sans attendre, et c’est cela qui ouvre le lien.",
+                "meta": ["ouverture"]
+            },
+            "spirituel": { 
+                "texte": "Tu ne sais pas, mais tu sens. Et c’est cette innocence qui te relie au mystère.",
+                "meta": ["seuil"]
+            }
+        },
+        "inversé": {
+            "personnalité": {
+                "texte": "Tu fais semblant d’être naturel·le, mais tu joues un rôle. Sois vrai·e, même fragile.",
+                "meta": ["tension"]
+            },
+            "affectif": { 
+                "texte": "Tu veux un amour parfait, mais tu ne veux pas risquer la douleur. Tu ne vis pas l’amour, tu le calcule.",
+                "meta": ["tension"]
+            },
+            "spirituel": {
+                "texte": "Tu veux des réponses, mais tu refuses de plonger. Le mystère n’est pas une idée : c’est une expérience.",
+                "meta": ["seuil"]
+            }
+        }
+    }
+]
+
+
+
