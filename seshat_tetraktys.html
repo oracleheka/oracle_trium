@@ -105,11 +105,11 @@ button:hover {
   <h1>Tirage Tétraktys – Oracle Seshat</h1>
   <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
   <fieldset style="border: none; margin: 0;">
-    <legend><strong>Choisir l’aspect :</strong></legend>
-    <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
-    <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
-    <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
-  </fieldset>
+  <legend><strong>Choisir l’aspect :</strong></legend>
+  <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
+  <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
+  <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
+</fieldset>
 
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
@@ -123,6 +123,10 @@ button:hover {
 <input type="text" id="champPrenom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
   <div id="resultats" style="margin-top: 2rem;"></div>
   </div>
+
+<!-- Bouton pour afficher la synthèse -->
+<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
+  
   <p>Ce tirage repose sur une structure triangulaire composée de 10 cartes réparties en 4 niveaux, formant une pyramide énergétique ou un chemin d’évolution.</p>
   <p>Chaque ligne représente un palier de conscience ou une phase intérieure, allant du fondement à l’épanouissement.</p>
   <ul>
@@ -245,6 +249,8 @@ function tirerLesCartes() {
       idx++;
     }
   });
+  // ✅ Affiche le bouton synthèse après le tirage complet
+document.getElementById("btnSynthese").style.display = "inline-block";
 }
 
 function ajouterUneCarte() {
@@ -291,6 +297,58 @@ function styleCarte(el) {
   el.style.marginTop = "0.5rem";
 }
 
+function afficherSyntheseTetraktys() {
+  const aspect = document.querySelector('input[name="aspect"]:checked')?.value;
+  const question = document.getElementById("question")?.value || "";
+  const prenom = document.getElementById("champPrenom")?.value || "";
+
+  if (cartesTirees.length < 10) {
+    alert("Veuillez d'abord tirer les 10 cartes du Tétraktys.");
+    return;
+  }
+
+  const niveaux = [
+    { titre: "1. Origine", nb: 1 },
+    { titre: "2. Dualité", nb: 2 },
+    { titre: "3. Chemin", nb: 3 },
+    { titre: "4. Manifestation", nb: 4 }
+  ];
+
+  let contenu = "--- Synthèse du tirage Tétraktys ---\n\n";
+  let index = 0;
+
+  niveaux.forEach(niveau => {
+    contenu += `→ ${niveau.titre}\n`;
+
+    for (let i = 0; i < niveau.nb; i++) {
+      const { carte, sens } = cartesTirees[index];
+      const interpretation = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+      const extrait = interpretation.split(".")[0].trim() + ".";
+      contenu += `• ${carte.nom} (${sens}) → ${extrait}\n`;
+      index++;
+    }
+
+    contenu += "\n";
+  });
+
+  // Synthèse globale guidée
+  const synthese = genererSyntheseGuidante(cartesTirees, aspect, {
+    question,
+    prenom,
+    mode: "normal"
+  });
+
+  contenu += `→ Synthèse guidée :\n\n${synthese}`;
+
+  document.getElementById("contenuSynthese").innerText = contenu;
+  document.getElementById("syntheseModal").style.display = "flex";
+}
+
+   
+function fermerSynthese() {
+  document.getElementById("syntheseModal").style.display = "none";
+}
+   
 function réinitialiser() {
   location.reload();
 }
@@ -298,8 +356,23 @@ function réinitialiser() {
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
+  document.getElementById("btnSynthese").onclick = afficherSyntheseTetraktys;
+  
 };
 </script>
-
+<div id="syntheseModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
+    <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
+    <h2>Synthèse Guidante</h2>
+    <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
+    <div style="text-align: center;">
+      <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Fermer
+      </button>
+    </div>
+  </div>
+</div>
+  <script src="data/synthese.js"></script>
 </body>
 </html>
