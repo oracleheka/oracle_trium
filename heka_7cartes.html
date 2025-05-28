@@ -303,6 +303,9 @@ function tirage7Cartes() {
   document.getElementById("contenuSynthese").innerText = resume;
   document.getElementById("syntheseModal").style.display = "flex";
 }
+   function fermerSynthese() {
+    document.getElementById("syntheseModal").style.display = "none";
+  }
 
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
