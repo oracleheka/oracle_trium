@@ -268,20 +268,6 @@ function tirerNumerologique() {
         { carte: carte2, sens: sens2 }
       ];
 
-      // Synthèse guidée
-      const aspectChoisi = aspect;
-      const question = document.getElementById("question")?.value || "";
-      const prenom = nom.charAt(0).toUpperCase() + nom.slice(1).toLowerCase();
-      const synthese = genererSyntheseGuidante(cartesTirees, aspectChoisi, {
-        question,
-        prenom,
-        mode: "normal"
-      });
-
-      document.getElementById("contenuSynthese").innerText =
-        `--- Synthèse guidée du tirage numérologique ---\n\n${synthese}`;
-      document.getElementById("syntheseModal").style.display = "flex";
-
     } catch (err) {
       alert("Erreur lors du calcul : " + err.message);
     }
