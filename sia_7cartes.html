@@ -105,11 +105,11 @@ button:hover {
   <h1>Tirage à 7 cartes avec l'Oracle Sia</h1>
   <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
   <fieldset style="border: none; margin: 0;">
-    <legend><strong>Choisir l’aspect :</strong></legend>
-    <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
-    <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
-    <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
-  </fieldset>
+  <legend><strong>Choisir l’aspect :</strong></legend>
+  <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
+  <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
+  <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
+</fieldset>
 
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
@@ -121,6 +121,9 @@ button:hover {
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
 </div>
   <div id="resultats" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
+   <!-- Bouton pour afficher la synthèse -->
+<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
+  
   <p>Tirage plus détaillé, idéal pour explorer une dynamique complexe. Peut servir à analyser une évolution, une relation ou une trajectoire personnelle.</p>
   <ul>
     <li>influence de départ</li>
@@ -214,7 +217,10 @@ function tirage7Cartes() {
 
     affichage.appendChild(div);
   });
-}
+
+    document.getElementById("btnSynthese").style.display = "inline-block";
+  }
+
   function ajouterUneCarte(estTirageInitial = false) {
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
@@ -261,10 +267,75 @@ function tirage7Cartes() {
   function réinitialiser() {
   location.reload(); // Recharge la page pour repartir de zéro
 }
+   
+   function afficherSynthese7Cartes() {
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+
+  const question = document.getElementById("question")?.value || "";
+  const prenom = document.getElementById("prenom")?.value || "";
+  const mode = prenom.toLowerCase() === "ce tirage" ? "lien" : "normal";
+
+  if (cartesTirees.length < 7) {
+    alert("Le tirage doit comporter 7 cartes pour générer cette synthèse.");
+    return;
+  }
+
+  const phrases = cartesTirees.map(({ carte, sens }) => {
+    const contenu = carte[sens]?.[aspect];
+    let texte = "(Message absent)";
+
+    if (typeof contenu === "object" && contenu.texte) {
+      texte = contenu.texte.trim().split(".")[0] + ".";
+    } else if (typeof contenu === "string") {
+      texte = contenu.trim().split(".")[0] + ".";
+    }
+
+    return `${carte.nom} (${sens}) → ${texte}`;
+  });
+
+  let resume = "--- Synthèse du tirage ---\n\n";
+  resume += "➤ Influences de départ :\n";
+  resume += phrases.slice(0, 2).join("\n") + "\n\n";
+  resume += "➤ Dynamique actuelle :\n";
+  resume += phrases.slice(2, 5).join("\n") + "\n\n";
+  resume += "➤ Évolution possible :\n";
+  resume += phrases.slice(5, 7).join("\n") + "\n\n";
+
+  const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
+  resume += `→ Synthèse guidée :\n\n${synthese}`;
+
+  document.getElementById("contenuSynthese").innerText = resume;
+  document.getElementById("syntheseModal").style.display = "flex";
+}
+   function fermerSynthese() {
+    document.getElementById("syntheseModal").style.display = "none";
+  }
+
+   function réinitialiser() {
+    location.reload();
+  }
+
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
+  document.getElementById("btnSynthese").onclick = afficherSynthese7Cartes;
 };
 </script>
+  <div id="syntheseModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
+    <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
+    <h2>Synthèse Guidante</h2>
+    <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
+    <div style="text-align: center;">
+      <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Fermer
+      </button>
+    </div>
+  </div>
+</div>
+  <script src="data/synthese.js"></script>
+</body>
+</html>
 </body>
 </html>
