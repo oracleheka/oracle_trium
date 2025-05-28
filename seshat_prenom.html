@@ -103,12 +103,12 @@ button:hover {
 
 <main>
   <h1>Tirage prénom avec l'Oracle Seshat</h1>
-   <fieldset style="border: none; margin: 0;">
-    <legend><strong>Choisir l’aspect :</strong></legend>
-    <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
-    <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
-    <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
-  </fieldset>
+    <fieldset style="border: none; margin: 0;">
+  <legend><strong>Choisir l’aspect :</strong></legend>
+  <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
+  <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
+  <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
+</fieldset>
 
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
@@ -122,6 +122,10 @@ button:hover {
   <input type="text" id="champPrenom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
   <div id="resultats" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
   </div>
+
+<!-- Bouton pour afficher la synthèse -->
+<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
+  
   <p>Chaque lettre du prénom reçoit une carte. Ce tirage offre une lecture très personnelle, intime, en lien direct avec l’identité vibratoire du consultant.</p>
   <ul>
     <li>Passé / Présent / Futur</li>
@@ -225,6 +229,7 @@ function tirerParPrenom() {
     }
 
     const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+    cartesTirees.push({ carte: carte, sens: sens }); // ← AJOUT ICI ✅
     const interpretation = carte[sens]?.[aspect]?.texte;
 
     if (!interpretation) {
@@ -244,7 +249,8 @@ function tirerParPrenom() {
     styleCarte(div);
     affichage.appendChild(div);
   }
-
+  document.getElementById("btnSynthese").style.display = "inline-block";
+  
   console.log("✅ Fin du tirage prénom");
   }   
 function ajouterUneCarte() {
@@ -290,6 +296,49 @@ function ajouterUneCarte() {
   styleCarte(div);
   affichageZone.appendChild(div);
 }
+
+   function afficherSynthesePrenom() {
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+  const prenomInput = document.getElementById("champPrenom")?.value || "";
+  const prenom = prenomInput.charAt(0).toUpperCase() + prenomInput.slice(1).toLowerCase();
+
+  if (cartesTirees.length === 0) {
+    alert("Veuillez d'abord tirer les cartes.");
+    return;
+  }
+
+  // Affichage brut des cartes
+  let resume = `--- Synthèse du prénom ---\n\n`;
+
+  cartesTirees.forEach(({ carte, sens }) => {
+    let msg = "";
+    const contenu = carte[sens]?.[aspect];
+
+    if (typeof contenu === "object" && contenu.texte) {
+      msg = contenu.texte;
+    } else if (typeof contenu === "string") {
+      msg = contenu;
+    }
+
+    const phrase = msg.trim().split(".")[0] + ".";
+    resume += `${carte.nom} (${sens}) → ${phrase}\n`;
+  });
+
+  // Synthèse guidante globale
+  const question = document.getElementById("question")?.value || "";
+  const mode = "normal";
+  const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
+
+  resume += `\n→ Synthèse guidée :\n\n${synthese}`;
+
+  document.getElementById("contenuSynthese").innerText = resume;
+  document.getElementById("syntheseModal").style.display = "flex";
+}
+
+   function fermerSynthese() {
+  document.getElementById("syntheseModal").style.display = "none";
+}
+   
   function réinitialiser() {
   location.reload(); // Recharge la page pour repartir de zéro
 }
@@ -305,11 +354,26 @@ function tirerLesCartes() {
   el.style.textAlign = "center";
   el.style.marginTop = "0.5rem";
 }
+// Rendre le bouton fonctionnel au chargement
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
+  document.getElementById("btnSynthese").onclick = afficherSynthesePrenom;
 };
 </script>
-
+<div id="syntheseModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
+    <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
+    <h2>Synthèse Guidante</h2>
+    <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
+    <div style="text-align: center;">
+      <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Fermer
+      </button>
+    </div>
+  </div>
+</div>
+  <script src="data/synthese.js"></script>
 </body>
 </html>
