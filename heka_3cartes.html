@@ -119,6 +119,8 @@ button:hover {
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
 </div>
   <div id="resultats" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
+   <!-- Bouton pour afficher la synthèse -->
+<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
   <h1>Tirage à 3 cartes – Oracle Heka</h1>
 
 <p>Le tirage à 3 cartes est une méthode simple et puissante pour explorer une situation, une question ou un état émotionnel. Grâce à l’Oracle Heka, ce tirage met en lumière les dynamiques de l’ego, les réactions instinctives, et les blocages visibles qui influencent votre présent.</p>
@@ -336,8 +338,6 @@ return resultats.length > 0 ? resultats.join(" ") : "Aucune dynamique claire dé
     document.getElementById("btnSynthese").onclick = afficherSynthese;
   };
 </script>
-  <!-- Bouton pour afficher la synthèse -->
-<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
 
 <!-- Boîte modale -->
 <div id="syntheseModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
