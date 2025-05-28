@@ -106,11 +106,11 @@ button:hover {
   <h1>Tirage à 3 cartes de l'Oracle Seshat</h1>
   <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
   <fieldset style="border: none; margin: 0;">
-    <legend><strong>Choisir l’aspect :</strong></legend>
-    <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
-    <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
-    <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
-  </fieldset>
+  <legend><strong>Choisir l’aspect :</strong></legend>
+  <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
+  <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
+  <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
+</fieldset>
 
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
@@ -122,6 +122,9 @@ button:hover {
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
 </div>
   <div id="resultats" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
+  <!-- Bouton pour afficher la synthèse -->
+<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
+  
   <p>Ce tirage permet une lecture rapide et efficace d’une situation ou d’une question simple. Il est particulièrement adapté aux demandes à trois volets, comme :</p>
   <ul>
     <li>Passé / Présent / Futur</li>
@@ -213,7 +216,8 @@ button:hover {
 
       affichage.appendChild(div);
     });
-  }
+  document.getElementById("btnSynthese").style.display = "inline-block";
+  }}
 
   function ajouterUneCarte(estTirageInitial = false) {
     if (!jeuPrepare) {
@@ -262,7 +266,69 @@ button:hover {
   function réinitialiser() {
     location.reload();
   }
+function afficherSynthese3Cartes() {
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
 
+  const question = document.getElementById("question")?.value || "";
+  const prenom = document.getElementById("prenom")?.value || "";
+  const mode = prenom.toLowerCase() === "ce tirage" ? "lien" : "normal";
+
+  if (cartesTirees.length < 3) {
+    alert("Veuillez tirer trois cartes pour générer la synthèse.");
+    return;
+  }
+
+  const phrases = cartesTirees.map(({ carte, sens }) => {
+    const contenu = carte[sens]?.[aspect];
+    let texte = "(Message absent)";
+
+    if (typeof contenu === "object" && contenu.texte) {
+      texte = contenu.texte.trim().split(".")[0] + ".";
+    } else if (typeof contenu === "string") {
+      texte = contenu.trim().split(".")[0] + ".";
+    }
+
+    return `${carte.nom} (${sens}) → ${texte}`;
+  });
+
+  let resume = "--- Lecture du tirage ---\n\n";
+  resume += phrases.join("\n") + "\n\n";
+
+  const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
+  resume += `→ Synthèse guidée :\n\n${synthese}`;
+
+  document.getElementById("contenuSynthese").innerText = resume;
+  document.getElementById("syntheseModal").style.display = "flex";
+}
+
+  function fermerSynthese() {
+    document.getElementById("syntheseModal").style.display = "none";
+  }
+
+  window.onload = function () {
+  document.getElementById("tirerBtn").disabled = true;
+  document.getElementById("ajouterBtn").disabled = true;
+  document.getElementById("btnSynthese").onclick = afficherSynthese3Cartes;
+};
+   
+</script>
+
+<div id="syntheseModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
+    <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
+    <h2>Synthèse Guidante</h2>
+    <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
+    <div style="text-align: center;">
+      <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Fermer
+      </button>
+    </div>
+  </div>
+</div>
+  <script src="data/synthese.js"></script>
+</body>
+</html>
   window.onload = function () {
     document.getElementById("tirerBtn").disabled = true;
     document.getElementById("ajouterBtn").disabled = true;
