@@ -1,4 +1,6 @@
-function genererSyntheseGuidante(cartesInfos, aspect, prenom = "Cette personne", mode = "normal") {
+function genererSyntheseGuidante(cartesTirees, aspect, options = {}) {
+  const { question = "", prenom = "", mode = "normal" } = options;
+
   const tensions = [];
   const ouvertures = [];
   const seuils = [];
@@ -29,9 +31,9 @@ function genererSyntheseGuidante(cartesInfos, aspect, prenom = "Cette personne",
     "rééquilibrage"
   ];
 
-  cartesInfos.forEach(({ carte, sens }) => {
+  cartesTirees.forEach(({ carte, sens }) => {
     const texte = carte[sens]?.[aspect]?.texte?.toLowerCase() || "";
-    const meta = carte[sens]?.[aspect]?.meta?.join(" ").toLowerCase() || "";
+    const meta = (carte[sens]?.[aspect]?.meta || []).join(" ").toLowerCase();
     const contenu = meta + " " + texte;
 
     if (motsClesTension.some(m => contenu.includes(m))) tensions.push(carte.nom);
@@ -49,7 +51,7 @@ function genererSyntheseGuidante(cartesInfos, aspect, prenom = "Cette personne",
   }
 
   if (ouvertures.length) {
-    lignes.push("\nMais un mouvement d'ouverture est perceptible :");
+    lignes.push("Mais un mouvement d'ouverture est perceptible :");
     ouvertures.forEach(nom => lignes.push(`• ${nom}`));
   }
 
@@ -57,40 +59,38 @@ function genererSyntheseGuidante(cartesInfos, aspect, prenom = "Cette personne",
     lignes.push("Le tirage est neutre — aucune tension ni ouverture particulière n’est détectée.");
   }
 
-  // Bilan final
+  // Synthèse finale
   let bilan = "";
-
-  const base = (prenom || "Cette personne");
+  const base = prenom || "Cette personne";
 
   if (mode === "lien") {
     if (prenom.toLowerCase() === "ce tirage") {
-      if (tensions.length === 0) {
-        bilan = "Ce tirage dégage une vibration fluide et alignée.";
-      } else if (tensions.length <= ouvertures.length) {
-        bilan = "Ce tirage est en transition : des tensions sont présentes, mais un mouvement de transformation est à l’œuvre.";
-      } else {
-        bilan = "Ce tirage traverse des résistances importantes, mais une évolution reste possible.";
-      }
+      bilan = tensions.length === 0
+        ? "Ce tirage dégage une vibration fluide et alignée."
+        : tensions.length <= ouvertures.length
+          ? "Ce tirage est en transition : des tensions sont présentes, mais un mouvement de transformation est à l’œuvre."
+          : "Ce tirage traverse des résistances importantes, mais une évolution reste possible.";
     } else {
-      if (tensions.length === 0) {
-        bilan = `Le lien entre ${prenom} dégage une vibration fluide et alignée.`;
-      } else if (tensions.length <= ouvertures.length) {
-        bilan = `Le lien entre ${prenom} est en transition : des tensions sont présentes, mais un mouvement de transformation est à l’œuvre.`;
-      } else {
-        bilan = `Le lien entre ${prenom} traverse des résistances importantes, mais une évolution reste possible.`;
-      }
+      bilan = tensions.length === 0
+        ? `Le lien entre ${prenom} dégage une vibration fluide et alignée.`
+        : tensions.length <= ouvertures.length
+          ? `Le lien entre ${prenom} est en transition : des tensions sont présentes, mais un mouvement de transformation est à l’œuvre.`
+          : `Le lien entre ${prenom} traverse des résistances importantes, mais une évolution reste possible.`;
     }
   } else {
-    if (tensions.length === 0) {
-      bilan = `${base} dégage une vibration fluide et alignée.`;
-    } else if (tensions.length <= ouvertures.length) {
-      bilan = `${base} est en transition : des tensions sont présentes, mais le mouvement intérieur est vivant.`;
-    } else {
-      bilan = `${base} fait face à des résistances marquées, mais une force de transformation est en veille.`;
-    }
+    bilan = tensions.length === 0
+      ? `${base} dégage une vibration fluide et alignée.`
+      : tensions.length <= ouvertures.length
+        ? `${base} est en transition : des tensions sont présentes, mais le mouvement intérieur est vivant.`
+        : `${base} fait face à des résistances marquées, mais une force de transformation est en veille.`;
   }
 
   lignes.push("\n→ " + bilan);
 
+  if (question) {
+    lignes.push(`\n💬 En réponse à la question : « ${question} »`);
+  }
+
   return lignes.join("\n");
 }
+
