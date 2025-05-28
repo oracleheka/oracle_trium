@@ -213,6 +213,8 @@ button:hover {
 
       affichage.appendChild(div);
     });
+
+    document.getElementById("btnSynthese").style.display = "inline-block";
   }
 
   function ajouterUneCarte(estTirageInitial = false) {
@@ -259,14 +261,92 @@ button:hover {
     }
   }
 
-  function réinitialiser() {
-    location.reload();
+  function genererSyntheseGuidante(cartesTirees, aspect) {
+    const categories = {
+      tension: [],
+      ouverture: [],
+      seuil: []
+    };
+
+    const motsCles = {
+      tension: ["conflit", "blocage", "colère", "résistance", "fuite", "refus"],
+      ouverture: ["paix", "réconciliation", "alignement", "amour", "accueil", "écoute", "réceptivité"],
+      seuil: ["passage", "transition", "mort", "naissance", "mutation", "épreuve", "franchir", "retirer"]
+    };
+
+    function detecterCategorie(texte, meta) {
+      if (meta.includes("tension")) return "tension";
+      if (meta.includes("ouverture")) return "ouverture";
+      if (meta.includes("seuil")) return "seuil";
+
+      const lower = texte.toLowerCase();
+      for (const cat in motsCles) {
+        for (const mot of motsCles[cat]) {
+          if (lower.includes(mot)) return cat;
+        }
+      }
+      return null;
+    }
+
+    cartesTirees.forEach(({ carte, sens }) => {
+      const texte = carte[sens]?.texte || "";
+      const meta = carte[sens]?.meta || [];
+      const cat = detecterCategorie(texte, meta);
+      if (cat && categories[cat]) {
+        categories[cat].push(`${carte.numero} – ${carte.nom}`);
+      }
+    });
+
+    const resultats = [];
+    if (categories.ouverture.length)
+      resultats.push(`Ouverture : ${categories.ouverture.join(", ")}.`);
+    if (categories.seuil.length)
+      resultats.push(`Un seuil à franchir : ${categories.seuil.join(", ")}.`);
+    if (categories.tension.length)
+      resultats.push(`Tensions présentes : ${categories.tension.join(", ")}.`);
+
+    // Ajouts interprétatifs globaux selon les dominantes
+if (categories.tension.length >= 2) {
+  resultats.push("⚠️ L'ensemble du tirage met en lumière un climat de tension intérieure fort.");
+}
+if (categories.ouverture.length >= 2) {
+  resultats.push("🌱 Une belle dynamique d’ouverture intérieure émerge.");
+}
+if (categories.seuil.length >= 2) {
+  resultats.push("🔁 Vous êtes à un carrefour de transformation important, un seuil est prêt à être franchi.");
+}
+
+return resultats.length > 0 ? resultats.join(" ") : "Aucune dynamique claire détectée.";
+  }
+
+  function afficherSynthese() {
+    const aspect = document.querySelector('input[name="aspect"]:checked').value;
+    const synthese = genererSyntheseGuidante(cartesTirees, aspect);
+    document.getElementById("contenuSynthese").innerText = synthese;
+    document.getElementById("syntheseModal").style.display = "flex";
+  }
+
+  function fermerSynthese() {
+    document.getElementById("syntheseModal").style.display = "none";
   }
 
   window.onload = function () {
     document.getElementById("tirerBtn").disabled = true;
     document.getElementById("ajouterBtn").disabled = true;
+    document.getElementById("btnSynthese").onclick = afficherSynthese;
   };
 </script>
+  <!-- Bouton pour afficher la synthèse -->
+<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
+
+<!-- Boîte modale -->
+<div id="syntheseModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 2rem; max-width: 600px; border-radius: 12px; position: relative;">
+    <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
+    <h2>Synthèse Guidante</h2>
+    <div id="contenuSynthese"></div>
+  </div>
+</div>
 </body>
 </html>
