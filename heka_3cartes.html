@@ -301,7 +301,9 @@ button:hover {
   function fermerSynthese() {
     document.getElementById("syntheseModal").style.display = "none";
   }
-
+   function réinitialiser() {
+    location.reload();
+  }
   window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
