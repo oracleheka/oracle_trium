@@ -263,9 +263,13 @@ function tirage7Cartes() {
   function réinitialiser() {
   location.reload(); // Recharge la page pour repartir de zéro
 }
-   // Fonction pour générer le résumé des 7 cartes, structuré en 3 phases, puis une synthèse guidante
-function afficherSynthese7Cartes() {
+   
+   function afficherSynthese7Cartes() {
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
+
+  const question = document.getElementById("question")?.value || "";
+  const prenom = document.getElementById("prenom")?.value || "";
+  const mode = prenom.toLowerCase() === "ce tirage" ? "lien" : "normal";
 
   if (cartesTirees.length < 7) {
     alert("Le tirage doit comporter 7 cartes pour générer cette synthèse.");
@@ -293,7 +297,7 @@ function afficherSynthese7Cartes() {
   resume += "➤ Évolution possible :\n";
   resume += phrases.slice(5, 7).join("\n") + "\n\n";
 
-  const synthese = genererSyntheseGuidante(cartesTirees, aspect);
+  const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
   resume += `→ Synthèse guidée :\n\n${synthese}`;
 
   document.getElementById("contenuSynthese").innerText = resume;
