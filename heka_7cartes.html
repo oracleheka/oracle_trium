@@ -101,18 +101,19 @@ button:hover {
   <h1>Tirage à 7 cartes avec l’Oracle Heka</h1>
   <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
   <fieldset style="border: none; margin: 0;">
-    <legend><strong>Choisir l’aspect :</strong></legend>
-    <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
-    <label><input type="radio" name="aspect" value="matériel" checked> matériel</label><br>
-    <label><input type="radio" name="aspect" value="professionnel" checked> professionnel</label><br>
-    <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
-    <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
-  </fieldset>
+  <legend><strong>Choisir l’aspect :</strong></legend>
+  <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
+  <label><input type="radio" name="aspect" value="matériel"> Matériel</label><br>
+  <label><input type="radio" name="aspect" value="professionnel"> Professionnel</label><br>
+  <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
+  <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
+</fieldset>
 
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
   <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
+  <button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
 </div>
   <div style="margin-top: 2rem;">
   <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
@@ -211,7 +212,10 @@ function tirage7Cartes() {
 
     affichage.appendChild(div);
   });
-}
+
+    document.getElementById("btnSynthese").style.display = "inline-block";
+  }
+
   function ajouterUneCarte(estTirageInitial = false) {
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
@@ -258,10 +262,60 @@ function tirage7Cartes() {
   function réinitialiser() {
   location.reload(); // Recharge la page pour repartir de zéro
 }
+   // Fonction pour générer le résumé des 7 cartes, structuré en 3 phases, puis une synthèse guidante
+function afficherSynthese7Cartes() {
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+
+  if (cartesTirees.length < 7) {
+    alert("Le tirage doit comporter 7 cartes pour générer cette synthèse.");
+    return;
+  }
+
+  const phrases = cartesTirees.map(({ carte, sens }) => {
+    const contenu = carte[sens]?.[aspect];
+    let texte = "(Message absent)";
+
+    if (typeof contenu === "object" && contenu.texte) {
+      texte = contenu.texte.trim().split(".")[0] + ".";
+    } else if (typeof contenu === "string") {
+      texte = contenu.trim().split(".")[0] + ".";
+    }
+
+    return `${carte.nom} (${sens}) → ${texte}`;
+  });
+
+  let resume = "--- Synthèse du tirage ---\n\n";
+  resume += "➤ Influences de départ :\n";
+  resume += phrases.slice(0, 2).join("\n") + "\n\n";
+  resume += "➤ Dynamique actuelle :\n";
+  resume += phrases.slice(2, 5).join("\n") + "\n\n";
+  resume += "➤ Évolution possible :\n";
+  resume += phrases.slice(5, 7).join("\n") + "\n\n";
+
+  const synthese = genererSyntheseGuidante(cartesTirees, aspect);
+  resume += `→ Synthèse guidée :\n\n${synthese}`;
+
+  document.getElementById("contenuSynthese").innerText = resume;
+  document.getElementById("syntheseModal").style.display = "flex";
+}
+
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
+  document.getElementById("btnSynthese").onclick = afficherSynthese7Cartes;
 };
 </script>
+  <!-- Boîte modale -->
+<div id="syntheseModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 2rem; max-width: 600px; border-radius: 12px; position: relative;">
+    <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
+    <h2>Synthèse Guidante</h2>
+    <div id="contenuSynthese"></div>
+  </div>
+</div>
+  <script src="data/synthese.js"></script>
+</body>
+</html>
 </body>
 </html>
