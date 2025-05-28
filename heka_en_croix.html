@@ -103,13 +103,13 @@ button:hover {
   <h1>Tirage en croix de l'Oracle Heka</h1>
  <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
   <fieldset style="border: none; margin: 0;">
-    <legend><strong>Choisir l’aspect :</strong></legend>
-   <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
-    <label><input type="radio" name="aspect" value="matériel" checked> matériel</label><br>
-    <label><input type="radio" name="aspect" value="professionnel" checked> professionnel</label><br>
-    <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
-    <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
-  </fieldset>
+  <legend><strong>Choisir l’aspect :</strong></legend>
+  <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
+  <label><input type="radio" name="aspect" value="matériel"> Matériel</label><br>
+  <label><input type="radio" name="aspect" value="professionnel"> Professionnel</label><br>
+  <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
+  <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
+</fieldset>
 
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
@@ -121,6 +121,10 @@ button:hover {
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
 </div>
  <div id="resultats" style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto auto; gap: 1rem; justify-items: center; margin-top: 2rem;"></div>
+
+   <!-- Bouton pour afficher la synthèse -->
+<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
+  
   <p>Ce tirage permet une lecture en croix intérieure pour révéler ce qui soutient, ce qui bloque, ce qui est caché… et ce qui éclaire la voie.</p>
   <ul>
     <li>la carte de gauche, ce qui soutient</li>
@@ -230,6 +234,8 @@ function tirerLesCartes() {
     affichage.appendChild(div);
   });
 }
+   document.getElementById("btnSynthese").style.display = "inline-block";
+  }
 
 function ajouterUneCarte() {
   if (!jeuPrepare) {
@@ -275,6 +281,28 @@ function styleCarte(el) {
   el.style.textAlign = "center";
   el.style.margin = "0.5rem";
 }
+   function afficherSyntheseCroix() {
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+
+  const question = document.getElementById("question")?.value || "";
+  const prenom = "ce tirage"; // mode "lien" pour le tirage en croix
+  const mode = "lien";
+
+  if (cartesTirees.length < 5) {
+    alert("Veuillez tirer cinq cartes pour générer la synthèse.");
+    return;
+  }
+
+  const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
+
+  const resume = `--- Synthèse guidée du tirage en croix ---\n\n${synthese}`;
+
+  document.getElementById("contenuSynthese").innerText = resume;
+  document.getElementById("syntheseModal").style.display = "flex";
+}
+   function fermerSynthese() {
+    document.getElementById("syntheseModal").style.display = "none";
+  }
 function réinitialiser() {
   location.reload();
 }
@@ -282,7 +310,24 @@ function réinitialiser() {
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
+  document.getElementById("btnSynthese").onclick = afficherSynthese3Cartes;
 };
+   
 </script>
+
+<div id="syntheseModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
+    <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
+    <h2>Synthèse Guidante</h2>
+    <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
+    <div style="text-align: center;">
+      <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Fermer
+      </button>
+    </div>
+  </div>
+</div>
+  <script src="data/synthese.js"></script>
 </body>
 </html>
