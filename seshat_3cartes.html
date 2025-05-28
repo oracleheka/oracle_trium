@@ -146,12 +146,6 @@ button:hover {
   let cartesTirees = [];
   let jeuPrepare = false;
 
-  async function chargerCartes() {
-    const reponse = await fetch("https://oracleheka.github.io/oracle_trium/data/seshat.json");
-    toutesLesCartes = await reponse.json();
-    cartesDisponibles = [...toutesLesCartes];
-  }
-
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -216,8 +210,9 @@ button:hover {
 
       affichage.appendChild(div);
     });
-  document.getElementById("btnSynthese").style.display = "inline-block";
-  }}
+
+    document.getElementById("btnSynthese").style.display = "inline-block";
+  }
 
   function ajouterUneCarte(estTirageInitial = false) {
     if (!jeuPrepare) {
@@ -262,8 +257,8 @@ button:hover {
       alert("Tirage complet : 3 cartes initiales + 3 couvertures.");
     }
   }
-
-function afficherSynthese3Cartes() {
+   
+  function afficherSynthese3Cartes() {
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
 
   const question = document.getElementById("question")?.value || "";
@@ -301,11 +296,9 @@ function afficherSynthese3Cartes() {
   function fermerSynthese() {
     document.getElementById("syntheseModal").style.display = "none";
   }
-
    function réinitialiser() {
     location.reload();
   }
-   
   window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
