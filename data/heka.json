@@ -5,45 +5,45 @@
         "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_01_origine.png",
             "endroit": {
                 "personnalité": {
-                    "texte": "Une personne rayonnante, créative et profondément inspirée. Elle sait ce qu’elle veut et possède une force intérieure qui l’amène naturellement à initier, guider et faire naître de nouveaux élans.",
+                    "texte": "Personnalité rayonnante, encline à initier, créer, prendre les devants. L’énergie de départ est disponible, encore fraîche et structurant",
                     "meta": ["ouverture"]
                 },
                 "affectif": {
-                    "texte": "Une relation pleine de promesses naît ou renaît, portée par une énergie sincère et lumineuse. Le lien se construit sur une base claire, saine, tournée vers l’avenir.",
+                    "texte": "Période de mise en mouvement intérieure. Besoin de poser un cadre sincère pour s’ouvrir à l’autre sans se perdre.",
                     "meta": ["ouverture"]
                 },
                 "matériel": {
-                    "texte": "Un projet prend vie avec clarté et détermination. L’élan est juste, l’inspiration solide : tout est en place pour que la concrétisation suive l’intuition.",
+                    "texte": "Volonté d’agir ou de commencer un projet. L’élan est là, mais demande à être canalisé pour aboutir.",
                     "meta": ["ouverture"]
                 },
                 "professionnel": {
-                    "texte": "Une nouvelle dynamique professionnelle émerge. L’esprit d’initiative est fort, les capacités sont alignées avec une vision claire. C’est le début d’un cycle prometteur.",
+                    "texte": "Phase de lancement ou d’émergence. Capacité à porter un projet, à poser une vision claire.",
                     "meta": ["ouverture"]
                 },
                 "spirituel": { 
-                    "texte": "Une impulsion profonde pousse à entamer un chemin spirituel. La lumière intérieure guide avec clarté, révélant une volonté sincère d’évoluer et de s’élever.",
+                    "texte": "Impulsion spirituelle en germe. Un début d’éveil, porté par une énergie sincère mais encore fragile.",
                     "meta": ["ouverture"]
                 }
             },
             "inversé": {
                 "personnalité": {
-                    "texte": "Une personne en perte de repères, dont le potentiel créatif est momentanément obscurci. Elle doute d’elle-même, freine ses élans et peine à incarner ce qu’elle porte en elle.",
+                    "texte": "Blocage créatif ou difficulté à initier. La clarté intérieure est voilée, l’élan premier contrarié.",
                     "meta": ["tension"]
                 },
                 "affectif": { 
-                    "texte": "Un lien flou ou instable empêche le véritable démarrage d’une relation. L’engagement manque, ou les intentions restent voilées, freinant la construction du lien.",
+                    "texte": "Doute sur la capacité à s’ouvrir. Un besoin de recul empêche le lien d’émerger pleinement.",
                     "meta": ["tension"]
                 },
                 "matériel": {
-                    "texte": "Des difficultés empêchent la mise en œuvre d’un projet. L’élan initial est là, mais des peurs ou des obstacles extérieurs freinent sa matérialisation.",
+                    "texte": "Élan présent mais contrarié par un manque de structure ou de confiance. L’initiative est freinée.",
                     "meta": ["tension"]
                 },
                 "professionnel": {
-                    "texte": "Un sentiment d’immobilisme ou de confusion freine l’élan professionnel. La direction n’est pas claire, et les décisions tardent à être prises.",
+                    "texte": "Manque d’élan ou de direction. Besoin de retrouver l’alignement avant d’agir.",
                     "meta": ["tension"]
                 },
                 "spirituel": {
-                    "texte": "Un désalignement intérieur crée une perte de sens. La lumière est toujours là, mais elle reste inaccessible tant que la volonté de s’ouvrir à l’inconnu est bloquée.",
+                    "texte": "Perte de repère ou refus d’un éveil naissant. La lumière est là mais inaccessible.",
                     "meta" : ["tension"]
                 }
             }
@@ -259,7 +259,7 @@
                 },
                 "matériel": {
                     "texte": "Une période propice aux projets collectifs et aux associations solides. L’union des forces permet d’aboutir à des résultats concrets, durables et justes pour tous.",
-                    "meta": ["partage", "association", "projet collectif"]
+                    "meta": ["ouverture"]
                 },
                 "professionnel": {
                     "texte": "Des collaborations harmonieuses favorisent la réussite. La coopération sincère, la complémentarité des talents et la vision commune créent un environnement propice à l’épanouissement.",
@@ -553,7 +553,7 @@
                 },
                 "matériel": {
                     "texte": "Les choix sont pesés avec soin. La personne prend le temps d’analyser avant d’agir, ce qui lui permet de poser des bases solides et d’avancer avec lucidité.",
-                    "meta": ["ouvertur"]
+                    "meta": ["ouverture"]
                 },
                 "professionnel": {
                     "texte": "Une posture professionnelle stable et mesurée. La personne agit avec responsabilité, sait conseiller ou guider, et avance avec une vision claire de ses objectifs.",
@@ -1100,7 +1100,7 @@
                 },
                 "spirituel": {
                     "texte": "La voie semble égarée sous un excès de questionnements. L’esprit cherche la vérité mais reste piégé dans une boucle mentale.",
-                    "meta": ["quête confuse", "surcharge mentale", "voile spirituel"]
+                    "meta": ["tension"]
                 }
             },
             "inversé": {
@@ -1367,7 +1367,7 @@
                 },
                 "spirituel": {
                     "texte": "L’initiation spirituelle reste incomplète. Une résistance intérieure empêche l’accès à une nouvelle vibration de conscience. Le seuil est là, mais encore non franchi.",
-                    "meta": ["résistance spirituelle", "incomplétude", "seuil non franchi"]
+                    "meta": ["tension"]
                 }
             }
         },
@@ -1906,7 +1906,7 @@
                 },
                 "spirituel": {
                     "texte": "L’accomplissement spirituel semble lointain. Un désalignement intérieur freine l’évolution. Revenir à l’essentiel, sans viser la perfection, permet de retrouver le fil.",
-                    "meta": ["désalignement spirituel", "frein à l’évolution", "retour à l’essentiel"]
+                    "meta": ["tension"]
                 }
             }
         },
@@ -2121,7 +2121,7 @@
                 },
                 "matériel": {
                     "texte": "Après des instabilités, une période de calme s’installe. La personne peut se recentrer sur ses besoins réels et consolider ses acquis. Elle retrouve un équilibre qui lui permet de mieux gérer ses ressources.",
-                    "meta": ["overture"]
+                    "meta": ["ouverture"]
                 },
                 "professionnel": {
                     "texte": "Un moment de pause bénéfique dans la vie professionnelle. La personne se donne le droit de souffler, de réfléchir, et d’envisager la suite avec plus de clarté. Elle retrouve son énergie avant un nouveau cycle.",
@@ -2441,7 +2441,7 @@
                 },
                 "professionnel": {
                     "texte": "Une perte de repères nuit aux décisions professionnelles. L’orientation stratégique devient floue, empêchant tout progrès significatif.",
-                    "meta": ["tensions"]
+                    "meta": ["tension"]
                 },
                 "spirituel": {
                     "texte": "Une désorientation spirituelle empêche toute progression intérieure. Tant que la confusion n’est pas reconnue, il reste difficile de se réaligner avec une vérité profonde.",
@@ -3141,7 +3141,7 @@
         "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_65_tension.png",
             "endroit": {
                 "personnalité": {
-                    "texte": "La personne est prise entre deux forces intérieures : d’un côté, le besoin de stabilité, d’harmonie, de continuité (6), de l’autre, une agitation croissante, un besoin de bouger, de libérer quelque chose (5). Elle tient encore, mais le corps, le cœur ou l’âme commencent à parler. Geb la retient au sol, mais Uranus commence à remuer sous ses pieds. Maât pèse silencieusement : “Est-ce encore juste ?”",
+                    "texte": "La personne est prise entre deux forces intérieures : d’un côté, le besoin de stabilité, d’harmonie, de continuité, de l’autre, une agitation croissante, un besoin de bouger, de libérer quelque chose. Elle tient encore, mais le corps, le cœur ou l’âme commencent à parler. Geb la retient au sol, mais Uranus commence à remuer sous ses pieds. Maât pèse silencieusement : “Est-ce encore juste ?”",
                     "meta": ["tension"]
                 },
                 "affectif": {
