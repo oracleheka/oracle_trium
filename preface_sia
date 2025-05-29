@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Préface du livre de l’Oracle Sia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Préface de l’oracle Sia : un chemin de silence et de clarté intérieure. Découvrez sa fonction symbolique, ses cartes, et sa résonance dans la trilogie initiatique Heka / Sia / Seshat.">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f9f6f1;
+      color: #2f2f2f;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.7;
+    }
+    h1 {
+      text-align: center;
+      color: #4a2e1e;
+    }
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .retour {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .retour a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #3b2618;
+      font-weight: bold;
+    }
+    .retour a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Préface de l’oracle Sia</h1>
+  <section>
+    <p><strong>Sia est un oracle du silence.</strong><br>
+    Il ne parle pas de l’avenir, ni des événements visibles. Il ne cherche pas à conseiller, orienter ou prédire. Il révèle.</p>
+
+    <p>Il révèle ce qui est là, sous la surface, dans les strates profondes de la conscience. Il agit comme une mémoire vibratoire : celle qui demeure lorsque tout s’est tu. Quand les gestes sont passés, que les émotions sont retombées, ce qu’il reste — c’est Sia qui le montre.</p>
+
+    <p>Sia, dans l’Égypte ancienne, était l’un des noms de la conscience créatrice. Non pas une pensée volontaire, mais une lucidité sacrée, une clarté inscrite dans la matière même. C’est cette conscience-là que cet oracle cherche à éveiller — non en parlant, mais en montrant.</p>
+
+    <p>Deuxième pilier de la trilogie initiatique Heka / Sia / Seshat, Sia se tient à mi-chemin : entre le souffle qui crée (Heka) et la mémoire qui inscrit (Seshat), il observe, accueille, enregistre ce qui vibre, même lorsque rien ne semble se dire.</p>
+
+    <p>Composé de 85 cartes, réparties en 9 familles vibratoires selon les lois numérologiques, chaque carte est rattachée à une planète, une divinité égyptienne, et à une dynamique intérieure. Ces cartes ne décrivent pas des faits, mais des états. Elles n’apportent pas de réponses : elles offrent un miroir.</p>
+
+    <p><strong>Sia est un oracle de seuil.</strong> Il parle de la transition, du regard intérieur, du lien entre visible et invisible. Il s’adresse à ceux qui sont prêts à entendre sans bruit, à voir sans projection, à ressentir sans interprétation hâtive.</p>
+
+    <p>Ce livre n’est pas un manuel. C’est un chemin d’écoute. À travers ces cartes, ce n’est pas un destin qu’on lit, mais une présence. Une vibration. Une mémoire encore vivante.</p>
+
+    <p>Sia est un témoin. Il ne te dit pas qui tu es. Il te montre ce qui, en toi, le sait déjà.</p>
+  </section>
+
+  <div class="retour">
+    <a href="decouverte.html">← Retour à la page Découverte</a>
+    <a href="index.html">🏠 Accueil</a>
+  </div>
+</body>
+</html>
