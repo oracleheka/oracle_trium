@@ -199,13 +199,13 @@ function tirage7Cartes() {
     const sens = Math.random() < 0.5 ? "endroit" : "inversé";
     cartesTirees.push({ carte: carte, sens: sens });
 
-    const texte = carte[sens][aspect]?.texte || "(Message manquant)";
+    const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
     const div = document.createElement("div");
 
     div.innerHTML = `
-      <h3>${carte.nom} (${sens})</h3>
-      <img src="${carte.image}" alt="${carte.nom}" style="width:150px"><br>
-      <p>${texte}</p>
+      <h3>${carte.id} : (${carte.nom}) : (${sens})</h3>
+      <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
+      <p>${interpretation}</p>
     `;
 
     div.style.padding = "1rem";
@@ -246,9 +246,9 @@ function tirage7Cartes() {
 
   const div = document.createElement("div");
   div.innerHTML = `
-    <h3>Carte supplémentaire : ${carte.nom} (${sens})</h3>
-    <img src="${carte.image}" alt="${carte.nom}" style="width:150px"><br>
-    <p>${interpretation}</p>
+    <h3>Carte supplémentaire :${carte.id} : (${carte.nom}) : (${sens})</h3>
+      <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
+      <p>${interpretation}</p>
   `;
 
   div.style.padding = "1rem";
@@ -289,7 +289,7 @@ function tirage7Cartes() {
       texte = contenu.trim().split(".")[0] + ".";
     }
 
-    return `${carte.nom} (${sens}) → ${texte}`;
+    return `${carte.id} : (${carte.nom}) : (${sens}) → ${texte}`;
   });
 
   let resume = "--- Synthèse du tirage ---\n\n";
