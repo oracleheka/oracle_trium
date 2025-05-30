@@ -204,7 +204,7 @@ function tirage7Cartes() {
 
     div.innerHTML = `
       <h3>${carte.nom} (${sens})</h3>
-      <img src="${carte.image}" alt="${carte.nom}" style="width:150px"><br>
+      <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
       <p>${texte}</p>
     `;
 
@@ -247,7 +247,7 @@ function tirage7Cartes() {
   const div = document.createElement("div");
   div.innerHTML = `
     <h3>Carte supplémentaire : ${carte.nom} (${sens})</h3>
-    <img src="${carte.image}" alt="${carte.nom}" style="width:150px"><br>
+    <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
     <p>${interpretation}</p>
   `;
 
