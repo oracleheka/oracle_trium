@@ -241,18 +241,16 @@ function tirerLesCartes() {
       const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
       const div = document.createElement("div");
       div.innerHTML = `
-        <strong>${carte.nom}</strong> (${sens})<br>
-        <img src="${carte.image}" alt="${carte.nom}" style="width:100px"><br>
+        <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
+        <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:100px"><br>
         <p style="margin-top:0.5rem;">${interpretation}</p>
       `;
-
       styleCarte(div);
       ligne.appendChild(div);
       idx++;
     }
   });
-  // ✅ Affiche le bouton synthèse après le tirage complet
-document.getElementById("btnSynthese").style.display = "inline-block";
+  document.getElementById("btnSynthese").style.display = "inline-block";
 }
 
 function ajouterUneCarte() {
@@ -273,30 +271,18 @@ function ajouterUneCarte() {
 
   const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-  const aspect = document.querySelector('input[name="aspect"]:checked').value; // ✅ ICI
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
   cartesTirees.push({ carte: carte, sens: sens });
 
-  const texte = carte[sens][aspect]?.texte || "(Message manquant)";
-
-  const affichageZone = document.getElementById("resultats");
+  const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
   const div = document.createElement("div");
   div.innerHTML = `
-    <strong>Carte supplémentaire :</strong> ${carte.nom} (${sens})<br>
-    <img src="${carte.image}" alt="${carte.nom}" style="width:100px"><br>
-    <p style="margin-top:0.5rem;">${texte}</p>
+    <strong>Carte supplémentaire :</strong> ${carte.id} : (${carte.nom}) : (${sens})<br>
+    <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:100px"><br>
+    <p style="margin-top:0.5rem;">${interpretation}</p>
   `;
   styleCarte(div);
-  affichageZone.appendChild(div);
-}
-
-function styleCarte(el) {
-  el.style.padding = "1rem";
-  el.style.border = "1px solid #ccc";
-  el.style.borderRadius = "8px";
-  el.style.backgroundColor = "#fdfdfd";
-  el.style.minWidth = "100px";
-  el.style.textAlign = "center";
-  el.style.marginTop = "0.5rem";
+  document.getElementById("resultats").appendChild(div);
 }
 
 function afficherSyntheseTetraktys() {
@@ -316,36 +302,37 @@ function afficherSyntheseTetraktys() {
     { titre: "4. Manifestation", nb: 4 }
   ];
 
-  let contenu = "--- Synthèse du tirage Tétraktys ---\n\n";
+  let contenu = "<h3>--- Synthèse du tirage Tétraktys ---</h3>";
   let index = 0;
 
   niveaux.forEach(niveau => {
-    contenu += `→ ${niveau.titre}\n`;
-
+    contenu += `<strong>→ ${niveau.titre}</strong><br>`;
     for (let i = 0; i < niveau.nb; i++) {
       const { carte, sens } = cartesTirees[index];
-      const interpretation = carte[sens]?.[aspect]?.texte || "(Message manquant)";
-      const extrait = interpretation.split(".")[0].trim() + ".";
-      contenu += `• ${carte.nom} (${sens}) → ${extrait}\n`;
+      const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
+      contenu += `
+        <div>
+          <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
+          <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:100px"><br>
+          <p style="margin-top:0.5rem;">${interpretation}</p>
+        </div>
+      `;
       index++;
     }
-
-    contenu += "\n";
+    contenu += "<hr>";
   });
 
-  // Synthèse globale guidée
   const synthese = genererSyntheseGuidante(cartesTirees, aspect, {
     question,
     prenom,
     mode: "normal"
   });
 
-  contenu += `→ Synthèse guidée :\n\n${synthese}`;
+  contenu += `<strong>→ Synthèse guidée :</strong><p>${synthese}</p>`;
 
-  document.getElementById("contenuSynthese").innerText = contenu;
+  document.getElementById("contenuSynthese").innerHTML = contenu;
   document.getElementById("syntheseModal").style.display = "flex";
 }
-
    
 function fermerSynthese() {
   document.getElementById("syntheseModal").style.display = "none";
