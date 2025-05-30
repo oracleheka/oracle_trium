@@ -303,40 +303,36 @@ function styleCarte(el) {
   const carteCentre = cartesTirees[4];
 
   // Construction du résumé lisible
-  const resume = 
-`--- Synthèse guidée du tirage en croix ---
+  const resumeHTML = `
+<h3>--- Synthèse guidée du tirage en croix ---</h3>
 
-Carte de gauche (Favorable) :
-${carteGauche.carte.id} : (${carteGauche.carte.nom}) : (${carteGauche.sens})
-<img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
-      <p>${interpretation}</p>
-      
-Carte de droite (Opposé) :
-${carteDroite.carte.id} : (${carteDroite.carte.nom}) : (${carteDroite.sens})
-<img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
-      <p>${interpretation}</p>
-      
-Carte du haut (Visible) :
-${carteHaut.carte.id} : (${carteHaut.carte.nom}) : (${carteHaut.sens})
-<img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
-      <p>${interpretation}</p>
-      
-Carte du bas (Résultat) :
-${carteBas.carte.id} : (${carteBas.carte.nom}) : (${carteBas.sens})
-<img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
-      <p>${interpretation}</p>
-      
-Carte du centre (Synthèse) :
-${carteCentre.carte.id} : (${carteCentre.carte.nom}) : (${carteCentre.sens})
-<img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
-      <p>${interpretation}</p>
-      
-→ Synthèse guidée :
+<div><strong>Carte de gauche (Favorable) :</strong><br>
+${carteGauche.carte.id} : (${carteGauche.carte.nom}) : (${carteGauche.sens})<br>
+<img src="${carteGauche.carte.image}" alt="Carte ${carteGauche.carte.id} – ${carteGauche.carte.nom} de l’Oracle Heka" style="width:150px"></div>
 
-${genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode })}`;
+<div><strong>Carte de droite (Opposé) :</strong><br>
+${carteDroite.carte.id} : (${carteDroite.carte.nom}) : (${carteDroite.sens})<br>
+<img src="${carteDroite.carte.image}" alt="Carte ${carteDroite.carte.id} – ${carteDroite.carte.nom} de l’Oracle Heka" style="width:150px"></div>
 
-  document.getElementById("contenuSynthese").innerText = resume;
-  document.getElementById("syntheseModal").style.display = "flex";
+<div><strong>Carte du haut (Visible) :</strong><br>
+${carteHaut.carte.id} : (${carteHaut.carte.nom}) : (${carteHaut.sens})<br>
+<img src="${carteHaut.carte.image}" alt="Carte ${carteHaut.carte.id} – ${carteHaut.carte.nom} de l’Oracle Heka" style="width:150px"></div>
+
+<div><strong>Carte du bas (Résultat) :</strong><br>
+${carteBas.carte.id} : (${carteBas.carte.nom}) : (${carteBas.sens})<br>
+<img src="${carteBas.carte.image}" alt="Carte ${carteBas.carte.id} – ${carteBas.carte.nom} de l’Oracle Heka" style="width:150px"></div>
+
+<div><strong>Carte du centre (Synthèse) :</strong><br>
+${carteCentre.carte.id} : (${carteCentre.carte.nom}) : (${carteCentre.sens})<br>
+<img src="${carteCentre.carte.image}" alt="Carte ${carteCentre.carte.id} – ${carteCentre.carte.nom} de l’Oracle Heka" style="width:150px"></div>
+
+<hr>
+<strong>→ Synthèse guidée :</strong>
+<p>${genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode })}</p>
+`;
+
+document.getElementById("contenuSynthese").innerHTML = resumeHTML;
+      
 }
    function fermerSynthese() {
     document.getElementById("syntheseModal").style.display = "none";
