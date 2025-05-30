@@ -308,19 +308,29 @@ function styleCarte(el) {
 
 Carte de gauche (Favorable) :
 ${carteGauche.carte.id} : (${carteGauche.carte.nom}) : (${carteGauche.sens})
-
+<img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
+      <p>${interpretation}</p>
+      
 Carte de droite (Opposé) :
 ${carteDroite.carte.id} : (${carteDroite.carte.nom}) : (${carteDroite.sens})
-
+<img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
+      <p>${interpretation}</p>
+      
 Carte du haut (Visible) :
 ${carteHaut.carte.id} : (${carteHaut.carte.nom}) : (${carteHaut.sens})
-
+<img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
+      <p>${interpretation}</p>
+      
 Carte du bas (Résultat) :
 ${carteBas.carte.id} : (${carteBas.carte.nom}) : (${carteBas.sens})
-
+<img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
+      <p>${interpretation}</p>
+      
 Carte du centre (Synthèse) :
 ${carteCentre.carte.id} : (${carteCentre.carte.nom}) : (${carteCentre.sens})
-
+<img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
+      <p>${interpretation}</p>
+      
 → Synthèse guidée :
 
 ${genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode })}`;
