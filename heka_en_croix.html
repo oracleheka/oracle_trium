@@ -300,33 +300,40 @@ function styleCarte(el) {
   const carteBas = cartesTirees[3];
   const carteCentre = cartesTirees[4];
 
+  // Ajoute les interprétations pour chaque carte
+  const interpretationGauche = carteGauche.carte[carteGauche.sens][aspect]?.texte || "(Message manquant)";
+  const interpretationDroite = carteDroite.carte[carteDroite.sens][aspect]?.texte || "(Message manquant)";
+  const interpretationHaut = carteHaut.carte[carteHaut.sens][aspect]?.texte || "(Message manquant)";
+  const interpretationBas = carteBas.carte[carteBas.sens][aspect]?.texte || "(Message manquant)";
+  const interpretationCentre = carteCentre.carte[carteCentre.sens][aspect]?.texte || "(Message manquant)";
+
   const resumeHTML = `
     <h3>--- Synthèse guidée du tirage en croix ---</h3>
 
     <div><strong>Carte de gauche (Favorable) :</strong><br>
     ${carteGauche.carte.id} : (${carteGauche.carte.nom}) : (${carteGauche.sens})<br>
     <img src="${carteGauche.carte.image}" alt="Carte ${carteGauche.carte.id} – ${carteGauche.carte.nom} de l’Oracle Heka" style="width:150px"><br>
-    <p>${carteGauche.carte[carteGauche.sens][aspect].texte || "(Message manquant)"}</p></div>
+    <p>${interpretationGauche}</p></div>
 
     <div><strong>Carte de droite (Opposé) :</strong><br>
     ${carteDroite.carte.id} : (${carteDroite.carte.nom}) : (${carteDroite.sens})<br>
     <img src="${carteDroite.carte.image}" alt="Carte ${carteDroite.carte.id} – ${carteDroite.carte.nom} de l’Oracle Heka" style="width:150px"><br>
-    <p>${carteDroite.carte[carteDroite.sens][aspect].texte || "(Message manquant)"}</p></div>
+    <p>${interpretationDroite}</p></div>
 
     <div><strong>Carte du haut (Visible) :</strong><br>
     ${carteHaut.carte.id} : (${carteHaut.carte.nom}) : (${carteHaut.sens})<br>
     <img src="${carteHaut.carte.image}" alt="Carte ${carteHaut.carte.id} – ${carteHaut.carte.nom} de l’Oracle Heka" style="width:150px"><br>
-    <p>${carteHaut.carte[carteHaut.sens][aspect].texte || "(Message manquant)"}</p></div>
+    <p>${interpretationHaut}</p></div>
 
     <div><strong>Carte du bas (Résultat) :</strong><br>
     ${carteBas.carte.id} : (${carteBas.carte.nom}) : (${carteBas.sens})<br>
     <img src="${carteBas.carte.image}" alt="Carte ${carteBas.carte.id} – ${carteBas.carte.nom} de l’Oracle Heka" style="width:150px"><br>
-    <p>${carteBas.carte[carteBas.sens][aspect].texte || "(Message manquant)"}</p></div>
+    <p>${interpretationBas}</p></div>
 
     <div><strong>Carte du centre (Synthèse) :</strong><br>
     ${carteCentre.carte.id} : (${carteCentre.carte.nom}) : (${carteCentre.sens})<br>
     <img src="${carteCentre.carte.image}" alt="Carte ${carteCentre.carte.id} – ${carteCentre.carte.nom} de l’Oracle Heka" style="width:150px"><br>
-    <p>${carteCentre.carte[carteCentre.sens][aspect].texte || "(Message manquant)"}</p></div>
+    <p>${interpretationCentre}</p></div>
 
     <hr>
     <strong>→ Synthèse guidée :</strong>
