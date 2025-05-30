@@ -1,7 +1,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Oracle Heka : Tirage à 7 cartes en ligne – Lecture de l’ego et introspection</title></title>
+  <title>Oracle Heka : Tirage à 7 cartes en ligne – Lecture de l’ego et introspection</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tirage gratuit à 7 cartes avec l’Oracle Heka. Une méthode introspective pour explorer les dynamiques de l’ego et ses mécanismes d’action.">
   <script type="application/ld+json">
@@ -199,7 +199,7 @@ function tirage7Cartes() {
     const sens = Math.random() < 0.5 ? "endroit" : "inversé";
     cartesTirees.push({ carte: carte, sens: sens });
 
-    const texte = carte[sens][aspect]?.texte || "(Message manquant)";
+    const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
     const div = document.createElement("div");
 
     div.innerHTML = `
