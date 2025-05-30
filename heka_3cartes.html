@@ -286,7 +286,8 @@ button:hover {
       texte = contenu.trim().split(".")[0] + ".";
     }
 
-    return `${carte.nom} (${sens}) → ${texte}`;
+    return `${carte.id} : (${carte.nom}) : (${sens}) → ${texte}`;
+    
   });
 
   let resume = "--- Lecture du tirage ---\n\n";
