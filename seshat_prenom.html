@@ -244,9 +244,9 @@ function tirerParPrenom() {
     const div = document.createElement("div");
     div.innerHTML = `
       <strong>Lettre : ${lettre}</strong><br>
-      <strong>${carte.nom}</strong> (${sens})<br>
-      <img src="${carte.image}" alt="${carte.nom}" style="width:100px"><br>
-      <p style="margin-top:0.5rem;">${texte}</p>
+      <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
+      <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Seshat" style="width:100px"><br>
+      <p style="margin-top:0.5rem;">${interpretation}</p>
     `;
     styleCarte(div);
     affichage.appendChild(div);
@@ -291,9 +291,9 @@ function ajouterUneCarte() {
   const div = document.createElement("div");
   div.innerHTML = `
     <strong>Carte supplémentaire</strong><br>
-    <strong>${carte.nom}</strong> (${sens})<br>
-    <img src="${carte.image}" alt="${carte.nom}" style="width:100px"><br>
-    <p style="margin-top:0.5rem;">${texte}</p>
+    <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
+    <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Seshat" style="width:100px"><br>
+    <p style="margin-top:0.5rem;">${interpretation}</p>
   `;
   styleCarte(div);
   affichageZone.appendChild(div);
@@ -309,24 +309,14 @@ function ajouterUneCarte() {
     return;
   }
 
-  // Affichage brut des cartes
+  // Résumé lisible
   let resume = `--- Synthèse du prénom ---\n\n`;
-
   cartesTirees.forEach(({ carte, sens }) => {
-    let msg = "";
-    const contenu = carte[sens]?.[aspect];
-
-    if (typeof contenu === "object" && contenu.texte) {
-      msg = contenu.texte;
-    } else if (typeof contenu === "string") {
-      msg = contenu;
-    }
-
-    const phrase = msg.trim().split(".")[0] + ".";
-    resume += `${carte.nom} (${sens}) → ${phrase}\n`;
+    const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
+    resume += `${carte.id} : (${carte.nom}) : (${sens}) → ${interpretation}\n`;
   });
 
-  // Synthèse guidante globale
+  // Synthèse globale
   const question = document.getElementById("question")?.value || "";
   const mode = "normal";
   const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
