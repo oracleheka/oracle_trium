@@ -245,9 +245,9 @@ function tirerNumerologique() {
       const div1 = document.createElement("div");
       div1.innerHTML = `
         <strong>Identité (${nom})</strong><br>
-        <strong>${carte1.nom}</strong> (${sens1})<br>
-        <img src="${carte1.image}" alt="${carte1.nom}" style="width:100px"><br>
-        <p style="margin-top:0.5rem;">${texte1}</p>
+      <strong>${carte1.id} : (${carte1.nom}) : (${sens1})</strong><br>
+      <img src="${carte1.image}" alt="Carte ${carte1.id} – ${carte1.nom} de l’Oracle Seshat" style="width:100px"><br>
+      <p style="margin-top:0.5rem;">${texte1}</p>
       `;
       styleCarte(div1);
       zone.appendChild(div1);
@@ -255,9 +255,9 @@ function tirerNumerologique() {
       const div2 = document.createElement("div");
       div2.innerHTML = `
         <strong>Chemin (${date})</strong><br>
-        <strong>${carte2.nom}</strong> (${sens2})<br>
-        <img src="${carte2.image}" alt="${carte2.nom}" style="width:100px"><br>
-        <p style="margin-top:0.5rem;">${texte2}</p>
+      <strong>${carte2.id} : (${carte2.nom}) : (${sens2})</strong><br>
+      <img src="${carte2.image}" alt="Carte ${carte2.id} – ${carte2.nom} de l’Oracle Seshat" style="width:100px"><br>
+      <p style="margin-top:0.5rem;">${texte2}</p>
       `;
       styleCarte(div2);
       zone.appendChild(div2);
@@ -285,6 +285,12 @@ function tirerNumerologique() {
     return;
   }
 
+  // Création d’un résumé lisible des deux cartes
+  const resume = cartesTirees.map(({ carte, sens }) => {
+    const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
+    return `${carte.id} : (${carte.nom}) : (${sens}) → ${interpretation}`;
+  }).join("\n");
+     
   const synthese = genererSyntheseGuidante(cartesTirees, aspect, {
     question,
     prenom,
