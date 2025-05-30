@@ -220,17 +220,17 @@ function tirerLesCartes() {
 
   let idx = 0;
   niveaux.forEach(niveau => {
-    const ligne = document.createElement("div");
-    ligne.style.display = "flex";
-    ligne.style.justifyContent = "center";
-    ligne.style.gap = "1rem";
-    ligne.style.marginBottom = "1rem";
-
     const titre = document.createElement("h4");
     titre.textContent = niveau.titre;
     titre.style.textAlign = "center";
     titre.style.width = "100%";
     affichage.appendChild(titre);
+
+    const ligne = document.createElement("div");
+    ligne.style.display = "flex";
+    ligne.style.justifyContent = "center";
+    ligne.style.gap = "1rem";
+    ligne.style.marginBottom = "1rem";
     affichage.appendChild(ligne);
 
     for (let i = 0; i < niveau.nb; i++) {
@@ -240,19 +240,19 @@ function tirerLesCartes() {
 
       const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
       const div = document.createElement("div");
-      div.innerHTML = 
+      div.innerHTML = `
         <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
         <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:100px"><br>
         <p style="margin-top:0.5rem;">${interpretation}</p>
-      ;
+      `;
 
       styleCarte(div);
       ligne.appendChild(div);
       idx++;
     }
   });
-  // ✅ Affiche le bouton synthèse après le tirage complet
-document.getElementById("btnSynthese").style.display = "inline-block";
+
+  document.getElementById("btnSynthese").style.display = "inline-block";
 }
 
 function ajouterUneCarte() {
@@ -273,18 +273,18 @@ function ajouterUneCarte() {
 
   const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-  const aspect = document.querySelector('input[name="aspect"]:checked').value; // ✅ ICI
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
   cartesTirees.push({ carte: carte, sens: sens });
 
-  const texte = carte[sens][aspect]?.texte || "(Message manquant)";
+  const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
 
   const affichageZone = document.getElementById("resultats");
   const div = document.createElement("div");
-  div.innerHTML = 
+  div.innerHTML = `
     <strong>Carte supplémentaire :</strong> ${carte.id} : (${carte.nom}) : (${sens})<br>
     <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:100px"><br>
     <p style="margin-top:0.5rem;">${interpretation}</p>
-  ;
+  `;
   styleCarte(div);
   affichageZone.appendChild(div);
 }
@@ -320,27 +320,26 @@ function afficherSyntheseTetraktys() {
   let index = 0;
 
   niveaux.forEach(niveau => {
-    contenu += → ${niveau.titre}\n;
+    contenu += `→ ${niveau.titre}\n`;
 
     for (let i = 0; i < niveau.nb; i++) {
       const { carte, sens } = cartesTirees[index];
       const interpretation = carte[sens]?.[aspect]?.texte || "(Message manquant)";
       const extrait = interpretation.split(".")[0].trim() + ".";
-      contenu += • ${carte.id} : ${carte.nom} : (${sens}) → ${extrait}\n;
+      contenu += `• ${carte.id} : ${carte.nom} : (${sens}) → ${extrait}\n`;
       index++;
     }
 
     contenu += "\n";
   });
 
-  // Synthèse globale guidée
   const synthese = genererSyntheseGuidante(cartesTirees, aspect, {
     question,
     prenom,
     mode: "normal"
   });
 
-  contenu += → Synthèse guidée :\n\n${synthese};
+  contenu += `→ Synthèse guidée :\n\n${synthese}`;
 
   document.getElementById("contenuSynthese").innerText = contenu;
   document.getElementById("syntheseModal").style.display = "flex";
