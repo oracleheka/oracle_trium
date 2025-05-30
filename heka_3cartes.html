@@ -204,7 +204,7 @@ button:hover {
 
       const div = document.createElement("div");
       div.innerHTML = `
-        <h3>${carte.nom} (${sens})</h3>
+        <h3>${carte.id} : (${carte.nom}) : (${sens})</h3>
         <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
         <p>${interpretation}</p>
       `;
@@ -247,7 +247,7 @@ button:hover {
 
     const div = document.createElement("div");
     div.innerHTML = `
-      <h3>${carte.nom} (${sens})</h3>
+      <h3>${carte.id} : (${carte.nom}) : (${sens})</h3>
       <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
       <p>${interpretation}</p>
     `;
