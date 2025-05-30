@@ -328,7 +328,7 @@ ${carteCentre.carte.id} : (${carteCentre.carte.nom}) : (${carteCentre.sens})<br>
 
 <hr>
 <strong>→ Synthèse guidée :</strong>
-<p>${genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode })}</p>
+<pre style="white-space: pre-wrap;">${genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode })}</pre>
 `;
 
 document.getElementById("contenuSynthese").innerHTML = resumeHTML;
