@@ -1715,7 +1715,7 @@
             }
         },
         {
-        "=id": 36,
+        "id": 36,
         "nom": "Enfermement",
         "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_36_enfermement.png",
             "endroit": {
