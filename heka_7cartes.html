@@ -82,6 +82,25 @@ button:hover {
       color: #666;
       border-top: 1px solid #ccc;
     }
+    /* Ajoute à ton <style> */
+#resultats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+#resultats > div {
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #resultats img {
+    width: 180px;
+  }
+}
   </style>
 </head>
 <body>
