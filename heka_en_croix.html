@@ -29,19 +29,62 @@
   }
   </script>
 
-  <style>
+ <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8f5f2;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    button {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f5f2;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: #f5efe6;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Liens du header */
+header nav a {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem 0.5rem;
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+  font-size: 1rem;
+}
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main */
+main {
+  flex: 1;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  background-color: #e8e0d8; /* ton plus marqué */
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #b8a998; /* bordure plus chaude */
+}
+
+/* Boutons */
+button {
   padding: 0.7rem 1.5rem;
-  background-color: #4a90e2;
+  background-color: #3b6a9a; /* bleu-grisé plus doux */
   color: white;
   border: none;
   border-radius: 8px;
@@ -49,41 +92,27 @@
   cursor: pointer;
 }
 button:hover {
-  background-color: #357abd;
+  background-color: #345b85; /* bleu-grisé plus foncé au survol */
 }
-    header {
-      background-color: #f5efe6;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    header nav a {
-      display: inline-block;
-  padding: 0.75rem 1rem; /* agrandit la zone cliquable */
-  margin: 0.25rem 0.5rem; /* espace entre les liens */
-  text-decoration: none;
-  color: #444;
-  font-weight: bold;
-  font-size: 1rem; /* assure lisibilité */
-    }
-    header nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      flex: 1;
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    footer {
-      background-color: #f0e9e0;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      border-top: 1px solid #ccc;
-    }
+
+/* Cadres des cartes */
+#resultats > div {
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  border: 1px solid #b8a998; /* bordure beige/brun plus chaude */
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Ajustement pour PC */
+@media (min-width: 768px) {
+  #resultats img {
+    width: 180px;
+  }
+}
   </style>
 </head>
 <body>
