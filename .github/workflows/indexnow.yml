@@ -1,0 +1,39 @@
+name: Notify IndexNow (only modified HTML pages)
+
+on:
+  push:
+    branches:
+      - main  # adapte si tu as une autre branche de prod
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get list of changed HTML files
+        id: get_changes
+        run: |
+          echo "Recherche des pages HTML modifiées..."
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '.html$' || true)
+          echo "Fichiers modifiés : $CHANGED_FILES"
+          URLS=$(echo "$CHANGED_FILES" | sed 's|^|https://oracleheka.github.io/oracle_trium/|g' | jq -R -s -c 'split("\n")[:-1]')
+          echo "URLS JSON : $URLS"
+          echo "urls=$URLS" >> $GITHUB_OUTPUT
+
+      - name: Notify IndexNow
+        if: steps.get_changes.outputs.urls != "[]"
+        run: |
+          echo "Envoi des pages modifiées à Bing..."
+          curl -X POST "https://api.indexnow.org/indexnow" \
+          -H "Content-Type: application/json" \
+          -d "{
+            \"host\": \"oracleheka.github.io\",
+            \"key\": \"94e5ba5ecaa5405a84176494f03fe0b0\",
+            \"keyLocation\": \"https://oracleheka.github.io/oracle_trium/94e5ba5ecaa5405a84176494f03fe0b0.txt\",
+            \"urlList\": ${{
+              steps.get_changes.outputs.urls
+            }}
+          }"
