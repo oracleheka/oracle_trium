@@ -24,7 +24,7 @@ jobs:
           echo "urls=$URLS" >> $GITHUB_OUTPUT
 
       - name: Notify IndexNow
-        if: steps.get_changes.outputs.urls != "[]"
+        if: steps.get_changes.outputs.urls != '[]'
         run: |
           echo "Envoi des pages modifiées à Bing..."
           curl -X POST "https://api.indexnow.org/indexnow" \
