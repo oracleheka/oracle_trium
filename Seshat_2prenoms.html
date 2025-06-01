@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tirage entre deux prénoms – Oracle Seshat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tirage gratuit entre deux prénoms avec l’Oracle Seshat : une méthode symbolique et introspective pour explorer les dynamiques relationnelles.">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f5f2;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #f5efe6;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header nav a {
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      margin: 0.25rem 0.5rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      flex: 1;
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    footer {
+      background-color: #e8e0d8;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #b8a998;
+    }
+    #burgerBtn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #333;
+    }
+    #burgerBtn:hover {
+      color: #000;
+    }
+    @media (max-width: 768px) {
+      #burgerBtn {
+        display: block;
+      }
+      header nav {
+        display: none;
+        flex-direction: column;
+        background: #f5efe6;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+      }
+      header nav.show {
+        display: flex;
+      }
+    }
+    button {
+      padding: 0.7rem 1.5rem;
+      background-color: #3b6a9a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #345b85;
+    }
+    #resultats > div {
+      flex: 1 1 250px;
+      max-width: 300px;
+      text-align: center;
+      border: 1px solid #b8a998;
+      border-radius: 8px;
+      background-color: #fdfdfd;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <button id="burgerBtn" aria-label="Menu">☰</button>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="methodes.html">Méthodes de Tirages</a>
+    <a href="heka.html">Oracle Heka</a>
+    <a href="sia.html">Oracle Sia</a>
+    <a href="seshat.html">Oracle Seshat</a>
+    <a href="decouverte.html">Découverte</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Tirage entre deux prénoms</h1>
+
+  <fieldset style="border: none; margin: 1rem 0;">
+    <legend><strong>Choisir l’aspect :</strong></legend>
+    <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
+    <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
+    <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
+  </fieldset>
+
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirageCroise()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button onclick="réinitialiser()">Réinitialiser</button>
+
+  <div style="margin-top: 1rem;">
+    <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
+    <input type="text" id="question" style="width:100%; max-width:600px; margin:0.5rem 0;">
+    <label for="prenom1"><strong>Prénom 1 :</strong></label><br>
+    <input type="text" id="prenom1" style="width:100%; max-width:600px; margin:0.5rem 0;">
+    <label for="prenom2"><strong>Prénom 2 :</strong></label><br>
+    <input type="text" id="prenom2" style="width:100%; max-width:600px; margin:0.5rem 0;">
+  </div>
+
+  <div id="resultats" style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;"></div>
+  <button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
+
+  <p>Chaque lettre de chaque prénom reçoit une carte. Ce tirage met en lumière les énergies et blocages relationnels propres à la rencontre de ces deux prénoms :</p>
+<ul>
+  <li>Attirance / Opposition / Résonance</li>
+  <li>Dynamique consciente / Inconsciente</li>
+  <li>Zones d'ombre / Zones de lumière</li>
+</ul>
+<p>L’Oracle Seshat agit ici comme un miroir symbolique : il révèle les points de tension, les zones de silence, et les ouvertures possibles dans la relation entre ces deux prénoms.</p>
+</main>
+
+<footer>
+  Produit par <strong>OracleHeka</strong> —
+  <a href="mentions-legales.html">Mentions légales</a> —
+  <a href="mailto:heka.sia.seshat@gmail.com">Contact</a> -
+  <a href="faq.html">FAQ</a>
+</footer>
+
+<script>
+let toutesLesCartes = [];
+let cartesDisponibles = [];
+let cartesTirees = [];
+let jeuPrepare = false;
+
+async function chargerCartes() {
+  const reponse = await fetch("https://oracleheka.github.io/oracle_trium/data/seshat.json");
+  toutesLesCartes = await reponse.json();
+  cartesDisponibles = [...toutesLesCartes];
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+async function melangerEtCouper() {
+  if (toutesLesCartes.length === 0) {
+    await chargerCartes();
+  }
+  cartesDisponibles = [...toutesLesCartes];
+  shuffle(cartesDisponibles);
+  jeuPrepare = true;
+  document.getElementById("tirerBtn").disabled = false;
+  alert("Le jeu a été mélangé et coupé !");
+}
+
+function tirageCroise() {
+  const nom1 = document.getElementById("prenom1").value.trim().toUpperCase();
+  const nom2 = document.getElementById("prenom2").value.trim().toUpperCase();
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+  const affichage = document.getElementById("resultats");
+  affichage.innerHTML = "";
+  cartesTirees = [];
+
+  if (!nom1 || !nom2) {
+    alert("Veuillez entrer les deux prénoms.");
+    return;
+  }
+
+  const nbLettres = Math.max(nom1.length, nom2.length);
+  if (cartesDisponibles.length < nbLettres * 2) {
+    alert("Pas assez de cartes !");
+    return;
+  }
+
+  for (let i = 0; i < nbLettres; i++) {
+    if (i < nom1.length) {
+      const carte1 = cartesDisponibles.shift();
+      const sens1 = Math.random() < 0.5 ? "endroit" : "inversé";
+      cartesTirees.push({ prenom: nom1, lettre: nom1[i], carte: carte1, sens: sens1 });
+      affichage.appendChild(creerCarteDiv(nom1, nom1[i], carte1, sens1, aspect));
+    }
+    if (i < nom2.length) {
+      const carte2 = cartesDisponibles.shift();
+      const sens2 = Math.random() < 0.5 ? "endroit" : "inversé";
+      cartesTirees.push({ prenom: nom2, lettre: nom2[i], carte: carte2, sens: sens2 });
+      affichage.appendChild(creerCarteDiv(nom2, nom2[i], carte2, sens2, aspect));
+    }
+  }
+  document.getElementById("btnSynthese").style.display = "inline-block";
+}
+
+function creerCarteDiv(prenom, lettre, carte, sens, aspect) {
+  const div = document.createElement("div");
+  div.innerHTML = `<strong>${prenom} - Lettre ${lettre}</strong><br>
+    <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
+    <img src="${carte.image}" style="width:100px"><br>
+    <p>${carte[sens][aspect]?.texte || "(Message manquant)"}</p>`;
+  styleCarte(div);
+  return div;
+}
+
+function styleCarte(el) {
+  el.style.padding = "1rem";
+  el.style.border = "1px solid #ccc";
+  el.style.borderRadius = "8px";
+  el.style.backgroundColor = "#fdfdfd";
+  el.style.textAlign = "center";
+}
+
+function afficherSynthese2Prenoms() {
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+  const nom1 = document.getElementById("prenom1").value.trim().toUpperCase();
+  const nom2 = document.getElementById("prenom2").value.trim().toUpperCase();
+  const question = document.getElementById("question").value.trim();
+  
+  if (!nom1 || !nom2) {
+    alert("Veuillez entrer les deux prénoms.");
+    return;
+  }
+
+  let resume = `--- Lien entre ${nom1} et ${nom2} ---\n\n`;
+  let cartesPrenom1 = [];
+  let cartesPrenom2 = [];
+  let zoneSilencieuse = [];
+
+  let index = 0;
+  const nbLettres = Math.max(nom1.length, nom2.length);
+  for (let i = 0; i < nbLettres; i++) {
+    let carteP1 = null;
+    let carteP2 = null;
+
+    if (i < nom1.length && index < cartesTirees.length) {
+      carteP1 = cartesTirees[index++];
+      cartesPrenom1.push({ carte: carteP1.carte, sens: carteP1.sens });
+    }
+    if (i < nom2.length && index < cartesTirees.length) {
+      carteP2 = cartesTirees[index++];
+      cartesPrenom2.push({ carte: carteP2.carte, sens: carteP2.sens });
+    }
+
+    if (carteP1 && carteP2) {
+      const texte1 = carteP1.carte[carteP1.sens][aspect]?.texte || "(Message manquant)";
+      const texte2 = carteP2.carte[carteP2.sens][aspect]?.texte || "(Message manquant)";
+      resume += `${carteP1.lettre} (${nom1}) ↔ ${carteP2.lettre} (${nom2})\n`;
+      resume += `→ Carte ${carteP1.carte.id} - ${carteP1.carte.nom} (${carteP1.sens}) [${aspect}]\n→ ${texte1}\n`;
+      resume += `→ Carte ${carteP2.carte.id} - ${carteP2.carte.nom} (${carteP2.sens}) [${aspect}]\n→ ${texte2}\n\n`;
+    } else if (carteP1) {
+      zoneSilencieuse.push(`${carteP1.lettre} (${nom1}) sans miroir → Absence de résonance avec : ${nom2}`);
+    } else if (carteP2) {
+      zoneSilencieuse.push(`${carteP2.lettre} (${nom2}) sans miroir → Absence de résonance avec : ${nom1}`);
+    }
+  }
+
+  if (zoneSilencieuse.length > 0) {
+    resume += `--- Zone silencieuse ---\n\n` + zoneSilencieuse.join("\n") + "\n\n";
+  }
+
+  const toutesLesCartes = [...cartesPrenom1, ...cartesPrenom2];
+  resume += `--- Synthèse individuelle de ${nom1} ---\n\n`;
+  resume += genererSyntheseGuidante(cartesPrenom1, aspect, { question, prenom: nom1 });
+  resume += `\n\n--- Synthèse individuelle de ${nom2} ---\n\n`;
+  resume += genererSyntheseGuidante(cartesPrenom2, aspect, { question, prenom: nom2 });
+  resume += `\n\n→ Synthèse du lien entre ${nom1} et ${nom2} :\n\n`;
+  resume += genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1} et ${nom2}`, mode: "lien" });
+
+  document.getElementById("contenuSynthese").innerText = resume;
+  document.getElementById("syntheseModal").style.display = "flex";
+}
+
+function fermerSynthese() {
+  document.getElementById("syntheseModal").style.display = "none";
+}
+function réinitialiser() {
+  location.reload();
+}
+
+window.onload = function () {
+  document.getElementById("tirerBtn").disabled = true;
+  document.getElementById("ajouterBtn").disabled = true;
+  document.getElementById("btnSynthese").onclick = afficherSynthese2Prenoms;
+};
+
+</script>
+<div id="syntheseModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
+    <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
+    <h2>Synthèse Guidante</h2>
+    <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
+    <div style="text-align: center;">
+      <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Fermer
+      </button>
+    </div>
+  </div>
+</div>
+  <script src="data/synthese.js"></script>
+  <script>
+  const burgerBtn = document.getElementById("burgerBtn");
+  const nav = document.querySelector("header nav");
+
+  burgerBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+</script>
+</body>
+</html>
