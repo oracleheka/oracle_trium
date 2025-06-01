@@ -43,22 +43,22 @@ header {
   background-color: #f5efe6;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Ajoute de l’espace pour le burger */
+  align-items: center;
+  position: relative;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
-/* Liens du header */
-header nav a {
-  display: inline-block;
-  padding: 0.75rem 1rem;
-  margin: 0.25rem 0.5rem;
+    header nav a {
+     display: inline-block;
+  padding: 0.75rem 1rem; /* agrandit la zone cliquable */
+  margin: 0.25rem 0.5rem; /* espace entre les liens */
   text-decoration: none;
   color: #444;
   font-weight: bold;
-  font-size: 1rem;
-}
-header nav a:hover {
-  text-decoration: underline;
+  font-size: 1rem; /* assure lisibilité */
+    }
+    header nav a:hover {
+      text-decoration: underline;
 }
 
 /* Main */
@@ -77,6 +77,39 @@ footer {
   font-size: 0.9rem;
   color: #666;
   border-top: 1px solid #b8a998; /* bordure plus chaude */
+}
+    #burgerBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+    /* Affichage du bouton burger en mobile */
+@media (max-width: 768px) {
+  #burgerBtn {
+    display: block; /* rends le bouton burger visible sur mobile */
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    background: #f5efe6;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  header nav.show {
+    max-height: 500px; /* ajuste à la hauteur de ton menu */
+  }
 }
 
 /* Boutons */
@@ -116,6 +149,8 @@ button:hover {
 <body>
 
 <header>
+   <!-- Bouton menu burger -->
+<button id="burgerBtn" aria-label="Menu">☰</button>
   <nav>
     <a href="index.html">Accueil</a>
     <a href="apropos.html">À propos</a>
@@ -357,5 +392,13 @@ button:hover {
   </div>
 </div>
   <script src="data/synthese.js"></script>
+  <script>
+  const burgerBtn = document.getElementById("burgerBtn");
+  const nav = document.querySelector("header nav");
+
+  burgerBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+</script>
 </body>
 </html>
