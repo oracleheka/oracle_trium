@@ -326,10 +326,10 @@ function afficherSynthese2Prenoms() {
     resume += `--- Zone silencieuse ---\n\n` + zoneSilencieuse.join("\n") + "\n\n";
   }
 
-  // Nettoyage des données
+  // Avant d’appeler la synthèse : filtrer les tableaux pour éviter les undefined
 cartesPrenom1 = cartesPrenom1.filter(c => c && c[0] && c[1]);
 cartesPrenom2 = cartesPrenom2.filter(c => c && c[0] && c[1]);
-const toutesLesCartes = cartesPrenom1.concat(cartesPrenom2);
+const toutesLesCartes = cartesPrenom1.concat(cartesPrenom2).filter(c => c && c[0] && c[1]);
 
 // Synthèses individuelles
 resume += `--- Synthèse individuelle de ${nom1} ---\n\n`;
