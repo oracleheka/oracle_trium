@@ -274,7 +274,6 @@ function afficherSynthese2Prenoms() {
     const texte = carte[sens][aspect]?.texte || "(Message manquant)";
     resume += `${carte.id} : (${carte.nom}) : (${sens}) → ${texte}\n`;
   });
-
   const synthese = genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1} et ${nom2}`, mode: "lien" });
   resume += `\n→ Synthèse guidée :\n\n${synthese}`;
 
