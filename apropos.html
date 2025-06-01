@@ -51,6 +51,39 @@
       color: #666;
       border-top: 1px solid #ccc;
     }  
+    #burgerBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+    /* Affichage du bouton burger en mobile */
+@media (max-width: 768px) {
+  #burgerBtn {
+    display: block; /* rends le bouton burger visible sur mobile */
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    background: #f5efe6;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  header nav.show {
+    max-height: 500px; /* ajuste à la hauteur de ton menu */
+  }
+}
   </style>
   <script type="application/ld+json">
 {
@@ -81,6 +114,8 @@
 <body>
   
 <header>
+   <!-- Bouton menu burger -->
+<button id="burgerBtn" aria-label="Menu">☰</button>
   <nav>
     <a href="index.html">Accueil</a>
     <a href="apropos.html">À propos</a>
@@ -145,5 +180,13 @@ Merci de respecter cette démarche, ses limites, et les personnes qui, comme vou
   <a href="mailto:heka.sia.seshat@gmail.com">Contact</a> -
   <a href="faq.html">FAQ</a>
 </footer>
+  <script>
+  const burgerBtn = document.getElementById("burgerBtn");
+  const nav = document.querySelector("header nav");
+
+  burgerBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+</script>
 </body>
 </html>
