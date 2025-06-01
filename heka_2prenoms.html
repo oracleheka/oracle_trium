@@ -191,7 +191,6 @@ async function melangerEtCouper() {
   shuffle(cartesDisponibles);
   jeuPrepare = true;
   document.getElementById("tirerBtn").disabled = false;
-  document.getElementById("ajouterBtn").disabled = false;
   alert("Le jeu a été mélangé et coupé !");
 }
 
@@ -218,13 +217,13 @@ function tirageCroise() {
     if (i < nom1.length) {
       const carte1 = cartesDisponibles.shift();
       const sens1 = Math.random() < 0.5 ? "endroit" : "inversé";
-      cartesTirees.push({ carte: carte1, sens: sens1 });
+      cartesTirees.push({ prenom: nom1, lettre: nom1[i], carte: carte1, sens: sens1 });
       affichage.appendChild(creerCarteDiv(nom1, nom1[i], carte1, sens1, aspect));
     }
     if (i < nom2.length) {
       const carte2 = cartesDisponibles.shift();
       const sens2 = Math.random() < 0.5 ? "endroit" : "inversé";
-      cartesTirees.push({ carte: carte2, sens: sens2 });
+      cartesTirees.push({ prenom: nom2, lettre: nom2[i], carte: carte2, sens: sens2 });
       affichage.appendChild(creerCarteDiv(nom2, nom2[i], carte2, sens2, aspect));
     }
   }
@@ -249,19 +248,6 @@ function styleCarte(el) {
   el.style.textAlign = "center";
 }
 
-function ajouterUneCarte() {
-  if (!jeuPrepare) {
-    alert("Veuillez d'abord mélanger le jeu.");
-    return;
-  }
-  const aspect = document.querySelector('input[name="aspect"]:checked').value;
-  const carte = cartesDisponibles.shift();
-  const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-  cartesTirees.push({ carte: carte, sens: sens });
-  const affichage = document.getElementById("resultats");
-  affichage.appendChild(creerCarteDiv("Supplémentaire", "?", carte, sens, aspect));
-}
-
 function afficherSynthese2Prenoms() {
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
   const nom1 = document.getElementById("prenom1").value.trim().toUpperCase();
@@ -278,37 +264,31 @@ function afficherSynthese2Prenoms() {
   let cartesPrenom2 = [];
   let zoneSilencieuse = [];
 
+  let index = 0;
   const nbLettres = Math.max(nom1.length, nom2.length);
-
   for (let i = 0; i < nbLettres; i++) {
-    let infos = {};
-    if (i < nom1.length) {
-      const lettre1 = nom1[i];
-      const carte1 = cartesTirees.shift();
-      if (carte1) { // Ajoute ce check !
-        cartesPrenom1.push([carte1.carte.nom, carte1.sens]);
-        infos.P1 = { lettre: lettre1, prenom: nom1, carte: carte1.carte, sens: carte1.sens };
-      }
+    let carteP1 = null;
+    let carteP2 = null;
+
+    if (i < nom1.length && index < cartesTirees.length) {
+      carteP1 = cartesTirees[index++];
+      cartesPrenom1.push({ carte: carteP1.carte, sens: carteP1.sens });
     }
-    if (i < nom2.length) {
-      const lettre2 = nom2[i];
-      const carte2 = cartesTirees.shift();
-      if (carte2) { // Ajoute ce check aussi !
-        cartesPrenom2.push([carte2.carte.nom, carte2.sens]);
-        infos.P2 = { lettre: lettre2, prenom: nom2, carte: carte2.carte, sens: carte2.sens };
-      }
+    if (i < nom2.length && index < cartesTirees.length) {
+      carteP2 = cartesTirees[index++];
+      cartesPrenom2.push({ carte: carteP2.carte, sens: carteP2.sens });
     }
-    
-    if (infos.P1 && infos.P2) {
-      const texte1 = infos.P1.carte[infos.P1.sens][aspect]?.texte || "(Message manquant)";
-      const texte2 = infos.P2.carte[infos.P2.sens][aspect]?.texte || "(Message manquant)";
-      resume += `${infos.P1.lettre} (${nom1}) ↔ ${infos.P2.lettre} (${nom2})\n`;
-      resume += `→ Carte ${infos.P1.carte.id} - ${infos.P1.carte.nom} (${infos.P1.sens}) [${aspect}]\n→ ${texte1}\n`;
-      resume += `→ Carte ${infos.P2.carte.id} - ${infos.P2.carte.nom} (${infos.P2.sens}) [${aspect}]\n→ ${texte2}\n\n`;
-    } else if (infos.P1) {
-      zoneSilencieuse.push(`${infos.P1.lettre} (${nom1}) sans miroir → Absence de résonance avec : ${nom2}`);
-    } else if (infos.P2) {
-      zoneSilencieuse.push(`${infos.P2.lettre} (${nom2}) sans miroir → Absence de résonance avec : ${nom1}`);
+
+    if (carteP1 && carteP2) {
+      const texte1 = carteP1.carte[carteP1.sens][aspect]?.texte || "(Message manquant)";
+      const texte2 = carteP2.carte[carteP2.sens][aspect]?.texte || "(Message manquant)";
+      resume += `${carteP1.lettre} (${nom1}) ↔ ${carteP2.lettre} (${nom2})\n`;
+      resume += `→ Carte ${carteP1.carte.id} - ${carteP1.carte.nom} (${carteP1.sens}) [${aspect}]\n→ ${texte1}\n`;
+      resume += `→ Carte ${carteP2.carte.id} - ${carteP2.carte.nom} (${carteP2.sens}) [${aspect}]\n→ ${texte2}\n\n`;
+    } else if (carteP1) {
+      zoneSilencieuse.push(`${carteP1.lettre} (${nom1}) sans miroir → Absence de résonance avec : ${nom2}`);
+    } else if (carteP2) {
+      zoneSilencieuse.push(`${carteP2.lettre} (${nom2}) sans miroir → Absence de résonance avec : ${nom1}`);
     }
   }
 
@@ -316,11 +296,7 @@ function afficherSynthese2Prenoms() {
     resume += `--- Zone silencieuse ---\n\n` + zoneSilencieuse.join("\n") + "\n\n";
   }
 
-  // Filtrer les cartes pour éviter undefined
-  cartesPrenom1 = cartesPrenom1.filter(c => c && c[0] && c[1]);
-  cartesPrenom2 = cartesPrenom2.filter(c => c && c[0] && c[1]);
-  const toutesLesCartes = cartesPrenom1.concat(cartesPrenom2).filter(c => c && c[0] && c[1]);
-
+  const toutesLesCartes = [...cartesPrenom1, ...cartesPrenom2];
   resume += `--- Synthèse individuelle de ${nom1} ---\n\n`;
   resume += genererSyntheseGuidante(cartesPrenom1, aspect, { question, prenom: nom1 });
   resume += `\n\n--- Synthèse individuelle de ${nom2} ---\n\n`;
@@ -335,7 +311,6 @@ function afficherSynthese2Prenoms() {
 function fermerSynthese() {
   document.getElementById("syntheseModal").style.display = "none";
 }
-
 function réinitialiser() {
   location.reload();
 }
