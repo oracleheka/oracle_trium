@@ -93,11 +93,14 @@
 
     max-height: 0;
     overflow: hidden;
+    height: 0; /* 👈 force à 0 hauteur */
+    padding: 0; /* 👈 force à 0 padding */
     transition: max-height 0.3s ease-out;
   }
 
   header nav.show {
     max-height: 500px; /* ajuste à la hauteur de ton menu */
+    padding: 1rem; /* 👈 remet le padding quand le menu est visible */
   }
 }
   </style>
