@@ -285,14 +285,18 @@ function afficherSynthese2Prenoms() {
     if (i < nom1.length) {
       const lettre1 = nom1[i];
       const carte1 = cartesTirees.shift();
-      cartesPrenom1.push([carte1.carte.nom, carte1.sens]);
-      infos.P1 = { lettre: lettre1, prenom: nom1, carte: carte1.carte, sens: carte1.sens };
+      if (carte1) { // Ajoute ce check !
+        cartesPrenom1.push([carte1.carte.nom, carte1.sens]);
+        infos.P1 = { lettre: lettre1, prenom: nom1, carte: carte1.carte, sens: carte1.sens };
+      }
     }
     if (i < nom2.length) {
       const lettre2 = nom2[i];
       const carte2 = cartesTirees.shift();
-      cartesPrenom2.push([carte2.carte.nom, carte2.sens]);
-      infos.P2 = { lettre: lettre2, prenom: nom2, carte: carte2.carte, sens: carte2.sens };
+      if (carte2) { // Ajoute ce check aussi !
+        cartesPrenom2.push([carte2.carte.nom, carte2.sens]);
+        infos.P2 = { lettre: lettre2, prenom: nom2, carte: carte2.carte, sens: carte2.sens };
+      }
     }
     
     if (infos.P1 && infos.P2) {
@@ -312,20 +316,17 @@ function afficherSynthese2Prenoms() {
     resume += `--- Zone silencieuse ---\n\n` + zoneSilencieuse.join("\n") + "\n\n";
   }
 
-  // Avant d’appeler la synthèse : filtrer les tableaux pour éviter les undefined
-cartesPrenom1 = cartesPrenom1.filter(c => c && c[0] && c[1]);
-cartesPrenom2 = cartesPrenom2.filter(c => c && c[0] && c[1]);
-const toutesLesCartes = cartesPrenom1.concat(cartesPrenom2).filter(c => c && c[0] && c[1]);
+  // Filtrer les cartes pour éviter undefined
+  cartesPrenom1 = cartesPrenom1.filter(c => c && c[0] && c[1]);
+  cartesPrenom2 = cartesPrenom2.filter(c => c && c[0] && c[1]);
+  const toutesLesCartes = cartesPrenom1.concat(cartesPrenom2).filter(c => c && c[0] && c[1]);
 
-// Synthèses individuelles
-resume += `--- Synthèse individuelle de ${nom1} ---\n\n`;
-resume += genererSyntheseGuidante(cartesPrenom1, aspect, { question, prenom: nom1 });
-resume += `\n\n--- Synthèse individuelle de ${nom2} ---\n\n`;
-resume += genererSyntheseGuidante(cartesPrenom2, aspect, { question, prenom: nom2 });
-
-// Synthèse globale
-resume += `\n\n→ Synthèse du lien entre ${nom1} et ${nom2} :\n\n`;
-resume += genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1} et ${nom2}`, mode: "lien" });
+  resume += `--- Synthèse individuelle de ${nom1} ---\n\n`;
+  resume += genererSyntheseGuidante(cartesPrenom1, aspect, { question, prenom: nom1 });
+  resume += `\n\n--- Synthèse individuelle de ${nom2} ---\n\n`;
+  resume += genererSyntheseGuidante(cartesPrenom2, aspect, { question, prenom: nom2 });
+  resume += `\n\n→ Synthèse du lien entre ${nom1} et ${nom2} :\n\n`;
+  resume += genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1} et ${nom2}`, mode: "lien" });
 
   document.getElementById("contenuSynthese").innerText = resume;
   document.getElementById("syntheseModal").style.display = "flex";
