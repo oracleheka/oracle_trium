@@ -150,25 +150,31 @@
     <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
   </fieldset>
 
+   <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez l’Oracle Seshat vous guider.</p>
+
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirageCroise()">Tirer les cartes</button>
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
   <button onclick="réinitialiser()">Réinitialiser</button>
 
-<h2>Informations pour le tirage</h2>
+<h2>Concentrez-vous sur votre question</h2>
 <p>Indiquez vos prénoms et posez votre question si vous le souhaitez (facultatif).</p>
   
   <div style="margin-top: 1rem;">
     <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
     <input type="text" id="question" style="width:100%; max-width:600px; margin:0.5rem 0;">
+   </div>  
+  <div style="margin-top: 1rem;">
     <label for="prenom1"><strong>Prénom 1 :</strong></label><br>
     <input type="text" id="prenom1" style="width:100%; max-width:600px; margin:0.5rem 0;">
+   </div>  
+  <div style="margin-top: 1rem;"> 
     <label for="prenom2"><strong>Prénom 2 :</strong></label><br>
     <input type="text" id="prenom2" style="width:100%; max-width:600px; margin:0.5rem 0;">
   </div>
 
   <div id="resultats" style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;"></div>
-  <button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse complète du tirage</button>
+  <button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse complète de votre tirage</button>
 
   <h2>Interprétation des résultats</h2>
 <p>Chaque lettre de chaque prénom reçoit une carte. Ce tirage met en lumière les énergies et blocages relationnels liés à ces deux prénoms :</p>
@@ -349,7 +355,7 @@ window.onload = function () {
   background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
   <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
     <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
-    <h2>Synthèse Guidante</h2>
+    <h2>Synthèse Guidante de l'oracle Heka</h2>
     <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
     <div style="text-align: center;">
       <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
