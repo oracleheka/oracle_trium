@@ -2,9 +2,24 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Tirage entre deux prénoms – Oracle Sia</title>
+  <title>Tirage deux prénoms – Oracle Sia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tirage gratuit entre deux prénoms avec l’Oracle Sia : une méthode symbolique et introspective pour explorer les dynamiques relationnelles.">
+  <meta name="description" content="Tirage gratuit entre deux prénoms avec l’Oracle Sia : découvrez les énergies et les zones d’ombre de votre lien.">
+ 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Tirage deux prénoms – Oracle Sia",
+  "description": "Tirage gratuit entre deux prénoms avec l’Oracle Sia : découvrez les énergies et les zones d’ombre de votre lien.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Oracle Heka",
+    "url": "https://oracleheka.github.io/oracle_trium/"
+  }
+}
+</script>
+  
   <style>
     body {
       margin: 0;
@@ -120,8 +135,12 @@
 </header>
 
 <main>
-  <h1>Tirage entre deux prénoms</h1>
+  <h1>Tirage gratuit entre deux prénoms – Oracle Sia</h1>
+  <p>Découvrez la dynamique relationnelle entre deux prénoms grâce à l’Oracle Sia. Cette méthode introspective explore les énergies profondes, les zones d’ombre et les ouvertures possibles.</p>
 
+  <h2>Choisissez l’aspect du tirage</h2>
+<p>Personnalité, affectif ou spirituel : chaque aspect révèle une dimension unique de votre relation.</p>
+  
   <fieldset style="border: none; margin: 1rem 0;">
     <legend><strong>Choisir l’aspect :</strong></legend>
     <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
@@ -129,6 +148,9 @@
     <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
   </fieldset>
 
+  <h2>Entrez vos informations</h2>
+  <p>Indiquez les deux prénoms et, si vous le souhaitez, posez une question pour enrichir l’interprétation.</p>
+  
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirageCroise()">Tirer les cartes</button>
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
@@ -144,15 +166,17 @@
   </div>
 
   <div id="resultats" style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;"></div>
-  <button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
+  <button id="btnSynthese" style="display:none; margin-top: 1rem;">Découvre la synthèse guidante de ton tirage Sia</button>
 
-  <p>Chaque lettre de chaque prénom reçoit une carte. Ce tirage met en lumière les énergies et blocages relationnels propres à la rencontre de ces deux prénoms :</p>
+  <h2>Interprétation du tirage</h2>
+<p>Chaque lettre de chaque prénom reçoit une carte, révélant :</p>
 <ul>
-  <li>Attirance / Opposition / Résonance</li>
-  <li>Dynamique consciente / Inconsciente</li>
-  <li>Zones d'ombre / Zones de lumière</li>
+  <li>Attirance, opposition et résonance</li>
+  <li>Dynamique consciente et inconsciente</li>
+  <li>Zones d’ombre et de lumière</li>
 </ul>
-<p>L’Oracle Sia agit ici comme un miroir symbolique : il révèle des points de tension, des zones de silence, et des ouvertures possibles dans la relation entre ces deux prénoms.</p>
+<p>L’Oracle Sia agit comme un miroir symbolique, révélant les tensions, les silences et les ouvertures possibles.</p>
+<p><em>Vous pouvez revenir à tout moment pour refaire un tirage et voir comment évoluent les énergies entre ces deux prénoms.</em></p>
 </main>
 
 <footer>
@@ -324,7 +348,7 @@ window.onload = function () {
   background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
   <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
     <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
-    <h2>Synthèse Guidante</h2>
+    <h2>Synthèse Guidante de l'oracle Sia</h2>
     <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
     <div style="text-align: center;">
       <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
