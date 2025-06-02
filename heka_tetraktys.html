@@ -164,7 +164,8 @@ button:hover {
 <p>Explorez votre ego et vos dynamiques intérieures à travers la structure symbolique du Tétraktys. Cette lecture en 10 cartes révèle les fondements, les tensions et les voies de transformation de votre posture personnelle.</p>
 
   <h2>Choisissez l’aspect à explorer</h2>
- <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
+  <p>Personnalité, matériel, professionnel, affectif ou spirituel : chaque aspect révèle une facette unique de la dynamique du tirage.</p>
+ <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0;">
    <fieldset style="border: none; margin: 0;">
   <legend><strong>Choisir l’aspect :</strong></legend>
   <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
@@ -173,26 +174,26 @@ button:hover {
   <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
   <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
 </fieldset>
-
+  </div>
+  <h2>Concentrez vous sur votre question</h2>
+  <div style="margin-top: 0.5rem;">
+  <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
+  <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
+  </div>
+  <div style="margin-top: 0.5rem;">
+    <label for="champPrenom"><strong>Prénom (symbolique) :</strong></label><br>
+<input type="text" id="champPrenom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
+  <div id="resultats" style="margin-top: 0.5rem;"></div>
+  </div>
+<div style="margin-top: 0.5rem;">
+<!-- Bouton pour afficher la synthèse -->
+<button id="btnSynthese" style="display:none; margin-top: 1rem;">Découvrez la synthèse guidante de votre tirage</button>
+</div>
+  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p>
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
   <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
-  </div>
-  <h2>Concentrez vous sur votre question</h2>
-  <div style="margin-top: 2rem;">
-  <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
-  <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
-  </div>
-  <div style="margin-top: 2rem;">
-    <label for="champPrenom"><strong>Prénom (symbolique) :</strong></label><br>
-<input type="text" id="champPrenom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
-  <div id="resultats" style="margin-top: 2rem;"></div>
-  </div>
-
-<!-- Bouton pour afficher la synthèse -->
-<button id="btnSynthese" style="display:none; margin-top: 1rem;">Découvrez la synthèse guidante de votre tirage</button>
-  
   <h2>Interprétation du tirage</h2>
   <p>Le Tétraktys se structure en 4 niveaux symboliques :</p>
   <ul>
