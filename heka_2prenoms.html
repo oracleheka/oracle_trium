@@ -140,7 +140,7 @@
   
   <h2>Choisissez l’aspect à explorer</h2>
 <p>Vous pouvez explorer les énergies d’un lien sur différents aspects : personnalité, matériel, professionnel, affectif ou spirituel.</p>
-  
+  <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
   <fieldset style="border: none; margin: 1rem 0;">
     <legend><strong>Choisir l’aspect :</strong></legend>
     <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
@@ -149,13 +149,7 @@
     <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
     <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
   </fieldset>
-
-   <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p>
-
-  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
-  <button id="tirerBtn" onclick="tirageCroise()">Tirer les cartes</button>
-  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
-  <button onclick="réinitialiser()">Réinitialiser</button>
+  </div>
 
 <h2>Concentrez-vous sur votre question</h2>
 <p>Indiquez vos prénoms et posez votre question si vous le souhaitez (facultatif).</p>
@@ -172,7 +166,13 @@
     <label for="prenom2"><strong>Prénom 2 :</strong></label><br>
     <input type="text" id="prenom2" style="width:100%; max-width:600px; margin:0.5rem 0;">
   </div>
-
+  
+  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p>
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirageCroise()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button onclick="réinitialiser()">Réinitialiser</button>
+  
   <div id="resultats" style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;"></div>
   <button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse complète de votre tirage</button>
 
