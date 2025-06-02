@@ -162,9 +162,9 @@ button:hover {
 <main>
   <h1>Tirage numérologique gratuit – Oracle Heka</h1>
 <p>Découvrez les énergies de votre identité et de votre chemin de vie à travers le tirage numérologique de l’Oracle Heka. Une méthode qui éclaire les influences et les dynamiques invisibles.</p>
-
   <h2>Choisissez l’aspect à explorer</h2>
-  <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
+  <p>Personnalité, matériel, professionnel, affectif ou spirituel : chaque aspect révèle une facette unique de la dynamique du tirage.</p>
+  <div style="display: flex; align-items: center; gap: 1rem; margin: 1rem 0;">
   <fieldset style="border: none; margin: 0;">
   <legend><strong>Choisir l’aspect :</strong></legend>
   <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
@@ -172,31 +172,30 @@ button:hover {
   <label><input type="radio" name="aspect" value="professionnel"> Professionnel</label><br>
   <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
   <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
-</fieldset>
-
-
+  </fieldset>
+  </div>
+  <h2>Concentrez-vous sur votre question</h2>
+  <div style="margin-top: 1rem;">
+  <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
+  <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
+  </div>
+  <div style="margin-top: 1rem;">
+    <label for="prénom"><strong>Prénom :</strong></label><br>
+  <input type="text" id="champNom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">    
+  </div>
+    <div style="margin-top: 1rem;">
+  <label for="date_naissance"><strong>Date de naissance (JJ/MM/AAAA) :</strong></label><br>
+  <input type="text" id="champDate" name="date_naissance" placeholder="Exemple : 15/05/1990" pattern="\\d{2}/\\d{2}/\\d{4}" style="width: 100%; max-width: 200px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
+  </div>
+  <div style="margin-top: 1rem;">
+    <!-- Bouton pour afficher la synthèse -->
+  <button id="btnSynthese" style="display:none; margin-top: 1rem;">Découvrez la synthèse guidante de votre tirage Heka</button>
+  </div>
+  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p>
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
   <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
-</div>
-  <h2>Indiquez vos informations</h2>
-  <div style="margin-top: 2rem;">
-  <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
-  <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
-  </div>
-  <div style="margin-top: 2rem;">
-    <label for="prénom"><strong>Prénom :</strong></label><br>
-  <input type="text" id="champNom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">    
-  </div>
-    <div style="margin-top: 1.5rem;">
-  <label for="date_naissance"><strong>Date de naissance (JJ/MM/AAAA) :</strong></label><br>
-  <input type="text" id="champDate" name="date_naissance" placeholder="Exemple : 15/05/1990" pattern="\\d{2}/\\d{2}/\\d{4}" style="width: 100%; max-width: 200px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
-  </div>
-
-    <!-- Bouton pour afficher la synthèse -->
-<button id="btnSynthese" style="display:none; margin-top: 1rem;">Découvrez la synthèse guidante de votre tirage Heka</button>
-
   <h2>Interprétation du tirage</h2>
 <p>Ce tirage se base sur la valeur numérologique de votre prénom et de votre date de naissance. Deux cartes majeures sont tirées :</p>
 <ul>
