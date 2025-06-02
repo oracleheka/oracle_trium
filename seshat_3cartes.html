@@ -1,11 +1,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Oracle Seshat : Tirage à 3 cartes – Choix, passage et voie intérieure</title>
+  <title>Tirage 3 cartes gratuit – Oracle Heka</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tirage gratuit à 3 cartes avec l’Oracle Seshat. Une méthode introspective pour discerner le passage à franchir ou la voie intérieure à suivre.">
-  <meta name="keywords" content="tirage 3 cartes, oracle Seshat, passage symbolique, discernement intérieur, voie à suivre, oracle introspectif, oracle gratuit.">
-
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -17,18 +16,8 @@
     "author": {
       "@type": "Person",
       "name": "Roland Alberolla"
-    },
-    "keywords": [
-      "tirage 3 cartes",
-      "oracle Seshat",
-      "passage symbolique",
-      "discernement intérieur",
-      "voie à suivre",
-      "oracle introspectif",
-      "oracle gratuit"
-    ]
+    }
   }
-    
   </script>
   
   <style>
@@ -171,7 +160,10 @@ button:hover {
 </header>
 
 <main>
-  <h1>Tirage à 3 cartes de l'Oracle Seshat</h1>
+  <h1>Tirage à 3 cartes de l’Oracle Seshat</h1>
+  <p>Découvrez ce tirage gratuit à 3 cartes de l’Oracle Seshat : une méthode introspective pour discerner la voie intérieure à suivre et franchir le passage symbolique qui se présente à vous.</p>
+  
+  <h2>Choisissez l’aspect à explorer</h2>
   <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
  <fieldset style="border: none; margin: 0;">
   <legend><strong>Choisir l’aspect :</strong></legend>
@@ -185,23 +177,24 @@ button:hover {
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
   <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
 </div>
+  <h2>Concentrez-vous sur votre question</h2>
   <div style="margin-top: 2rem;">
   <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
 </div>
   <div id="resultats" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
    <!-- Bouton pour afficher la synthèse -->
-<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
+<button id="btnSynthese" style="display:none; margin-top: 1rem;">Découvrez la synthèse guidante de votre tirage</button>
   
-  <p>Ce tirage permet une lecture rapide et efficace d’une situation ou d’une question simple. Il est particulièrement adapté aux demandes à trois volets, comme :</p>
+  <h2>À propos du tirage</h2>
+  <p>Ce tirage à 3 cartes est particulièrement adapté aux questions à trois volets :</p>
   <ul>
     <li>Passé / Présent / Futur</li>
     <li>Situation / Obstacle / Conseil</li>
     <li>Conflit / Intention / Évolution</li>
   </ul>
-  <p>Seshat est l’oracle du passage. Il n’éclaire ni ce que l’on montre, ni ce que l’on ressent : il montre où cela mène.
-     Il trace des lignes, ouvre des directions, indique des carrefours intérieurs. Il ne prédit rien, mais il révèle les dynamiques qui traversent une situation, une période, un être.</p>
-
+  <p>L’Oracle Seshat éclaire ici les dynamiques profondes de votre situation. Il ne prédit rien, mais révèle les passages intérieurs à franchir et les choix qui façonnent votre chemin.</p>
+  <p><em>Refaites ce tirage quand cela vous semble nécessaire pour affiner votre posture intérieure et avancer plus consciemment.</em></p>
 </main>
 <footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
   Produit par <strong>OracleHeka</strong> —
@@ -386,7 +379,7 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
   <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
     <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
-    <h2>Synthèse Guidante</h2>
+    <h2>Synthèse Guidante de l'oracle de Seshat</h2>
     <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
     <div style="text-align: center;">
       <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
