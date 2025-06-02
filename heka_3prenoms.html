@@ -308,7 +308,6 @@ function ajouterUneCarte() {
   affichageZone.appendChild(div);
 }
 
-
 function afficherSynthese3Prenoms() {
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
   const nom1 = document.getElementById("prenom1").value.trim().toUpperCase();
@@ -316,78 +315,89 @@ function afficherSynthese3Prenoms() {
   const nom3 = document.getElementById("prenom3").value.trim().toUpperCase();
   const question = document.getElementById("question").value.trim();
 
-  let resume = `--- Tirage triangulaire entre ${nom1}, ${nom2} et ${nom3} ---\n\n`;
+  if (!nom1 || !nom2 || !nom3) {
+    alert("Veuillez entrer les trois prénoms.");
+    return;
+  }
 
+  let resume = `--- Tirage triangulaire entre ${nom1}, ${nom2} et ${nom3} ---\n\n`;
   let cartesPrenom1 = [];
   let cartesPrenom2 = [];
   let cartesPrenom3 = [];
-  let index = 0;
-  const nbLettres = Math.max(nom1.length, nom2.length, nom3.length);
   let zoneSilencieuse = [];
 
+  let index = 0;
+  const nbLettres = Math.max(nom1.length, nom2.length, nom3.length);
+
   for (let i = 0; i < nbLettres; i++) {
-    let carteP1 = (i < nom1.length && index < cartesTirees.length) ? cartesTirees[index++] : null;
-    let carteP2 = (i < nom2.length && index < cartesTirees.length) ? cartesTirees[index++] : null;
-    let carteP3 = (i < nom3.length && index < cartesTirees.length) ? cartesTirees[index++] : null;
+    let carteP1 = null;
+    let carteP2 = null;
+    let carteP3 = null;
 
-    if (carteP1) cartesPrenom1.push(carteP1);
-    if (carteP2) cartesPrenom2.push(carteP2);
-    if (carteP3) cartesPrenom3.push(carteP3);
-  }
-
-  // Pour chaque lien 2 à 2
-  const liens = [
-    { pA: nom1, cartesA: cartesPrenom1, pB: nom2, cartesB: cartesPrenom2 },
-    { pA: nom2, cartesA: cartesPrenom2, pB: nom3, cartesB: cartesPrenom3 },
-    { pA: nom1, cartesA: cartesPrenom1, pB: nom3, cartesB: cartesPrenom3 }
-  ];
-
-  liens.forEach(lien => {
-    resume += `--- Lien entre ${lien.pA} et ${lien.pB} ---\n\n`;
-
-    for (let i = 0; i < nbLettres; i++) {
-      const carteA = lien.cartesA[i] || null;
-      const carteB = lien.cartesB[i] || null;
-
-      if (carteA && carteB) {
-        const texteA = carteA.carte[carteA.sens][aspect]?.texte || "(Message manquant)";
-        const texteB = carteB.carte[carteB.sens][aspect]?.texte || "(Message manquant)";
-        resume += `${carteA.lettre} (${lien.pA}) ↔ ${carteB.lettre} (${lien.pB})\n`;
-        resume += `→ Carte ${carteA.carte.id} - ${carteA.carte.nom} (${carteA.sens}) [${aspect}]\n→ ${texteA}\n`;
-        resume += `→ Carte ${carteB.carte.id} - ${carteB.carte.nom} (${carteB.sens}) [${aspect}]\n→ ${texteB}\n\n`;
-      } else if (carteA) {
-        zoneSilencieuse.push(`${carteA.lettre} (${lien.pA}) sans miroir → Absence de résonance avec : ${lien.pB}`);
-      } else if (carteB) {
-        zoneSilencieuse.push(`${carteB.lettre} (${lien.pB}) sans miroir → Absence de résonance avec : ${lien.pA}`);
-      }
+    if (i < nom1.length && index < cartesTirees.length) {
+      carteP1 = cartesTirees[index++];
+      cartesPrenom1.push({ carte: carteP1.carte, sens: carteP1.sens });
     }
-  });
+    if (i < nom2.length && index < cartesTirees.length) {
+      carteP2 = cartesTirees[index++];
+      cartesPrenom2.push({ carte: carteP2.carte, sens: carteP2.sens });
+    }
+    if (i < nom3.length && index < cartesTirees.length) {
+      carteP3 = cartesTirees[index++];
+      cartesPrenom3.push({ carte: carteP3.carte, sens: carteP3.sens });
+    }
+
+    // Liens 2 à 2
+    if (carteP1 && carteP2) {
+      const texte1 = carteP1.carte[carteP1.sens][aspect]?.texte || "(Message manquant)";
+      const texte2 = carteP2.carte[carteP2.sens][aspect]?.texte || "(Message manquant)";
+      resume += `${carteP1.lettre} (${nom1}) ↔ ${carteP2.lettre} (${nom2})\n`;
+      resume += `→ Carte ${carteP1.carte.id} - ${carteP1.carte.nom} (${carteP1.sens}) [${aspect}]\n→ ${texte1}\n`;
+      resume += `→ Carte ${carteP2.carte.id} - ${carteP2.carte.nom} (${carteP2.sens}) [${aspect}]\n→ ${texte2}\n\n`;
+    } else if (carteP1) {
+      zoneSilencieuse.push(`${carteP1.lettre} (${nom1}) sans miroir → Absence de résonance avec : ${nom2}`);
+    } else if (carteP2) {
+      zoneSilencieuse.push(`${carteP2.lettre} (${nom2}) sans miroir → Absence de résonance avec : ${nom1}`);
+    }
+
+    if (carteP2 && carteP3) {
+      const texte2 = carteP2.carte[carteP2.sens][aspect]?.texte || "(Message manquant)";
+      const texte3 = carteP3.carte[carteP3.sens][aspect]?.texte || "(Message manquant)";
+      resume += `${carteP2.lettre} (${nom2}) ↔ ${carteP3.lettre} (${nom3})\n`;
+      resume += `→ Carte ${carteP2.carte.id} - ${carteP2.carte.nom} (${carteP2.sens}) [${aspect}]\n→ ${texte2}\n`;
+      resume += `→ Carte ${carteP3.carte.id} - ${carteP3.carte.nom} (${carteP3.sens}) [${aspect}]\n→ ${texte3}\n\n`;
+    } else if (carteP2) {
+      zoneSilencieuse.push(`${carteP2.lettre} (${nom2}) sans miroir → Absence de résonance avec : ${nom3}`);
+    } else if (carteP3) {
+      zoneSilencieuse.push(`${carteP3.lettre} (${nom3}) sans miroir → Absence de résonance avec : ${nom2}`);
+    }
+
+    if (carteP1 && carteP3) {
+      const texte1 = carteP1.carte[carteP1.sens][aspect]?.texte || "(Message manquant)";
+      const texte3 = carteP3.carte[carteP3.sens][aspect]?.texte || "(Message manquant)";
+      resume += `${carteP1.lettre} (${nom1}) ↔ ${carteP3.lettre} (${nom3})\n`;
+      resume += `→ Carte ${carteP1.carte.id} - ${carteP1.carte.nom} (${carteP1.sens}) [${aspect}]\n→ ${texte1}\n`;
+      resume += `→ Carte ${carteP3.carte.id} - ${carteP3.carte.nom} (${carteP3.sens}) [${aspect}]\n→ ${texte3}\n\n`;
+    } else if (carteP1) {
+      zoneSilencieuse.push(`${carteP1.lettre} (${nom1}) sans miroir → Absence de résonance avec : ${nom3}`);
+    } else if (carteP3) {
+      zoneSilencieuse.push(`${carteP3.lettre} (${nom3}) sans miroir → Absence de résonance avec : ${nom1}`);
+    }
+  }
 
   if (zoneSilencieuse.length > 0) {
-    resume += `--- Zone silencieuse ---\n\n${zoneSilencieuse.join("\n")}\n\n`;
+    resume += `--- Zone silencieuse ---\n\n` + zoneSilencieuse.join("\n") + "\n\n";
   }
 
-  // Synthèses individuelles
-  [[nom1, cartesPrenom1], [nom2, cartesPrenom2], [nom3, cartesPrenom3]].forEach(([prenom, cartes]) => {
-    const cartesFormat = cartes.map(c => [c.carte.nom, c.sens]); // AJOUT
-    resume += `--- Synthèse individuelle de ${prenom} ---\n\n`;
-    const synthese = genererSyntheseGuidante(cartesFormat, aspect, { question, prenom });
-    resume += synthese + "\n\n";
-  });
-
-  // Synthèses des liens 2 à 2
-  liens.forEach(lien => {
-    const cartesFormat = [...lien.cartesA, ...lien.cartesB].map(c => [c.carte.nom, c.sens]); // AJOUT
-    resume += `--- Synthèse du lien entre ${lien.pA} et ${lien.pB} ---\n\n`;
-    const synthese = genererSyntheseGuidante(cartesFormat, aspect, { question, prenom: `${lien.pA} et ${lien.pB}`, mode: "lien" });
-    resume += synthese + "\n\n";
-  });
-
-  // Synthèse globale
-  const toutesLesCartes = [...cartesPrenom1, ...cartesPrenom2, ...cartesPrenom3].map(c => [c.carte.nom, c.sens]); // AJOUT
-  resume += `--- Synthèse globale des trois prénoms ---\n\n`;
-  const syntheseGlobale = genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1}, ${nom2} et ${nom3}`, mode: "lien" });
-  resume += syntheseGlobale;
+  const toutesLesCartes = [...cartesPrenom1, ...cartesPrenom2, ...cartesPrenom3];
+  resume += `--- Synthèse individuelle de ${nom1} ---\n\n`;
+  resume += genererSyntheseGuidante(cartesPrenom1, aspect, { question, prenom: nom1 });
+  resume += `\n\n--- Synthèse individuelle de ${nom2} ---\n\n`;
+  resume += genererSyntheseGuidante(cartesPrenom2, aspect, { question, prenom: nom2 });
+  resume += `\n\n--- Synthèse individuelle de ${nom3} ---\n\n`;
+  resume += genererSyntheseGuidante(cartesPrenom3, aspect, { question, prenom: nom3 });
+  resume += `\n\n→ Synthèse du lien entre ${nom1}, ${nom2} et ${nom3} :\n\n`;
+  resume += genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1}, ${nom2} et ${nom3}`, mode: "lien" });
 
   document.getElementById("contenuSynthese").innerText = resume;
   document.getElementById("syntheseModal").style.display = "flex";
