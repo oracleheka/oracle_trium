@@ -163,9 +163,9 @@ button:hover {
 <main>
   <h1>Tirage en croix gratuit – Oracle Heka</h1>
   <p>Explorez vos dynamiques intérieures grâce au tirage en croix de l’Oracle Heka. Une méthode en 5 cartes pour révéler ce qui soutient, ce qui bloque et la voie d’apaisement.</p>
-
   <h2>Choisissez l’aspect à explorer</h2>
- <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
+  <p>Personnalité, matériel, professionnel, affectif ou spirituel : chaque aspect révèle une facette unique de la dynamique du tirage.</p>
+   <div style="display: flex; align-items: center; gap: 1rem; margin: 1.5rem 0;">
   <fieldset style="border: none; margin: 0;">
   <legend><strong>Choisir l’aspect :</strong></legend>
   <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
@@ -173,22 +173,22 @@ button:hover {
   <label><input type="radio" name="aspect" value="professionnel"> Professionnel</label><br>
   <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
   <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
-</fieldset>
-
-  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
-  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
-  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
-  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
-</div>
+  </fieldset>
+  </div>
   <h2>Concentrez-vous sur votre question (facultatif)</h2>
   <div style="margin-top: 2rem;">
   <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
-</div>
- <div id="resultats" style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto auto; gap: 1rem; justify-items: center; margin-top: 2rem;"></div>
-
+  </div>
+  <div id="resultats" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
    <!-- Bouton pour afficher la synthèse -->
 <button id="btnSynthese" style="display:none; margin-top: 1rem;">Consultez votre synthèse guidante</button>
+</div>
+  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p> 
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
   <h2>Interprétation du tirage</h2>
   <p>Ce tirage en croix en 5 cartes éclaire les tensions, les blocages et la voie d’apaisement :</p>
 <ul>
