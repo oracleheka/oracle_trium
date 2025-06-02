@@ -143,8 +143,12 @@
   <div style="margin-top: 1rem;">
     <label for="prenom1"><strong>Prénom 1 :</strong></label><br>
     <input type="text" id="prenom1" style="width:100%; max-width:600px; margin:0.5rem 0;">
+   </div>
+  <div style="margin-top: 1rem;"> 
     <label for="prenom2"><strong>Prénom 2 :</strong></label><br>
     <input type="text" id="prenom2" style="width:100%; max-width:600px; margin:0.5rem 0;">
+  </div>
+  <div style="margin-top: 1rem;">
     <label for="prenom3"><strong>Prénom 3 :</strong></label><br>
     <input type="text" id="prenom3" style="width:100%; max-width:600px; margin:0.5rem 0;">
   </div>
@@ -317,51 +321,80 @@ function afficherSynthese3Prenoms() {
   let cartesPrenom1 = [];
   let cartesPrenom2 = [];
   let cartesPrenom3 = [];
-  let zoneSilencieuse = [];
-
   let index = 0;
   const nbLettres = Math.max(nom1.length, nom2.length, nom3.length);
+  let zoneSilencieuse = [];
 
   for (let i = 0; i < nbLettres; i++) {
     let carteP1 = (i < nom1.length && index < cartesTirees.length) ? cartesTirees[index++] : null;
     let carteP2 = (i < nom2.length && index < cartesTirees.length) ? cartesTirees[index++] : null;
     let carteP3 = (i < nom3.length && index < cartesTirees.length) ? cartesTirees[index++] : null;
 
-    if (carteP1) cartesPrenom1.push({ carte: carteP1.carte, sens: carteP1.sens });
-    if (carteP2) cartesPrenom2.push({ carte: carteP2.carte, sens: carteP2.sens });
-    if (carteP3) cartesPrenom3.push({ carte: carteP3.carte, sens: carteP3.sens });
+    if (carteP1) cartesPrenom1.push(carteP1);
+    if (carteP2) cartesPrenom2.push(carteP2);
+    if (carteP3) cartesPrenom3.push(carteP3);
   }
 
-  // Liens 2 à 2
+  // Pour chaque lien 2 à 2
   const liens = [
     { pA: nom1, cartesA: cartesPrenom1, pB: nom2, cartesB: cartesPrenom2 },
     { pA: nom2, cartesA: cartesPrenom2, pB: nom3, cartesB: cartesPrenom3 },
-    { pA: nom1, cartesA: cartesPrenom1, pB: nom3, cartesB: cartesPrenom3 },
+    { pA: nom1, cartesA: cartesPrenom1, pB: nom3, cartesB: cartesPrenom3 }
   ];
 
   liens.forEach(lien => {
     resume += `--- Lien entre ${lien.pA} et ${lien.pB} ---\n\n`;
-    // ici, tu peux reconstruire les dialogues lettre par lettre si tu veux, ou simplement concaténer
-    const toutesCartes = [...lien.cartesA, ...lien.cartesB];
-    const synthese = genererSyntheseGuidante(toutesCartes, aspect, { question, prenom: `${lien.pA} et ${lien.pB}`, mode: "lien" });
-    resume += synthese + "\n\n";
+
+    for (let i = 0; i < nbLettres; i++) {
+      const carteA = lien.cartesA[i] || null;
+      const carteB = lien.cartesB[i] || null;
+
+      if (carteA && carteB) {
+        const texteA = carteA.carte[carteA.sens][aspect]?.texte || "(Message manquant)";
+        const texteB = carteB.carte[carteB.sens][aspect]?.texte || "(Message manquant)";
+        resume += `${carteA.lettre} (${lien.pA}) ↔ ${carteB.lettre} (${lien.pB})\n`;
+        resume += `→ Carte ${carteA.carte.id} - ${carteA.carte.nom} (${carteA.sens}) [${aspect}]\n→ ${texteA}\n`;
+        resume += `→ Carte ${carteB.carte.id} - ${carteB.carte.nom} (${carteB.sens}) [${aspect}]\n→ ${texteB}\n\n`;
+      } else if (carteA) {
+        zoneSilencieuse.push(`${carteA.lettre} (${lien.pA}) sans miroir → Absence de résonance avec : ${lien.pB}`);
+      } else if (carteB) {
+        zoneSilencieuse.push(`${carteB.lettre} (${lien.pB}) sans miroir → Absence de résonance avec : ${lien.pA}`);
+      }
+    }
   });
+
+  if (zoneSilencieuse.length > 0) {
+    resume += `--- Zone silencieuse ---\n\n${zoneSilencieuse.join("\n")}\n\n`;
+  }
 
   // Synthèses individuelles
   [[nom1, cartesPrenom1], [nom2, cartesPrenom2], [nom3, cartesPrenom3]].forEach(([prenom, cartes]) => {
+    const cartesFormat = cartes.map(c => [c.carte.nom, c.sens]);
     resume += `--- Synthèse individuelle de ${prenom} ---\n\n`;
-    const synthese = genererSyntheseGuidante(cartes, aspect, { question, prenom });
+    const synthese = genererSyntheseGuidante(cartesFormat, aspect, { question, prenom });
+    resume += synthese + "\n\n";
+  });
+
+  // Synthèses des liens 2 à 2
+  liens.forEach(lien => {
+    const cartesFormat = [...lien.cartesA, ...lien.cartesB].map(c => [c.carte.nom, c.sens]);
+    resume += `--- Synthèse du lien entre ${lien.pA} et ${lien.pB} ---\n\n`;
+    const synthese = genererSyntheseGuidante(cartesFormat, aspect, { question, prenom: `${lien.pA} et ${lien.pB}`, mode: "lien" });
     resume += synthese + "\n\n";
   });
 
   // Synthèse globale
-  const toutesLesCartes = [...cartesPrenom1, ...cartesPrenom2, ...cartesPrenom3];
+  const toutesLesCartes = [...cartesPrenom1, ...cartesPrenom2, ...cartesPrenom3].map(c => [c.carte.nom, c.sens]);
   resume += `--- Synthèse globale des trois prénoms ---\n\n`;
   const syntheseGlobale = genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1}, ${nom2} et ${nom3}`, mode: "lien" });
   resume += syntheseGlobale;
 
   document.getElementById("contenuSynthese").innerText = resume;
   document.getElementById("syntheseModal").style.display = "flex";
+}
+
+  function fermerSynthese() {
+  document.getElementById("syntheseModal").style.display = "none";
 }
 
 function réinitialiser() {
