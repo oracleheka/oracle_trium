@@ -369,7 +369,7 @@ function afficherSynthese3Prenoms() {
 
   // Synthèses individuelles
   [[nom1, cartesPrenom1], [nom2, cartesPrenom2], [nom3, cartesPrenom3]].forEach(([prenom, cartes]) => {
-    const cartesFormat = cartes.map(c => [c.carte.nom, c.sens]);
+    const cartesFormat = cartes.map(c => [c.carte.nom, c.sens]); // AJOUT
     resume += `--- Synthèse individuelle de ${prenom} ---\n\n`;
     const synthese = genererSyntheseGuidante(cartesFormat, aspect, { question, prenom });
     resume += synthese + "\n\n";
@@ -377,14 +377,14 @@ function afficherSynthese3Prenoms() {
 
   // Synthèses des liens 2 à 2
   liens.forEach(lien => {
-    const cartesFormat = [...lien.cartesA, ...lien.cartesB].map(c => [c.carte.nom, c.sens]);
+    const cartesFormat = [...lien.cartesA, ...lien.cartesB].map(c => [c.carte.nom, c.sens]); // AJOUT
     resume += `--- Synthèse du lien entre ${lien.pA} et ${lien.pB} ---\n\n`;
     const synthese = genererSyntheseGuidante(cartesFormat, aspect, { question, prenom: `${lien.pA} et ${lien.pB}`, mode: "lien" });
     resume += synthese + "\n\n";
   });
 
   // Synthèse globale
-  const toutesLesCartes = [...cartesPrenom1, ...cartesPrenom2, ...cartesPrenom3].map(c => [c.carte.nom, c.sens]);
+  const toutesLesCartes = [...cartesPrenom1, ...cartesPrenom2, ...cartesPrenom3].map(c => [c.carte.nom, c.sens]); // AJOUT
   resume += `--- Synthèse globale des trois prénoms ---\n\n`;
   const syntheseGlobale = genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1}, ${nom2} et ${nom3}`, mode: "lien" });
   resume += syntheseGlobale;
