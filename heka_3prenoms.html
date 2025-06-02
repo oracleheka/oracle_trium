@@ -132,7 +132,7 @@
   </fieldset>
 
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
-  <button id="tirerBtn" onclick="tirageCroise()">Tirer les cartes</button>
+  <button id="tirerBtn" onclick="tirageTriangulaire()">Tirer les cartes</button>
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
   <button onclick="réinitialiser()">Réinitialiser</button>
 
@@ -369,7 +369,7 @@ function réinitialiser() {
 window.onload = function () {
   document.getElementById("tirerBtn").disabled = true;
   document.getElementById("ajouterBtn").disabled = true;
-  document.getElementById("btnSynthese").onclick = afficherSynthese2Prenoms;
+  document.getElementById("btnSynthese").onclick = afficherSynthese3Prenoms;
 };
 
 </script>
