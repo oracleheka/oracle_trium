@@ -217,7 +217,7 @@ button:hover {
   </div>
 <div style="margin-top: 0.5rem;">
 <!-- Bouton pour afficher la synthèse -->
-<button id="btnSynthese" style="display:none; margin-top: 1rem;">Découvrez la synthèse guidante de votre tirage</button>
+<button id="btnSynthese" style="display:none; margin-top: 0.5rem;">Découvrez la synthèse guidante de votre tirage</button>
 </div>
   <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p>
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
@@ -327,11 +327,12 @@ niveaux.forEach(niveau => {
   ligne.style.gap = "1rem";
   ligne.style.marginBottom = "1rem";
   ligne.style.width = "100%";
-  
-  // Ajoute la marge automatique pour centrer la ligne (comme une pyramide)
-  const largeurMax = 4; // 4 cartes au maximum pour la base
+  ligne.style.position = "relative"; // Pour centrer la ligne par rapport au conteneur
+
+  // Centrage "pyramidal" en jouant sur la marge gauche
+  const largeurMax = 4; // 4 cartes max (base)
   const ratio = niveau.nb / largeurMax;
-  const marge = (1 - ratio) / 2 * 100; // pour centrer la ligne
+  const marge = (1 - ratio) / 2 * 100;
   ligne.style.marginLeft = `${marge}%`;
   ligne.style.marginRight = `${marge}%`;
 
