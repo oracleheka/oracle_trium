@@ -117,6 +117,20 @@
       padding: 1rem;
       margin-bottom: 1rem;
     }
+   .btn-retour {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: #3b6a9a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+  background-color: #345b85;
+}
   </style>
 </head>
 <body>
@@ -155,17 +169,17 @@
 <h2>Concentrez-vous sur votre question</h2>
 <p>Indiquez vos prénoms et posez votre question si vous le souhaitez (facultatif).</p>
   
-  <div style="margin-top: 1rem;">
+ <div style="margin-top: 2rem;">
     <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
-    <input type="text" id="question" style="width:100%; max-width:600px; margin:0.5rem 0;">
-   </div>  
-  <div style="margin-top: 1rem;">
+    <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
+  </div>
+  <div style="margin-top: 2rem;">
     <label for="prenom1"><strong>Prénom 1 :</strong></label><br>
-    <input type="text" id="prenom1" style="width:100%; max-width:600px; margin:0.5rem 0;">
-   </div>  
-  <div style="margin-top: 1rem;"> 
+    <input type="text" id="prenom1" name="prenom1" placeholder="Entrer le premier prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
+   </div>
+  <div style="margin-top: 2rem;"> 
     <label for="prenom2"><strong>Prénom 2 :</strong></label><br>
-    <input type="text" id="prenom2" style="width:100%; max-width:600px; margin:0.5rem 0;">
+    <input type="text" id="prenom2" name="prenom2" placeholder="Entrer le deuxième prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
   </div>
   
   <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p>
@@ -186,6 +200,9 @@
 </ul>
 <p>L’Oracle Heka agit ici comme un miroir symbolique, révélant les points de tension, les zones de silence et les ouvertures possibles.</p>
  <p><em>Refaites ce tirage aussi souvent que nécessaire pour clarifier vos intentions et avancer en conscience.</em></p>
+<div class="retour">
+    <a href="sia.html" class="btn-retour">← Retour à la page Oracle Sia</a>
+  </div>
 </main>
 
 <footer>
