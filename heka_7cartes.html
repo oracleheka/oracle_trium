@@ -180,13 +180,14 @@ button:hover {
   <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
 </div>
-<p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p> 
+ <div id="resultats" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
+  <button id="btnSynthese" style="display:none; margin-top: 1rem;">Consultez la synthèse guidante</button>
+</div>
+  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p> 
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
   <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
-  <div id="resultats" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
-  <button id="btnSynthese" style="display:none; margin-top: 1rem;">Consultez la synthèse guidante</button>
   <h2>Interprétation du tirage</h2>
   <p>Idéal pour explorer une dynamique complexe, ce tirage à 7 cartes est gratuit et approfondi. Il aide à analyser une évolution, une relation ou une trajectoire personnelle.</p>
  <ul>
