@@ -1,10 +1,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Oracle Sia : Tirage prénom une Lecture symbolique de l’identité</title>
+  <title>Tirage prénom gratuit – Oracle Sia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tirage prénom gratuit avec l’Oracle Sia. Une méthode symbolique pour explorer l’identité projetée à travers la vibration du prénom.">
-  <meta name="keywords" content="tirage prénom, oracle Heka, oracle introspectif, identité projetée, prénom symbolique, lecture de soi, oracle gratuit, introspection en ligne.">
+  <meta name="description" content="Tirage prénom gratuit avec l’Oracle Sia : explorez votre identité vibratoire et vos dynamiques intérieures à travers la symbolique du prénom.">
+
  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -16,20 +16,9 @@
     "author": {
       "@type": "Person",
       "name": "Roland Alberolla"
-    },
-    "keywords": [
-      "tirage prénom",
-      "oracle Heka",
-      "oracle introspectif",
-      "identité projetée",
-      "prénom symbolique",
-      "lecture de soi",
-      "oracle gratuit",
-      "introspection en ligne"
-    ]
+    }
   }
   </script>
-  
   <style>
     body {
   margin: 0;
@@ -151,6 +140,20 @@ button:hover {
     width: 180px;
   }
 }
+.btn-retour {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: #3b6a9a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+  background-color: #345b85;
+}
   </style>
 </head>
 <body>
@@ -170,30 +173,34 @@ button:hover {
 </header>
 
 <main>
-  <h1>Tirage prénom – Oracle Sia</h1>
+   <h1>Tirage prénom gratuit – Oracle Sia</h1>
+<p>Plongez dans la symbolique de votre prénom avec l’Oracle Sia. Ce tirage révèle les énergies vibratoires et les tensions inconscientes qui vous traversent, offrant un miroir intime de votre identité projetée.</p>
+  <h2>Choisissez l’aspect à explorer</h2>
    <fieldset style="border: none; margin: 0;">
   <legend><strong>Choisir l’aspect :</strong></legend>
   <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
   <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
   <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
 </fieldset>
-
+</div>
+  <h2>Concentrez-vous sur votre question</h2>
+  <div style="margin-top: 2rem;">
+  <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
+  <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
+  </div>
+  <div style="margin-top: 2rem;">
+    <label for="prénom"><strong>Prénom :</strong></label><br>
+  <input type="text" id="champPrenom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
+  </div>
+  <div id="resultats" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
+<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante de votre tirage</button>
+</div>
+ <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p>
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
   <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
-</div>
-  <div style="margin-top: 2rem;">
-  <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
-  <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
-    <label for="prénom"><strong>Prénom :</strong></label><br>
-  <input type="text" id="champPrenom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
-  <div id="resultats" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
-  </div>
-
-  <!-- Bouton pour afficher la synthèse -->
-<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
-  
+  <h2>Interprétation du tirage</h2>
   <p>Chaque lettre du prénom reçoit une carte. Ce tirage offre une lecture très personnelle, intime, en lien direct avec l’identité vibratoire du consultant.</p>
   <ul>
     <li>Passé / Présent / Futur</li>
@@ -202,7 +209,10 @@ button:hover {
   </ul>
   <p>Sia est l’oracle du dedans. Il n’éclaire pas ce qui se voit, mais ce qui murmure en profondeur.
      Il révèle les perceptions subtiles, les mouvements internes, les ressentis que l’on ne sait pas toujours nommer mais que l’on porte en silence.</p>
-
+  <p><em>Revenez à tout moment pour refaire ce tirage et affiner votre compréhension de votre prénom.</em></p>
+  <div class="retour">
+    <a href="sia.html" class="btn-retour">← Retour à la page Oracle Sia</a>
+  </div>
 </main>
 <footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
   Produit par <strong>OracleHeka</strong> —
@@ -424,7 +434,7 @@ window.onload = function () {
   background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
   <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
     <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
-    <h2>Synthèse Guidante</h2>
+    <h2>Synthèse Guidante de l'oracle de Sia</h2>
     <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
     <div style="text-align: center;">
       <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
