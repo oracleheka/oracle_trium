@@ -135,9 +135,9 @@ button:hover {
 }
 
 /* Cadres des cartes */
-#resultats > div {
-  flex: 1 1 250px;
-  max-width: 300px;
+.ligneTetraktys > div {
+  flex: 1 1 150px;
+  max-width: 200px;
   text-align: center;
   border: 1px solid #b8a998; /* bordure beige/brun plus chaude */
   border-radius: 8px;
@@ -148,9 +148,21 @@ button:hover {
 
 /* Ajustement pour PC */
 @media (min-width: 768px) {
-  #resultats img {
+  .ligneTetraktys > div img {
     width: 180px;
   }
+}
+
+/* Les lignes de la pyramide */
+.ligneTetraktys {
+  display: flex;
+  justify-content: center; /* centre les cartes horizontalement */
+  gap: 1rem;
+  margin-bottom: 1rem;
+  width: auto;
+  border: none;
+  background: transparent;
+  box-sizing: content-box;
 }
   </style>
 </head>
@@ -171,30 +183,37 @@ button:hover {
 </header>
 
 <main>
-  <h1>Tirage Tétraktys – Oracle Seshat</h1>
-  <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
+  <h1>Tirage Tétraktys gratuit – Oracle Seshat</h1>
+  <p>Explorez votre ego et vos dynamiques intérieures à travers la structure symbolique du Tétraktys. Cette lecture en 10 cartes révèle les fondements, les tensions et les voies de transformation de votre posture personnelle.</p>
+  <h2>Choisissez l’aspect à explorer</h2>
+  <p>Personnalité, affectif ou spirituel : chaque aspect révèle une facette unique de la dynamique du tirage.</p>
+  <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0;">
   <fieldset style="border: none; margin: 0;">
   <legend><strong>Choisir l’aspect :</strong></legend>
   <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
   <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
   <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
 </fieldset>
-
-  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
-  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
-  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
-  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
-</div>
-  <div style="margin-top: 2rem;">
+  </div>
+  
+   <h2>Concentrez vous sur votre question</h2>
+  <div style="margin-top: 0.5rem;">
   <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
    <label for="champPrenom"><strong>Prénom (symbolique) :</strong></label><br>
 <input type="text" id="champPrenom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
-  <div id="resultats" style="margin-top: 2rem;"></div>
+  <div id="resultats" style="margin-top: 0.5rem;"></div>
   </div>
 
 <!-- Bouton pour afficher la synthèse -->
-<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
+<button id="btnSynthese" style="display:none; margin-top: 0.5rem;">Voir la synthèse guidante de l'oracle Seshat</button>
+  </div>
+  
+  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Seshat vous montrer le chemin.</p>
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
   
   <p>Ce tirage repose sur une structure triangulaire composée de 10 cartes réparties en 4 niveaux, formant une pyramide énergétique ou un chemin d’évolution.</p>
   <p>Chaque ligne représente un palier de conscience ou une phase intérieure, allant du fondement à l’épanouissement.</p>
@@ -248,6 +267,7 @@ button:hover {
 
     alert("Le jeu a été mélangé et coupé !");
   }
+   
 function tirerLesCartes() {
   const champ = document.getElementById("champPrenom");
   const nomSymbolique = champ.value.trim();
@@ -288,19 +308,18 @@ function tirerLesCartes() {
 
   let idx = 0;
   niveaux.forEach(niveau => {
+    // Ajoute le titre du niveau
     const titre = document.createElement("h4");
     titre.textContent = niveau.titre;
     titre.style.textAlign = "center";
-    titre.style.width = "100%";
     affichage.appendChild(titre);
 
+    // Crée la ligne pour les cartes de ce niveau
     const ligne = document.createElement("div");
-    ligne.style.display = "flex";
-    ligne.style.justifyContent = "center";
-    ligne.style.gap = "1rem";
-    ligne.style.marginBottom = "1rem";
+    ligne.classList.add("ligneTetraktys"); // pour le CSS
     affichage.appendChild(ligne);
 
+    // Ajoute les cartes de ce niveau
     for (let i = 0; i < niveau.nb; i++) {
       const carte = tirage[idx];
       const sens = Math.random() < 0.5 ? "endroit" : "inversé";
@@ -310,19 +329,16 @@ function tirerLesCartes() {
       const div = document.createElement("div");
       div.innerHTML = `
         <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
-        <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Seshat" style="width:100px"><br>
+        <img src="${carte.image}" alt="Carte ${carte.id}" style="width:100px"><br>
         <p style="margin-top:0.5rem;">${interpretation}</p>
       `;
-
-      styleCarte(div);
       ligne.appendChild(div);
-      idx++;
+    idx++;
     }
   });
 
   document.getElementById("btnSynthese").style.display = "inline-block";
 }
-
 function ajouterUneCarte() {
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
@@ -433,7 +449,7 @@ window.onload = function () {
   background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
   <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
     <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
-    <h2>Synthèse Guidante</h2>
+    <h2>Synthèse Guidante de l'oracle de Seshat</h2>
     <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
     <div style="text-align: center;">
       <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
