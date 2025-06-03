@@ -315,20 +315,26 @@ function tirerLesCartes() {
 
   let idx = 0;
   niveaux.forEach(niveau => {
+    const ligne = document.createElement("div");
+    ligne.style.display = "flex";
+    ligne.style.flexDirection = "column";
+    ligne.style.alignItems = "center";
+    ligne.style.marginBottom = "1rem";
+    ligne.style.width = "100%";
+
     const titre = document.createElement("h4");
     titre.textContent = niveau.titre;
     titre.style.textAlign = "center";
     titre.style.width = "100%";
-    affichage.appendChild(titre);
+    ligne.appendChild(titre);
 
-    const ligne = document.createElement("div");
-    ligne.style.display = "flex";
-    ligne.style.justifyContent = "center";
-    ligne.style.flexWrap = "wrap"; // Ajouté pour gérer l’adaptation
-    ligne.style.gap = "1rem";
-    ligne.style.marginBottom = "1rem";
-    ligne.style.width = "100%"; // Ajouté pour s’adapter au parent
-    affichage.appendChild(ligne);
+    const cartesContainer = document.createElement("div");
+    cartesContainer.style.display = "flex";
+    cartesContainer.style.justifyContent = "center";
+    cartesContainer.style.gap = "1rem";
+    cartesContainer.style.flexWrap = "wrap";
+    cartesContainer.style.width = "100%";
+    ligne.appendChild(cartesContainer);
 
     for (let i = 0; i < niveau.nb; i++) {
       const carte = tirage[idx];
@@ -342,13 +348,13 @@ function tirerLesCartes() {
         <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:100px"><br>
         <p style="margin-top:0.5rem;">${interpretation}</p>
       `;
-
       styleCarte(div);
-      ligne.appendChild(div);
+      cartesContainer.appendChild(div);
       idx++;
     }
-  });
 
+    affichage.appendChild(ligne);
+  });
   document.getElementById("btnSynthese").style.display = "inline-block";
 }
 
