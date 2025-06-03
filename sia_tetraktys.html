@@ -153,6 +153,20 @@ button:hover {
   background: transparent;
   box-sizing: content-box;
 }
+.btn-retour {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: #3b6a9a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+  background-color: #345b85;
+}
   </style>
 </head>
 <body>
@@ -192,10 +206,8 @@ button:hover {
   <div style="margin-top: 0.5rem;">
     <label for="champPrenom"><strong>Prénom (symbolique) :</strong></label><br>
 <input type="text" id="champPrenom" name="prenom" placeholder="Entrer votre prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">  
-  <div id="resultats" style="margin-top: 0.5rem;"></div>
   </div>
-
-  <!-- Bouton pour afficher la synthèse -->
+    <div id="resultats" style="margin-top: 0.5rem;"></div>
 <button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante de votre tirage</button>
 </div>
   
@@ -218,6 +230,9 @@ button:hover {
   <p>Le Tétraktys permet une lecture en profondeur, construite comme une pyramide symbolique. Il éclaire non seulement une situation, mais aussi les couches internes qui la sous-tendent..</p>
   <p>Il est particulièrement adapté aux questions complexes, aux phases de transition, ou à une lecture globale de soi à un moment donné.</p>
   <p><em>Refaites ce tirage aussi souvent que nécessaire pour clarifier vos intentions et avancer en conscience.</em></p>
+<div class="retour">
+    <a href="sia.html" class="btn-retour">← Retour à la page Oracle Sia</a>
+  </div>
 </main>
 <footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
   Produit par <strong>OracleHeka</strong> —
