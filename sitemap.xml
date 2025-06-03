@@ -11,6 +11,12 @@
   <url>
     <loc>https://oracleheka.github.io/oracle_trium/methodes.html</loc>
   </url>
+   <url>
+    <loc>https://oracleheka.github.io/oracle_trium/faq.html</loc>
+  </url>
+  <url>
+    <loc>https://oracleheka.github.io/oracle_trium/mentions-legales.html</loc>
+  </url>
 
   <!-- Heka -->
   <url>
@@ -34,7 +40,13 @@
   <url>
     <loc>https://oracleheka.github.io/oracle_trium/heka_tetraktys.html</loc>
   </url>
-
+  <url
+  <loc>https://oracleheka.github.io/oracle_trium/heka_2prenoms.html</loc>
+  </url>
+  <url
+  <loc>https://oracleheka.github.io/oracle_trium/heka_3prenoms.html</loc>
+  </url>
+  
   <!-- Sia -->
   <url>
     <loc>https://oracleheka.github.io/oracle_trium/sia.html</loc>
@@ -56,6 +68,12 @@
   </url>
   <url>
     <loc>https://oracleheka.github.io/oracle_trium/sia_tetraktys.html</loc>
+  </url>
+  <url
+  <loc>https://oracleheka.github.io/oracle_trium/sia_2prenoms.html</loc>
+  </url>
+  <url
+  <loc>https://oracleheka.github.io/oracle_trium/sia_3prenoms.html</loc>
   </url>
 
   <!-- Seshat -->
@@ -80,6 +98,14 @@
   <url>
     <loc>https://oracleheka.github.io/oracle_trium/seshat_tetraktys.html</loc>
   </url>
+    <url
+  <loc>https://oracleheka.github.io/oracle_trium/seshat_2prenoms.html</loc>
+  </url>
+  <url
+  <loc>https://oracleheka.github.io/oracle_trium/seshat_3prenoms.html</loc>
+  </url>
+
+  <!-- decouverte -->  
   <url>
     <loc>https://oracleheka.github.io/oracle_trium/decouverte.html</loc>
   </url>
@@ -91,9 +117,6 @@
   </url>
   <url>
     <loc>https://oracleheka.github.io/oracle_trium/poemes.html</loc>
-  </url>
-  <url>
-    <loc>https://oracleheka.github.io/oracle_trium/faq.html</loc>
   </url>
   <url>
     <loc>https://oracleheka.github.io/oracle_trium/preface_seshat.html</loc>
