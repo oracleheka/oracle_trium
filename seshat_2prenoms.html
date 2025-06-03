@@ -117,6 +117,20 @@
       padding: 1rem;
       margin-bottom: 1rem;
     }
+   .btn-retour {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: #3b6a9a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+  background-color: #345b85;
+}
   </style>
 </head>
 <body>
@@ -147,11 +161,7 @@
     <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
     <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
   </fieldset>
-  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez l’Oracle Seshat vous guider.</p>
-  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
-  <button id="tirerBtn" onclick="tirageCroise()">Tirer les cartes</button>
-  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
-  <button onclick="réinitialiser()">Réinitialiser</button>
+</div>
   <h2>Concentrez-vous sur votre question</h2>
    <p>Indiquez les deux prénoms et posez une question (facultatif) pour affiner le tirage.</p>
   <div style="margin-top: 0.5rem;">
@@ -168,6 +178,11 @@
   </div>
   <div id="resultats" style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;"></div>
   <button id="btnSynthese" style="display:none; margin-top: 1rem;">Découvrez la synthèse guidante de votre tirage Seshat</button>
+  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez l’Oracle Seshat vous guider.</p>
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirageCroise()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button onclick="réinitialiser()">Réinitialiser</button>
   <h2>Interprétation du tirage</h2>
 <p>Chaque lettre de chaque prénom reçoit une carte, dévoilant :</p>
 <ul>
@@ -177,6 +192,9 @@
 </ul>
 <p>L’Oracle Seshat agit ici comme un miroir symbolique pour explorer vos liens et clarifier les zones de tension ou d’harmonie.</p>
 <p><em>Vous pouvez revenir à tout moment pour refaire un tirage et voir comment évoluent les énergies entre ces deux prénoms.</em></p>
+<div class="retour">
+    <a href="seshat.html" class="btn-retour">← Retour à la page Oracle Seshat</a>
+  </div>
 </main>
 
 <footer>
