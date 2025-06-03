@@ -140,6 +140,30 @@ button:hover {
     width: 180px;
   }
 }
+/* Pyramide pour Tétraktys */
+#resultats > div {
+  display: flex;
+  justify-content: center; /* centre les cartes */
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+/* Pour former la pyramide visuelle */
+#resultats > div:nth-child(2) { /* Ligne 1 : 1 carte */
+  margin-left: auto;
+  margin-right: auto;
+}
+#resultats > div:nth-child(4) { /* Ligne 2 : 2 cartes */
+  margin-left: 10%;
+  margin-right: 10%;
+}
+#resultats > div:nth-child(6) { /* Ligne 3 : 3 cartes */
+  margin-left: 5%;
+  margin-right: 5%;
+}
+#resultats > div:nth-child(8) { /* Ligne 4 : 4 cartes */
+  margin-left: 0;
+  margin-right: 0;
+}
   </style>
 </head>
 <body>
