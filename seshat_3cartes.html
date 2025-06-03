@@ -141,6 +141,20 @@ button:hover {
     width: 180px;
   }
 }
+ .btn-retour {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: #3b6a9a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+  background-color: #345b85;
+}
   </style>
 </head>
 <body>
@@ -164,6 +178,7 @@ button:hover {
   <p>Découvrez ce tirage gratuit à 3 cartes de l’Oracle Seshat : une méthode introspective pour discerner la voie intérieure à suivre et franchir le passage symbolique qui se présente à vous.</p>
   
   <h2>Choisissez l’aspect à explorer</h2>
+   <p>Chaque aspect révèle une dimension spécifique de votre relation : personnalité, affectif ou spirituel.</p>
   <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
  <fieldset style="border: none; margin: 0;">
   <legend><strong>Choisir l’aspect :</strong></legend>
@@ -171,11 +186,6 @@ button:hover {
   <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
   <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
 </fieldset>
-
-  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
-  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
-  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
-  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
 </div>
   <h2>Concentrez-vous sur votre question</h2>
   <div style="margin-top: 2rem;">
@@ -185,7 +195,12 @@ button:hover {
   <div id="resultats" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
    <!-- Bouton pour afficher la synthèse -->
 <button id="btnSynthese" style="display:none; margin-top: 1rem;">Découvrez la synthèse guidante de votre tirage</button>
-  
+</div>
+  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez l’Oracle Seshat vous guider.</p>
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
   <h2>À propos du tirage</h2>
   <p>Ce tirage à 3 cartes est particulièrement adapté aux questions à trois volets :</p>
   <ul>
@@ -195,6 +210,9 @@ button:hover {
   </ul>
   <p>L’Oracle Seshat éclaire ici les dynamiques profondes de votre situation. Il ne prédit rien, mais révèle les passages intérieurs à franchir et les choix qui façonnent votre chemin.</p>
   <p><em>Refaites ce tirage quand cela vous semble nécessaire pour affiner votre posture intérieure et avancer plus consciemment.</em></p>
+<div class="retour">
+    <a href="seshat.html" class="btn-retour">← Retour à la page Oracle Seshat</a>
+  </div>
 </main>
 <footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
   Produit par <strong>OracleHeka</strong> —
