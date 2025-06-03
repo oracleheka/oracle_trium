@@ -154,23 +154,16 @@
   <h2>Usage responsable et éthique</h2>
   <p><em>Ce tirage des trois prénoms explore des liens complexes et profonds. Il doit être abordé avec discernement et bienveillance, en gardant à l’esprit que chaque lien est vivant et en constante évolution.</em></p>
   <h2>Choisissez l’aspect du tirage</h2>
-<p>Personnalité, affectif ou spirituel : chaque aspect dévoile une dimension unique de la relation triangulaire.</p>
-  
+  <p>Personnalité, affectif ou spirituel : chaque aspect dévoile une dimension unique de la relation triangulaire.</p>
   <fieldset style="border: none; margin: 1rem 0;">
     <legend><strong>Choisir l’aspect :</strong></legend>
     <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
     <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
     <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
   </fieldset>
-
-  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
-  <button id="tirerBtn" onclick="tirageTriangulaire()">Tirer les cartes</button>
-  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
-  <button onclick="réinitialiser()">Réinitialiser</button>
-
+</div>
   <h2>Concentrez-vous sur votre question</h2>
 <p>Indiquez les trois prénoms et, si vous le souhaitez, posez une question pour enrichir la lecture.</p>
-  
   <div style="margin-top: 2rem;">
     <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
     <input type="text" id="question" style="width:100%; max-width:600px; margin:0.5rem 0;">
@@ -187,10 +180,13 @@
     <label for="prenom3"><strong>Prénom 3 :</strong></label><br>
     <input type="text" id="prenom3" style="width:100%; max-width:600px; margin:0.5rem 0;">
   </div>
-
   <div id="resultats" style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;"></div>
   <button id="btnSynthese" style="display:none; margin-top: 1rem;">Découvrez la synthèse guidante de votre tirage Sia</button>
-
+  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Sia vous guider.</p>
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirageTriangulaire()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button onclick="réinitialiser()">Réinitialiser</button>
   <h2>Interprétation du tirage</h2>
 <p>Chaque lettre de chaque prénom reçoit une carte. Cette lecture triangulaire révèle :</p>
 <ul>
