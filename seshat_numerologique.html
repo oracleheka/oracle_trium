@@ -1,10 +1,9 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Oracle Seshat : Tirage numérologique – Passage, chemin et discernement intérieur</title>
+  <title>Tirage numérologique gratuit – Oracle Seshat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tirage numérologique gratuit avec l’Oracle Seshat. Une méthode introspective pour éclairer le chemin de passage et les choix à partir du prénom et de la date de naissance.">
-  <meta name="keywords" content="tirage numérologique, oracle Seshat, prénom et date de naissance, passage symbolique, discernement intérieur, oracle introspectif, tirage gratuit, chemin personnel">
+  <meta name="description" content="Tirage numérologique gratuit avec l’Oracle Seshat. Analyse de l’identité et du chemin de vie à partir du prénom et de la date de naissance.">
 
   <script type="application/ld+json">
   {
@@ -12,22 +11,12 @@
     "@type": "WebPage",
     "name": "Oracle Seshat : Tirage numérologique",
     "url": "https://oracleheka.github.io/oracle_trium/seshat_numerologique.html",
-    "description": "Tirage numérologique gratuit avec l’Oracle Seshat. Une méthode introspective pour éclairer le chemin de passage et les choix à partir du prénom et de la date de naissance.",
+    "description": "Tirage numérologique gratuit avec l’Oracle Seshat. Analyse de l’identité et du chemin de vie à partir du prénom et de la date de naissance.",
     "inLanguage": "fr",
     "author": {
       "@type": "Person",
       "name": "Roland Alberolla"
-    },
-    "keywords": [
-      "tirage numérologique",
-      "oracle Seshat",
-      "prénom et date de naissance",
-      "passage symbolique",
-      "discernement intérieur",
-      "oracle introspectif",
-      "tirage gratuit",
-      "chemin personnel"
-    ]
+    }
   }
   </script>
   
@@ -152,6 +141,20 @@ button:hover {
     width: 180px;
   }
 }
+.btn-retour {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: #3b6a9a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+  background-color: #345b85;
+}
   </style>
 </head>
 <body>
@@ -171,7 +174,10 @@ button:hover {
 </header>
 
 <main>
-  <h1>Tirage numérologique – Oracle Seshat</h1>
+  <h1>Tirage numérologique gratuit – Oracle Seshat</h1>
+<p>Découvrez les énergies de votre identité et de votre chemin de vie à travers le tirage numérologique de l’Oracle Seshat. Une méthode qui éclaire les influences et les dynamiques invisibles.</p>
+  <h2>Choisissez l’aspect à explorer</h2>
+  <p>Personnalité, affectif ou spirituel : chaque aspect révèle une facette unique de la dynamique du tirage.</p>
   <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
   <fieldset style="border: none; margin: 0;">
   <legend><strong>Choisir l’aspect :</strong></legend>
@@ -179,12 +185,8 @@ button:hover {
   <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
   <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
 </fieldset>
-
-  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
-  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
-  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
-  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
 </div>
+  <h2>Concentrez-vous sur votre question</h2>
   <div style="margin-top: 2rem;">
   <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
@@ -194,10 +196,15 @@ button:hover {
   <label for="date_naissance"><strong>Date de naissance (JJ/MM/AAAA) :</strong></label><br>
   <input type="text" id="champDate" name="date_naissance" placeholder="Exemple : 15/05/1990" pattern="\\d{2}/\\d{2}/\\d{4}" style="width: 100%; max-width: 200px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
   </div>
-
-<!-- Bouton pour afficher la synthèse -->
-<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
-    
+  <div id="resultats" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;"></div>
+<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante de votre tirage</button>
+  </div> 
+<p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Seshat  vous guider.</p>
+ <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
+  <h2>Interprétation du tirage</h2>
   <p>Ce tirage est basé sur le nom complet (identité) et la date de naissance. Deux cartes majeures sont tirées :</p>
   <ul>
     <li>Carte d’Identité (valeur réduite du nom)</li>
@@ -205,8 +212,11 @@ button:hover {
   </ul>
   <p>Seshat est l’oracle du passage. Il n’éclaire ni ce que l’on montre, ni ce que l’on ressent : il montre où cela mène.
      Il trace des lignes, ouvre des directions, indique des carrefours intérieurs. Il ne prédit rien, mais il révèle les dynamiques qui traversent une situation, une période, un être.</p>
+<p><em>Vous pouvez refaire ce tirage à tout moment pour voir l’évolution de vos énergies et affiner votre compréhension.</em></p>
+<div class="retour">
+    <a href="seshat.html" class="btn-retour">← Retour à la page Oracle Seshat</a>
+  </div>
 
- <div id="resultats" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;"></div>
 </main>
 <footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
   Produit par <strong>OracleHeka</strong> —
@@ -406,7 +416,7 @@ function tirerNumerologique() {
   background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
   <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
     <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
-    <h2>Synthèse Guidante</h2>
+    <h2>Synthèse Guidante de l'oracle Seshat</h2>
     <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
     <div style="text-align: center;">
       <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
