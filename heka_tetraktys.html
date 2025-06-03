@@ -299,11 +299,6 @@ function tirerLesCartes() {
     ligne.style.width = "100%"; // Ajouté pour s’adapter au parent
     affichage.appendChild(ligne);
 
-    #resultats img {
-   max-width: 100px; /* ou la taille que tu juges adaptée */
-  height: auto;
-  }
-
     for (let i = 0; i < niveau.nb; i++) {
       const carte = tirage[idx];
       const sens = Math.random() < 0.5 ? "endroit" : "inversé";
