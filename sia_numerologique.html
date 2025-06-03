@@ -1,33 +1,21 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Oracle Sia : Tirage numérologique – Résonance émotionnelle du prénom et intuition</title>
+  <title>Tirage numérologique gratuit – Oracle Sia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tirage numérologique gratuit avec l’Oracle Sia. Une méthode symbolique pour explorer l’intuition et la mémoire émotionnelle à partir du prénom et de la date de naissance.">
-  <meta name="keywords" content="tirage numérologique, oracle Sia, prénom et date de naissance, intuition, mémoire émotionnelle, oracle de l’âme, introspection, tirage gratuit">
-
+  <meta name="description" content="Tirage numérologique gratuit avec l’Oracle Sia. Analyse de l’identité et du chemin de vie à partir du prénom et de la date de naissance.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Oracle Sia : Tirage numérologique",
     "url": "https://oracleheka.github.io/oracle_trium/sia_numerologique.html",
-    "description": "Tirage numérologique gratuit avec l’Oracle Sia. Une méthode symbolique pour explorer l’intuition et la mémoire émotionnelle à partir du prénom et de la date de naissance.",
+    "description": "Tirage numérologique gratuit avec l’Oracle Sia. Analyse de l’identité et du chemin de vie à partir du prénom et de la date de naissance.",
     "inLanguage": "fr",
     "author": {
       "@type": "Person",
       "name": "Roland Alberolla"
-    },
-    "keywords": [
-      "tirage numérologique",
-      "oracle Sia",
-      "prénom et date de naissance",
-      "intuition",
-      "mémoire émotionnelle",
-      "oracle de l’âme",
-      "introspection",
-      "tirage gratuit"
-    ]
+    }
   }
   </script>
   
@@ -152,6 +140,20 @@ button:hover {
     width: 180px;
   }
 }
+.btn-retour {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: #3b6a9a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+  background-color: #345b85;
+}
   </style>
 </head>
 <body>
@@ -171,7 +173,10 @@ button:hover {
 </header>
 
 <main>
-  <h1>Tirage numérologique de l'Oracle Sia</h1>
+  <h1>Tirage numérologique gratuit – Oracle Sia</h1>
+<p>Découvrez les énergies de votre identité et de votre chemin de vie à travers le tirage numérologique de l’Oracle Sia. Une méthode qui éclaire les influences et les dynamiques invisibles.</p>
+  <h2>Choisissez l’aspect à explorer</h2>
+  <p>Personnalité, affectif ou spirituel : chaque aspect révèle une facette unique de la dynamique du tirage.</p>
   <div style="display: flex; align-items: center; gap: 2rem; margin: 1.5rem 0;">
   <fieldset style="border: none; margin: 0;">
   <legend><strong>Choisir l’aspect :</strong></legend>
@@ -179,12 +184,8 @@ button:hover {
   <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
   <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
 </fieldset>
-
-  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
-  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
-  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
-  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
 </div>
+   <h2>Concentrez-vous sur votre question</h2>
   <div style="margin-top: 2rem;">
   <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
   <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
@@ -194,10 +195,15 @@ button:hover {
   <label for="date_naissance"><strong>Date de naissance (JJ/MM/AAAA) :</strong></label><br>
   <input type="text" id="champDate" name="date_naissance" placeholder="Exemple : 15/05/1990" pattern="\\d{2}/\\d{2}/\\d{4}" style="width: 100%; max-width: 200px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
   </div>
-
-    <!-- Bouton pour afficher la synthèse -->
-<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
-    
+   <div id="resultats" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;"></div> 
+   <button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
+  </div>
+  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la murmure de l'Oracle Sia  vous guider.</p> 
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button> 
+  <h2>Interprétation du tirage</h2>    
   <p>Ce tirage est basé sur le nom complet (identité) et la date de naissance. Deux cartes majeures sont tirées :</p>
   <ul>
     <li>Carte d’Identité (valeur réduite du nom)</li>
@@ -205,8 +211,11 @@ button:hover {
   </ul>
   <p>Sia est l’oracle du dedans. Il n’éclaire pas ce qui se voit, mais ce qui murmure en profondeur.
      Il révèle les perceptions subtiles, les mouvements internes, les ressentis que l’on ne sait pas toujours nommer mais que l’on porte en silence.</p>
-
- <div id="resultats" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;"></div>
+  <p><em>Vous pouvez refaire ce tirage à tout moment pour voir l’évolution de vos énergies et affiner votre compréhension.</em></p>
+  <div class="retour">
+    <a href="sia.html" class="btn-retour">← Retour à la page Oracle Sia</a>
+  </div>    
+ 
 </main>
 <footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
   Produit par <strong>OracleHeka</strong> —
