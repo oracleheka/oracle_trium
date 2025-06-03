@@ -288,9 +288,16 @@ function tirerLesCartes() {
     const ligne = document.createElement("div");
     ligne.style.display = "flex";
     ligne.style.justifyContent = "center";
+    ligne.style.flexWrap = "wrap"; // Ajouté pour gérer l’adaptation
     ligne.style.gap = "1rem";
     ligne.style.marginBottom = "1rem";
+    ligne.style.width = "100%"; // Ajouté pour s’adapter au parent
     affichage.appendChild(ligne);
+
+    #resultats img {
+   max-width: 100px; /* ou la taille que tu juges adaptée */
+  height: auto;
+  }
 
     for (let i = 0; i < niveau.nb; i++) {
       const carte = tirage[idx];
