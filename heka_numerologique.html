@@ -140,7 +140,20 @@ button:hover {
     width: 180px;
   }
 }
-
+.btn-retour {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: #3b6a9a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+  background-color: #345b85;
+}
   </style>
 </head>
 <body>
@@ -187,7 +200,7 @@ button:hover {
   <label for="date_naissance"><strong>Date de naissance (JJ/MM/AAAA) :</strong></label><br>
   <input type="text" id="champDate" name="date_naissance" placeholder="Exemple : 15/05/1990" pattern="\\d{2}/\\d{2}/\\d{4}" style="width: 100%; max-width: 200px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
   </div>
-  <div style="margin-top: 1rem;">
+  <div id="resultats" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;"></div>
     <!-- Bouton pour afficher la synthèse -->
   <button id="btnSynthese" style="display:none; margin-top: 1rem;">Découvrez la synthèse guidante de votre tirage Heka</button>
   </div>
@@ -204,9 +217,10 @@ button:hover {
 </ul>
 <p>L’Oracle Heka révèle ainsi les points de tension, les leviers de transformation et les dynamiques intérieures qui influencent votre chemin de vie.</p>
 <p><em>Vous pouvez refaire ce tirage à tout moment pour voir l’évolution de vos énergies et affiner votre compréhension.</em></p>
-     <div id="resultats" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;"></div>
+<div class="retour">
+    <a href="heka.html" class="btn-retour">← Retour à la page Oracle Heka</a>
+  </div>
 </main>
-
 <footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
   Produit par <strong>OracleHeka</strong> —
   <a href="mentions-legales.html">Mentions légales</a> —
