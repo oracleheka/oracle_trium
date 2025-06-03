@@ -140,18 +140,30 @@ button:hover {
     width: 180px;
   }
 }
+/* Conteneur principal qui empile les lignes */
 #resultats {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 1rem;
 }
 
-#resultats > div {
+/* Chaque ligne de cartes (niveau de la pyramide) */
+.ligneTetraktys {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-bottom: 1rem;
-  flex-wrap: nowrap;
+}
+
+/* Cartes */
+.ligneTetraktys > div {
+  border: 1px solid #b8a998;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  padding: 1rem;
+  min-width: 100px;
+  text-align: center;
 }
   </style>
 </head>
@@ -288,46 +300,46 @@ function tirerLesCartes() {
 
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
 
+  const niveaux = [
+    { titre: "1. Origine", nb: 1 },
+    { titre: "2. Dualité", nb: 2 },
+    { titre: "3. Chemin", nb: 3 },
+    { titre: "4. Manifestation", nb: 4 }
+  ];
+
+  let idx = 0;
   niveaux.forEach(niveau => {
-  const titre = document.createElement("h4");
-  titre.textContent = niveau.titre;
-  titre.style.textAlign = "center";
-  titre.style.width = "100%";
-  affichage.appendChild(titre);
+    // Ajoute le titre du niveau
+    const titre = document.createElement("h4");
+    titre.textContent = niveau.titre;
+    titre.style.textAlign = "center";
+    affichage.appendChild(titre);
 
-  const ligne = document.createElement("div");
-  ligne.style.display = "flex";
-  ligne.style.justifyContent = "center"; // centre les cartes dans la ligne
-  ligne.style.gap = "1rem";
-  ligne.style.marginBottom = "1rem";
-  ligne.style.position = "relative";
+    // Crée la ligne pour les cartes de ce niveau
+    const ligne = document.createElement("div");
+    ligne.classList.add("ligneTetraktys"); // pour le CSS
+    affichage.appendChild(ligne);
 
-  // ⚠️ Supprime ligne.style.width = "100%" !
-  // Il faut laisser la largeur s'adapter au contenu pour éviter le débordement.
+    // Ajoute les cartes de ce niveau
+    for (let i = 0; i < niveau.nb; i++) {
+      const carte = tirage[idx];
+      const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+      cartesTirees.push({ carte: carte, sens: sens });
 
-  for (let i = 0; i < niveau.nb; i++) {
-    const carte = tirage[idx];
-    const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-    cartesTirees.push({ carte: carte, sens: sens });
-
-    const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
-      <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:100px"><br>
-      <p style="margin-top:0.5rem;">${interpretation}</p>
-    `;
-    styleCarte(div);
-    ligne.appendChild(div);
+      const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
+        <img src="${carte.image}" alt="Carte ${carte.id}" style="width:100px"><br>
+        <p style="margin-top:0.5rem;">${interpretation}</p>
+      `;
+      ligne.appendChild(div);
     idx++;
-  }
+    }
+  });
 
-  // Centrage horizontal naturel
-  affichage.appendChild(ligne);
-});
   document.getElementById("btnSynthese").style.display = "inline-block";
 }
-
 function ajouterUneCarte() {
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
