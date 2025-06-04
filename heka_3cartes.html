@@ -513,14 +513,18 @@ document.getElementById("syntheseModal").style.display = "flex";
     // Texte de synthèse avec découpage
     y += 10;
     pdf.setFontSize(12);
-    const lignes = pdf.splitTextToSize(syntheseTexte, 180);
-    for (let i = 0; i < lignes.length; i++) {
-      if (y > 290) {
-        pdf.addPage();
-        y = 10;
+    const paragraphs = syntheseTexte.split('\n');
+    for (const para of paragraphs) {
+      const lignes = pdf.splitTextToSize(para, 180);
+      for (const ligne of lignes) {
+        if (y > 290) {
+          pdf.addPage();
+          y = 10;
+        }
+        pdf.text(ligne, 10, y);
+        y += 6;
       }
-      pdf.text(lignes[i], 10, y);
-      y += 6;
+      y += 4; // petit espace entre paragraphes
     }
 
     pdf.save('tirage_oracle.pdf');
