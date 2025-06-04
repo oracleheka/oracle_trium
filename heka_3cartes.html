@@ -425,55 +425,69 @@ button:hover {
     nav.classList.toggle("show");
   });
   </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <script>
   document.getElementById('exportPDFBtn').addEventListener('click', () => {
-    const logoUrl = "https://oracleheka.github.io/oracle_trium/images/logoheka.png";
-    const logoImg = new Image();
-    logoImg.crossOrigin = "anonymous";
-    logoImg.src = logoUrl;
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    
+    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png'; // Ton logo
+    const titre = 'Synthèse du tirage Oracle Heka';
+    const syntheseTexte = document.getElementById('contenuSynthese').innerText;
 
-    logoImg.onload = () => {
-      const canvasLogo = document.createElement('canvas');
-      canvasLogo.width = logoImg.width;
-      canvasLogo.height = logoImg.height;
+    // Exemple de récupération des cartes tirées (tableau [{imageSrc, nom, sens}])
+    const cartesTirees = window.cartesTirees || []; // À adapter si nécessaire !
 
-      const ctxLogo = canvasLogo.getContext('2d');
-      ctxLogo.drawImage(logoImg, 0, 0);
+    // Charger le logo d'abord
+    const loadImage = (src) => new Promise((resolve) => {
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = () => resolve(img);
+      img.src = src;
+    });
 
-      const logoData = canvasLogo.toDataURL('image/png');
+    const drawPDF = async () => {
+      let y = 10;
 
-      const { jsPDF } = window.jspdf;
-      const pdf = new jsPDF('p', 'mm', 'a4');
+      // Logo
+      const logoImg = await loadImage(logoUrl);
+      pdf.addImage(logoImg, 'PNG', 80, y, 50, 20);
+      y += 30;
 
-      const content = document.getElementById('syntheseModal');
+      // Titre
+      pdf.setFontSize(16);
+      pdf.text(titre, 10, y);
+      y += 10;
 
-      html2canvas(content, {
-        scale: 2,
-        useCORS: true
-      }).then((canvasContent) => {
-        const imgData = canvasContent.toDataURL('image/png');
+      // Cartes tirées
+      for (const carte of cartesTirees) {
+        // Charger l’image de la carte
+        const carteImg = await loadImage(carte.imageSrc);
+        pdf.addImage(carteImg, 'PNG', 10, y, 30, 40); // Petite image à gauche
 
-        // Ajoute le logo
-        pdf.addImage(logoData, 'PNG', 10, 10, 30, 30);
+        // Texte de la carte
+        pdf.setFontSize(11);
+        pdf.text(`${carte.nom} (${carte.sens})`, 45, y + 10);
+        y += 45;
 
-        // Ajoute le titre à côté du logo
-        pdf.setFontSize(16);
-        pdf.text("Synthèse du tirage Oracle Heka", 50, 20);
+        // Saut de page si besoin
+        if (y > 260) {
+          pdf.addPage();
+          y = 10;
+        }
+      }
 
-        // Décale l'image principale
-        let position = 50;
+      // Texte de synthèse
+      y += 10;
+      pdf.setFontSize(12);
+      const lignes = pdf.splitTextToSize(syntheseTexte, 180);
+      pdf.text(lignes, 10, y);
 
-        const imgWidth = 210;
-        const pageHeight = 297;
-        const imgHeight = canvasContent.height * imgWidth / canvasContent.width;
-
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-
-        pdf.save('synthese_oracle.pdf');
-      });
+      pdf.save('tirage_oracle.pdf');
     };
+
+    drawPDF();
   });
 </script>
 </body>
