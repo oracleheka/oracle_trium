@@ -384,6 +384,7 @@ button:hover {
 
   document.getElementById("contenuSynthese").innerText = resume;
   document.getElementById("syntheseModal").style.display = "flex";
+
 }
 
   function fermerSynthese() {
@@ -410,6 +411,9 @@ button:hover {
       <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
         Fermer
       </button>
+      <button id="exportPDFBtn" style="background-color: #3b6a9a; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Exporter votre tirage
+      </button>
     </div>
   </div>
 </div>
@@ -420,6 +424,56 @@ button:hover {
 
   burgerBtn.addEventListener("click", () => {
     nav.classList.toggle("show");
+  });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  document.getElementById('exportPDFBtn').addEventListener('click', () => {
+    const logoUrl = "https://oracleheka.github.io/oracle_trium/images/logo%20heka.png";
+    const logoImg = new Image();
+    logoImg.crossOrigin = "anonymous";
+    logoImg.src = logoUrl;
+
+    logoImg.onload = () => {
+      const canvasLogo = document.createElement('canvas');
+      canvasLogo.width = logoImg.width;
+      canvasLogo.height = logoImg.height;
+
+      const ctxLogo = canvasLogo.getContext('2d');
+      ctxLogo.drawImage(logoImg, 0, 0);
+
+      const logoData = canvasLogo.toDataURL('image/png');
+
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+
+      const content = document.getElementById('syntheseModal');
+
+      html2canvas(content, {
+        scale: 2,
+        useCORS: true
+      }).then((canvasContent) => {
+        const imgData = canvasContent.toDataURL('image/png');
+
+        // Ajoute le logo
+        pdf.addImage(logoData, 'PNG', 10, 10, 30, 30);
+
+        // Ajoute le titre à côté du logo
+        pdf.setFontSize(16);
+        pdf.text("Synthèse du tirage Oracle Heka", 50, 20);
+
+        // Décale l'image principale
+        let position = 50;
+
+        const imgWidth = 210;
+        const pageHeight = 297;
+        const imgHeight = canvasContent.height * imgWidth / canvasContent.width;
+
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+
+        pdf.save('synthese_oracle.pdf');
+      });
+    };
   });
 </script>
 </body>
