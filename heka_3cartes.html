@@ -454,72 +454,71 @@ document.getElementById("syntheseModal").style.display = "flex";
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
-    async function exportPDF() {
-  const { jsPDF } = window.jspdf;
-  const pdf = new jsPDF('p', 'mm', 'a4');
+  document.getElementById('exportPDFBtn').addEventListener('click', async () => {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('p', 'mm', 'a4');
 
-  let y = 10;
-  const pageWidth = pdf.internal.pageSize.getWidth();
+    let y = 10;
+    const pageWidth = pdf.internal.pageSize.getWidth();
 
-  const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
-  const titre = 'Synthèse du tirage Oracle Heka';
-  const syntheseTexte = document.getElementById('contenuSynthese').innerText;
-  const cartes = window.cartesTireesPDF || [];
+    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+    const titre = 'Synthèse du tirage Oracle Heka';
+    const syntheseTexte = document.getElementById('contenuSynthese').innerText;
+    const cartes = window.cartesTireesPDF || [];
 
-  // Fonction pour charger les images
-  const loadImage = (src) => new Promise((resolve) => {
-    const img = new Image();
-    img.crossOrigin = 'Anonymous';
-    img.onload = () => resolve(img);
-    img.src = src;
-  });
+    // Fonction pour charger les images
+    const loadImage = (src) => new Promise((resolve) => {
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = () => resolve(img);
+      img.src = src;
+    });
 
-  // Logo centré
-  const logoImg = await loadImage(logoUrl);
-  const logoWidth = 50;
-  const logoHeight = 20;
-  const logoX = (pageWidth - logoWidth) / 2;
-  pdf.addImage(logoImg, 'PNG', logoX, y, logoWidth, logoHeight);
-  y += logoHeight + 5;
+    // Logo centré
+    const logoImg = await loadImage(logoUrl);
+    const logoWidth = 50;
+    const logoHeight = 20;
+    const logoX = (pageWidth - logoWidth) / 2;
+    pdf.addImage(logoImg, 'PNG', logoX, y, logoWidth, logoHeight);
+    y += logoHeight + 5;
 
-  // Titre centré
-  pdf.setFontSize(16);
-  pdf.setFont(undefined, 'bold');
-  const textWidth = pdf.getStringUnitWidth(titre) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
-  const textX = (pageWidth - textWidth) / 2;
-  pdf.text(titre, textX, y);
-  y += 10;
+    // Titre centré
+    pdf.setFontSize(16);
+    pdf.setFont(undefined, 'bold');
+    const textWidth = pdf.getStringUnitWidth(titre) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
+    const textX = (pageWidth - textWidth) / 2;
+    pdf.text(titre, textX, y);
+    y += 10;
 
-  // Images des cartes + titres
-  for (const carte of cartes) {
-    const carteImg = await loadImage(carte.imageSrc);
-    pdf.addImage(carteImg, 'PNG', 10, y, 40, 50); // Image plus grande et plus lisible
+    // Images des cartes + titres
+    for (const carte of cartes) {
+      const carteImg = await loadImage(carte.imageSrc);
+      pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
 
-    pdf.setFontSize(11);
-    pdf.text(`${carte.nom} (${carte.sens})`, 55, y + 10);
-    y += 55;
+      pdf.setFontSize(11);
+      pdf.text(`${carte.nom} (${carte.sens})`, 55, y + 10);
+      y += 55;
 
-    if (y > 260) {
-      pdf.addPage();
-      y = 10;
+      if (y > 260) {
+        pdf.addPage();
+        y = 10;
+      }
     }
-  }
 
-  // Synthèse avec découpage du texte pour éviter dépassement
-  y += 10;
-  pdf.setFontSize(12);
-  const lignes = pdf.splitTextToSize(syntheseTexte, 180);
-  for (let i = 0; i < lignes.length; i++) {
-    if (y > 290) { // Ajuste la limite selon tes marges
-      pdf.addPage();
-      y = 10;
+    // Texte de synthèse avec découpage
+    y += 10;
+    pdf.setFontSize(12);
+    const lignes = pdf.splitTextToSize(syntheseTexte, 180);
+    for (let i = 0; i < lignes.length; i++) {
+      if (y > 290) {
+        pdf.addPage();
+        y = 10;
+      }
+      pdf.text(lignes[i], 10, y);
+      y += 6;
     }
-    pdf.text(lignes[i], 10, y);
-    y += 6; // espacement entre lignes
-  }
 
-  pdf.save('tirage_oracle.pdf');
+    pdf.save('tirage_oracle.pdf');
   });
 </script>
 </body>
