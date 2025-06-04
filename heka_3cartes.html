@@ -447,65 +447,65 @@ document.getElementById("syntheseModal").style.display = "flex";
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-  document.getElementById('exportPDFBtn').addEventListener('click', async () => {
-  const { jsPDF } = window.jspdf;
-  const pdf = new jsPDF('p', 'mm', 'a4');
+   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('p', 'mm', 'a4');
 
-  let y = 10;
-  const pageWidth = pdf.internal.pageSize.getWidth();
+    let y = 10;
+    const pageWidth = pdf.internal.pageSize.getWidth();
 
-  const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
-  const titre = 'Synthèse du tirage Oracle Heka';
-  const syntheseTexte = document.getElementById('contenuSynthese').innerText;
-  const cartes = window.cartesTirees || []; // tableau [{ imageSrc, nom, sens }]
+    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+    const titre = 'Synthèse du tirage Oracle Heka';
+    const syntheseTexte = document.getElementById('contenuSynthese').innerText;
+    const cartes = window.cartesTirees || []; // [{ carte, sens }]
 
-  // Fonction pour charger les images
-  const loadImage = (src) => new Promise((resolve) => {
-    const img = new Image();
-    img.crossOrigin = 'Anonymous';
-    img.onload = () => resolve(img);
-    img.src = src;
-  });
+    // Fonction pour charger les images
+    const loadImage = (src) => new Promise((resolve) => {
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = () => resolve(img);
+      img.src = src;
+    });
 
-  // Charger le logo et le centrer
-  const logoImg = await loadImage(logoUrl);
-  const logoWidth = 50;
-  const logoHeight = 20;
-  const logoX = (pageWidth - logoWidth) / 2; // centré horizontalement
-  pdf.addImage(logoImg, 'PNG', logoX, y, logoWidth, logoHeight);
-  y += logoHeight + 5; // espace après le logo
+    // Charger le logo et le centrer
+    const logoImg = await loadImage(logoUrl);
+    const logoWidth = 50;
+    const logoHeight = 20;
+    const logoX = (pageWidth - logoWidth) / 2;
+    pdf.addImage(logoImg, 'PNG', logoX, y, logoWidth, logoHeight);
+    y += logoHeight + 5;
 
-  // Centrer le titre
-  pdf.setFontSize(16);
-  pdf.setFont(undefined, 'bold');
-  const textWidth = pdf.getStringUnitWidth(titre) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
-  const textX = (pageWidth - textWidth) / 2; // centré horizontalement
-  pdf.text(titre, textX, y);
-  y += 10;
+    // Centrer le titre
+    pdf.setFontSize(16);
+    pdf.setFont(undefined, 'bold');
+    const textWidth = pdf.getStringUnitWidth(titre) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
+    const textX = (pageWidth - textWidth) / 2;
+    pdf.text(titre, textX, y);
+    y += 10;
 
-  // Images des cartes
-  for (const carte of cartes) {
-    const carteImg = await loadImage(carte.imageSrc);
-    pdf.addImage(carteImg, 'PNG', 10, y, 30, 40);
+    // Boucle sur les cartes
+    for (const { carte, sens } of cartes) {
+      const carteImg = await loadImage(carte.image);
+      pdf.addImage(carteImg, 'PNG', 10, y, 30, 40);
 
-    pdf.setFontSize(11);
-    pdf.text(`${carte.nom} (${carte.sens})`, 45, y + 10);
-    y += 45;
+      pdf.setFontSize(11);
+      pdf.text(`${carte.nom} (${sens})`, 45, y + 10);
+      y += 45;
 
-    if (y > 260) {
-      pdf.addPage();
-      y = 10;
+      if (y > 260) {
+        pdf.addPage();
+        y = 10;
+      }
     }
-  }
 
-  // Texte de synthèse
-  y += 10;
-  pdf.setFontSize(12);
-  const lignes = pdf.splitTextToSize(syntheseTexte, 180);
-  pdf.text(lignes, 10, y);
+    // Texte de synthèse
+    y += 10;
+    pdf.setFontSize(12);
+    const lignes = pdf.splitTextToSize(syntheseTexte, 180);
+    pdf.text(lignes, 10, y);
 
-  pdf.save('tirage_oracle.pdf');
-});
+    pdf.save('tirage_oracle.pdf');
+  });
 </script>
 </body>
 </html>
