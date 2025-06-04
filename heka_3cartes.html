@@ -381,11 +381,30 @@ button:hover {
   const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
   resume += `→ Synthèse guidée :\n\n${synthese}`;
 
-  document.getElementById("contenuSynthese").innerText = resume;
-  document.getElementById("syntheseModal").style.display = "flex";
+ const contenuDiv = document.getElementById("contenuSynthese");
+contenuDiv.innerHTML = ""; // Vide le contenu précédent
 
-}
+// Ajoute chaque carte avec son image et le texte de base
+cartesTirees.forEach(({ carte, sens }) => {
+  const imageSrc = carte.image; // l'URL de l'image de la carte (à vérifier si c'est la bonne clé !)
+  const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
+  const texte = carte[sens]?.[aspect]?.texte || "(Message absent)";
 
+  const carteHtml = `
+    <div style="margin-bottom: 1rem;">
+      <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+      <p>${titre} → ${texte}</p>
+    </div>`;
+  
+  contenuDiv.innerHTML += carteHtml;
+});
+
+// Ajoute la synthèse finale
+contenuDiv.innerHTML += `<pre style="white-space:pre-wrap; margin-top: 1rem;">${resume}</pre>`;
+
+// Affiche la modale
+document.getElementById("syntheseModal").style.display = "flex";
+  }
   function fermerSynthese() {
     document.getElementById("syntheseModal").style.display = "none";
   }
@@ -424,6 +443,7 @@ button:hover {
   burgerBtn.addEventListener("click", () => {
     nav.classList.toggle("show");
   });
+  </script<
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
