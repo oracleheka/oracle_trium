@@ -452,13 +452,14 @@ document.getElementById("syntheseModal").style.display = "flex";
   });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="polices/Roboto-Regular.js"></script>
+<script src="polices/Roboto-Regular.js"></script> <!-- ⚠️ Ton fichier police déjà encodé -->
+
 <script>
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF('p', 'mm', 'a4');
 
-    // Utiliser la police correctement (déjà chargée dans Roboto-Regular.js)
+    // Utilise la police Roboto encodée dans Roboto-Regular.js
     pdf.setFont("Roboto");
 
     let y = 10;
@@ -469,7 +470,6 @@ document.getElementById("syntheseModal").style.display = "flex";
     const syntheseTexte = document.getElementById('contenuSynthese').innerText;
     const cartes = window.cartesTireesPDF || [];
 
-    // Fonction pour charger les images
     const loadImage = (src) => new Promise((resolve) => {
       const img = new Image();
       img.crossOrigin = 'Anonymous';
@@ -477,7 +477,6 @@ document.getElementById("syntheseModal").style.display = "flex";
       img.src = src;
     });
 
-    // Logo
     const logoImg = await loadImage(logoUrl);
     const logoWidth = 50;
     const logoHeight = 20;
@@ -485,7 +484,6 @@ document.getElementById("syntheseModal").style.display = "flex";
     pdf.addImage(logoImg, 'PNG', logoX, y, logoWidth, logoHeight);
     y += logoHeight + 5;
 
-    // Titre
     pdf.setFontSize(16);
     pdf.setFont(undefined, 'bold');
     const textWidth = pdf.getStringUnitWidth(titre) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
@@ -493,7 +491,6 @@ document.getElementById("syntheseModal").style.display = "flex";
     pdf.text(titre, textX, y);
     y += 10;
 
-    // Images des cartes + titres
     for (const carte of cartes) {
       const carteImg = await loadImage(carte.imageSrc);
       pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
@@ -508,7 +505,6 @@ document.getElementById("syntheseModal").style.display = "flex";
       }
     }
 
-    // Texte de synthèse complet
     y += 10;
     pdf.setFontSize(12);
     const cleanTexte = syntheseTexte.replace(/\n\s*\n/g, '\n');
@@ -526,5 +522,6 @@ document.getElementById("syntheseModal").style.display = "flex";
     pdf.save('tirage_oracle.pdf');
   });
 </script>
+  <script src="polices/Roboto-Regular.js"></script>
 </body>
 </html>
