@@ -88,7 +88,7 @@ function genererSyntheseGuidante(cartesTirees, aspect, options = {}) {
   lignes.push("\n→ " + bilan);
 
   if (question) {
-    lignes.push(`\n En réponse à la question : « ${question} »`);
+    lignes.push(`En réponse à la question : « ${question} »`);
   }
 
   return lignes.join("\n");
