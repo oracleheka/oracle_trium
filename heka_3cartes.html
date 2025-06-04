@@ -451,23 +451,22 @@ document.getElementById("syntheseModal").style.display = "flex";
     nav.classList.toggle("show");
   });
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
     const { jsPDF } = window.jspdf;
-const pdf = new jsPDF('p', 'mm', 'a4');
+    const pdf = new jsPDF('p', 'mm', 'a4');
 
-// Change la police pour Helvetica (police intégrée fiable)
-pdf.setFont("Helvetica");
+    pdf.setFont("Helvetica");
 
-let y = 10;
-const pageWidth = pdf.internal.pageSize.getWidth();
+    let y = 10;
+    const pageWidth = pdf.internal.pageSize.getWidth();
 
-const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
-const titre = 'Synthèse du tirage Oracle Heka';
-const syntheseTexte = document.getElementById('contenuSynthese').textContent;
-const cartes = window.cartesTireesPDF || [];
+    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+    const titre = 'Synthèse du tirage Oracle Heka';
+    const syntheseTexte = document.getElementById('contenuSynthese').textContent;
+    const cartes = window.cartesTireesPDF || [];
 
     const loadImage = (src) => new Promise((resolve) => {
       const img = new Image();
@@ -483,18 +482,23 @@ const cartes = window.cartesTireesPDF || [];
     pdf.addImage(logoImg, 'PNG', logoX, y, logoWidth, logoHeight);
     y += logoHeight + 5;
 
+    // Titre en gras
     pdf.setFontSize(16);
-    pdf.setFont(undefined, 'bold');
+    pdf.setFont("Helvetica", "bold"); // 💡 gras uniquement pour le titre
     const textWidth = pdf.getStringUnitWidth(titre) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
     const textX = (pageWidth - textWidth) / 2;
     pdf.text(titre, textX, y);
     y += 10;
 
+    // 💡 Revenir à la police normale pour la suite
+    pdf.setFont("Helvetica", "normal");
+    pdf.setFontSize(11);
+
+    // Images des cartes
     for (const carte of cartes) {
       const carteImg = await loadImage(carte.imageSrc);
       pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
 
-      pdf.setFontSize(11);
       pdf.text(`${carte.nom} (${carte.sens})`, 55, y + 10);
       y += 55;
 
@@ -504,6 +508,7 @@ const cartes = window.cartesTireesPDF || [];
       }
     }
 
+    // Texte de synthèse
     y += 10;
     pdf.setFontSize(12);
     const cleanTexte = syntheseTexte.replace(/\n\s*\n/g, '\n');
