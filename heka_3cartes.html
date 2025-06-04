@@ -451,12 +451,17 @@ document.getElementById("syntheseModal").style.display = "flex";
     nav.classList.toggle("show");
   });
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="polices/Roboto-Regular.js"></script> <!-- 👈 Ton fichier police généré -->
 <script>
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF('p', 'mm', 'a4');
+
+    // Ajoute la police
+    pdf.addFileToVFS("Roboto-Regular.ttf", "<base64_data>");
+    pdf.addFont("Roboto-Regular.ttf", "Roboto", "normal");
+    pdf.setFont("Roboto");
 
     let y = 10;
     const pageWidth = pdf.internal.pageSize.getWidth();
