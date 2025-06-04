@@ -452,23 +452,22 @@ document.getElementById("syntheseModal").style.display = "flex";
   });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="polices/Roboto-Regular.js"></script> <!-- ⚠️ Ton fichier police déjà encodé -->
 
 <script>
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
     const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF('p', 'mm', 'a4');
+const pdf = new jsPDF('p', 'mm', 'a4');
 
-    // Utilise la police Roboto encodée dans Roboto-Regular.js
-    pdf.setFont("Roboto");
+// Change la police pour Helvetica (police intégrée fiable)
+pdf.setFont("Helvetica");
 
-    let y = 10;
-    const pageWidth = pdf.internal.pageSize.getWidth();
+let y = 10;
+const pageWidth = pdf.internal.pageSize.getWidth();
 
-    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
-    const titre = 'Synthèse du tirage Oracle Heka';
-    const syntheseTexte = document.getElementById('contenuSynthese').innerText;
-    const cartes = window.cartesTireesPDF || [];
+const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+const titre = 'Synthèse du tirage Oracle Heka';
+const syntheseTexte = document.getElementById('contenuSynthese').textContent;
+const cartes = window.cartesTireesPDF || [];
 
     const loadImage = (src) => new Promise((resolve) => {
       const img = new Image();
