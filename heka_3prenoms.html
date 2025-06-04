@@ -185,14 +185,16 @@
     <label for="prenom3"><strong>Prénom 3 :</strong></label><br>
     <input type="text" id="prenom3" name="prenom3" placeholder="Entrer le troisième prénom" style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
   </div>
-  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p>
+
+  <button onclick="réinitialiser()">Réinitialiser</button>
+  <div id="resultats" style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;"></div>
+  <button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse complète du tirage</button>
+</div>
+   <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p>
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
   <button id="tirerBtn" onclick="tirageTriangulaire()">Tirer les cartes</button>
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
   <button onclick="réinitialiser()">Réinitialiser</button>
-  <div id="resultats" style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;"></div>
-  <button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse complète du tirage</button>
-
   <h2>Interprétation des résultats</h2>
 <p>Chaque lettre de chaque prénom reçoit une carte. Ce tirage triangulaire dévoile :</p>
 <ul>
