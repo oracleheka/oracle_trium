@@ -424,22 +424,19 @@ button:hover {
   burgerBtn.addEventListener("click", () => {
     nav.classList.toggle("show");
   });
-  </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-  document.getElementById('exportPDFBtn').addEventListener('click', () => {
+  document.getElementById('exportPDFBtn').addEventListener('click', async () => {
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF('p', 'mm', 'a4');
-    
-    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png'; // Ton logo
+
+    let y = 10;
+    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
     const titre = 'Synthèse du tirage Oracle Heka';
     const syntheseTexte = document.getElementById('contenuSynthese').innerText;
+    const cartes = window.cartesTirees || []; // tableau [{ imageSrc, nom, sens }]
 
-    // Exemple de récupération des cartes tirées (tableau [{imageSrc, nom, sens}])
-    const cartesTirees = window.cartesTirees || []; // À adapter si nécessaire !
-
-    // Charger le logo d'abord
+    // Charger logo
     const loadImage = (src) => new Promise((resolve) => {
       const img = new Image();
       img.crossOrigin = 'Anonymous';
@@ -447,47 +444,37 @@ button:hover {
       img.src = src;
     });
 
-    const drawPDF = async () => {
-      let y = 10;
+    const logoImg = await loadImage(logoUrl);
+    pdf.addImage(logoImg, 'PNG', 80, y, 50, 20);
+    y += 30;
 
-      // Logo
-      const logoImg = await loadImage(logoUrl);
-      pdf.addImage(logoImg, 'PNG', 80, y, 50, 20);
-      y += 30;
+    // Titre
+    pdf.setFontSize(16);
+    pdf.text(titre, 10, y);
+    y += 10;
 
-      // Titre
-      pdf.setFontSize(16);
-      pdf.text(titre, 10, y);
-      y += 10;
+    // Cartes (images + titres)
+    for (const carte of cartes) {
+      const carteImg = await loadImage(carte.imageSrc);
+      pdf.addImage(carteImg, 'PNG', 10, y, 30, 40);
 
-      // Cartes tirées
-      for (const carte of cartesTirees) {
-        // Charger l’image de la carte
-        const carteImg = await loadImage(carte.imageSrc);
-        pdf.addImage(carteImg, 'PNG', 10, y, 30, 40); // Petite image à gauche
+      pdf.setFontSize(11);
+      pdf.text(`${carte.nom} (${carte.sens})`, 45, y + 10);
+      y += 45;
 
-        // Texte de la carte
-        pdf.setFontSize(11);
-        pdf.text(`${carte.nom} (${carte.sens})`, 45, y + 10);
-        y += 45;
-
-        // Saut de page si besoin
-        if (y > 260) {
-          pdf.addPage();
-          y = 10;
-        }
+      if (y > 260) {
+        pdf.addPage();
+        y = 10;
       }
+    }
 
-      // Texte de synthèse
-      y += 10;
-      pdf.setFontSize(12);
-      const lignes = pdf.splitTextToSize(syntheseTexte, 180);
-      pdf.text(lignes, 10, y);
+    // Texte de synthèse
+    y += 10;
+    pdf.setFontSize(12);
+    const lignes = pdf.splitTextToSize(syntheseTexte, 180);
+    pdf.text(lignes, 10, y);
 
-      pdf.save('tirage_oracle.pdf');
-    };
-
-    drawPDF();
+    pdf.save('tirage_oracle.pdf');
   });
 </script>
 </body>
