@@ -384,9 +384,8 @@ button:hover {
  const contenuDiv = document.getElementById("contenuSynthese");
 contenuDiv.innerHTML = ""; // Vide le contenu précédent
 
-// Ajoute chaque carte avec son image et le texte de base
 cartesTirees.forEach(({ carte, sens }) => {
-  const imageSrc = carte.image; // l'URL de l'image de la carte (à vérifier si c'est la bonne clé !)
+  const imageSrc = carte.image; // l'URL de l'image de la carte
   const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
   const texte = carte[sens]?.[aspect]?.texte || "(Message absent)";
 
@@ -398,6 +397,14 @@ cartesTirees.forEach(({ carte, sens }) => {
   
   contenuDiv.innerHTML += carteHtml;
 });
+
+// Prépare le tableau pour l'export PDF
+const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
+  imageSrc: carte.image,
+  nom: carte.nom,
+  sens: sens
+}));
+window.cartesTireesPDF = cartesPDF;
 
 // Ajoute la synthèse finale
 contenuDiv.innerHTML += `<pre style="white-space:pre-wrap; margin-top: 1rem;">${resume}</pre>`;
@@ -449,62 +456,61 @@ document.getElementById("syntheseModal").style.display = "flex";
 <script>
    document.getElementById('exportPDFBtn').addEventListener('click', async () => {
     const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF('p', 'mm', 'a4');
+const pdf = new jsPDF('p', 'mm', 'a4');
 
-    let y = 10;
-    const pageWidth = pdf.internal.pageSize.getWidth();
+let y = 10;
+const pageWidth = pdf.internal.pageSize.getWidth();
 
-    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
-    const titre = 'Synthèse du tirage Oracle Heka';
-    const syntheseTexte = document.getElementById('contenuSynthese').innerText;
-    const cartes = window.cartesTirees || []; // [{ carte, sens }]
+const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+const titre = 'Synthèse du tirage Oracle Heka';
+const syntheseTexte = document.getElementById('contenuSynthese').innerText;
+const cartes = window.cartesTireesPDF || []; // 👈 corrigé
 
-    // Fonction pour charger les images
-    const loadImage = (src) => new Promise((resolve) => {
-      const img = new Image();
-      img.crossOrigin = 'Anonymous';
-      img.onload = () => resolve(img);
-      img.src = src;
-    });
+const loadImage = (src) => new Promise((resolve) => {
+  const img = new Image();
+  img.crossOrigin = 'Anonymous';
+  img.onload = () => resolve(img);
+  img.src = src;
+});
 
-    // Charger le logo et le centrer
-    const logoImg = await loadImage(logoUrl);
-    const logoWidth = 50;
-    const logoHeight = 20;
-    const logoX = (pageWidth - logoWidth) / 2;
-    pdf.addImage(logoImg, 'PNG', logoX, y, logoWidth, logoHeight);
-    y += logoHeight + 5;
+// Logo
+const logoImg = await loadImage(logoUrl);
+const logoWidth = 50;
+const logoHeight = 20;
+const logoX = (pageWidth - logoWidth) / 2;
+pdf.addImage(logoImg, 'PNG', logoX, y, logoWidth, logoHeight);
+y += logoHeight + 5;
 
-    // Centrer le titre
-    pdf.setFontSize(16);
-    pdf.setFont(undefined, 'bold');
-    const textWidth = pdf.getStringUnitWidth(titre) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
-    const textX = (pageWidth - textWidth) / 2;
-    pdf.text(titre, textX, y);
-    y += 10;
+// Titre
+pdf.setFontSize(16);
+pdf.setFont(undefined, 'bold');
+const textWidth = pdf.getStringUnitWidth(titre) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
+const textX = (pageWidth - textWidth) / 2;
+pdf.text(titre, textX, y);
+y += 10;
 
-    // Boucle sur les cartes
-    for (const { carte, sens } of cartes) {
-      const carteImg = await loadImage(carte.image);
-      pdf.addImage(carteImg, 'PNG', 10, y, 30, 40);
+// Cartes
+for (const carte of cartes) {
+  const carteImg = await loadImage(carte.imageSrc);
+  pdf.addImage(carteImg, 'PNG', 10, y, 30, 40);
 
-      pdf.setFontSize(11);
-      pdf.text(`${carte.nom} (${sens})`, 45, y + 10);
-      y += 45;
+  pdf.setFontSize(11);
+  pdf.text(`${carte.nom} (${carte.sens})`, 45, y + 10);
+  y += 45;
 
-      if (y > 260) {
-        pdf.addPage();
-        y = 10;
-      }
-    }
+  if (y > 260) {
+    pdf.addPage();
+    y = 10;
+  }
+}
 
-    // Texte de synthèse
-    y += 10;
-    pdf.setFontSize(12);
-    const lignes = pdf.splitTextToSize(syntheseTexte, 180);
-    pdf.text(lignes, 10, y);
+// Synthèse
+y += 10;
+pdf.setFontSize(12);
+const lignes = pdf.splitTextToSize(syntheseTexte, 180);
+pdf.text(lignes, 10, y);
 
-    pdf.save('tirage_oracle.pdf');
+pdf.save('tirage_oracle.pdf');
   });
 </script>
 </body>
