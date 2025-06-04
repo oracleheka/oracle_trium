@@ -452,15 +452,13 @@ document.getElementById("syntheseModal").style.display = "flex";
   });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="polices/Roboto-Regular.js"></script> <!-- 👈 Ton fichier police généré -->
+<script src="polices/Roboto-Regular.js"></script>
 <script>
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF('p', 'mm', 'a4');
 
-    // Ajoute la police
-    pdf.addFileToVFS("Roboto-Regular.ttf", "<base64_data>");
-    pdf.addFont("Roboto-Regular.ttf", "Roboto", "normal");
+    // Utiliser la police correctement (déjà chargée dans Roboto-Regular.js)
     pdf.setFont("Roboto");
 
     let y = 10;
@@ -479,7 +477,7 @@ document.getElementById("syntheseModal").style.display = "flex";
       img.src = src;
     });
 
-    // Logo centré
+    // Logo
     const logoImg = await loadImage(logoUrl);
     const logoWidth = 50;
     const logoHeight = 20;
@@ -487,7 +485,7 @@ document.getElementById("syntheseModal").style.display = "flex";
     pdf.addImage(logoImg, 'PNG', logoX, y, logoWidth, logoHeight);
     y += logoHeight + 5;
 
-    // Titre centré
+    // Titre
     pdf.setFontSize(16);
     pdf.setFont(undefined, 'bold');
     const textWidth = pdf.getStringUnitWidth(titre) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
@@ -510,21 +508,19 @@ document.getElementById("syntheseModal").style.display = "flex";
       }
     }
 
-    // Texte de synthèse avec découpage
+    // Texte de synthèse complet
     y += 10;
     pdf.setFontSize(12);
-    const paragraphs = syntheseTexte.split('\n');
-    for (const para of paragraphs) {
-      const lignes = pdf.splitTextToSize(para, 180);
-      for (const ligne of lignes) {
-        if (y > 290) {
-          pdf.addPage();
-          y = 10;
-        }
-        pdf.text(ligne, 10, y);
-        y += 6;
+    const cleanTexte = syntheseTexte.replace(/\n\s*\n/g, '\n');
+    const lignes = pdf.splitTextToSize(cleanTexte, 180);
+
+    for (const ligne of lignes) {
+      if (y > 290) {
+        pdf.addPage();
+        y = 10;
       }
-      y += 4; // petit espace entre paragraphes
+      pdf.text(ligne, 10, y);
+      y += 6;
     }
 
     pdf.save('tirage_oracle.pdf');
