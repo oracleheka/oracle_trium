@@ -557,26 +557,12 @@ document.getElementById("syntheseModal").style.display = "flex";
   y += 8;
 
 // ➜ Supprime tout doublon de lecture du tirage dans la synthèse finale
-let contenuSynthese = document.querySelector('#contenuSynthese').textContent.trim() || "(pas de synthèse)";
+let syntheseFinale = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
 
-// ➜ Trouver la position de la synthèse finale, en ignorant la partie "Lecture du tirage"
-const indexSynthese = contenuSynthese.lastIndexOf('Synthèse guidée :');
-
-let syntheseFinale = contenuSynthese;
-if (indexSynthese !== -1) {
-  syntheseFinale = contenuSynthese.slice(indexSynthese + 'Synthèse guidée :'.length).trim();
-}
-
-// ➜ Supprimer à nouveau tout bloc "Lecture du tirage" qui pourrait être resté
-const indexLecture = syntheseFinale.indexOf('--- Lecture du tirage ---');
-if (indexLecture !== -1) {
-  syntheseFinale = syntheseFinale.slice(0, indexLecture).trim();
-}
-
-// ➜ Découpe automatique (pas de forçage sur les points si pas présent)
+// ➜ Découpe en lignes (pas de lecture du tirage ici !)
 const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
 
-// ➜ Impression finale
+// ➜ Impression ligne par ligne
 pdf.setFontSize(11);
 pdf.setFont("Times", "normal");
 for (const ligne of lignesSynthese) {
