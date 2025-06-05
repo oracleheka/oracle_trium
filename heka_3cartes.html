@@ -556,24 +556,26 @@ document.getElementById("syntheseModal").style.display = "flex";
   pdf.text('Synthèse guidée :', 10, y);
   y += 8;
 
-  let syntheseFinale = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
-
 // ➜ Supprime tout doublon de lecture du tirage dans la synthèse finale
-const indexLecture = syntheseFinale.indexOf('--- Lecture du tirage ---');
-if (indexLecture !== -1) {
-  syntheseFinale = syntheseFinale.slice(0, indexLecture).trim();
+let syntheseComplete = document.querySelector('#contenuSynthese').textContent.trim() || "(pas de synthèse)";
+
+// ➜ Trouve la position du bloc de la lecture du tirage
+const indexLecture = syntheseComplete.indexOf('--- Lecture du tirage ---');
+
+// ➜ Trouve la position de la synthèse finale (après "Synthèse guidée :")
+const indexSynthese = syntheseComplete.indexOf('Synthèse guidée :');
+
+// ➜ La vraie synthèse finale est ce qui est après "Synthèse guidée :"
+let syntheseFinale = "";
+if (indexSynthese !== -1) {
+  syntheseFinale = syntheseComplete.slice(indexSynthese + 'Synthèse guidée :'.length).trim();
 }
 
-// ➜ Coupe aussi la phrase "Un passage symbolique..." et "Cette personne est en transition..." si elles sont trop longues sans ponctuation
-// Ajoute un saut de ligne après un point ou un point-virgule (si présent) pour éviter l’effet "lettres séparées"
-syntheseFinale = syntheseFinale.replace(/([.!?;])\s*/g, "$1\n");
-
-// ➜ Si la phrase est encore trop longue, splitTextToSize s'en occupe
+// ➜ Découpe la synthèse finale proprement, même si elle est longue
 const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
-
-// ➜ Impression propre
 pdf.setFontSize(11);
 pdf.setFont("Times", "normal");
+
 for (const ligne of lignesSynthese) {
   if (y > 280) { pdf.addPage(); y = 10; }
   pdf.text(ligne, 10, y);
