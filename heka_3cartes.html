@@ -455,76 +455,84 @@ document.getElementById("syntheseModal").style.display = "flex";
 
 <script>
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF('p', 'mm', 'a4');
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF('p', 'mm', 'a4');
 
-    pdf.setFont("Helvetica");
+  // ➜ Change la police pour Times, souvent plus fiable pour les accents
+  pdf.setFont("Times");
+  let y = 10;
+  const pageWidth = pdf.internal.pageSize.getWidth();
 
-    let y = 10;
-    const pageWidth = pdf.internal.pageSize.getWidth();
-
-    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
-    const titre = 'Synthèse du tirage Oracle Heka';
-    const syntheseTexte = document.getElementById('contenuSynthese').textContent;
-    const cartes = window.cartesTireesPDF || [];
-
-    const loadImage = (src) => new Promise((resolve) => {
-      const img = new Image();
-      img.crossOrigin = 'Anonymous';
-      img.onload = () => resolve(img);
-      img.src = src;
-    });
-
-    const logoImg = await loadImage(logoUrl);
-    const logoWidth = 50;
-    const logoHeight = 20;
-    const logoX = (pageWidth - logoWidth) / 2;
-    pdf.addImage(logoImg, 'PNG', logoX, y, logoWidth, logoHeight);
-    y += logoHeight + 5;
-
-    // Titre en gras
-    pdf.setFontSize(16);
-    pdf.setFont("Helvetica", "bold"); // 💡 gras uniquement pour le titre
-    const textWidth = pdf.getStringUnitWidth(titre) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
-    const textX = (pageWidth - textWidth) / 2;
-    pdf.text(titre, textX, y);
-    y += 10;
-
-    // 💡 Revenir à la police normale pour la suite
-    pdf.setFont("Helvetica", "normal");
-    pdf.setFontSize(11);
-
-    // Images des cartes
-    for (const carte of cartes) {
-      const carteImg = await loadImage(carte.imageSrc);
-      pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
-
-      pdf.text(`${carte.nom} (${carte.sens})`, 55, y + 10);
-      y += 55;
-
-      if (y > 260) {
-        pdf.addPage();
-        y = 10;
-      }
-    }
-
-    // Texte de synthèse
-    y += 10;
-    pdf.setFontSize(12);
-    const cleanTexte = syntheseTexte.replace(/\n\s*\n/g, '\n');
-    const lignes = pdf.splitTextToSize(cleanTexte, 180);
-
-    for (const ligne of lignes) {
-      if (y > 290) {
-        pdf.addPage();
-        y = 10;
-      }
-      pdf.text(ligne, 10, y);
-      y += 6;
-    }
-
-    pdf.save('tirage_oracle.pdf');
+  // ➜ Logo
+  const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+  const loadImage = (src) => new Promise((resolve) => {
+    const img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = () => resolve(img);
+    img.src = src;
   });
+  const logoImg = await loadImage(logoUrl);
+  const logoWidth = 50;
+  const logoHeight = 20;
+  const logoX = (pageWidth - logoWidth) / 2;
+  pdf.addImage(logoImg, 'PNG', logoX, y, logoWidth, logoHeight);
+  y += logoHeight + 5;
+
+  // ➜ Titre
+  const titre = 'Synthèse du tirage Oracle Heka';
+  pdf.setFontSize(16);
+  pdf.setFont("Times", "bold");
+  const textWidth = pdf.getStringUnitWidth(titre) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
+  const textX = (pageWidth - textWidth) / 2;
+  pdf.text(titre, textX, y);
+  y += 10;
+
+  // ➜ Revenir à la police normale pour la suite
+  pdf.setFont("Times", "normal");
+  pdf.setFontSize(11);
+
+  // ➜ Images des cartes
+  const cartes = window.cartesTireesPDF || [];
+  for (const carte of cartes) {
+    const carteImg = await loadImage(carte.imageSrc);
+    pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+
+    pdf.setFont("Times", "bold");
+    pdf.text(`${carte.nom} (${carte.sens})`, 55, y + 10);
+    pdf.setFont("Times", "normal");
+
+    y += 55;
+    if (y > 260) {
+      pdf.addPage();
+      y = 10;
+    }
+  }
+
+  // ➜ Texte de synthèse
+  y += 10;
+  pdf.setFontSize(12);
+
+  // ➜ Nettoyage du texte
+  let syntheseTexte = document.getElementById('contenuSynthese').textContent.trim();
+  // ➜ Corrige les multiples retours à la ligne (pas de paragraphes trop espacés)
+  syntheseTexte = syntheseTexte.replace(/\n\s*\n/g, '\n');
+
+  // ➜ On splitte proprement avec splitTextToSize
+  const lignes = pdf.splitTextToSize(syntheseTexte, 180);
+
+  // ➜ Impression ligne par ligne avec contrôle du dépassement de page
+  for (const ligne of lignes) {
+    if (y > 280) { // marge plus grande pour éviter de coller au bord
+      pdf.addPage();
+      y = 10;
+    }
+    pdf.text(ligne, 10, y);
+    y += 6;
+  }
+
+  // ➜ Sauvegarde finale
+  pdf.save('tirage_oracle.pdf');
+});
 </script>
 </body>
 </html>
