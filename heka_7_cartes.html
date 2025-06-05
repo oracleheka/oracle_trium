@@ -386,10 +386,7 @@ function tirage7Cartes() {
 
   const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
   resume += `→ Synthèse guidée :\n\n${synthese}`;
-
- const contenuDiv = document.getElementById("contenuSynthese");
-contenuDiv.innerHTML = ""; // Vide le contenu précédent  
-    
+   
   cartesTirees.forEach(({ carte, sens }) => {
     const imageSrc = carte.image; // l'URL de l'image de la carte
     const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
