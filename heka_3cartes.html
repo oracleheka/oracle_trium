@@ -558,17 +558,18 @@ document.getElementById("syntheseModal").style.display = "flex";
 
 // ➜ Supprime tout doublon de lecture du tirage dans la synthèse finale
 let syntheseComplete = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
-
-// ➜ Cherche la dernière mention "Synthèse guidée :" (pour éviter la répétition du bloc "Lecture du tirage")
 const indexSynthese = syntheseComplete.lastIndexOf('Synthèse guidée :');
 let syntheseFinale = (indexSynthese !== -1)
   ? syntheseComplete.slice(indexSynthese).trim()
   : syntheseComplete;
 
-// ➜ Découpe proprement avec splitTextToSize
+// ➜ Nettoyage des caractères parasites
+syntheseFinale = syntheseFinale.replace(/[^\x20-\x7EÀ-ÿ\n]/g, '').trim();
+
+// ➜ Découpe propre pour retour à la ligne
 const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
 
-// ➜ Impression ligne par ligne
+// ➜ Impression propre
 pdf.setFontSize(11);
 pdf.setFont("Times", "normal");
 for (const ligne of lignesSynthese) {
