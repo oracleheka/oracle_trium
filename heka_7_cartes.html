@@ -564,7 +564,20 @@ resume += "➤ Dynamique actuelle :\n";
 resume += phrases.slice(2, 5).join("\n") + "\n\n";
 resume += "➤ Évolution possible :\n";
 resume += phrases.slice(5, 7).join("\n") + "\n\n";
-    
+y += 10;
+pdf.setFontSize(13);
+pdf.setFont("Times", "bold");
+pdf.text('--- Synthèse du tirage ---', 10, y);
+y += 8;
+
+pdf.setFontSize(11);
+pdf.setFont("Times", "normal");
+const lignesResume = pdf.splitTextToSize(resume, 190);
+for (const ligne of lignesResume) {
+  if (y > 280) { pdf.addPage(); y = 10; }
+  pdf.text(ligne, 10, y);
+  y += 5;
+} 
   // Synthèse guidée (sans la lecture du tirage doublée)
   y += 10;
   pdf.setFontSize(13);
