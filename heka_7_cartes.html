@@ -381,9 +381,6 @@ function tirage7Cartes() {
   resume += "➤ Évolution possible :\n";
   resume += phrases.slice(5, 7).join("\n") + "\n\n";
 
-  const contenuDiv = document.getElementById("contenuSynthese");
-contenuDiv.innerHTML = ""; // Vide le contenu précédent
-
 cartesTirees.forEach(({ carte, sens }) => {
   const imageSrc = carte.image; // l'URL de l'image de la carte
   const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
