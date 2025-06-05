@@ -348,7 +348,7 @@ function tirage7Cartes() {
   location.reload(); // Recharge la page pour repartir de zéro
 }
    
-   function afficherSynthese7Cartes() {
+  function afficherSynthese7Cartes() {
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
 
   const question = document.getElementById("question")?.value || "";
@@ -359,6 +359,9 @@ function tirage7Cartes() {
     alert("Le tirage doit comporter 7 cartes pour générer cette synthèse.");
     return;
   }
+
+  const contenuDiv = document.getElementById("contenuSynthese");
+  contenuDiv.innerHTML = ""; // Vide le contenu précédent
 
   const phrases = cartesTirees.map(({ carte, sens }) => {
     const contenu = carte[sens]?.[aspect];
@@ -381,19 +384,20 @@ function tirage7Cartes() {
   resume += "➤ Évolution possible :\n";
   resume += phrases.slice(5, 7).join("\n") + "\n\n";
 
-cartesTirees.forEach(({ carte, sens }) => {
-  const imageSrc = carte.image; // l'URL de l'image de la carte
-  const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
-  const texte = carte[sens]?.[aspect]?.texte || "(Message absent)";
+  cartesTirees.forEach(({ carte, sens }) => {
+    const imageSrc = carte.image; // l'URL de l'image de la carte
+    const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
+    const texte = carte[sens]?.[aspect]?.texte || "(Message absent)";
 
-  const carteHtml = `
-    <div style="margin-bottom: 1rem;">
-      <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
-      <p>${titre} → ${texte}</p>
-    </div>`;
-  
-  contenuDiv.innerHTML += carteHtml;
-});
+    const carteHtml = `
+      <div style="margin-bottom: 1rem;">
+        <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+        <p>${titre} → ${texte}</p>
+      </div>`;
+    
+    contenuDiv.innerHTML += carteHtml;
+  });
+}
 
 // Prépare le tableau pour l'export PDF
 const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
