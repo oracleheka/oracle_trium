@@ -551,33 +551,51 @@ for (const carte of cartesPDF) {
   y += 4;
 }
 
-// ➜ Ajoute la synthèse complète propre (Influences / Dynamique / Évolution)
+// ➜ Crée la synthèse en blocs clairs (Influences / Dynamique / Évolution)
 const phrases = cartesPDF.map(carte => {
   const texteCourt = carte.texte?.split(".")[0] + "." || "(Message manquant)";
   return `${carte.nr} : (${carte.nom}) : (${carte.sens}) → ${texteCourt}`;
 });
 
-let resume = "--- Synthèse du tirage ---\n\n";
-resume += "➤ Influences de départ :\n";
-resume += phrases.slice(0, 2).join("\n") + "\n\n";
-resume += "➤ Dynamique actuelle :\n";
-resume += phrases.slice(2, 5).join("\n") + "\n\n";
-resume += "➤ Évolution possible :\n";
-resume += phrases.slice(5, 7).join("\n") + "\n\n";
-y += 10;
-pdf.setFontSize(13);
-pdf.setFont("Times", "bold");
-pdf.text('--- Synthèse du tirage ---', 10, y);
-y += 8;
+// ➜ Titres des sections
+const titres = [
+  "➤ Influences de départ :",
+  "➤ Dynamique actuelle :",
+  "➤ Évolution possible :"
+];
 
-pdf.setFontSize(11);
-pdf.setFont("Times", "normal");
-const lignesResume = pdf.splitTextToSize(resume, 190);
-for (const ligne of lignesResume) {
+// ➜ Blocs de phrases
+const blocs = [
+  phrases.slice(0, 2).join("\n"),
+  phrases.slice(2, 5).join("\n"),
+  phrases.slice(5, 7).join("\n")
+];
+
+// ➜ Ajoute un espace avant la synthèse
+y += 10;
+
+// ➜ Parcourt chaque titre + bloc de texte
+for (let i = 0; i < titres.length; i++) {
+  // Titre en gras
+  pdf.setFontSize(12);
+  pdf.setFont("Times", "bold");
   if (y > 280) { pdf.addPage(); y = 10; }
-  pdf.text(ligne, 10, y);
-  y += 5;
-} 
+  pdf.text(titres[i], 10, y);
+  y += 6;
+
+  // Texte associé en normal
+  pdf.setFontSize(11);
+  pdf.setFont("Times", "normal");
+  const lignes = pdf.splitTextToSize(blocs[i], 190);
+  for (const ligne of lignes) {
+    if (y > 280) { pdf.addPage(); y = 10; }
+    pdf.text(ligne, 10, y);
+    y += 5;
+  }
+
+  // Espace après chaque bloc
+  y += 4;
+}
   // Synthèse guidée (sans la lecture du tirage doublée)
   y += 10;
   pdf.setFontSize(13);
