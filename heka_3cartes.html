@@ -458,8 +458,7 @@ document.getElementById("syntheseModal").style.display = "flex";
   const { jsPDF } = window.jspdf;
   const pdf = new jsPDF('p', 'mm', 'a4');
 
-  // ➜ Change la police pour Times, souvent plus fiable pour les accents
-  pdf.setFont("Times");
+  pdf.setFont("Times", "normal");
   let y = 10;
   const pageWidth = pdf.internal.pageSize.getWidth();
 
@@ -479,58 +478,77 @@ document.getElementById("syntheseModal").style.display = "flex";
   y += logoHeight + 5;
 
   // ➜ Titre
-  const titre = 'Synthèse du tirage Oracle Heka';
-  pdf.setFontSize(16);
+  pdf.setFontSize(14);
   pdf.setFont("Times", "bold");
-  const textWidth = pdf.getStringUnitWidth(titre) * pdf.internal.getFontSize() / pdf.internal.scaleFactor;
-  const textX = (pageWidth - textWidth) / 2;
-  pdf.text(titre, textX, y);
+  pdf.text('Synthèse du tirage Oracle Heka', 10, y);
   y += 10;
 
-  // ➜ Revenir à la police normale pour la suite
+  // ➜ Revenir à la police normale
   pdf.setFont("Times", "normal");
-  pdf.setFontSize(11);
 
-  // ➜ Images des cartes
+  // ➜ Récupérer les cartes tirées
   const cartes = window.cartesTireesPDF || [];
   for (const carte of cartes) {
     const carteImg = await loadImage(carte.imageSrc);
     pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
 
+    // Ligne 1 (Nr, Nom, Sens)
+    pdf.setFontSize(12);
     pdf.setFont("Times", "bold");
-    pdf.text(`${carte.nom} (${carte.sens})`, 55, y + 10);
-    pdf.setFont("Times", "normal");
+    pdf.text(`${carte.nr} : (${carte.nom}) (${carte.sens})`, 55, y + 6);
 
-    y += 55;
+    // Ligne 2 (texte associé)
+    pdf.setFontSize(11);
+    pdf.setFont("Times", "normal");
+    const texteAssocie = carte.texte || "(Interprétation manquante)";
+    const lignesCarte = pdf.splitTextToSize(texteAssocie, 135);
+    pdf.text(lignesCarte, 55, y + 12);
+
+    y += 55 + 10; // espace après chaque bloc
     if (y > 260) {
       pdf.addPage();
       y = 10;
     }
   }
 
-  // ➜ Texte de synthèse
+  // ➜ Lecture du tirage
   y += 10;
-  pdf.setFontSize(12);
+  pdf.setFontSize(13);
+  pdf.setFont("Times", "bold");
+  pdf.text('--- Lecture du tirage ---', 10, y);
+  y += 8;
 
-  // ➜ Nettoyage du texte
-  let syntheseTexte = document.getElementById('contenuSynthese').textContent.trim();
-  // ➜ Corrige les multiples retours à la ligne (pas de paragraphes trop espacés)
-  syntheseTexte = syntheseTexte.replace(/\n\s*\n/g, '\n');
+  const lectureTirage = window.lectureTiragePDF || [];
+  for (const elem of lectureTirage) {
+    pdf.setFontSize(12);
+    pdf.setFont("Times", "bold");
+    pdf.text(`${elem.nr} : (${elem.nom}) (${elem.sens})`, 10, y);
 
-  // ➜ On splitte proprement avec splitTextToSize
-  const lignes = pdf.splitTextToSize(syntheseTexte, 180);
+    pdf.setFontSize(11);
+    pdf.setFont("Times", "normal");
+    const lignesLecture = pdf.splitTextToSize(elem.texte, 190);
+    pdf.text(lignesLecture, 10, y + 6);
 
-  // ➜ Impression ligne par ligne avec contrôle du dépassement de page
-  for (const ligne of lignes) {
-    if (y > 280) { // marge plus grande pour éviter de coller au bord
+    y += 15 + (lignesLecture.length * 5);
+    if (y > 280) {
       pdf.addPage();
       y = 10;
     }
-    pdf.text(ligne, 10, y);
-    y += 6;
   }
 
-  // ➜ Sauvegarde finale
+  // ➜ Synthèse finale
+  y += 10;
+  pdf.setFontSize(13);
+  pdf.setFont("Times", "bold");
+  pdf.text('Synthèse guidée :', 10, y);
+  y += 8;
+
+  pdf.setFontSize(11);
+  pdf.setFont("Times", "normal");
+  let syntheseTexte = document.getElementById('contenuSynthese').textContent.trim();
+  const lignesSynthese = pdf.splitTextToSize(syntheseTexte, 190);
+  pdf.text(lignesSynthese, 10, y);
+
   pdf.save('tirage_oracle.pdf');
 });
 </script>
