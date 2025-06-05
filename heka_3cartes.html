@@ -462,7 +462,7 @@ document.getElementById("syntheseModal").style.display = "flex";
   let y = 10;
   const pageWidth = pdf.internal.pageSize.getWidth();
 
-  // ➜ Logo
+  // Logo
   const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
   const loadImage = (src) => new Promise((resolve) => {
     const img = new Image();
@@ -471,19 +471,16 @@ document.getElementById("syntheseModal").style.display = "flex";
     img.src = src;
   });
   const logoImg = await loadImage(logoUrl);
-  const logoWidth = 50;
-  const logoHeight = 20;
-  const logoX = (pageWidth - logoWidth) / 2;
-  pdf.addImage(logoImg, 'PNG', logoX, y, logoWidth, logoHeight);
-  y += logoHeight + 5;
+  pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
+  y += 25;
 
-  // ➜ Titre
+  // Titre
   pdf.setFontSize(14);
   pdf.setFont("Times", "bold");
   pdf.text('Synthèse du tirage Oracle Heka', 10, y);
   y += 10;
 
-  // ➜ Données du tirage
+  // Cartes
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
   const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
     nr: carte.id?.toString() || "(?)",
@@ -497,17 +494,17 @@ document.getElementById("syntheseModal").style.display = "flex";
     const carteImg = await loadImage(carte.imageSrc);
     pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
 
-    // Ligne 1 : ID, Nom, Sens
+    // Ligne 1
     pdf.setFontSize(12);
     pdf.setFont("Times", "bold");
     pdf.text(`${carte.nr} : (${carte.nom}) : (${carte.sens})`, 55, y + 6);
 
-    // Ligne 2 : Texte (retour à la ligne géré)
+    // Ligne 2
     pdf.setFontSize(11);
     pdf.setFont("Times", "normal");
     const lignesCarte = pdf.splitTextToSize(carte.texte, 135);
-
     let yy = y + 12;
+
     for (const ligne of lignesCarte) {
       if (yy > 280) {
         pdf.addPage();
@@ -517,29 +514,27 @@ document.getElementById("syntheseModal").style.display = "flex";
       yy += 5;
     }
 
-    y = yy + 5;
+    // Ajuste y pour éviter les superpositions
+    const hauteurBloc = Math.max(55, yy - y);
+    y += hauteurBloc + 5;
     if (y > 260) {
       pdf.addPage();
       y = 10;
     }
   }
 
-  // ➜ Lecture du tirage (Lignes distinctes)
-  y += 10;
+  // Décaler plus bas pour Lecture du tirage
+  y += 15;
   pdf.setFontSize(13);
   pdf.setFont("Times", "bold");
   pdf.text('--- Lecture du tirage ---', 10, y);
   y += 8;
 
-  // Construire la lecture proprement, carte par carte (ligne A puis B)
   for (const carte of cartesPDF) {
     pdf.setFontSize(12);
     pdf.setFont("Times", "bold");
     const ligneA = `${carte.nr} : (${carte.nom}) : (${carte.sens})`;
-    if (y > 280) {
-      pdf.addPage();
-      y = 10;
-    }
+    if (y > 280) { pdf.addPage(); y = 10; }
     pdf.text(ligneA, 10, y);
     y += 6;
 
@@ -547,17 +542,14 @@ document.getElementById("syntheseModal").style.display = "flex";
     pdf.setFont("Times", "normal");
     const lignesB = pdf.splitTextToSize(carte.texte, 190);
     for (const ligne of lignesB) {
-      if (y > 280) {
-        pdf.addPage();
-        y = 10;
-      }
+      if (y > 280) { pdf.addPage(); y = 10; }
       pdf.text(ligne, 10, y);
       y += 5;
     }
-    y += 4; // espace après chaque carte
+    y += 4;
   }
 
-  // ➜ Synthèse guidée finale
+  // Synthèse guidée (sans la lecture du tirage doublée)
   y += 10;
   pdf.setFontSize(13);
   pdf.setFont("Times", "bold");
@@ -565,14 +557,13 @@ document.getElementById("syntheseModal").style.display = "flex";
   y += 8;
 
   const syntheseFinale = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
-  const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
+// Pas de remplacement, on laisse splitTextToSize gérer naturellement
+const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
+
   pdf.setFontSize(11);
   pdf.setFont("Times", "normal");
   for (const ligne of lignesSynthese) {
-    if (y > 280) {
-      pdf.addPage();
-      y = 10;
-    }
+    if (y > 280) { pdf.addPage(); y = 10; }
     pdf.text(ligne, 10, y);
     y += 5;
   }
