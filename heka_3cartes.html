@@ -483,7 +483,7 @@ document.getElementById("syntheseModal").style.display = "flex";
   pdf.text('Synthèse du tirage Oracle Heka', 10, y);
   y += 10;
 
-  // ➜ Récupère les cartesTirees avec image et texte
+  // ➜ Données du tirage
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
   const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
     nr: carte.id?.toString() || "(?)",
@@ -502,12 +502,11 @@ document.getElementById("syntheseModal").style.display = "flex";
     pdf.setFont("Times", "bold");
     pdf.text(`${carte.nr} : (${carte.nom}) : (${carte.sens})`, 55, y + 6);
 
-    // Ligne 2 : Texte associé (multi-lignes)
+    // Ligne 2 : Texte (retour à la ligne géré)
     pdf.setFontSize(11);
     pdf.setFont("Times", "normal");
     const lignesCarte = pdf.splitTextToSize(carte.texte, 135);
 
-    // ➜ Vérifie ligne par ligne et saut de page si besoin
     let yy = y + 12;
     for (const ligne of lignesCarte) {
       if (yy > 280) {
@@ -518,32 +517,44 @@ document.getElementById("syntheseModal").style.display = "flex";
       yy += 5;
     }
 
-    y = yy + 5; // espace après la carte
+    y = yy + 5;
     if (y > 260) {
       pdf.addPage();
       y = 10;
     }
   }
 
-  // ➜ Lecture du tirage
+  // ➜ Lecture du tirage (Lignes distinctes)
   y += 10;
   pdf.setFontSize(13);
   pdf.setFont("Times", "bold");
   pdf.text('--- Lecture du tirage ---', 10, y);
   y += 8;
 
-  const lecture = document.querySelector('#contenuSynthese').textContent.split('--- Lecture du tirage ---')[1]?.split('→ Synthèse guidée :')[0] || "";
-  const lignesLecture = pdf.splitTextToSize(lecture.trim(), 190);
-  pdf.setFontSize(11);
-  pdf.setFont("Times", "normal");
-
-  for (const ligne of lignesLecture) {
+  // Construire la lecture proprement, carte par carte (ligne A puis B)
+  for (const carte of cartesPDF) {
+    pdf.setFontSize(12);
+    pdf.setFont("Times", "bold");
+    const ligneA = `${carte.nr} : (${carte.nom}) : (${carte.sens})`;
     if (y > 280) {
       pdf.addPage();
       y = 10;
     }
-    pdf.text(ligne, 10, y);
-    y += 5;
+    pdf.text(ligneA, 10, y);
+    y += 6;
+
+    pdf.setFontSize(11);
+    pdf.setFont("Times", "normal");
+    const lignesB = pdf.splitTextToSize(carte.texte, 190);
+    for (const ligne of lignesB) {
+      if (y > 280) {
+        pdf.addPage();
+        y = 10;
+      }
+      pdf.text(ligne, 10, y);
+      y += 5;
+    }
+    y += 4; // espace après chaque carte
   }
 
   // ➜ Synthèse guidée finale
