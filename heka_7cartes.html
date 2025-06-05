@@ -461,130 +461,135 @@ window.onload = function () {
 
 <script>
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
-  const { jsPDF } = window.jspdf;
-  const pdf = new jsPDF('p', 'mm', 'a4');
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('p', 'mm', 'a4');
 
-  pdf.setFont("Times", "normal");
-  let y = 10;
-  const pageWidth = pdf.internal.pageSize.getWidth();
-
-  // Logo
-  const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
-  const loadImage = (src) => new Promise((resolve) => {
-    const img = new Image();
-    img.crossOrigin = 'Anonymous';
-    img.onload = () => resolve(img);
-    img.src = src;
-  });
-  const logoImg = await loadImage(logoUrl);
-  pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
-  y += 25;
-
-  // Titre
-  pdf.setFontSize(14);
-  pdf.setFont("Times", "bold");
-  pdf.text('Synthèse du tirage Oracle Heka', 10, y);
-  y += 10;
-
-  // Cartes
-  const aspect = document.querySelector('input[name="aspect"]:checked').value;
-  const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
-    nr: carte.id?.toString() || "(?)",
-    nom: carte.nom,
-    sens: sens,
-    texte: carte[sens]?.[aspect]?.texte || "(Message manquant)",
-    imageSrc: carte.image
-  }));
-
-  for (const carte of cartesPDF) {
-    const carteImg = await loadImage(carte.imageSrc);
-    pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
-
-    // Ligne 1
-    pdf.setFontSize(12);
-    pdf.setFont("Times", "bold");
-    pdf.text(`${carte.nr} : (${carte.nom}) : (${carte.sens})`, 55, y + 6);
-
-    // Ligne 2
-    pdf.setFontSize(11);
     pdf.setFont("Times", "normal");
-    const lignesCarte = pdf.splitTextToSize(carte.texte, 135);
-    let yy = y + 12;
+    let y = 10;
+    const pageWidth = pdf.internal.pageSize.getWidth();
 
-    for (const ligne of lignesCarte) {
-      if (yy > 280) {
-        pdf.addPage();
-        yy = 10;
+    // Logo
+    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+    const loadImage = (src) => new Promise((resolve) => {
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = () => resolve(img);
+      img.src = src;
+    });
+    const logoImg = await loadImage(logoUrl);
+    pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
+    y += 25;
+
+    // Titre
+    pdf.setFontSize(14);
+    pdf.setFont("Times", "bold");
+    pdf.text('Synthèse du tirage Oracle Heka', 10, y);
+    y += 10;
+
+    // Cartes
+    const aspect = document.querySelector('input[name="aspect"]:checked').value;
+    const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
+      nr: carte.id?.toString() || "(?)",
+      nom: carte.nom,
+      sens: sens,
+      texte: carte[sens]?.[aspect]?.texte || "(Message manquant)",
+      imageSrc: carte.image
+    }));
+
+    for (const carte of cartesPDF) {
+      const carteImg = await loadImage(carte.imageSrc);
+      pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+
+      // Ligne 1
+      pdf.setFontSize(12);
+      pdf.setFont("Times", "bold");
+      pdf.text(`${carte.nr} : (${carte.nom}) : (${carte.sens})`, 55, y + 6);
+
+      // Ligne 2
+      pdf.setFontSize(11);
+      pdf.setFont("Times", "normal");
+      const lignesCarte = pdf.splitTextToSize(carte.texte, 135);
+      let yy = y + 12;
+
+      for (const ligne of lignesCarte) {
+        if (yy > 280) {
+          pdf.addPage();
+          yy = 10;
+        }
+        pdf.text(ligne, 55, yy);
+        yy += 5;
       }
-      pdf.text(ligne, 55, yy);
-      yy += 5;
+
+      // Ajuste y pour éviter les superpositions
+      const hauteurBloc = Math.max(55, yy - y);
+      y += hauteurBloc + 5;
+      if (y > 260) {
+        pdf.addPage();
+        y = 10;
+      }
     }
 
-    // Ajuste y pour éviter les superpositions
-    const hauteurBloc = Math.max(55, yy - y);
-    y += hauteurBloc + 5;
-    if (y > 260) {
-      pdf.addPage();
-      y = 10;
-    }
-  }
-
-  // Décaler plus bas pour Lecture du tirage
-  y += 15;
-  pdf.setFontSize(13);
-  pdf.setFont("Times", "bold");
-  pdf.text('--- Lecture du tirage ---', 10, y);
-  y += 8;
-
-  for (const carte of cartesPDF) {
-    pdf.setFontSize(12);
+    // Lecture du tirage
+    y += 15;
+    pdf.setFontSize(13);
     pdf.setFont("Times", "bold");
-    const ligneA = `${carte.nr} : (${carte.nom}) : (${carte.sens})`;
-    if (y > 280) { pdf.addPage(); y = 10; }
-    pdf.text(ligneA, 10, y);
-    y += 6;
+    pdf.text('--- Lecture du tirage ---', 10, y);
+    y += 8;
 
+    for (const carte of cartesPDF) {
+      pdf.setFontSize(12);
+      pdf.setFont("Times", "bold");
+      const ligneA = `${carte.nr} : (${carte.nom}) : (${carte.sens})`;
+      if (y > 280) { pdf.addPage(); y = 10; }
+      pdf.text(ligneA, 10, y);
+      y += 6;
+
+      pdf.setFontSize(11);
+      pdf.setFont("Times", "normal");
+      const lignesB = pdf.splitTextToSize(carte.texte, 190);
+      for (const ligne of lignesB) {
+        if (y > 280) { pdf.addPage(); y = 10; }
+        pdf.text(ligne, 10, y);
+        y += 5;
+      }
+      y += 4;
+    }
+
+    // Synthèse finale (Influences / Dynamique / Évolution / Synthèse guidée)
+    const phrases = cartesPDF.map(carte => {
+      const texteCourt = carte.texte?.split(".")[0] + "." || "(Message manquant)";
+      return `${carte.nr} : (${carte.nom}) : (${carte.sens}) → ${texteCourt}`;
+    });
+
+    let resume = "--- Synthèse du tirage ---\n\n";
+    resume += "➤ Influences de départ :\n";
+    resume += phrases.slice(0, 2).join("\n") + "\n\n";
+    resume += "➤ Dynamique actuelle :\n";
+    resume += phrases.slice(2, 5).join("\n") + "\n\n";
+    resume += "➤ Évolution possible :\n";
+    resume += phrases.slice(5, 7).join("\n") + "\n\n";
+
+    const syntheseFinale = genererSyntheseGuidante(cartesTirees, aspect, { question: "", prenom: "", mode: "normal" });
+    resume += `→ Synthèse guidée :\n\n${syntheseFinale}`;
+
+    // Ajoute la synthèse proprement
+    y += 10;
+    pdf.setFontSize(13);
+    pdf.setFont("Times", "bold");
+    pdf.text('Synthèse finale :', 10, y);
+    y += 8;
+
+    const lignesResume = pdf.splitTextToSize(resume, 190);
     pdf.setFontSize(11);
     pdf.setFont("Times", "normal");
-    const lignesB = pdf.splitTextToSize(carte.texte, 190);
-    for (const ligne of lignesB) {
+    for (const ligne of lignesResume) {
       if (y > 280) { pdf.addPage(); y = 10; }
       pdf.text(ligne, 10, y);
       y += 5;
     }
-    y += 4;
-  }
 
-  // Synthèse guidée (sans la lecture du tirage doublée)
-  y += 10;
-  pdf.setFontSize(13);
-  pdf.setFont("Times", "bold");
-  pdf.text('Synthèse guidée :', 10, y);
-  y += 8;
-
-// ➜ Supprime tout doublon de lecture du tirage dans la synthèse finale
-let syntheseComplete = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
-const indexSynthese = syntheseComplete.lastIndexOf('Synthèse guidée :');
-let syntheseFinale = (indexSynthese !== -1)
-  ? syntheseComplete.slice(indexSynthese).trim()
-  : syntheseComplete;
-
-// ➜ Nettoyage des caractères parasites
-syntheseFinale = syntheseFinale.replace(/[^\x20-\x7EÀ-ÿ\n]/g, '').trim();
-
-// ➜ Découpe propre pour retour à la ligne
-const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
-
-// ➜ Impression propre
-pdf.setFontSize(11);
-pdf.setFont("Times", "normal");
-for (const ligne of lignesSynthese) {
-  if (y > 280) { pdf.addPage(); y = 10; }
-  pdf.text(ligne, 10, y);
-  y += 5;
-}
-  pdf.save('tirage_oracle.pdf');
-});
+    pdf.save('tirage_oracle.pdf');
+  });
 </script>
 </body>
 </html>
