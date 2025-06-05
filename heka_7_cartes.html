@@ -565,7 +565,9 @@ resume += "➤ Dynamique actuelle :\n";
 resume += phrases.slice(2, 5).join("\n") + "\n\n";
 resume += "➤ Évolution possible :\n";
 resume += phrases.slice(5, 7).join("\n") + "\n\n";
-    }
+    
+const syntheseFinale = genererSyntheseGuidante(cartesTirees, aspect, { question: "", prenom: "", mode: "normal" });
+resume += `→ Synthèse guidée :\n\n${syntheseFinale}`;
 
     // Synthèse guidée (sans la lecture du tirage doublée)
   y += 10;
