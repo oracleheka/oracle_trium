@@ -557,31 +557,48 @@ document.getElementById("syntheseModal").style.display = "flex";
   y += 8;
 
 // ➜ Supprime tout doublon de lecture du tirage dans la synthèse finale
-let syntheseComplete = document.querySelector('#contenuSynthese').textContent.trim() || "(pas de synthèse)";
+let syntheseFinale = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
 
-// ➜ Trouve la position du bloc de la lecture du tirage
-const indexLecture = syntheseComplete.indexOf('--- Lecture du tirage ---');
+// ➜ Vérifie la présence de cette phrase et la découpe proprement
+const phraseTransition = "Cette personne est en transition : des tensions sont présentes, mais le mouvement intérieur est vivant.";
+const phraseQuestion = "En réponse à la question : « qui suis-je »";
 
-// ➜ Trouve la position de la synthèse finale (après "Synthèse guidée :")
-const indexSynthese = syntheseComplete.indexOf('Synthèse guidée :');
+// ➜ Cherche la position de la phrase "Cette personne est en transition"
+const indexPhrase = syntheseFinale.indexOf("Cette personne est en transition");
+if (indexPhrase !== -1) {
+  // Découpe le texte avant et après la phrase
+  const avant = syntheseFinale.slice(0, indexPhrase).trim();
+  const apres = syntheseFinale.slice(indexPhrase).trim();
 
-// ➜ La vraie synthèse finale est ce qui est après "Synthèse guidée :"
-let syntheseFinale = "";
-if (indexSynthese !== -1) {
-  syntheseFinale = syntheseComplete.slice(indexSynthese + 'Synthèse guidée :'.length).trim();
+  // ➜ Découpe la phrase elle-même proprement avec splitTextToSize
+  const lignesPhrase = pdf.splitTextToSize(apres, 190);
+
+  // ➜ Reconstruction : avant + lignes de la phrase finale + "En réponse"
+  const lignesSynthese = pdf.splitTextToSize(avant, 190);
+  lignesSynthese.push(...lignesPhrase);
+
+  // ➜ Ajoute la dernière phrase "En réponse à la question"
+  lignesSynthese.push(phraseQuestion);
+
+  // ➜ Impression
+  pdf.setFontSize(11);
+  pdf.setFont("Times", "normal");
+  for (const ligne of lignesSynthese) {
+    if (y > 280) { pdf.addPage(); y = 10; }
+    pdf.text(ligne, 10, y);
+    y += 5;
+  }
+} else {
+  // Sinon découpe normal
+  const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
+  pdf.setFontSize(11);
+  pdf.setFont("Times", "normal");
+  for (const ligne of lignesSynthese) {
+    if (y > 280) { pdf.addPage(); y = 10; }
+    pdf.text(ligne, 10, y);
+    y += 5;
+  }
 }
-
-// ➜ Découpe la synthèse finale proprement, même si elle est longue
-const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
-pdf.setFontSize(11);
-pdf.setFont("Times", "normal");
-
-for (const ligne of lignesSynthese) {
-  if (y > 280) { pdf.addPage(); y = 10; }
-  pdf.text(ligne, 10, y);
-  y += 5;
-}
-
   pdf.save('tirage_oracle.pdf');
 });
 </script>
