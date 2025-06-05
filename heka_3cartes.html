@@ -557,15 +557,20 @@ document.getElementById("syntheseModal").style.display = "flex";
   y += 8;
 
 // ➜ Supprime tout doublon de lecture du tirage dans la synthèse finale
-let syntheseFinale = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
+let syntheseComplete = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
+let lignes = syntheseComplete.split("\n");
 
-// ➜ Découpe en lignes (pas de lecture du tirage ici !)
-const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
+// ➜ La phrase de bilan est la dernière ligne (avant la phrase "En réponse à la question..." si elle existe)
+let phraseFinale = lignes[lignes.length - 1];
+if (phraseFinale.startsWith("En réponse à la question")) {
+  phraseFinale = lignes[lignes.length - 2];
+}
 
-// ➜ Impression ligne par ligne
+// ➜ Affichage propre dans le PDF (retour à la ligne si nécessaire)
+const lignesPhrase = pdf.splitTextToSize(phraseFinale, 190);
 pdf.setFontSize(11);
 pdf.setFont("Times", "normal");
-for (const ligne of lignesSynthese) {
+for (const ligne of lignesPhrase) {
   if (y > 280) { pdf.addPage(); y = 10; }
   pdf.text(ligne, 10, y);
   y += 5;
