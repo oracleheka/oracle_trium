@@ -1,0 +1,603 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tirage 7 cartes gratuit – Oracle Heka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tirage gratuit à 7 cartes avec l’Oracle Heka : explorez les dynamiques de l’ego et ses mécanismes d’action pour clarifier votre situation.">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Tirage 7 cartes gratuit – Oracle Heka",
+  "url": "https://oracleheka.github.io/oracle_trium/heka_7cartes.html",
+  "description": "Tirage gratuit à 7 cartes avec l’Oracle Heka : explorez les dynamiques de l’ego et ses mécanismes d’action pour clarifier votre situation.",
+  "inLanguage": "fr",
+  "author": {
+    "@type": "Person",
+    "name": "Roland Alberolla"
+  }
+}
+</script>
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f5f2;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* Header */
+header {
+  background-color: #f5efe6;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between; /* Ajoute de l’espace pour le burger */
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+    header nav a {
+     display: inline-block;
+  padding: 0.75rem 1rem; /* agrandit la zone cliquable */
+  margin: 0.25rem 0.5rem; /* espace entre les liens */
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+  font-size: 1rem; /* assure lisibilité */
+    }
+    header nav a:hover {
+      text-decoration: underline;
+}
+
+/* Main */
+main {
+  flex: 1;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  background-color: #e8e0d8; /* ton plus marqué */
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #b8a998; /* bordure plus chaude */
+}
+    #burgerBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+   color: #333; /* 👈 Ajoute cette ligne pour forcer la couleur */
+}
+    #burgerBtn:hover {
+  color: #000; /* couleur encore plus foncée au survol */
+}
+    /* Affichage du bouton burger en mobile */
+@media (max-width: 768px) {
+  #burgerBtn {
+    display: block; /* rends le bouton burger visible sur mobile */
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    background: #f5efe6;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  header nav.show {
+    max-height: 500px; /* ajuste à la hauteur de ton menu */
+  }
+}
+
+/* Boutons */
+button {
+  padding: 0.7rem 1.5rem;
+  background-color: #3b6a9a; /* bleu-grisé plus doux */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #345b85; /* bleu-grisé plus foncé au survol */
+}
+
+/* Cadres des cartes */
+#resultats > div {
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  border: 1px solid #b8a998; /* bordure beige/brun plus chaude */
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Ajustement pour PC */
+@media (min-width: 768px) {
+  #resultats img {
+    width: 180px;
+  }
+}
+.btn-retour {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: #3b6a9a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+  background-color: #345b85;
+}
+  </style>
+</head>
+<body>
+
+<header>
+   <!-- Bouton menu burger -->
+<button id="burgerBtn" aria-label="Menu">☰</button>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="methodes.html">Méthodes de Tirages</a>
+    <a href="heka.html">Oracle Heka</a>
+    <a href="sia.html">Oracle Sia</a>
+    <a href="seshat.html">Oracle Seshat</a>
+    <a href="decouverte.html">Découverte</a>
+  </nav>
+  
+</header>
+
+<main>
+  <h1>Tirage 7 cartes gratuit – Oracle Heka</h1>
+  <p>Découvrez les dynamiques intérieures qui façonnent votre situation grâce au tirage à 7 cartes de l’Oracle Heka. Une méthode introspective pour éclairer l’ego et ses mécaniques d’action.</p>
+  <h2>Choisissez un aspect à explorer</h2>
+  <p>Personnalité, matériel, professionnel, affectif ou spirituel : chaque aspect révèle une facette unique de la dynamique du tirage.</p>
+  <div style="display: flex; align-items: center; gap: 1rem; margin: 1.5rem 0;">
+  <fieldset style="border: none; margin: 0;">
+  <legend><strong>Choisir l’aspect :</strong></legend>
+  <label><input type="radio" name="aspect" value="personnalité" checked> Personnalité</label><br>
+  <label><input type="radio" name="aspect" value="matériel"> Matériel</label><br>
+  <label><input type="radio" name="aspect" value="professionnel"> Professionnel</label><br>
+  <label><input type="radio" name="aspect" value="affectif"> Affectif</label><br>
+  <label><input type="radio" name="aspect" value="spirituel"> Spirituel</label>
+</fieldset>
+  </div>
+  <h2>Concentrez-vous sur votre question</h2>
+  <div style="margin-top: 1rem;">
+  <label for="question"><strong>Posez votre question (facultatif) :</strong></label><br>
+  <input type="text" id="question" name="question" placeholder="Écrivez votre question ici..." style="width: 100%; max-width: 600px; padding: 0.6rem; margin-top: 0.5rem; border: 1px solid #ccc; border-radius: 6px;">
+</div>
+ <div id="resultats" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
+  <button id="btnSynthese" style="display:none; margin-top: 1rem;">Consultez la synthèse guidante de votre tirage</button>
+</div>
+  <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p> 
+  <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
+  <h2>Interprétation du tirage</h2>
+  <p>Idéal pour explorer une dynamique complexe, ce tirage à 7 cartes est gratuit et approfondi. Il aide à analyser une évolution, une relation ou une trajectoire personnelle.</p>
+ <ul>
+  <li>Influence de départ</li>
+  <li>Dynamique actuelle</li>
+  <li>Évolution possible</li>
+</ul>
+  <p>L’Oracle Heka agit ici comme un miroir symbolique : il révèle les tensions, les silences et les possibles ouvertures. Ce tirage introspectif vous aide à clarifier les enjeux de votre posture intérieure et à avancer plus consciemment.</p>
+<p><em>Refaites ce tirage aussi souvent que nécessaire pour clarifier votre posture intérieure et avancer plus consciemment.</em></p>
+<div class="retour">
+    <a href="heka.html" class="btn-retour">← Retour à la page Oracle Heka</a>
+  </div>
+
+</main>
+<footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
+  Produit par <strong>OracleHeka</strong> —
+  <a href="mentions-legales.html">Mentions légales</a> —
+  <a href="mailto:heka.sia.seshat@gmail.com">Contact</a> -
+  <a href="faq.html">FAQ</a>
+</footer>
+ <script>
+  let toutesLesCartes = [];
+  let cartesDisponibles = [];
+  let cartesTirees = [];
+  let jeuPrepare = false;
+
+  async function chargerCartes() {
+    const reponse = await fetch("https://oracleheka.github.io/oracle_trium/data/heka.json");
+    toutesLesCartes = await reponse.json();
+    cartesDisponibles = [...toutesLesCartes];
+  }
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  async function melangerEtCouper() {
+    if (toutesLesCartes.length === 0) {
+      await chargerCartes();
+    }
+
+    cartesDisponibles = [...toutesLesCartes];
+    shuffle(cartesDisponibles);
+    jeuPrepare = true;
+
+    document.getElementById("tirerBtn").disabled = false;
+    document.getElementById("ajouterBtn").disabled = false;
+
+    alert("Le jeu a été mélangé et coupé !");
+  }
+
+  function tirerLesCartes() {
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
+  }
+
+  if (cartesTirees.length > 0) {
+    alert("Tirage déjà effectué. Utilisez 'Ajouter une carte'.");
+    return;
+  }
+
+  document.getElementById("resultats").innerHTML = ""; // reset visuel
+  cartesTirees = [];
+
+  // Appelle directement la fonction spécifique à cette page
+  tirage7Cartes();
+}
+
+function tirage7Cartes() {
+  const tirage = cartesDisponibles.splice(0, 7);
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+  const affichage = document.getElementById("resultats");
+
+  tirage.forEach(carte => {
+    const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+    cartesTirees.push({ carte: carte, sens: sens });
+
+    const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
+    const div = document.createElement("div");
+
+    div.innerHTML = `
+      <h3>${carte.id} : (${carte.nom}) : (${sens})</h3>
+      <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
+      <p>${interpretation}</p>
+    `;
+
+    div.style.padding = "1rem";
+    div.style.border = "1px solid #ccc";
+    div.style.borderRadius = "8px";
+    div.style.backgroundColor = "#fdfdfd";
+    div.style.marginBottom = "1rem";
+
+    affichage.appendChild(div);
+  });
+
+    document.getElementById("btnSynthese").style.display = "inline-block";
+  }
+
+  function ajouterUneCarte(estTirageInitial = false) {
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
+  }
+
+  const maxCartes = 10; // 7 de base + 3 couvertures
+  if (cartesTirees.length >= maxCartes) {
+    alert("Nombre maximum de cartes atteint (10).");
+    return;
+  }
+
+  if (cartesDisponibles.length === 0) {
+    alert("Le jeu est vide !");
+    return;
+  }
+
+  const carte = cartesDisponibles.shift();
+  const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+
+  const interpretation = carte[sens][aspect]?.texte || "Interprétation manquante.";
+  cartesTirees.push({ carte: carte, sens: sens });
+
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <h3>Carte supplémentaire :${carte.id} : (${carte.nom}) : (${sens})</h3>
+      <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:150px">
+      <p>${interpretation}</p>
+  `;
+
+  div.style.padding = "1rem";
+  div.style.border = "1px solid #ccc";
+  div.style.borderRadius = "8px";
+  div.style.backgroundColor = "#fdfdfd";
+  div.style.marginBottom = "1rem";
+
+  document.getElementById("resultats").appendChild(div);
+
+  if (!estTirageInitial && cartesTirees.length === 10) {
+    alert("Tirage complet : 7 cartes initiales + 3 couvertures.");
+  }
+}
+  function réinitialiser() {
+  location.reload(); // Recharge la page pour repartir de zéro
+}
+   
+   function afficherSynthese7Cartes() {
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+
+  const question = document.getElementById("question")?.value || "";
+  const prenom = document.getElementById("prenom")?.value || "";
+  const mode = prenom.toLowerCase() === "ce tirage" ? "lien" : "normal";
+
+  if (cartesTirees.length < 7) {
+    alert("Le tirage doit comporter 7 cartes pour générer cette synthèse.");
+    return;
+  }
+
+  const phrases = cartesTirees.map(({ carte, sens }) => {
+    const contenu = carte[sens]?.[aspect];
+    let texte = "(Message absent)";
+
+    if (typeof contenu === "object" && contenu.texte) {
+      texte = contenu.texte.trim().split(".")[0] + ".";
+    } else if (typeof contenu === "string") {
+      texte = contenu.trim().split(".")[0] + ".";
+    }
+
+    return `${carte.id} : (${carte.nom}) : (${sens}) → ${texte}`;
+  });
+
+  let resume = "--- Synthèse du tirage ---\n\n";
+  resume += "➤ Influences de départ :\n";
+  resume += phrases.slice(0, 2).join("\n") + "\n\n";
+  resume += "➤ Dynamique actuelle :\n";
+  resume += phrases.slice(2, 5).join("\n") + "\n\n";
+  resume += "➤ Évolution possible :\n";
+  resume += phrases.slice(5, 7).join("\n") + "\n\n";
+
+  const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
+  resume += `→ Synthèse guidée :\n\n${synthese}`;
+
+  const contenuDiv = document.getElementById("contenuSynthese");
+contenuDiv.innerHTML = ""; // Vide le contenu précédent
+
+cartesTirees.forEach(({ carte, sens }) => {
+  const imageSrc = carte.image; // l'URL de l'image de la carte
+  const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
+  const texte = carte[sens]?.[aspect]?.texte || "(Message absent)";
+
+  const carteHtml = `
+    <div style="margin-bottom: 1rem;">
+      <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+      <p>${titre} → ${texte}</p>
+    </div>`;
+  
+  contenuDiv.innerHTML += carteHtml;
+});
+
+// Prépare le tableau pour l'export PDF
+const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
+  imageSrc: carte.image,
+  nom: carte.nom,
+  sens: sens
+}));
+window.cartesTireesPDF = cartesPDF;
+
+// Ajoute la synthèse finale
+contenuDiv.innerHTML += `<pre style="white-space:pre-wrap; margin-top: 1rem;">${resume}</pre>`;
+
+// Affiche la modale
+document.getElementById("syntheseModal").style.display = "flex";
+  }
+   function fermerSynthese() {
+    document.getElementById("syntheseModal").style.display = "none";
+  }
+
+   function réinitialiser() {
+    location.reload();
+  }
+
+window.onload = function () {
+  document.getElementById("tirerBtn").disabled = true;
+  document.getElementById("ajouterBtn").disabled = true;
+  document.getElementById("btnSynthese").onclick = afficherSynthese7Cartes;
+};
+</script>
+  <div id="syntheseModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; position: relative;">
+    <button onclick="fermerSynthese()" style="position: absolute; top: 10px; right: 10px;">✖</button>
+    <h2>Synthèse Guidante de l'oracle Heka</h2>
+    <div id="contenuSynthese" style="white-space: pre-wrap; margin-bottom: 1.5rem;"></div>
+    <div style="text-align: center;">
+      <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Fermer
+      </button>
+      <button id="exportPDFBtn" style="background-color: #3b6a9a; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Exporter votre tirage
+      </button>
+    </div>
+  </div>
+</div>
+  <script src="data/synthese.js"></script>
+  <script>
+  const burgerBtn = document.getElementById("burgerBtn");
+  const nav = document.querySelector("header nav");
+
+  burgerBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+  document.getElementById('exportPDFBtn').addEventListener('click', async () => {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('p', 'mm', 'a4');
+
+    pdf.setFont("Times", "normal");
+    let y = 10;
+    const pageWidth = pdf.internal.pageSize.getWidth();
+
+    // Logo
+    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+    const loadImage = (src) => new Promise((resolve) => {
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = () => resolve(img);
+      img.src = src;
+    });
+    const logoImg = await loadImage(logoUrl);
+    pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
+    y += 25;
+
+    // Titre
+    pdf.setFontSize(14);
+    pdf.setFont("Times", "bold");
+    pdf.text('Synthèse du tirage Oracle Heka', 10, y);
+    y += 10;
+
+    // Cartes
+    const aspect = document.querySelector('input[name="aspect"]:checked').value;
+    const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
+      nr: carte.id?.toString() || "(?)",
+      nom: carte.nom,
+      sens: sens,
+      texte: carte[sens]?.[aspect]?.texte || "(Message manquant)",
+      imageSrc: carte.image
+    }));
+
+    for (const carte of cartesPDF) {
+      const carteImg = await loadImage(carte.imageSrc);
+      pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+
+      // Ligne 1
+      pdf.setFontSize(12);
+      pdf.setFont("Times", "bold");
+      pdf.text(`${carte.nr} : (${carte.nom}) : (${carte.sens})`, 55, y + 6);
+
+      // Ligne 2
+      pdf.setFontSize(11);
+      pdf.setFont("Times", "normal");
+      const lignesCarte = pdf.splitTextToSize(carte.texte, 135);
+      let yy = y + 12;
+
+      for (const ligne of lignesCarte) {
+        if (yy > 280) {
+          pdf.addPage();
+          yy = 10;
+        }
+        pdf.text(ligne, 55, yy);
+        yy += 5;
+      }
+
+      // Ajuste y pour éviter les superpositions
+      const hauteurBloc = Math.max(55, yy - y);
+      y += hauteurBloc + 5;
+      if (y > 260) {
+        pdf.addPage();
+        y = 10;
+      }
+    }
+
+    // Lecture du tirage
+   y += 15;
+pdf.setFontSize(13);
+pdf.setFont("Times", "bold");
+pdf.text('--- Lecture du tirage ---', 10, y);
+y += 8;
+
+for (const carte of cartesPDF) {
+  pdf.setFontSize(12);
+  pdf.setFont("Times", "bold");
+  const ligneA = `${carte.nr} : (${carte.nom}) : (${carte.sens})`;
+  if (y > 280) { pdf.addPage(); y = 10; }
+  pdf.text(ligneA, 10, y);
+  y += 6;
+
+  pdf.setFontSize(11);
+  pdf.setFont("Times", "normal");
+  const lignesB = pdf.splitTextToSize(carte.texte, 190);
+  for (const ligne of lignesB) {
+    if (y > 280) { pdf.addPage(); y = 10; }
+    pdf.text(ligne, 10, y);
+    y += 5;
+  }
+  y += 4;
+}
+
+// ➜ Ajoute la synthèse complète propre (Influences / Dynamique / Évolution)
+const phrases = cartesPDF.map(carte => {
+  const texteCourt = carte.texte?.split(".")[0] + "." || "(Message manquant)";
+  return `${carte.nr} : (${carte.nom}) : (${carte.sens}) → ${texteCourt}`;
+});
+
+let resume = "--- Synthèse du tirage ---\n\n";
+resume += "➤ Influences de départ :\n";
+resume += phrases.slice(0, 2).join("\n") + "\n\n";
+resume += "➤ Dynamique actuelle :\n";
+resume += phrases.slice(2, 5).join("\n") + "\n\n";
+resume += "➤ Évolution possible :\n";
+resume += phrases.slice(5, 7).join("\n") + "\n\n";
+    }
+
+    // Synthèse guidée (sans la lecture du tirage doublée)
+  y += 10;
+  pdf.setFontSize(13);
+  pdf.setFont("Times", "bold");
+  pdf.text('Synthèse guidée :', 10, y);
+  y += 8;
+
+// ➜ Supprime tout doublon de lecture du tirage dans la synthèse finale
+let syntheseComplete = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
+const indexSynthese = syntheseComplete.lastIndexOf('Synthèse guidée :');
+let syntheseFinale = (indexSynthese !== -1)
+  ? syntheseComplete.slice(indexSynthese).trim()
+  : syntheseComplete;
+
+// ➜ Nettoyage des caractères parasites
+syntheseFinale = syntheseFinale.replace(/[^\x20-\x7EÀ-ÿ\n]/g, '').trim();
+
+// ➜ Découpe propre pour retour à la ligne
+const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
+
+// ➜ Impression propre
+pdf.setFontSize(11);
+pdf.setFont("Times", "normal");
+for (const ligne of lignesSynthese) {
+  if (y > 280) { pdf.addPage(); y = 10; }
+  pdf.text(ligne, 10, y);
+  y += 5;
+}
+  pdf.save('tirage_oracle.pdf');
+});
+</script>
+</body>
+</html>
