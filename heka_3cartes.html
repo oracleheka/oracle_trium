@@ -483,28 +483,42 @@ document.getElementById("syntheseModal").style.display = "flex";
   pdf.text('Synthèse du tirage Oracle Heka', 10, y);
   y += 10;
 
-  // ➜ Revenir à la police normale
-  pdf.setFont("Times", "normal");
+  // ➜ Récupère les cartesTirees avec image et texte
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+  const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
+    nr: carte.id?.toString() || "(?)",
+    nom: carte.nom,
+    sens: sens,
+    texte: carte[sens]?.[aspect]?.texte || "(Message manquant)",
+    imageSrc: carte.image
+  }));
 
-  // ➜ Récupérer les cartes tirées
-  const cartes = window.cartesTireesPDF || [];
-  for (const carte of cartes) {
+  for (const carte of cartesPDF) {
     const carteImg = await loadImage(carte.imageSrc);
     pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
 
-    // Ligne 1 (Nr, Nom, Sens)
+    // Ligne 1 : ID, Nom, Sens
     pdf.setFontSize(12);
     pdf.setFont("Times", "bold");
-    pdf.text(`${carte.nr} : (${carte.nom}) (${carte.sens})`, 55, y + 6);
+    pdf.text(`${carte.nr} : (${carte.nom}) : (${carte.sens})`, 55, y + 6);
 
-    // Ligne 2 (texte associé)
+    // Ligne 2 : Texte associé (multi-lignes)
     pdf.setFontSize(11);
     pdf.setFont("Times", "normal");
-    const texteAssocie = carte.texte || "(Interprétation manquante)";
-    const lignesCarte = pdf.splitTextToSize(texteAssocie, 135);
-    pdf.text(lignesCarte, 55, y + 12);
+    const lignesCarte = pdf.splitTextToSize(carte.texte, 135);
 
-    y += 55 + 10; // espace après chaque bloc
+    // ➜ Vérifie ligne par ligne et saut de page si besoin
+    let yy = y + 12;
+    for (const ligne of lignesCarte) {
+      if (yy > 280) {
+        pdf.addPage();
+        yy = 10;
+      }
+      pdf.text(ligne, 55, yy);
+      yy += 5;
+    }
+
+    y = yy + 5; // espace après la carte
     if (y > 260) {
       pdf.addPage();
       y = 10;
@@ -518,36 +532,39 @@ document.getElementById("syntheseModal").style.display = "flex";
   pdf.text('--- Lecture du tirage ---', 10, y);
   y += 8;
 
-  const lectureTirage = window.lectureTiragePDF || [];
-  for (const elem of lectureTirage) {
-    pdf.setFontSize(12);
-    pdf.setFont("Times", "bold");
-    pdf.text(`${elem.nr} : (${elem.nom}) (${elem.sens})`, 10, y);
+  const lecture = document.querySelector('#contenuSynthese').textContent.split('--- Lecture du tirage ---')[1]?.split('→ Synthèse guidée :')[0] || "";
+  const lignesLecture = pdf.splitTextToSize(lecture.trim(), 190);
+  pdf.setFontSize(11);
+  pdf.setFont("Times", "normal");
 
-    pdf.setFontSize(11);
-    pdf.setFont("Times", "normal");
-    const lignesLecture = pdf.splitTextToSize(elem.texte, 190);
-    pdf.text(lignesLecture, 10, y + 6);
-
-    y += 15 + (lignesLecture.length * 5);
+  for (const ligne of lignesLecture) {
     if (y > 280) {
       pdf.addPage();
       y = 10;
     }
+    pdf.text(ligne, 10, y);
+    y += 5;
   }
 
-  // ➜ Synthèse finale
+  // ➜ Synthèse guidée finale
   y += 10;
   pdf.setFontSize(13);
   pdf.setFont("Times", "bold");
   pdf.text('Synthèse guidée :', 10, y);
   y += 8;
 
+  const syntheseFinale = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
+  const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
   pdf.setFontSize(11);
   pdf.setFont("Times", "normal");
-  let syntheseTexte = document.getElementById('contenuSynthese').textContent.trim();
-  const lignesSynthese = pdf.splitTextToSize(syntheseTexte, 190);
-  pdf.text(lignesSynthese, 10, y);
+  for (const ligne of lignesSynthese) {
+    if (y > 280) {
+      pdf.addPage();
+      y = 10;
+    }
+    pdf.text(ligne, 10, y);
+    y += 5;
+  }
 
   pdf.save('tirage_oracle.pdf');
 });
