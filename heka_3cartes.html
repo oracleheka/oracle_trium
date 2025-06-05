@@ -557,47 +557,32 @@ document.getElementById("syntheseModal").style.display = "flex";
   y += 8;
 
 // ➜ Supprime tout doublon de lecture du tirage dans la synthèse finale
-let syntheseFinale = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
+let contenuSynthese = document.querySelector('#contenuSynthese').textContent.trim() || "(pas de synthèse)";
 
-// ➜ Vérifie la présence de cette phrase et la découpe proprement
-const phraseTransition = "Cette personne est en transition : des tensions sont présentes, mais le mouvement intérieur est vivant.";
-const phraseQuestion = "En réponse à la question : « qui suis-je »";
+// ➜ Trouver la position de la synthèse finale, en ignorant la partie "Lecture du tirage"
+const indexSynthese = contenuSynthese.lastIndexOf('Synthèse guidée :');
 
-// ➜ Cherche la position de la phrase "Cette personne est en transition"
-const indexPhrase = syntheseFinale.indexOf("Cette personne est en transition");
-if (indexPhrase !== -1) {
-  // Découpe le texte avant et après la phrase
-  const avant = syntheseFinale.slice(0, indexPhrase).trim();
-  const apres = syntheseFinale.slice(indexPhrase).trim();
+let syntheseFinale = contenuSynthese;
+if (indexSynthese !== -1) {
+  syntheseFinale = contenuSynthese.slice(indexSynthese + 'Synthèse guidée :'.length).trim();
+}
 
-  // ➜ Découpe la phrase elle-même proprement avec splitTextToSize
-  const lignesPhrase = pdf.splitTextToSize(apres, 190);
+// ➜ Supprimer à nouveau tout bloc "Lecture du tirage" qui pourrait être resté
+const indexLecture = syntheseFinale.indexOf('--- Lecture du tirage ---');
+if (indexLecture !== -1) {
+  syntheseFinale = syntheseFinale.slice(0, indexLecture).trim();
+}
 
-  // ➜ Reconstruction : avant + lignes de la phrase finale + "En réponse"
-  const lignesSynthese = pdf.splitTextToSize(avant, 190);
-  lignesSynthese.push(...lignesPhrase);
+// ➜ Découpe automatique (pas de forçage sur les points si pas présent)
+const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
 
-  // ➜ Ajoute la dernière phrase "En réponse à la question"
-  lignesSynthese.push(phraseQuestion);
-
-  // ➜ Impression
-  pdf.setFontSize(11);
-  pdf.setFont("Times", "normal");
-  for (const ligne of lignesSynthese) {
-    if (y > 280) { pdf.addPage(); y = 10; }
-    pdf.text(ligne, 10, y);
-    y += 5;
-  }
-} else {
-  // Sinon découpe normal
-  const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
-  pdf.setFontSize(11);
-  pdf.setFont("Times", "normal");
-  for (const ligne of lignesSynthese) {
-    if (y > 280) { pdf.addPage(); y = 10; }
-    pdf.text(ligne, 10, y);
-    y += 5;
-  }
+// ➜ Impression finale
+pdf.setFontSize(11);
+pdf.setFont("Times", "normal");
+for (const ligne of lignesSynthese) {
+  if (y > 280) { pdf.addPage(); y = 10; }
+  pdf.text(ligne, 10, y);
+  y += 5;
 }
   pdf.save('tirage_oracle.pdf');
 });
