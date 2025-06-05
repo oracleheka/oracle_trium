@@ -381,9 +381,6 @@ function tirage7Cartes() {
   resume += "➤ Évolution possible :\n";
   resume += phrases.slice(5, 7).join("\n") + "\n\n";
 
-  const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
-  resume += `→ Synthèse guidée :\n\n${synthese}`;
-
   const contenuDiv = document.getElementById("contenuSynthese");
 contenuDiv.innerHTML = ""; // Vide le contenu précédent
 
