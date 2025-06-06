@@ -343,10 +343,7 @@ function tirage7Cartes() {
     alert("Tirage complet : 7 cartes initiales + 3 couvertures.");
   }
 }
-  function réinitialiser() {
-  location.reload(); // Recharge la page pour repartir de zéro
-}
-   
+ 
    function afficherSynthese7Cartes() {
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
 
@@ -358,6 +355,9 @@ function tirage7Cartes() {
     alert("Le tirage doit comporter 7 cartes pour générer cette synthèse.");
     return;
   }
+
+  const contenuDiv = document.getElementById("contenuSynthese");
+  contenuDiv.innerHTML = ""; // Vide le contenu précédent
 
   const phrases = cartesTirees.map(({ carte, sens }) => {
     const contenu = carte[sens]?.[aspect];
@@ -380,12 +380,39 @@ function tirage7Cartes() {
   resume += "➤ Évolution possible :\n";
   resume += phrases.slice(5, 7).join("\n") + "\n\n";
 
-  const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
+    const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
   resume += `→ Synthèse guidée :\n\n${synthese}`;
 
-  document.getElementById("contenuSynthese").innerText = resume;
-  document.getElementById("syntheseModal").style.display = "flex";
-}
+contenuDiv.innerHTML = ""; // Vide le contenu précédent
+    
+  cartesTirees.forEach(({ carte, sens }) => {
+    const imageSrc = carte.image; // l'URL de l'image de la carte
+    const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
+    const texte = carte[sens]?.[aspect]?.texte || "(Message absent)";
+
+    const carteHtml = `
+      <div style="margin-bottom: 1rem;">
+        <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+        <p>${titre} → ${texte}</p>
+      </div>`;
+    
+    contenuDiv.innerHTML += carteHtml;
+  });
+
+// Prépare le tableau pour l'export PDF
+const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
+  imageSrc: carte.image,
+  nom: carte.nom,
+  sens: sens
+}));
+window.cartesTireesPDF = cartesPDF;
+
+// Ajoute la synthèse finale
+contenuDiv.innerHTML += `<pre style="white-space:pre-wrap; margin-top: 1rem;">${resume}</pre>`;
+
+// Affiche la modale
+document.getElementById("syntheseModal").style.display = "flex";
+  }
    function fermerSynthese() {
     document.getElementById("syntheseModal").style.display = "none";
   }
@@ -410,6 +437,9 @@ window.onload = function () {
       <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
         Fermer
       </button>
+       <button id="exportPDFBtn" style="background-color: #3b6a9a; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Exporter votre tirage
+      </button>
     </div>
   </div>
 </div>
@@ -422,5 +452,174 @@ window.onload = function () {
     nav.classList.toggle("show");
   });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+  // Fonction pour nettoyer les caractères parasites
+  function nettoyerTexte(txt) {
+    return txt
+      .normalize("NFKC")
+      .replace(/[^\x20-\x7EÀ-ÿ\n]/g, '')
+      .trim();
+  }
+
+  document.getElementById('exportPDFBtn').addEventListener('click', async () => {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('p', 'mm', 'a4');
+
+    pdf.setFont("Times", "normal");
+    let y = 10;
+    const pageWidth = pdf.internal.pageSize.getWidth();
+
+    // Logo
+    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+    const loadImage = (src) => new Promise((resolve) => {
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = () => resolve(img);
+      img.src = src;
+    });
+    const logoImg = await loadImage(logoUrl);
+    pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
+    y += 25;
+
+    // Titre
+    pdf.setFontSize(14);
+    pdf.setFont("Times", "bold");
+    pdf.text('Synthèse du tirage Oracle Heka', 10, y);
+    y += 10;
+
+    // Cartes
+    const aspect = document.querySelector('input[name="aspect"]:checked').value;
+    const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
+      nr: carte.id?.toString() || "(?)",
+      nom: carte.nom,
+      sens: sens,
+      texte: carte[sens]?.[aspect]?.texte || "(Message manquant)",
+      imageSrc: carte.image
+    }));
+
+    for (const carte of cartesPDF) {
+      const carteImg = await loadImage(carte.imageSrc);
+      pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+
+      // Ligne 1
+      pdf.setFontSize(12);
+      pdf.setFont("Times", "bold");
+      pdf.text(nettoyerTexte(`${carte.nr} : (${carte.nom}) : (${carte.sens})`), 55, y + 6);
+
+      // Ligne 2
+      pdf.setFontSize(11);
+      pdf.setFont("Times", "normal");
+      const lignesCarte = pdf.splitTextToSize(nettoyerTexte(carte.texte), 135);
+      let yy = y + 12;
+
+      for (const ligne of lignesCarte) {
+        if (yy > 280) { pdf.addPage(); yy = 10; }
+        pdf.text(ligne, 55, yy);
+        yy += 5;
+      }
+
+      const hauteurBloc = Math.max(55, yy - y);
+      y += hauteurBloc + 5;
+      if (y > 260) {
+        pdf.addPage();
+        y = 10;
+      }
+    }
+
+    // Lecture du tirage
+    y += 15;
+    pdf.setFontSize(13);
+    pdf.setFont("Times", "bold");
+    pdf.text('--- Lecture du tirage ---', 10, y);
+    y += 8;
+
+    for (const carte of cartesPDF) {
+      pdf.setFontSize(12);
+      pdf.setFont("Times", "bold");
+      const ligneA = `${carte.nr} : (${carte.nom}) : (${carte.sens})`;
+      if (y > 280) { pdf.addPage(); y = 10; }
+      pdf.text(nettoyerTexte(ligneA), 10, y);
+      y += 6;
+
+      pdf.setFontSize(11);
+      pdf.setFont("Times", "normal");
+      const lignesB = pdf.splitTextToSize(nettoyerTexte(carte.texte), 190);
+      for (const ligne of lignesB) {
+        if (y > 280) { pdf.addPage(); y = 10; }
+        pdf.text(ligne, 10, y);
+        y += 5;
+      }
+      y += 4;
+    }
+
+    // Synthèse claire (Influences / Dynamique / Évolution)
+    const phrases = cartesPDF.map(carte => {
+      const texteCourt = carte.texte?.split(".")[0] + "." || "(Message manquant)";
+      return `${carte.nr} : (${carte.nom}) : (${carte.sens}) → ${texteCourt}`;
+    });
+
+    const titres = [
+      "Influences de départ :",
+      "Dynamique actuelle :",
+      "Évolution possible :"
+    ];
+
+    const blocs = [
+      phrases.slice(0, 2).join("\n"),
+      phrases.slice(2, 5).join("\n"),
+      phrases.slice(5, 7).join("\n")
+    ];
+
+    y += 10;
+    for (let i = 0; i < titres.length; i++) {
+      pdf.setFontSize(12);
+      pdf.setFont("Times", "bold");
+      if (y > 280) { pdf.addPage(); y = 10; }
+      pdf.text(nettoyerTexte(titres[i]), 10, y);
+      y += 6;
+
+      pdf.setFontSize(11);
+      pdf.setFont("Times", "normal");
+      const lignes = pdf.splitTextToSize(nettoyerTexte(blocs[i]), 190);
+      for (const ligne of lignes) {
+        if (y > 280) { pdf.addPage(); y = 10; }
+        pdf.text(ligne, 10, y);
+        y += 5;
+      }
+      y += 4;
+    }
+
+    // Synthèse guidée
+    y += 10;
+    pdf.setFontSize(13);
+    pdf.setFont("Times", "bold");
+    pdf.text('Synthèse guidée :', 10, y);
+    y += 8;
+
+    let syntheseComplete = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
+    const indexSynthese = syntheseComplete.lastIndexOf('Synthèse guidée :');
+    let syntheseFinale = (indexSynthese !== -1)
+      ? syntheseComplete.slice(indexSynthese).trim()
+      : syntheseComplete;
+
+    // ➜ Supprime les apostrophes et normalise les caractères
+    syntheseFinale = syntheseFinale.normalize("NFKD").replace(/[\u2018\u2019]/g, "'").replace(/[^\x20-\x7EÀ-ÿ\n]/g, '').trim();
+
+    const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
+    pdf.setFontSize(11);
+    pdf.setFont("Times", "normal");
+    for (const ligne of lignesSynthese) {
+      if (y > 280) { pdf.addPage(); y = 10; }
+      pdf.text(ligne, 10, y);
+      y += 5;
+    }
+
+    pdf.save('tirage_oracle.pdf');
+  });
+</script>
+</body>
+</html>
 </body>
 </html>
