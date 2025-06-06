@@ -351,9 +351,6 @@ function afficherSynthese2Prenoms() {
   resume += `\n\n→ Synthèse du lien entre ${nom1} et ${nom2} :\n\n`;
   resume += genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1} et ${nom2}`, mode: "lien" });
 
-  // Prépare la synthèse guidée
-const synthese = genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1} et ${nom2}`, mode: "lien" });
-resume += `→ Synthèse du lien :\n\n${synthese}`;
 
 // Vide le contenu précédent
 const contenuDiv = document.getElementById("contenuSynthese");
