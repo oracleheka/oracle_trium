@@ -580,11 +580,17 @@ window.onload = function () {
         yy += 4; // petit saut de ligne après chaque bloc de texte
         
         const hauteurBloc = Math.max(55, yy - y);
-        y += hauteurBloc + 7;
-        if (y > 260) { pdf.addPage(); y = 10; }
+
+      // Vérifie si la prochaine carte dépasse la page
+     if (y + hauteurBloc + 8 > 280) {
+      pdf.addPage();
+      y = 10;
+     }
+
+// Ajoute l’espace pour la carte (avec marge plus grande)
+y += hauteurBloc + 8;
       }
-      y += 4;
-    }
+     
 
     // ➜ Imprimer les cartes du tirage Tétraktys
     await imprimerCartes(cartesPrenom);
