@@ -344,8 +344,46 @@ function afficherSynthese2Prenoms() {
   resume += `\n\n→ Synthèse du lien entre ${nom1} et ${nom2} :\n\n`;
   resume += genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1} et ${nom2}`, mode: "lien" });
 
-  document.getElementById("contenuSynthese").innerText = resume;
-  document.getElementById("syntheseModal").style.display = "flex";
+
+// Vide le contenu précédent
+const contenuDiv = document.getElementById("contenuSynthese");
+contenuDiv.innerHTML = "";
+
+// Ajoute chaque carte visuellement (images + texte)
+cartesTirees.forEach(({ carte, sens }) => {
+  const imageSrc = carte.image;
+  const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
+  const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+
+  const carteHtml = `
+    <div style="margin-bottom: 1rem;">
+      <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+      <p>${titre} → ${texte}</p>
+    </div>`;
+
+  contenuDiv.innerHTML += carteHtml;
+});
+// Stocke les variables globales pour l'export PDF
+window.nom1 = nom1;
+window.nom2 = nom2;
+window.aspect = aspect;
+window.question = question;
+window.cartesPrenom1 = cartesPrenom1;
+window.cartesPrenom2 = cartesPrenom2;
+window.zoneSilencieuse = zoneSilencieuse;
+// Prépare pour l'export PDF
+const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
+  imageSrc: carte.image,
+  nom: carte.nom,
+  sens: sens
+}));
+window.cartesTireesPDF = cartesPDF;
+
+// Ajoute la synthèse finale (bloc texte propre)
+contenuDiv.innerHTML += `<pre style="white-space: pre-wrap; margin-top: 1rem;">${resume}</pre>`;
+window.resume = resume;  // stocke pour le PDF
+// Affiche la modale
+document.getElementById("syntheseModal").style.display = "flex";
 }
 
 function fermerSynthese() {
@@ -372,6 +410,9 @@ window.onload = function () {
       <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
         Fermer
       </button>
+      <button id="exportPDFBtn" style="background-color: #3b6a9a; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Exporter votre tirage
+      </button>
     </div>
   </div>
 </div>
@@ -382,6 +423,127 @@ window.onload = function () {
 
   burgerBtn.addEventListener("click", () => {
     nav.classList.toggle("show");
+  });
+</script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+  // Fonction pour nettoyer les caractères parasites
+  function nettoyerTexte(txt) {
+    return txt
+      .normalize("NFKC")
+      .replace(/[^\x20-\x7EÀ-ÿ\n]/g, '')
+      .trim();
+  }
+
+  document.getElementById('exportPDFBtn').addEventListener('click', async () => {
+    const nom1 = window.nom1;
+    const nom2 = window.nom2;
+    const aspect = window.aspect;
+    const question = window.question;
+    const cartesPrenom1 = window.cartesPrenom1;
+    const cartesPrenom2 = window.cartesPrenom2;
+    const zoneSilencieuse = window.zoneSilencieuse;
+
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    pdf.setFont("Times", "normal");
+    let y = 10;
+    const pageWidth = pdf.internal.pageSize.getWidth();
+
+    // Logo
+    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+    const loadImage = (src) => new Promise((resolve) => {
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = () => resolve(img);
+      img.src = src;
+    });
+    const logoImg = await loadImage(logoUrl);
+    pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
+    y += 30; // espace après le logo
+
+    // Titre principal (centré)
+    const titrePrincipal = `Tirage croisé entre ${nom1} et ${nom2}`;
+    const titreWidth = pdf.getTextWidth(titrePrincipal);
+    pdf.setFontSize(14);
+    pdf.setFont("Times", "bold");
+    pdf.text(titrePrincipal, (pageWidth - titreWidth) / 2, y);
+    y += 15;
+
+    // ➜ Fonction pour imprimer les cartes d’un prénom
+    async function imprimerCartes(cartes, prenom) {
+      pdf.setFontSize(13);
+      pdf.setFont("Times", "bold");
+      pdf.text(`--- Cartes pour ${prenom} ---`, 10, y);
+      y += 8;
+
+      for (const { carte, sens } of cartes) {
+        const carteImg = await loadImage(carte.image);
+        pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+
+        pdf.setFontSize(12);
+        pdf.setFont("Times", "bold");
+        pdf.text(`${carte.id} : (${carte.nom}) : (${sens})`, 55, y + 6);
+
+        const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+        pdf.setFontSize(11);
+        pdf.setFont("Times", "normal");
+        const lignesCarte = pdf.splitTextToSize(texte, 135);
+
+        let yy = y + 12;
+        for (const ligne of lignesCarte) {
+          if (yy > 280) { pdf.addPage(); yy = 10; }
+          pdf.text(ligne, 55, yy);
+          yy += 5;
+        }
+
+        const hauteurBloc = Math.max(55, yy - y);
+        y += hauteurBloc + 5;
+        if (y > 260) { pdf.addPage(); y = 10; }
+      }
+      y += 4;
+    }
+
+    // ➜ Imprimer les cartes des deux prénoms
+    await imprimerCartes(cartesPrenom1, nom1);
+    await imprimerCartes(cartesPrenom2, nom2);
+
+    // ➜ Zone silencieuse (si elle existe)
+    if (zoneSilencieuse.length > 0) {
+      pdf.setFontSize(13);
+      pdf.setFont("Times", "bold");
+      pdf.text("--- Zone silencieuse ---", 10, y);
+      y += 8;
+
+      pdf.setFontSize(11);
+      pdf.setFont("Times", "normal");
+      const lignes = pdf.splitTextToSize(zoneSilencieuse.join("\n"), 190);
+      for (const ligne of lignes) {
+        if (y > 280) { pdf.addPage(); y = 10; }
+        pdf.text(ligne, 10, y);
+        y += 5;
+      }
+      y += 4;
+    }
+
+    // ➜ Ajoute la synthèse finale (une seule fois, proprement)
+    const resumeNettoye = nettoyerTexte(window.resume);
+    const lignesResume = pdf.splitTextToSize(resumeNettoye, 190);
+    pdf.setFontSize(11);
+    pdf.setFont("Times", "normal");
+
+    if (y > 280) { pdf.addPage(); y = 10; }
+    y += 10; // espace avant la synthèse finale
+
+    for (const ligne of lignesResume) {
+      if (y > 280) { pdf.addPage(); y = 10; }
+      pdf.text(ligne, 10, y);
+      y += 5;
+    }
+
+    // ➜ Téléchargement du PDF
+    pdf.save(`tirage_croise_${nom1}_${nom2}.pdf`);
   });
 </script>
 </body>
