@@ -445,136 +445,116 @@ window.onload = function () {
       .replace(/[^\x20-\x7EÀ-ÿ\n]/g, '')
       .trim();
   }
+
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
     const nom1 = window.nom1;
-  const nom2 = window.nom2;
-  const aspect = window.aspect;
-  const question = window.question;
-  const cartesPrenom1 = window.cartesPrenom1;
-  const cartesPrenom2 = window.cartesPrenom2;
-  const zoneSilencieuse = window.zoneSilencieuse;
-  const { jsPDF } = window.jspdf;
-  const pdf = new jsPDF('p', 'mm', 'a4');
-  pdf.setFont("Times", "normal");
-  let y = 10;
-  const pageWidth = pdf.internal.pageSize.getWidth();
+    const nom2 = window.nom2;
+    const aspect = window.aspect;
+    const question = window.question;
+    const cartesPrenom1 = window.cartesPrenom1;
+    const cartesPrenom2 = window.cartesPrenom2;
+    const zoneSilencieuse = window.zoneSilencieuse;
 
-  // Logo
-  const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
-  const loadImage = (src) => new Promise((resolve) => {
-    const img = new Image();
-    img.crossOrigin = 'Anonymous';
-    img.onload = () => resolve(img);
-    img.src = src;
-  });
-const logoImg = await loadImage(logoUrl);
-pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
-y += 30;  // plus d’espace entre le logo et le titre
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    pdf.setFont("Times", "normal");
+    let y = 10;
+    const pageWidth = pdf.internal.pageSize.getWidth();
 
-// Titre principal (centré)
-const titrePrincipal = `Tirage croisé entre ${nom1} et ${nom2}`;
-const titreWidth = pdf.getTextWidth(titrePrincipal);
-pdf.setFontSize(14);
-pdf.setFont("Times", "bold");
-pdf.text(titrePrincipal, (pageWidth - titreWidth) / 2, y);  // centrage horizontal
-y += 15;  // plus d’espace après le titre
+    // Logo
+    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+    const loadImage = (src) => new Promise((resolve) => {
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = () => resolve(img);
+      img.src = src;
+    });
+    const logoImg = await loadImage(logoUrl);
+    pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
+    y += 30; // espace après le logo
 
-  // ➜ Ajoute le texte complet de la modale (resume)
-const resumeNettoye = nettoyerTexte(window.resume);  // ou directement "resume"
-const lignesResume = pdf.splitTextToSize(resumeNettoye, 190);
-pdf.setFontSize(11);
-pdf.setFont("Times", "normal");
-for (const ligne of lignesResume) {
-  if (y > 280) { pdf.addPage(); y = 10; }
-  pdf.text(ligne, 10, y);
-  y += 5;
-}
-    
-y += 10;  // espace avant d'enchaîner
-  // ➜ Fonction pour imprimer les cartes d’un prénom
-  async function imprimerCartes(cartes, prenom) {
-    pdf.setFontSize(13);
+    // Titre principal (centré)
+    const titrePrincipal = `Tirage croisé entre ${nom1} et ${nom2}`;
+    const titreWidth = pdf.getTextWidth(titrePrincipal);
+    pdf.setFontSize(14);
     pdf.setFont("Times", "bold");
-    pdf.text(`--- Cartes pour ${prenom} ---`, 10, y);
-    y += 8;
+    pdf.text(titrePrincipal, (pageWidth - titreWidth) / 2, y);
+    y += 15;
 
-    for (const { carte, sens } of cartes) {
-      const carteImg = await loadImage(carte.image);
-      pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
-
-      pdf.setFontSize(12);
+    // ➜ Fonction pour imprimer les cartes d’un prénom
+    async function imprimerCartes(cartes, prenom) {
+      pdf.setFontSize(13);
       pdf.setFont("Times", "bold");
-      pdf.text(`${carte.id} : (${carte.nom}) : (${sens})`, 55, y + 6);
+      pdf.text(`--- Cartes pour ${prenom} ---`, 10, y);
+      y += 8;
 
-      const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+      for (const { carte, sens } of cartes) {
+        const carteImg = await loadImage(carte.image);
+        pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+
+        pdf.setFontSize(12);
+        pdf.setFont("Times", "bold");
+        pdf.text(`${carte.id} : (${carte.nom}) : (${sens})`, 55, y + 6);
+
+        const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+        pdf.setFontSize(11);
+        pdf.setFont("Times", "normal");
+        const lignesCarte = pdf.splitTextToSize(texte, 135);
+
+        let yy = y + 12;
+        for (const ligne of lignesCarte) {
+          if (yy > 280) { pdf.addPage(); yy = 10; }
+          pdf.text(ligne, 55, yy);
+          yy += 5;
+        }
+
+        const hauteurBloc = Math.max(55, yy - y);
+        y += hauteurBloc + 5;
+        if (y > 260) { pdf.addPage(); y = 10; }
+      }
+      y += 4;
+    }
+
+    // ➜ Imprimer les cartes des deux prénoms
+    await imprimerCartes(cartesPrenom1, nom1);
+    await imprimerCartes(cartesPrenom2, nom2);
+
+    // ➜ Zone silencieuse (si elle existe)
+    if (zoneSilencieuse.length > 0) {
+      pdf.setFontSize(13);
+      pdf.setFont("Times", "bold");
+      pdf.text("--- Zone silencieuse ---", 10, y);
+      y += 8;
+
       pdf.setFontSize(11);
       pdf.setFont("Times", "normal");
-      const lignesCarte = pdf.splitTextToSize(texte, 135);
-
-      let yy = y + 12;
-      for (const ligne of lignesCarte) {
-        if (yy > 280) { pdf.addPage(); yy = 10; }
-        pdf.text(ligne, 55, yy);
-        yy += 5;
+      const lignes = pdf.splitTextToSize(zoneSilencieuse.join("\n"), 190);
+      for (const ligne of lignes) {
+        if (y > 280) { pdf.addPage(); y = 10; }
+        pdf.text(ligne, 10, y);
+        y += 5;
       }
-
-      const hauteurBloc = Math.max(55, yy - y);
-      y += hauteurBloc + 5;
-      if (y > 260) { pdf.addPage(); y = 10; }
+      y += 4;
     }
-    y += 4;
-  }
 
-  // ➜ Imprimer les cartes des deux prénoms
-  await imprimerCartes(cartesPrenom1, nom1);
-  await imprimerCartes(cartesPrenom2, nom2);
-
-  // ➜ Zone silencieuse (si elle existe)
-  if (zoneSilencieuse.length > 0) {
-    pdf.setFontSize(13);
-    pdf.setFont("Times", "bold");
-    pdf.text("--- Zone silencieuse ---", 10, y);
-    y += 8;
-
+    // ➜ Ajoute la synthèse finale (une seule fois, proprement)
+    const resumeNettoye = nettoyerTexte(window.resume);
+    const lignesResume = pdf.splitTextToSize(resumeNettoye, 190);
     pdf.setFontSize(11);
     pdf.setFont("Times", "normal");
-    const lignes = pdf.splitTextToSize(zoneSilencieuse.join("\n"), 190);
-    for (const ligne of lignes) {
-      if (y > 280) { pdf.addPage(); y = 10; }
-      pdf.text(ligne, 10, y);
-      y += 5;
-    }
-    y += 4;
-  }
 
-  // ➜ Synthèses individuelles et du lien
-  const syntheses = [
-    { titre: `--- Synthèse individuelle de ${nom1} ---`, texte: genererSyntheseGuidante(cartesPrenom1, aspect, { question, prenom: nom1 }) },
-    { titre: `--- Synthèse individuelle de ${nom2} ---`, texte: genererSyntheseGuidante(cartesPrenom2, aspect, { question, prenom: nom2 }) },
-    { titre: `→ Synthèse du lien entre ${nom1} et ${nom2} :`, texte: genererSyntheseGuidante([...cartesPrenom1, ...cartesPrenom2], aspect, { question, prenom: `${nom1} et ${nom2}`, mode: "lien" }) }
-  ];
-
-  for (const { titre, texte } of syntheses) {
-    pdf.setFontSize(13);
-    pdf.setFont("Times", "bold");
     if (y > 280) { pdf.addPage(); y = 10; }
-    pdf.text(titre, 10, y);
-    y += 8;
+    y += 10; // espace avant la synthèse finale
 
-    let texteNettoye = texte.replace(/[^\x20-\x7EÀ-ÿ\n]/g, '').trim();
-    const lignes = pdf.splitTextToSize(texteNettoye, 190);
-    pdf.setFontSize(11);
-    pdf.setFont("Times", "normal");
-    for (const ligne of lignes) {
+    for (const ligne of lignesResume) {
       if (y > 280) { pdf.addPage(); y = 10; }
       pdf.text(ligne, 10, y);
       y += 5;
     }
-    y += 4;
-  }
 
-  pdf.save(`tirage_croise_${nom1}_${nom2}.pdf`);
-});
+    // ➜ Téléchargement du PDF
+    pdf.save(`tirage_croise_${nom1}_${nom2}.pdf`);
+  });
 </script>
 </body>
 </html>
