@@ -405,21 +405,21 @@ function afficherSyntheseTetraktys() {
     { titre: "4. Manifestation", nb: 4 }
   ];
 
-  let contenu = "--- Synthèse du tirage Tétraktys ---\n\n";
+  let resume = "--- Synthèse du tirage Tétraktys ---\n\n";
   let index = 0;
 
   niveaux.forEach(niveau => {
-    contenu += `→ ${niveau.titre}\n`;
+    resume += `→ ${niveau.titre}\n`;
 
     for (let i = 0; i < niveau.nb; i++) {
       const { carte, sens } = cartesTirees[index];
       const interpretation = carte[sens]?.[aspect]?.texte || "(Message manquant)";
       const extrait = interpretation.split(".")[0].trim() + ".";
-      contenu += `• ${carte.id} : ${carte.nom} : (${sens}) → ${extrait}\n`;
+      resume += `• ${carte.id} : ${carte.nom} : (${sens}) → ${extrait}\n`;
       index++;
     }
 
-    contenu += "\n";
+    resume += "\n";
   });
 
   const synthese = genererSyntheseGuidante(cartesTirees, aspect, {
@@ -428,7 +428,7 @@ function afficherSyntheseTetraktys() {
     mode: "normal"
   });
 
-  contenu += `→ Synthèse guidée :\n\n${synthese}`;
+  resume += `→ Synthèse guidée :\n\n${synthese}`;
 
   // Prépare l’affichage visuel (cartes avec images et interprétations)
   const contenuDiv = document.getElementById("contenuSynthese");
