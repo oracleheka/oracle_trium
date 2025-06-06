@@ -605,7 +605,8 @@ window.onload = function () {
       ? syntheseComplete.slice(indexSynthese).trim()
       : syntheseComplete;
 
-    syntheseFinale = nettoyerTexte(syntheseFinale);
+    // ➜ Supprime les apostrophes et normalise les caractères
+    syntheseFinale = syntheseFinale.normalize("NFKD").replace(/[\u2018\u2019]/g, "'").replace(/[^\x20-\x7EÀ-ÿ\n]/g, '').trim();
 
     const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
     pdf.setFontSize(11);
