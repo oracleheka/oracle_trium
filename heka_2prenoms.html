@@ -351,9 +351,24 @@ function afficherSynthese2Prenoms() {
   resume += `\n\n→ Synthèse du lien entre ${nom1} et ${nom2} :\n\n`;
   resume += genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1} et ${nom2}`, mode: "lien" });
 
-  document.getElementById("contenuSynthese").innerText = resume;
-  document.getElementById("syntheseModal").style.display = "flex";
-}
+// Prépare pour export PDF
+  const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
+    imageSrc: carte.image,
+    nom: carte.nom,
+    sens: sens
+  }));
+  window.cartesTireesPDF = cartesPDF;
+
+  // Ajoute la synthèse finale (bloc texte propre)
+  contenuDiv.innerHTML += `<pre style="white-space: pre-wrap; margin-top: 1rem;">${resume}</pre>`;
+
+ window.cartesPrenom1 = cartesPrenom1;
+window.cartesPrenom2 = cartesPrenom2;
+window.zoneSilencieuse = zoneSilencieuse;
+
+// Ensuite la modale
+document.getElementById("contenuSynthese").innerText = resume;
+document.getElementById("syntheseModal").style.display = "flex";
 
 function fermerSynthese() {
   document.getElementById("syntheseModal").style.display = "none";
@@ -379,6 +394,9 @@ window.onload = function () {
       <button onclick="fermerSynthese()" style="background-color: #4a90e2; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
         Fermer
       </button>
+      <button id="exportPDFBtn" style="background-color: #3b6a9a; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Exporter votre tirage
+      </button>
     </div>
   </div>
 </div>
@@ -391,5 +409,124 @@ window.onload = function () {
     nav.classList.toggle("show");
   });
 </script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+  // Fonction pour nettoyer les caractères parasites
+  function nettoyerTexte(txt) {
+    return txt
+      .normalize("NFKC")
+      .replace(/[^\x20-\x7EÀ-ÿ\n]/g, '')
+      .trim();
+  }
+  document.getElementById('exportPDFBtn').addEventListener('click', async () => {
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF('p', 'mm', 'a4');
+  pdf.setFont("Times", "normal");
+  let y = 10;
+  const pageWidth = pdf.internal.pageSize.getWidth();
+
+  // Logo
+  const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+  const loadImage = (src) => new Promise((resolve) => {
+    const img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = () => resolve(img);
+    img.src = src;
+  });
+  const logoImg = await loadImage(logoUrl);
+  pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
+  y += 25;
+
+  // Titre principal
+  pdf.setFontSize(14);
+  pdf.setFont("Times", "bold");
+  pdf.text(`Tirage croisé entre ${nom1} et ${nom2}`, 10, y);
+  y += 10;
+
+  // ➜ Fonction pour imprimer les cartes d’un prénom
+  async function imprimerCartes(cartes, prenom) {
+    pdf.setFontSize(13);
+    pdf.setFont("Times", "bold");
+    pdf.text(`--- Cartes pour ${prenom} ---`, 10, y);
+    y += 8;
+
+    for (const { carte, sens } of cartes) {
+      const carteImg = await loadImage(carte.image);
+      pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+
+      pdf.setFontSize(12);
+      pdf.setFont("Times", "bold");
+      pdf.text(`${carte.id} : (${carte.nom}) : (${sens})`, 55, y + 6);
+
+      const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+      pdf.setFontSize(11);
+      pdf.setFont("Times", "normal");
+      const lignesCarte = pdf.splitTextToSize(texte, 135);
+
+      let yy = y + 12;
+      for (const ligne of lignesCarte) {
+        if (yy > 280) { pdf.addPage(); yy = 10; }
+        pdf.text(ligne, 55, yy);
+        yy += 5;
+      }
+
+      const hauteurBloc = Math.max(55, yy - y);
+      y += hauteurBloc + 5;
+      if (y > 260) { pdf.addPage(); y = 10; }
+    }
+    y += 4;
+  }
+
+  // ➜ Imprimer les cartes des deux prénoms
+  await imprimerCartes(cartesPrenom1, nom1);
+  await imprimerCartes(cartesPrenom2, nom2);
+
+  // ➜ Zone silencieuse (si elle existe)
+  if (zoneSilencieuse.length > 0) {
+    pdf.setFontSize(13);
+    pdf.setFont("Times", "bold");
+    pdf.text("--- Zone silencieuse ---", 10, y);
+    y += 8;
+
+    pdf.setFontSize(11);
+    pdf.setFont("Times", "normal");
+    const lignes = pdf.splitTextToSize(zoneSilencieuse.join("\n"), 190);
+    for (const ligne of lignes) {
+      if (y > 280) { pdf.addPage(); y = 10; }
+      pdf.text(ligne, 10, y);
+      y += 5;
+    }
+    y += 4;
+  }
+
+  // ➜ Synthèses individuelles et du lien
+  const syntheses = [
+    { titre: `--- Synthèse individuelle de ${nom1} ---`, texte: genererSyntheseGuidante(cartesPrenom1, aspect, { question, prenom: nom1 }) },
+    { titre: `--- Synthèse individuelle de ${nom2} ---`, texte: genererSyntheseGuidante(cartesPrenom2, aspect, { question, prenom: nom2 }) },
+    { titre: `→ Synthèse du lien entre ${nom1} et ${nom2} :`, texte: genererSyntheseGuidante([...cartesPrenom1, ...cartesPrenom2], aspect, { question, prenom: `${nom1} et ${nom2}`, mode: "lien" }) }
+  ];
+
+  for (const { titre, texte } of syntheses) {
+    pdf.setFontSize(13);
+    pdf.setFont("Times", "bold");
+    if (y > 280) { pdf.addPage(); y = 10; }
+    pdf.text(titre, 10, y);
+    y += 8;
+
+    let texteNettoye = texte.replace(/[^\x20-\x7EÀ-ÿ\n]/g, '').trim();
+    const lignes = pdf.splitTextToSize(texteNettoye, 190);
+    pdf.setFontSize(11);
+    pdf.setFont("Times", "normal");
+    for (const ligne of lignes) {
+      if (y > 280) { pdf.addPage(); y = 10; }
+      pdf.text(ligne, 10, y);
+      y += 5;
+    }
+    y += 4;
+  }
+
+  pdf.save(`tirage_croise_${nom1}_${nom2}.pdf`);
+});
 </body>
 </html>
