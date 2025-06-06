@@ -456,6 +456,14 @@ window.onload = function () {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
+  // Fonction pour nettoyer les caractères parasites
+  function nettoyerTexte(txt) {
+    return txt
+      .normalize("NFKC")
+      .replace(/[^\x20-\x7EÀ-ÿ\n]/g, '')
+      .trim();
+  }
+
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF('p', 'mm', 'a4');
@@ -499,24 +507,20 @@ window.onload = function () {
       // Ligne 1
       pdf.setFontSize(12);
       pdf.setFont("Times", "bold");
-      pdf.text(`${carte.nr} : (${carte.nom}) : (${carte.sens})`, 55, y + 6);
+      pdf.text(nettoyerTexte(`${carte.nr} : (${carte.nom}) : (${carte.sens})`), 55, y + 6);
 
       // Ligne 2
       pdf.setFontSize(11);
       pdf.setFont("Times", "normal");
-      const lignesCarte = pdf.splitTextToSize(carte.texte, 135);
+      const lignesCarte = pdf.splitTextToSize(nettoyerTexte(carte.texte), 135);
       let yy = y + 12;
 
       for (const ligne of lignesCarte) {
-        if (yy > 280) {
-          pdf.addPage();
-          yy = 10;
-        }
+        if (yy > 280) { pdf.addPage(); yy = 10; }
         pdf.text(ligne, 55, yy);
         yy += 5;
       }
 
-      // Ajuste y pour éviter les superpositions
       const hauteurBloc = Math.max(55, yy - y);
       y += hauteurBloc + 5;
       if (y > 260) {
@@ -526,106 +530,94 @@ window.onload = function () {
     }
 
     // Lecture du tirage
-   y += 15;
-pdf.setFontSize(13);
-pdf.setFont("Times", "bold");
-pdf.text('--- Lecture du tirage ---', 10, y);
-y += 8;
+    y += 15;
+    pdf.setFontSize(13);
+    pdf.setFont("Times", "bold");
+    pdf.text('--- Lecture du tirage ---', 10, y);
+    y += 8;
 
-for (const carte of cartesPDF) {
-  pdf.setFontSize(12);
-  pdf.setFont("Times", "bold");
-  const ligneA = `${carte.nr} : (${carte.nom}) : (${carte.sens})`;
-  if (y > 280) { pdf.addPage(); y = 10; }
-  pdf.text(ligneA, 10, y);
-  y += 6;
+    for (const carte of cartesPDF) {
+      pdf.setFontSize(12);
+      pdf.setFont("Times", "bold");
+      const ligneA = `${carte.nr} : (${carte.nom}) : (${carte.sens})`;
+      if (y > 280) { pdf.addPage(); y = 10; }
+      pdf.text(nettoyerTexte(ligneA), 10, y);
+      y += 6;
 
-  pdf.setFontSize(11);
-  pdf.setFont("Times", "normal");
-  const lignesB = pdf.splitTextToSize(carte.texte, 190);
-  for (const ligne of lignesB) {
-    if (y > 280) { pdf.addPage(); y = 10; }
-    pdf.text(ligne, 10, y);
-    y += 5;
-  }
-  y += 4;
-}
+      pdf.setFontSize(11);
+      pdf.setFont("Times", "normal");
+      const lignesB = pdf.splitTextToSize(nettoyerTexte(carte.texte), 190);
+      for (const ligne of lignesB) {
+        if (y > 280) { pdf.addPage(); y = 10; }
+        pdf.text(ligne, 10, y);
+        y += 5;
+      }
+      y += 4;
+    }
 
-// ➜ Crée la synthèse en blocs clairs (Influences / Dynamique / Évolution)
-const phrases = cartesPDF.map(carte => {
-  const texteCourt = carte.texte?.split(".")[0] + "." || "(Message manquant)";
-  return `${carte.nr} : (${carte.nom}) : (${carte.sens}) → ${texteCourt}`;
-});
+    // Synthèse claire (Influences / Dynamique / Évolution)
+    const phrases = cartesPDF.map(carte => {
+      const texteCourt = carte.texte?.split(".")[0] + "." || "(Message manquant)";
+      return `${carte.nr} : (${carte.nom}) : (${carte.sens}) → ${texteCourt}`;
+    });
 
-// ➜ Titres des sections
-const titres = [
-  "Influences de départ :",
-  "Dynamique actuelle :",
-  "Évolution possible :"
-];
+    const titres = [
+      "Influences de départ :",
+      "Dynamique actuelle :",
+      "Évolution possible :"
+    ];
 
-// ➜ Blocs de phrases
-const blocs = [
-  phrases.slice(0, 2).join("\n"),
-  phrases.slice(2, 5).join("\n"),
-  phrases.slice(5, 7).join("\n")
-];
+    const blocs = [
+      phrases.slice(0, 2).join("\n"),
+      phrases.slice(2, 5).join("\n"),
+      phrases.slice(5, 7).join("\n")
+    ];
 
-// ➜ Ajoute un espace avant la synthèse
-y += 10;
+    y += 10;
+    for (let i = 0; i < titres.length; i++) {
+      pdf.setFontSize(12);
+      pdf.setFont("Times", "bold");
+      if (y > 280) { pdf.addPage(); y = 10; }
+      pdf.text(nettoyerTexte(titres[i]), 10, y);
+      y += 6;
 
-// ➜ Parcourt chaque titre + bloc de texte
-for (let i = 0; i < titres.length; i++) {
-  // Titre en gras
-  pdf.setFontSize(12);
-  pdf.setFont("Times", "bold");
-  if (y > 280) { pdf.addPage(); y = 10; }
-  pdf.text(titres[i], 10, y);
-  y += 6;
+      pdf.setFontSize(11);
+      pdf.setFont("Times", "normal");
+      const lignes = pdf.splitTextToSize(nettoyerTexte(blocs[i]), 190);
+      for (const ligne of lignes) {
+        if (y > 280) { pdf.addPage(); y = 10; }
+        pdf.text(ligne, 10, y);
+        y += 5;
+      }
+      y += 4;
+    }
 
-  // Texte associé en normal
-  pdf.setFontSize(11);
-  pdf.setFont("Times", "normal");
-  const lignes = pdf.splitTextToSize(blocs[i], 190);
-  for (const ligne of lignes) {
-    if (y > 280) { pdf.addPage(); y = 10; }
-    pdf.text(ligne, 10, y);
-    y += 5;
-  }
+    // Synthèse guidée
+    y += 10;
+    pdf.setFontSize(13);
+    pdf.setFont("Times", "bold");
+    pdf.text('Synthèse guidée :', 10, y);
+    y += 8;
 
-  // Espace après chaque bloc
-  y += 4;
-}
-  // Synthèse guidée (sans la lecture du tirage doublée)
-  y += 10;
-  pdf.setFontSize(13);
-  pdf.setFont("Times", "bold");
-  pdf.text('Synthèse guidée :', 10, y);
-  y += 8;
+    let syntheseComplete = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
+    const indexSynthese = syntheseComplete.lastIndexOf('Synthèse guidée :');
+    let syntheseFinale = (indexSynthese !== -1)
+      ? syntheseComplete.slice(indexSynthese).trim()
+      : syntheseComplete;
 
-// ➜ Supprime tout doublon de lecture du tirage dans la synthèse finale
-let syntheseComplete = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
-const indexSynthese = syntheseComplete.lastIndexOf('Synthèse guidée :');
-let syntheseFinale = (indexSynthese !== -1)
-  ? syntheseComplete.slice(indexSynthese).trim()
-  : syntheseComplete;
+    syntheseFinale = nettoyerTexte(syntheseFinale);
 
-// ➜ Nettoyage des caractères parasites
-syntheseFinale = syntheseFinale.replace(/[^\x20-\x7EÀ-ÿ\n]/g, '').trim();
+    const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
+    pdf.setFontSize(11);
+    pdf.setFont("Times", "normal");
+    for (const ligne of lignesSynthese) {
+      if (y > 280) { pdf.addPage(); y = 10; }
+      pdf.text(ligne, 10, y);
+      y += 5;
+    }
 
-// ➜ Découpe propre pour retour à la ligne
-const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
-
-// ➜ Impression propre
-pdf.setFontSize(11);
-pdf.setFont("Times", "normal");
-for (const ligne of lignesSynthese) {
-  if (y > 280) { pdf.addPage(); y = 10; }
-  pdf.text(ligne, 10, y);
-  y += 5;
-}
-  pdf.save('tirage_oracle.pdf');
-});
+    pdf.save('tirage_oracle.pdf');
+  });
 </script>
 </body>
 </html>
