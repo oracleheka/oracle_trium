@@ -351,23 +351,46 @@ function afficherSynthese2Prenoms() {
   resume += `\n\n→ Synthèse du lien entre ${nom1} et ${nom2} :\n\n`;
   resume += genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1} et ${nom2}`, mode: "lien" });
 
-// Prépare pour export PDF
-  const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
-    imageSrc: carte.image,
-    nom: carte.nom,
-    sens: sens
-  }));
-  window.cartesTireesPDF = cartesPDF;
+  // Prépare la synthèse guidée
+const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
+resume += `→ Synthèse guidée :\n\n${synthese}`;
 
-  // Ajoute la synthèse finale (bloc texte propre)
-  contenuDiv.innerHTML += `<pre style="white-space: pre-wrap; margin-top: 1rem;">${resume}</pre>`;
+// Vide le contenu précédent
+const contenuDiv = document.getElementById("contenuSynthese");
+contenuDiv.innerHTML = "";
 
- window.cartesPrenom1 = cartesPrenom1;
+// Ajoute chaque carte visuellement (images + texte)
+cartesTirees.forEach(({ carte, sens }) => {
+  const imageSrc = carte.image;
+  const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
+  const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+
+  const carteHtml = `
+    <div style="margin-bottom: 1rem;">
+      <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+      <p>${titre} → ${texte}</p>
+    </div>`;
+
+  contenuDiv.innerHTML += carteHtml;
+});
+
+// Prépare pour l'export PDF
+const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
+  imageSrc: carte.image,
+  nom: carte.nom,
+  sens: sens
+}));
+window.cartesTireesPDF = cartesPDF;
+
+// Ajoute la synthèse finale (bloc texte propre)
+contenuDiv.innerHTML += `<pre style="white-space: pre-wrap; margin-top: 1rem;">${resume}</pre>`;
+
+// Stocke les tableaux spécifiques aux prénoms pour le PDF
+window.cartesPrenom1 = cartesPrenom1;
 window.cartesPrenom2 = cartesPrenom2;
 window.zoneSilencieuse = zoneSilencieuse;
 
-// Ensuite la modale
-document.getElementById("contenuSynthese").innerText = resume;
+// Affiche la modale
 document.getElementById("syntheseModal").style.display = "flex";
 }
 
