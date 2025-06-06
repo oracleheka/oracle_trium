@@ -391,7 +391,7 @@ window.cartesTireesPDF = cartesPDF;
 
 // Ajoute la synthèse finale (bloc texte propre)
 contenuDiv.innerHTML += `<pre style="white-space: pre-wrap; margin-top: 1rem;">${resume}</pre>`;
-
+window.resume = resume;  // stocke pour le PDF
 // Affiche la modale
 document.getElementById("syntheseModal").style.display = "flex";
 }
@@ -467,16 +467,30 @@ window.onload = function () {
     img.onload = () => resolve(img);
     img.src = src;
   });
-  const logoImg = await loadImage(logoUrl);
-  pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
-  y += 25;
+const logoImg = await loadImage(logoUrl);
+pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
+y += 30;  // plus d’espace entre le logo et le titre
 
-  // Titre principal
-  pdf.setFontSize(14);
-  pdf.setFont("Times", "bold");
-  pdf.text(`Tirage croisé entre ${nom1} et ${nom2}`, 10, y);
-  y += 10;
+// Titre principal (centré)
+const titrePrincipal = `Tirage croisé entre ${nom1} et ${nom2}`;
+const titreWidth = pdf.getTextWidth(titrePrincipal);
+pdf.setFontSize(14);
+pdf.setFont("Times", "bold");
+pdf.text(titrePrincipal, (pageWidth - titreWidth) / 2, y);  // centrage horizontal
+y += 15;  // plus d’espace après le titre
 
+  // ➜ Ajoute le texte complet de la modale (resume)
+const resumeNettoye = nettoyerTexte(window.resume);  // ou directement "resume"
+const lignesResume = pdf.splitTextToSize(resumeNettoye, 190);
+pdf.setFontSize(11);
+pdf.setFont("Times", "normal");
+for (const ligne of lignesResume) {
+  if (y > 280) { pdf.addPage(); y = 10; }
+  pdf.text(ligne, 10, y);
+  y += 5;
+}
+    
+y += 10;  // espace avant d'enchaîner
   // ➜ Fonction pour imprimer les cartes d’un prénom
   async function imprimerCartes(cartes, prenom) {
     pdf.setFontSize(13);
