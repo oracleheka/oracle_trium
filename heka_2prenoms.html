@@ -471,7 +471,7 @@ window.onload = function () {
     y += 30; // espace après le logo
 
     // Titre principal (centré)
-    const titrePrincipal = `Tirage croisé entre ${nom1} et ${nom2}`;
+    const titrePrincipal = `Tirage croisé Heka entre ${nom1} et ${nom2}`;
     const titreWidth = pdf.getTextWidth(titrePrincipal);
     pdf.setFontSize(14);
     pdf.setFont("Times", "bold");
@@ -550,7 +550,7 @@ window.onload = function () {
     }
 
     // ➜ Téléchargement du PDF
-    pdf.save(`tirage_croise_${nom1}_${nom2}.pdf`);
+    pdf.save(`tirage_croise_Heka_${nom1}_${nom2}.pdf`);
   });
 </script>
 </body>
