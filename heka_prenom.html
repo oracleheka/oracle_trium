@@ -535,7 +535,7 @@ window.onload = function () {
     y += 30;
 
     // Titre principal (centré)
-    const titrePrincipal = `Tirage pour ${prenom}`;
+    const titrePrincipal = `Tirage Heka pour ${prenom}`;
     const titreWidth = pdf.getTextWidth(titrePrincipal);
     pdf.setFontSize(14);
     pdf.setFont("Times", "bold");
@@ -595,7 +595,7 @@ window.onload = function () {
     }
 
     // ➜ Téléchargement du PDF
-    pdf.save(`tirage_prenom_${prenom}.pdf`);
+    pdf.save(`tirage_prenom_Heka${prenom}.pdf`);
   });
 </script>
 </body>
