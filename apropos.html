@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>À propos – Trilogie Oraculaire Heka, Sia, Seshat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Découvrez la trilogie d’oracles introspectifs Heka, Sia et Seshat : un outil symbolique pour mieux se connaître, loin de la divination classique.">
+  <meta name="description" content="Découvrez la trilogie d’oracles introspectifs Heka, Sia et Seshat : un outil introspectif unique, pour mieux vous connaître et explorer vos forces intérieures.">
   <style>
     body {
       margin: 0;
@@ -16,22 +16,22 @@
       min-height: 100vh;
     }
     header {
-  background-color: #f5efe6;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between; /* Ajoute de l’espace pour le burger */
-  align-items: center;
-  position: relative;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+      background-color: #f5efe6;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
     header nav a {
-     display: inline-block;
-  padding: 0.75rem 1rem; /* agrandit la zone cliquable */
-  margin: 0.25rem 0.5rem; /* espace entre les liens */
-  text-decoration: none;
-  color: #444;
-  font-weight: bold;
-  font-size: 1rem; /* assure lisibilité */
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      margin: 0.25rem 0.5rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+      font-size: 1rem;
     }
     header nav a:hover {
       text-decoration: underline;
@@ -43,9 +43,9 @@
       margin: 0 auto;
     }
     main p {
-    margin-bottom: 1rem;
-  }
-  footer {
+      margin-bottom: 1rem;
+    }
+    footer {
       background-color: #f0e9e0;
       padding: 1rem;
       text-align: center;
@@ -54,56 +54,52 @@
       border-top: 1px solid #ccc;
     }  
     #burgerBtn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-   color: #333; /* 👈 Ajoute cette ligne pour forcer la couleur */
-}
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #333;
+    }
     #burgerBtn:hover {
-  color: #000; /* couleur encore plus foncée au survol */
-}
-    /* Affichage du bouton burger en mobile */
-@media (max-width: 768px) {
-  #burgerBtn {
-    display: block; /* rends le bouton burger visible sur mobile */
-  }
-
-  header nav {
-    display: flex;
-    flex-direction: column;
-    background: #f5efe6;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-  }
-
-  header nav.show {
-    max-height: 500px; /* ajuste à la hauteur de ton menu */
-  }
-}
-.btn-retour {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin-top: 2rem;
-  background-color: #3b6a9a;
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-.btn-retour:hover {
-  background-color: #345b85;
-}
+      color: #000;
+    }
+    @media (max-width: 768px) {
+      #burgerBtn {
+        display: block;
+      }
+      header nav {
+        display: flex;
+        flex-direction: column;
+        background: #f5efe6;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      header nav.show {
+        max-height: 500px;
+      }
+    }
+    .btn-retour {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin-top: 2rem;
+      background-color: #3b6a9a;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn-retour:hover {
+      background-color: #345b85;
+    }
   </style>
   <script type="application/ld+json">
 {
@@ -111,20 +107,19 @@
   "@type": "AboutPage",
   "name": "À propos – Trilogie Oraculaire Heka, Sia, Seshat",
   "url": "https://oracleheka.github.io/oracle_trium/apropos.html",
-  "description": "Découvrez la trilogie d’oracles introspectifs Heka, Sia et Seshat : un outil symbolique pour mieux se connaître, loin de la divination classique.",
+  "description": "Découvrez la trilogie d’oracles introspectifs Heka, Sia et Seshat : un outil introspectif unique, pour mieux vous connaître et explorer vos forces intérieures.",
   "inLanguage": "fr",
   "author": {
     "@type": "Person",
     "name": "Roland Alberolla"
   }
 }
-</script>
+  </script>
 </head>
 <body>
   
 <header>
-   <!-- Bouton menu burger -->
-<button id="burgerBtn" aria-label="Menu">☰</button>
+  <button id="burgerBtn" aria-label="Menu">☰</button>
   <nav>
     <a href="index.html">Accueil</a>
     <a href="apropos.html">À propos</a>
@@ -136,63 +131,44 @@
   </nav>
 </header>
 
-  <main>
-    <h1>À propos</h1>
-<h2>À propos de cette trilogie oraculaire</h2>
+<main>
+  <h1>À propos</h1>
+  <p>Bienvenue sur cette page dédiée à la présentation de la trilogie oraculaire. Découvrez la philosophie, les origines et la démarche derrière ce projet unique.</p>
 
-<p>
-Ce projet a été conçu de manière entièrement indépendante : chaque carte, chaque mot, chaque structure est le fruit d’un travail personnel et d’une quête intérieure. 
-La trilogie repose sur trois piliers symboliques : la numérologie, les cycles planétaires, et les archétypes issus de traditions anciennes.
-</p>
+  <h2>À propos de cette trilogie oraculaire</h2>
 
-<p>
-Né d’un besoin d’introspection, cet oracle vise à mettre en lumière les forces invisibles et visibles qui nous traversent — ces mouvements intérieurs qui influencent nos choix, nos blocages, nos élans.
-</p>
+  <p>Ce projet a été conçu de manière entièrement indépendante : chaque carte, chaque mot, chaque structure est le fruit d’un travail personnel et d’une quête intérieure. La trilogie repose sur trois piliers symboliques : la numérologie, les cycles planétaires, et les archétypes issus de traditions anciennes.</p>
 
-<p>
-La trilogie se compose de trois oracles complémentaires :
-</p>
-<ul>
-  <li><strong>Heka</strong> – la voix de l’ego : celle qui agit, défend, exprime ou résiste.</li>
-  <li><strong>Sia</strong> – la voix de l’âme : plus subtile, souvent mise de côté, mais toujours présente.</li>
-  <li><strong>Seshat</strong> – la voie du passage : ce qui doit être compris, dépassé, ou traversé.</li>
-</ul>
+  <p>Né d’un besoin d’introspection, cet oracle vise à mettre en lumière les forces invisibles et visibles qui nous traversent — ces mouvements intérieurs qui influencent nos choix, nos blocages, nos élans.</p>
 
-<p>
-Ce n’est ni un tarot, ni un outil de divination au sens classique. Il ne prédit rien. 
-C’est un oracle introspectif — un outil symbolique de connaissance de soi, un miroir pour explorer ses propres dynamiques internes.
-</p>
-<p>
-<strong>Précision essentielle :</strong> L’Oracle Heka (et ses compagnons Sia et Seshat) n’est pas un outil de divination au sens classique.  
-Son but premier n’est pas de prédire l’avenir, mais de refléter ce qui est déjà là, en vous, prêt à être vu.  
-Ces oracles offrent un miroir symbolique, un langage poétique qui révèle les tensions, les blocages ou les élans intérieurs.  
-Ils n’annoncent pas un destin fixé ; ils exposent un instant vivant.  
-Bien sûr, comme tout langage symbolique, ils peuvent parfois suggérer des possibles à venir — non pas pour imposer un chemin, mais pour aider à reconnaître un mouvement déjà en germe.  
-C’est ainsi qu’ils accompagnent, plutôt qu’ils ne prédisent.
-</p>
-<p>
-Chaque carte agit comme une clé. Ce qu’elle révèle dépend de vous : ce que vous êtes prêt à voir, ressentir, refuser ou accueillir. Il n’y a pas de vérité imposée ici.
-</p>
+  <p>La trilogie se compose de trois oracles complémentaires :</p>
+  <ul>
+    <li><strong>Heka</strong> – la voix de l’ego : celle qui agit, défend, exprime ou résiste.</li>
+    <li><strong>Sia</strong> – la voix de l’âme : plus subtile, souvent mise de côté, mais toujours présente.</li>
+    <li><strong>Seshat</strong> – la voie du passage : ce qui doit être compris, dépassé, ou traversé.</li>
+  </ul>
 
-<p>
-Chacun est libre d’adhérer, de douter, ou de simplement expérimenter. Ce site ne cherche pas à convaincre, mais à offrir un espace de réflexion, d’écoute de soi et de transformation personnelle.
-</p>
+  <p>Ce n’est ni un tarot, ni un outil de divination au sens classique. Il ne prédit rien. C’est un oracle introspectif — un outil symbolique de connaissance de soi, un miroir pour explorer ses propres dynamiques internes.</p>
 
-<p>
-Merci de respecter cette démarche, ses limites, et les personnes qui, comme vous peut-être, empruntent ce chemin intérieur à leur manière.
-</p>
-<div class="retour">
-    <a href="index.html" class="btn-retour">← Retour à la page Accueil</a>
-  </div> 
-  </main>
-  
-<footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
+  <p><strong>Précision essentielle :</strong> L’Oracle Heka (et ses compagnons Sia et Seshat) n’est pas un outil de divination au sens classique. Son but premier n’est pas de prédire l’avenir, mais de refléter ce qui est déjà là, en vous, prêt à être vu. Ces oracles offrent un miroir symbolique, un langage poétique qui révèle les tensions, les blocages ou les élans intérieurs. Ils n’annoncent pas un destin fixé ; ils exposent un instant vivant. Bien sûr, comme tout langage symbolique, ils peuvent parfois suggérer des possibles à venir — non pas pour imposer un chemin, mais pour aider à reconnaître un mouvement déjà en germe. C’est ainsi qu’ils accompagnent, plutôt qu’ils ne prédisent.</p>
+
+  <p>Chaque carte agit comme une clé. Ce qu’elle révèle dépend de vous : ce que vous êtes prêt à voir, ressentir, refuser ou accueillir. Il n’y a pas de vérité imposée ici.</p>
+
+  <p>Chacun est libre d’adhérer, de douter, ou de simplement expérimenter. Ce site ne cherche pas à convaincre, mais à offrir un espace de réflexion, d’écoute de soi et de transformation personnelle.</p>
+
+  <p>Merci de respecter cette démarche, ses limites, et les personnes qui, comme vous peut-être, empruntent ce chemin intérieur à leur manière.</p>
+
+  <a href="index.html" class="btn-retour">← Retour à la page Accueil</a>
+</main>
+
+<footer>
   Produit par <strong>OracleHeka</strong> —
   <a href="mentions-legales.html">Mentions légales</a> —
-  <a href="mailto:heka.sia.seshat@gmail.com">Contact</a> -
+  <a href="mailto:heka.sia.seshat@gmail.com">Contact</a> —
   <a href="faq.html">FAQ</a>
 </footer>
-  <script>
+
+<script>
   const burgerBtn = document.getElementById("burgerBtn");
   const nav = document.querySelector("header nav");
 
