@@ -199,7 +199,7 @@ button:hover {
 </div>
   <div id="resultats" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;"></div>
    <!-- Bouton pour afficher la synthèse -->
-<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante</button>
+<button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante de votre tirage</button>
 </div>
   <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez le murmure de l'Oracle Sia vous guider.</p>
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
@@ -495,7 +495,7 @@ window.onload = function () {
     y += 30;
 
     // Titre principal
-    const titrePrincipal = `Tirage à 7 cartes - Oracle Heka`;
+    const titrePrincipal = `Tirage à 7 cartes - Oracle Sia`;
     const titreWidth = pdf.getTextWidth(titrePrincipal);
     pdf.setFontSize(14);
     pdf.setFont("Times", "bold");
@@ -588,7 +588,7 @@ window.onload = function () {
     }
 
     // ➜ Téléchargement
-    pdf.save('tirage_7_cartes_Heka.pdf');
+    pdf.save('tirage_7_cartes_Sia.pdf');
   });
 </script>
 </body>
