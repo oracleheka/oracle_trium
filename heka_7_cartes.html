@@ -417,10 +417,11 @@ window.cartesPrenom1 = cartesTirees;  // les 7 cartes
 window.zoneSilencieuse = [];          // pas de zone silencieuse ici
 window.resume = resume;               // texte complet pour le PDF
 window.cartesTireesPDF = cartesTirees.map(({ carte, sens }) => ({
+  id: carte.id,                              // Ajout de l'ID !
   imageSrc: carte.image,
   nom: carte.nom,
   sens: sens,
-  texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"  // Ajout du texte !
+  texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
 }));
   // Affiche la modale
   document.getElementById("syntheseModal").style.display = "flex";
