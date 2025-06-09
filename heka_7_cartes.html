@@ -502,7 +502,7 @@ window.onload = function () {
     pdf.text(titrePrincipal, (pageWidth - titreWidth) / 2, y);
     y += 15;
 
-    // ➜ Impression des cartes (image + nom + texte court)
+    // ➜ Impression des cartes (image + nom + texte complet)
     const cartesPDF = window.cartesTireesPDF || [];
     for (const carte of cartesPDF) {
       const carteImg = await loadImage(carte.imageSrc);
@@ -514,7 +514,7 @@ window.onload = function () {
       pdf.setFont("Times", "bold");
       pdf.text(`${carte.nom} : (${carte.sens})`, 55, y + 6);
 
-      const texte = nettoyerTexte(carte.texte || "(Message manquant)");
+      const texte = carte.texte ? nettoyerTexte(carte.texte) : "(Message manquant)";
       pdf.setFontSize(11);
       pdf.setFont("Times", "normal");
       const lignesCarte = pdf.splitTextToSize(texte, 135);
@@ -530,7 +530,7 @@ window.onload = function () {
       y += hauteurBloc + 8;
     }
 
-    // ➜ Sections structurées (sans la synthèse finale)
+    // ➜ Sections structurées (si besoin)
     const phrases = (window.resume || "").split('\n').filter(l => l.trim() !== '');
     const sections = [
       { titre: "Influences de départ :", lignes: phrases.slice(1, 3) },
@@ -557,7 +557,7 @@ window.onload = function () {
       y += 4;
     }
 
-    // ➜ Synthèse guidée (imprimée UNE SEULE FOIS à la fin)
+    // ➜ Synthèse guidée finale
     if (y > 280) { pdf.addPage(); y = 10; }
     y += 10;
     pdf.setFontSize(13);
@@ -572,7 +572,6 @@ window.onload = function () {
       : syntheseComplete;
 
     syntheseFinale = nettoyerTexte(syntheseFinale);
-
     const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
     pdf.setFontSize(11);
     pdf.setFont("Times", "normal");
