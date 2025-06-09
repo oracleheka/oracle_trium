@@ -531,31 +531,37 @@ window.onload = function () {
     }
 
     // ➜ Sections structurées (si besoin)
-    const phrases = (window.resume || "").split('\n').filter(l => l.trim() !== '');
-    const sections = [
-      { titre: "Influences de départ :", lignes: phrases.slice(1, 3) },
-      { titre: "Dynamique actuelle :", lignes: phrases.slice(4, 7) },
-      { titre: "Évolution possible :", lignes: phrases.slice(8, 10) }
-    ];
+    const titres = [
+  { titre: "➤ Influences de départ :", indices: [0, 1] },
+  { titre: "➤ Dynamique actuelle :", indices: [2, 3, 4] },
+  { titre: "➤ Évolution possible :", indices: [5, 6] }
+];
 
-    for (const { titre, lignes } of sections) {
-      if (y > 280) { pdf.addPage(); y = 10; }
-      pdf.setFontSize(12);
-      pdf.setFont("Times", "bold");
-      pdf.text(nettoyerTexte(titre), 10, y);
-      y += 6;
+const cartesPDF = window.cartesTireesPDF || [];
 
-      pdf.setFontSize(11);
-      pdf.setFont("Times", "normal");
-      const bloc = lignes.join("\n");
-      const lignesBloc = pdf.splitTextToSize(nettoyerTexte(bloc), 190);
-      for (const ligne of lignesBloc) {
+for (const { titre, indices } of titres) {
+  if (y > 280) { pdf.addPage(); y = 10; }
+  pdf.setFontSize(12);
+  pdf.setFont("Times", "bold");
+  pdf.text(titre, 10, y);
+  y += 6;
+
+  pdf.setFontSize(11);
+  pdf.setFont("Times", "normal");
+  for (const i of indices) {
+    const c = cartesPDF[i];
+    if (c) {
+      const ligne = `${c.nom} : (${c.sens}) → ${nettoyerTexte(c.texte)}`;
+      const lignesBloc = pdf.splitTextToSize(ligne, 190);
+      for (const lignePartielle of lignesBloc) {
         if (y > 280) { pdf.addPage(); y = 10; }
-        pdf.text(ligne, 10, y);
+        pdf.text(lignePartielle, 10, y);
         y += 5;
       }
-      y += 4;
     }
+  }
+  y += 4;
+}
 
     // ➜ Synthèse guidée finale
     if (y > 280) { pdf.addPage(); y = 10; }
