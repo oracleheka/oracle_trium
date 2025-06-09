@@ -537,7 +537,7 @@ window.onload = function () {
   { titre: "➤ Évolution possible :", indices: [5, 6] }
 ];
 
-const cartesPourTexte = window.cartesTireesPDF || [];
+const cartesPDF = window.cartesTireesPDF || [];
 
 for (const { titre, indices } of titres) {
   if (y > 280) { pdf.addPage(); y = 10; }
@@ -549,46 +549,39 @@ for (const { titre, indices } of titres) {
   pdf.setFontSize(11);
   pdf.setFont("Times", "normal");
   for (const i of indices) {
-    const c = cartesPourTexte[i];
+    const c = cartesPDF[i];
     if (c) {
-      const ligne = `${c.nom} : (${c.sens}) → ${nettoyerTexte(c.texte)}`;
-      const lignesBloc = pdf.splitTextToSize(ligne, 190);
-      for (const lignePartielle of lignesBloc) {
+      const lignesCarte = pdf.splitTextToSize(`${c.nom} : (${c.sens}) → ${c.texte}`, 190);
+      for (const ligne of lignesCarte) {
         if (y > 280) { pdf.addPage(); y = 10; }
-        pdf.text(lignePartielle, 10, y);
+        pdf.text(ligne, 10, y);
         y += 5;
       }
+      y += 3;
     }
   }
-  y += 4;
 }
 
-    // ➜ Synthèse guidée finale
-    if (y > 280) { pdf.addPage(); y = 10; }
-    y += 10;
-    pdf.setFontSize(13);
-    pdf.setFont("Times", "bold");
-    pdf.text('Synthèse guidée :', 10, y);
-    y += 8;
+// ➜ Synthèse finale
+if (y > 280) { pdf.addPage(); y = 10; }
+y += 10;
+pdf.setFontSize(13);
+pdf.setFont("Times", "bold");
+pdf.text('Synthèse guidée :', 10, y);
+y += 8;
 
-    let syntheseComplete = document.querySelector('#contenuSynthese pre')?.textContent.trim() || "(pas de synthèse)";
-    const indexSynthese = syntheseComplete.lastIndexOf('Synthèse guidée :');
-    let syntheseFinale = (indexSynthese !== -1)
-      ? syntheseComplete.slice(indexSynthese).trim()
-      : syntheseComplete;
+const syntheseFinale = document.querySelector('#contenuSynthese pre')?.textContent.split("→ Synthèse guidée :")[1].trim() || "(pas de synthèse)";
+const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
 
-    syntheseFinale = nettoyerTexte(syntheseFinale);
-    const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
-    pdf.setFontSize(11);
-    pdf.setFont("Times", "normal");
-    for (const ligne of lignesSynthese) {
-      if (y > 280) { pdf.addPage(); y = 10; }
-      pdf.text(ligne, 10, y);
-      y += 5;
-    }
+pdf.setFontSize(11);
+pdf.setFont("Times", "normal");
+for (const ligne of lignesSynthese) {
+  if (y > 280) { pdf.addPage(); y = 10; }
+  pdf.text(ligne, 10, y);
+  y += 5;
+}
 
-    // ➜ Téléchargement
-    pdf.save('tirage_7_cartes_Heka.pdf');
+pdf.save('tirage_7_cartes_Heka.pdf');
   });
 </script>
 </body>
