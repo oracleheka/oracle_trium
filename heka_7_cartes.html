@@ -531,13 +531,13 @@ window.onload = function () {
     }
 
     // ➜ Sections structurées (si besoin)
-    const titres = [
+   const titres = [
   { titre: "➤ Influences de départ :", indices: [0, 1] },
   { titre: "➤ Dynamique actuelle :", indices: [2, 3, 4] },
   { titre: "➤ Évolution possible :", indices: [5, 6] }
 ];
 
-const cartesPDF = window.cartesTireesPDF || [];
+const cartesPourTexte = window.cartesTireesPDF || [];
 
 for (const { titre, indices } of titres) {
   if (y > 280) { pdf.addPage(); y = 10; }
@@ -549,7 +549,7 @@ for (const { titre, indices } of titres) {
   pdf.setFontSize(11);
   pdf.setFont("Times", "normal");
   for (const i of indices) {
-    const c = cartesPDF[i];
+    const c = cartesPourTexte[i];
     if (c) {
       const ligne = `${c.nom} : (${c.sens}) → ${nettoyerTexte(c.texte)}`;
       const lignesBloc = pdf.splitTextToSize(ligne, 190);
