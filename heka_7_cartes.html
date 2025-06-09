@@ -475,96 +475,82 @@ window.onload = function () {
   }
 
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
-    const prenom = window.nom1;
-    const aspect = window.aspect;
-    const cartes = window.cartesPrenom1;
-    const resume = window.resume;
+  const aspect = window.aspect;
+  const prenom = window.nom1;
+  const resume = window.resume;
+  const cartesPDF = window.cartesTireesPDF;
 
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    pdf.setFont("Times", "normal");
-    let y = 10;
-    const pageWidth = pdf.internal.pageSize.getWidth();
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF('p', 'mm', 'a4');
+  pdf.setFont("Times", "normal");
+  let y = 10;
+  const pageWidth = pdf.internal.pageSize.getWidth();
 
-    // Logo
-     const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
-    const loadImage = (src) => new Promise((resolve) => {
-      const img = new Image();
-      img.crossOrigin = 'Anonymous';
-      img.onload = () => resolve(img);
-      img.src = src;
-    });
-    const logoImg = await loadImage(logoUrl);
-    pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
-    y += 30;
+  // Logo
+  const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+  const loadImage = (src) => new Promise((resolve) => {
+    const img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = () => resolve(img);
+    img.src = src;
+  });
+  const logoImg = await loadImage(logoUrl);
+  pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
+  y += 30;
 
-    // Titre
-    const titre = `Tirage à 7 cartes - Oracle Heka`;
-    const titreWidth = pdf.getTextWidth(titre);
-    pdf.setFontSize(14);
+  // Titre
+  const titre = `Tirage à 7 cartes - Oracle Heka`;
+  const titreWidth = pdf.getTextWidth(titre);
+  pdf.setFontSize(14);
+  pdf.setFont("Times", "bold");
+  pdf.text(titre, (pageWidth - titreWidth) / 2, y);
+  y += 15;
+
+  // ➜ Impression des cartes (même logique que Tétraktys)
+  pdf.setFontSize(13);
+  pdf.setFont("Times", "bold");
+  pdf.text("--- Cartes du tirage ---", 10, y);
+  y += 8;
+
+  for (const carte of cartesPDF) {
+    const carteImg = await loadImage(carte.imageSrc);
+    if (y + 55 + 8 > 280) { pdf.addPage(); y = 10; }
+    pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+
+    pdf.setFontSize(12);
     pdf.setFont("Times", "bold");
-    pdf.text(titre, (pageWidth - titreWidth) / 2, y);
-    y += 15;
+    pdf.text(`${carte.nom} : (${carte.sens})`, 55, y + 6);
 
-    // ➜ Impression des 7 cartes (même logique que Tétraktys)
-    pdf.setFontSize(13);
-    pdf.setFont("Times", "bold");
-    pdf.text("--- Cartes du tirage ---", 10, y);
-    y += 8;
-
-    for (const { carte, sens } of cartesPrenom) {
-      const carteImg = await loadImage(carte.image);
-
-      // Vérifie si la carte va dépasser la page, sinon ajoute une page
-      if (y + 55 + 8 > 280) {
-        pdf.addPage();
-        y = 10;
-      }
-
-      pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
-
-      pdf.setFontSize(12);
-      pdf.setFont("Times", "bold");
-      pdf.text(`${carte.id} : (${carte.nom}) : (${sens})`, 55, y + 6);
-
-      const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
-      pdf.setFontSize(11);
-      pdf.setFont("Times", "normal");
-      const lignesCarte = pdf.splitTextToSize(texte, 135);
-
-      let yy = y + 12;
-      for (const ligne of lignesCarte) {
-        if (yy > 280) {
-          pdf.addPage();
-          yy = 10;
-        }
-        pdf.text(ligne, 55, yy);
-        yy += 5;
-      }
-      yy += 4; // petit saut de ligne après le bloc de texte
-
-      const hauteurBloc = Math.max(55, yy - y);
-      y += hauteurBloc + 8; // plus de marge entre les cartes
-    }
-
-    // ➜ Ajoute la synthèse finale (une seule fois, proprement)
-    const resumeNettoye = nettoyerTexte(resume);
-    const lignesResume = pdf.splitTextToSize(resumeNettoye, 190);
+    const lignesTexte = pdf.splitTextToSize(nettoyerTexte(carte.texte), 135);
     pdf.setFontSize(11);
     pdf.setFont("Times", "normal");
-
-    if (y > 280) { pdf.addPage(); y = 10; }
-    y += 10; // espace avant la synthèse finale
-
-    for (const ligne of lignesResume) {
-      if (y > 280) { pdf.addPage(); y = 10; }
-      pdf.text(ligne, 10, y);
-      y += 5;
+    let yy = y + 12;
+    for (const ligne of lignesTexte) {
+      if (yy > 280) { pdf.addPage(); yy = 10; }
+      pdf.text(ligne, 55, yy);
+      yy += 5;
     }
 
-    // ➜ Téléchargement du PDF
-    pdf.save(`tirage_7_cartes_Heka.pdf`);
-  });
-</script>
+    const hauteurBloc = Math.max(55, yy - y);
+    y += hauteurBloc + 8;
+  }
+
+  // ➜ Ajoute la synthèse finale
+  const resumeNettoye = nettoyerTexte(resume);
+  const lignesResume = pdf.splitTextToSize(resumeNettoye, 190);
+  pdf.setFontSize(11);
+  pdf.setFont("Times", "normal");
+  if (y > 280) { pdf.addPage(); y = 10; }
+  y += 10;
+
+  for (const ligne of lignesResume) {
+    if (y > 280) { pdf.addPage(); y = 10; }
+    pdf.text(ligne, 10, y);
+    y += 5;
+  }
+
+  pdf.save(`tirage_7_cartes_Heka.pdf`);
+});
+  </script>
 </body>
 </html>
