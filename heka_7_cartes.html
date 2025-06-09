@@ -537,8 +537,6 @@ window.onload = function () {
   { titre: "➤ Évolution possible :", indices: [5, 6] }
 ];
 
-const cartesPDF = window.cartesTireesPDF || [];
-
 for (const { titre, indices } of titres) {
   if (y > 280) { pdf.addPage(); y = 10; }
   pdf.setFontSize(12);
