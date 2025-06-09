@@ -484,8 +484,8 @@ window.onload = function () {
     const pageWidth = pdf.internal.pageSize.getWidth();
 
     // Logo
-    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
-    const loadImage = (src) => new Promise(resolve => {
+     const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+    const loadImage = (src) => new Promise((resolve) => {
       const img = new Image();
       img.crossOrigin = 'Anonymous';
       img.onload = () => resolve(img);
