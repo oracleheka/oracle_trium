@@ -465,7 +465,6 @@ window.onload = function () {
   });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 <script>
   // Fonction pour nettoyer les caractères parasites
   function nettoyerTexte(txt) {
@@ -503,16 +502,11 @@ window.onload = function () {
     pdf.text(titrePrincipal, (pageWidth - titreWidth) / 2, y);
     y += 15;
 
-    // ➜ Impression des cartes
-    const aspect = window.aspect;
+    // ➜ Impression des cartes (image + nom + texte court)
     const cartesPDF = window.cartesTireesPDF || [];
     for (const carte of cartesPDF) {
       const carteImg = await loadImage(carte.imageSrc);
-
-      if (y + 55 + 8 > 280) {
-        pdf.addPage();
-        y = 10;
-      }
+      if (y + 55 + 8 > 280) { pdf.addPage(); y = 10; }
 
       pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
 
@@ -536,8 +530,8 @@ window.onload = function () {
       y += hauteurBloc + 8;
     }
 
-    // ➜ Ajoute la synthèse structurée
-    const phrases = window.resume.split('\n').filter(l => l.trim() !== '');
+    // ➜ Sections structurées (sans la synthèse finale)
+    const phrases = (window.resume || "").split('\n').filter(l => l.trim() !== '');
     const sections = [
       { titre: "Influences de départ :", lignes: phrases.slice(1, 3) },
       { titre: "Dynamique actuelle :", lignes: phrases.slice(4, 7) },
@@ -563,7 +557,7 @@ window.onload = function () {
       y += 4;
     }
 
-    // ➜ Synthèse guidée
+    // ➜ Synthèse guidée (imprimée UNE SEULE FOIS à la fin)
     if (y > 280) { pdf.addPage(); y = 10; }
     y += 10;
     pdf.setFontSize(13);
@@ -577,7 +571,7 @@ window.onload = function () {
       ? syntheseComplete.slice(indexSynthese).trim()
       : syntheseComplete;
 
-    syntheseFinale = syntheseFinale.replace(/[^\x20-\x7EÀ-ÿ\n]/g, '').trim();
+    syntheseFinale = nettoyerTexte(syntheseFinale);
 
     const lignesSynthese = pdf.splitTextToSize(syntheseFinale, 190);
     pdf.setFontSize(11);
