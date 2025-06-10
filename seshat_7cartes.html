@@ -467,12 +467,14 @@ window.onload = function () {
 </script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
+  // Fonction pour nettoyer les caractères parasites
   function nettoyerTexte(txt) {
-    return txt
-      .normalize("NFKC")
-      .replace(/[^\x20-\x7EÀ-ÿ\n]/g, '')
-      .trim();
-  }
+  return txt
+    .normalize("NFKC")
+    .replace(/[’‘]/g, "'")  // Remplace les guillemets typographiques par des apostrophes simples
+    .replace(/[^\x20-\x7EÀ-ÿ\n']/g, '')  // Garde aussi l'apostrophe simple
+    .trim();
+}
 
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
   const aspect = window.aspect;
