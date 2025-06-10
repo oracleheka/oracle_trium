@@ -524,12 +524,12 @@ window.onload = function () {
 <script>
   // Fonction pour nettoyer les caractères parasites
   function nettoyerTexte(txt) {
-    return txt
-      .normalize("NFKC")
-      .replace(/[^\x20-\x7EÀ-ÿ\n]/g, '')
-      .trim();
-  }
-
+  return txt
+    .normalize("NFKC")
+    .replace(/[’‘]/g, "'")  // Remplace les guillemets typographiques par des apostrophes simples
+    .replace(/[^\x20-\x7EÀ-ÿ\n']/g, '')  // Garde aussi l'apostrophe simple
+    .trim();
+}
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
     const prenom = window.nom1;
     const aspect = window.aspect;
