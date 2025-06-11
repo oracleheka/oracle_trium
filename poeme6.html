@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Le Gardien des Temps Oubliés – Poème Heka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="<meta name="description" content="Poème mystique : Le Gardien des Temps Oubliés évoque un voyageur cosmique, la mémoire de l’univers, et l’expérience humaine à travers les âges.">">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f5f2;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+     header {
+  background-color: #f5efe6;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between; /* Ajoute de l’espace pour le burger */
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+    header nav a {
+     display: inline-block;
+  padding: 0.75rem 1rem; /* agrandit la zone cliquable */
+  margin: 0.25rem 0.5rem; /* espace entre les liens */
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+  font-size: 1rem; /* assure lisibilité */
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      flex: 1;
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #4a2e1e;
+      margin-top: 1rem;
+    }
+    .poeme {
+      white-space: pre-wrap;
+      font-family: 'Courier New', monospace;
+      background-color: #ffffff;
+      border-left: 4px solid #c2b280;
+      padding: 1rem;
+      margin: 2rem auto;
+      max-width: 800px;
+      color: #000; /* Texte plus foncé pour plus de contraste */
+    }
+    .retour {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .retour a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #3b2618;
+      font-weight: bold;
+    }
+    .retour a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background-color: #f0e9e0;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ccc;
+    }
+    #burgerBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333; /* 👈 Ajoute cette ligne pour forcer la couleur */
+}
+    #burgerBtn:hover {
+  color: #000; /* couleur encore plus foncée au survol */
+}
+    /* Affichage du bouton burger en mobile */
+@media (max-width: 768px) {
+  #burgerBtn {
+    display: block; /* rends le bouton burger visible sur mobile */
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    background: #f5efe6;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  header nav.show {
+    max-height: 500px; /* ajuste à la hauteur de ton menu */
+  }
+}
+.btn-retour {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: #3b6a9a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+  background-color: #345b85;
+}
+@media (max-width: 768px) {
+    button {
+      margin-bottom: 0.5rem;
+      display: block;
+      width: 100%;
+    }
+  }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Le chant d’une carte",
+  "url": "https://oracleheka.github.io/oracle_trium/poeme1.html",
+  "description": "Poème mystique : Le Gardien des Temps Oubliés évoque un voyageur cosmique, la mémoire de l’univers, et l’expérience humaine à travers les âges.",
+  "author": {
+    "@type": "Person",
+    "name": "Roland Alberolla"
+  },
+  "inLanguage": "fr"
+}
+</script>
+</head>
+<body>
+<header>
+  <!-- Bouton menu burger -->
+<button id="burgerBtn" aria-label="Menu">☰</button>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="methodes.html">Méthodes de Tirages</a>
+    <a href="heka.html">Oracle Heka</a>
+    <a href="sia.html">Oracle Sia</a>
+    <a href="seshat.html">Oracle Seshat</a>
+    <a href="decouverte.html">Découverte</a>
+  </nav>
+</header>
+  <h1>Le Gardien des Temps Oubliés</h1>
+
+  <div class="poeme">
+<p>Durant une éternité, j'ai voyagé<br>
+  À travers l'immensité<br>
+  De la Voie lactée<br>
+  De l'univers tout entier</p>
+
+  <p>Sur bien des planètes, je me suis arrêté<br>
+  À voir des mondes de toutes beautés<br>
+  Et d'autres entièrement glacés</p>
+
+  <p>À regarder la vie des astres passés<br>
+  Vivre et s'éteindre à un rythme effréné<br>
+  Dans une danse qui ne s'arrête jamais</p>
+
+  <p>J'ai souri à voir une étoile s'élever<br>
+  À chanter devant la vie qui arrivait<br>
+  À pleurer quand elle disparaissait<br>
+  Et voir le cycle recommencer</p>
+
+  <p>Et continuer à voyager<br>
+  Dans cette immensité<br>
+  Sans vraiment m'arrêter<br>
+  Dans cette éternité</p>
+
+  <p>Sur cette Terre, je suis arrivé<br>
+  J'y ai vu toute sa diversité<br>
+  Toute sa beauté</p>
+
+  <p>Et je me suis incarné<br>
+  Pour vivre à vos côtés<br>
+  Apprendre la joie et la gaieté<br>
+  La tristesse et la pauvreté<br>
+  La colère, la cruauté<br>
+  De ce monde dans toute sa complexité</p>
+
+  <p>Et j'ai laissé l'humanité me traverser<br>
+  Au travers des âges, j'ai regardé<br>
+  Et votre histoire m'a blessé</p>
+
+  <p>Le fils du père sacrifié<br>
+  Sur une croix crucifié<br>
+  Qu'une lance a tué<br>
+  Pour vous montrer la cruauté<br>
+  Et espérer vous voir changer</p>
+
+  <p>Mais vos guerres ont continué<br>
+  Durant des siècles, sans s'arrêter<br>
+  À voir des enfants, des nouveau-nés<br>
+  Mourir sous les bombes larguées<br>
+  Par des pères désabusés</p>
+
+  <p>À voir l'amour, l'amitié s'effacer<br>
+  Devant l'autel de l'absurdité<br>
+  Pour un mot prononcé<br>
+  De jalousie qui pousse à posséder<br>
+  Et vous enfermer dans vos pensées</p>
+
+  <p>Cette vie, je l'ai acceptée<br>
+  Dans son intégralité<br>
+  Dans sa dualité</p>
+
+  <p>Par les mêmes émotions, j'ai été traversé<br>
+  Les mêmes contradictions éprouvées<br>
+  À explorer tout ce qui fait l'humanité<br>
+  Sa richesse et sa cruauté</p>
+
+  <p>Parfois à la juger<br>
+  Voire la condamner<br>
+  Comme un humain, en vérité</p>
+
+  <p>Mais aussi à admirer<br>
+  Ce que la nature nous a donné<br>
+  Dans ses paysages de toute beauté</p>
+
+  <p>À me rappeler que cet instant n'est que de courte durée<br>
+  Dans cette éternité<br>
+  À chercher pourquoi toujours vouloir tout contrôler</p>
+
+  <p>Car votre vie, je l'ai acceptée<br>
+  Avant de reprendre mon voyage vers d'autres contrées<br>
+  D'autres univers à explorer<br>
+  Sans jamais m'arrêter</p>
+
+  <p>Car je suis la création<br>
+  Comme la destruction</p>
+
+  <p>J'ai été le premier<br>
+  Bien avant que les étoiles ne soient nées<br>
+  Je serai le dernier<br>
+  Quand tout aura cessé d'exister</p>
+
+  <p>Et quand plus personne ne sera là pour écouter<br>
+  Je resterai le gardien des temps oubliés<br>
+  La conscience de tout ce qui a un instant été<br>
+  Tout comme vous, pour dire vrai<br>
+  Car nous sommes tous reliés<br>
+  Les hommes, les étoiles, et l'univers tout entier.</p>
+
+  </div>
+
+  <div class="retour">
+    <a href="poemes.html" class="btn-retour">← Retour à la liste des poèmes</a>
+  </div>
+
+<footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
+  Produit par <strong>OracleHeka</strong> —
+ <a href="mentions-legales.html">Mentions légales</a> —
+  <a href="mailto:heka.sia.seshat@gmail.com">Contact</a> -
+  <a href="faq.html">FAQ</a>
+</footer>
+<script>
+  const burgerBtn = document.getElementById("burgerBtn");
+  const nav = document.querySelector("header nav");
+
+  burgerBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+</script>
+</body>
+</html>
