@@ -156,8 +156,23 @@ button {
 </script>
 </head>
 <body>
+  
+<header>
+  <!-- Bouton menu burger -->
+<button id="burgerBtn" aria-label="Menu">☰</button>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="methodes.html">Méthodes de Tirages</a>
+    <a href="heka.html">Oracle Heka</a>
+    <a href="sia.html">Oracle Sia</a>
+    <a href="seshat.html">Oracle Seshat</a>
+    <a href="decouverte.html">Découverte</a>
+  </nav>
+</header>
+  <main>
   <h1>Préface de l’oracle Heka</h1>
-  <section>
+  <div class="preface_heka">
     <p>Heka est né d’un long cheminement. Il ne s’agit pas d’un oracle comme les autres. Ce n’est ni un outil de divination new âge, ni un tarot psychologique modernisé. Heka est un langage symbolique à part entière, une structure vivante, un système autonome qui parle depuis un lieu plus profond : celui de la cohérence sacrée.</p>
 
     <p>Le nom même d’Heka renvoie à la puissance créatrice de la parole dans l’Égypte ancienne, à cette force qui lie le verbe à l’acte, la pensée à la manifestation. Heka est le souffle organisateur, l’intelligence à l’œuvre dans le monde. C’est cette force-là qui a guidé la création de cet oracle introspectif.</p>
@@ -177,18 +192,26 @@ button {
     <p>Ce livre est le fruit d’une lente gestation, d’une écoute profonde, et d’un engagement total. Il s’adresse à celles et ceux qui cherchent un outil d’ancrage, de vérité et de passage vers eux-mêmes.</p>
 
     <p><strong>Heka est un miroir. Un initiateur. Un souffle. Il est maintenant entre vos mains.</strong></p>
-  </section>
+  </div>
 
-  
-    <a href="decouverte.html" class="btn-retour" >← Retour à la page Découverte</a>
-     <div class="retour">
+   <a href="decouverte.html" class="btn-retour">← Retour à la page Découverte</a>
+ <div class="retour">
     <a href="index.html" class="btn-retour">Retour à l'Accueil</a>
   </div>
+  </main>
 <footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
   Produit par <strong>OracleHeka</strong> —
  <a href="mentions-legales.html">Mentions légales</a> —
   <a href="mailto:heka.sia.seshat@gmail.com">Contact</a> -
   <a href="faq.html">FAQ</a>
 </footer>
+<script>
+  const burgerBtn = document.getElementById("burgerBtn");
+  const nav = document.querySelector("header nav");
+
+  burgerBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+</script>
 </body>
 </html>
