@@ -5,40 +5,50 @@
   <title>Poèmes de l’univers Heka – Voix introspectives et symboliques</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Recueil de poèmes inspirés de l’oracle Heka : une voix poétique pour explorer l’introspection, le silence et la vibration symbolique de l’être.">
-  <style>
+   <style>
     body {
-      font-family: 'Georgia', serif;
-      background-color: #f9f6f1;
-      color: #2f2f2f;
       margin: 0;
-      padding: 2rem;
-      line-height: 1.7;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f5f2;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    h1, h2, h3 {
-      text-align: center;
-      color: #4a2e1e;
-      margin-top: 1rem;
-    }
-    p {
-      max-width: 800px;
-      margin: 1rem auto;
-    }
-    ul {
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 0;
-      list-style: none;
-    }
-    li {
-      margin: 1rem 0;
-    }
-    a {
-      color: #3b2618;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
+    header {
+  background-color: #f5efe6;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 👈 Centre horizontalement sur PC */
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header nav {
+  display: flex;
+  justify-content: center; /* 👈 Centre les liens */
+  flex-wrap: wrap;
+}
+
+header nav a {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem 0.5rem;
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+    main {
+      flex: 1;
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
     }
     footer {
       background-color: #f0e9e0;
@@ -47,8 +57,89 @@
       font-size: 0.9rem;
       color: #666;
       border-top: 1px solid #ccc;
-      margin-top: 3rem;
     }
+    #burgerBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* === Spécifique au mobile (<= 768px) === */
+@media (max-width: 768px) {
+  header {
+    justify-content: space-between; /* 👈 sur mobile : burger à gauche, nav à droite (ou caché) */
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    background: #f5efe6;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  header nav.show {
+    max-height: 500px;
+  }
+
+  #burgerBtn {
+    display: block; /* 👈 visible sur mobile seulement */
+  }
+}
+button {
+      padding: 0.7rem 1.5rem;
+      background-color: #3b6a9a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #345b85;
+    }
+    #resultats > div {
+      flex: 1 1 250px;
+      max-width: 300px;
+      text-align: center;
+      border: 1px solid #b8a998;
+      border-radius: 8px;
+      background-color: #fdfdfd;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+   .btn-retour {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: #3b6a9a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+  background-color: #345b85;
+}
+@media (max-width: 768px) {
+    button {
+      margin-bottom: 0.5rem;
+      display: block;
+      width: 100%;
+    }
+  }
   </style>
   <script type="application/ld+json">
 {
@@ -65,6 +156,20 @@
 </script>
 </head>
 <body>
+  <header>
+  <!-- Bouton menu burger -->
+<button id="burgerBtn" aria-label="Menu">☰</button>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="methodes.html">Méthodes de Tirages</a>
+    <a href="heka.html">Oracle Heka</a>
+    <a href="sia.html">Oracle Sia</a>
+    <a href="seshat.html">Oracle Seshat</a>
+    <a href="decouverte.html">Découverte</a>
+  </nav>
+</header>
+  <main>
   <h1>Poèmes – Voix de l’univers Heka</h1>
 
   <p>
@@ -87,16 +192,24 @@
 <strong>Note :</strong> Ces poèmes n’ont aucune vocation à prédire quoi que ce soit. Ils ne sont pas liés à l’oracle, ni à un système de croyance. Ils sont simplement le reflet de moments vécus, de pensées ou d’émotions posées sur le papier.  
 Aucune vérité n’y est imposée, aucun message universel. Ils n’aspirent pas à la beauté académique, mais à la sincérité d’une voix, d’un instant.  
 </p>
-  
-  <div class="retour">
-    <a href="decouverte.html">← Retour à la page Découverte</a>
-    <a href="index.html">🏠 Accueil</a>
+  <a href="decouverte.html" class="btn-retour">← Retour à la page Découverte</a>
+ <div class="retour">
+    <a href="index.html" class="btn-retour">Retour à l'Accueil</a>
   </div>
-  <footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
+  </main>
+<footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
   Produit par <strong>OracleHeka</strong> —
  <a href="mentions-legales.html">Mentions légales</a> —
   <a href="mailto:heka.sia.seshat@gmail.com">Contact</a> -
   <a href="faq.html">FAQ</a>
 </footer>
+<script>
+  const burgerBtn = document.getElementById("burgerBtn");
+  const nav = document.querySelector("header nav");
+
+  burgerBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+</script>
 </body>
 </html>
