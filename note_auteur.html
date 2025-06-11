@@ -201,5 +201,13 @@ button {
   <a href="mailto:heka.sia.seshat@gmail.com">Contact</a> -
   <a href="faq.html">FAQ</a>
 </footer>
+<script>
+  const burgerBtn = document.getElementById("burgerBtn");
+  const nav = document.querySelector("header nav");
+
+  burgerBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+</script>
 </body>
 </html>
