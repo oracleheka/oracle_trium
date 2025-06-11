@@ -5,35 +5,50 @@
   <title>Préface de l’oracle Heka – Structure, numérologie, symbolique égyptienne</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Découvrez la préface complète de l’oracle Heka : un outil introspectif fondé sur 85 cartes, la numérologie, les planètes et la symbolique égyptienne. Un langage vivant et structuré pour explorer l’ego et la transformation intérieure.">
-  <style>
+ <style>
     body {
-      font-family: 'Georgia', serif;
-      background-color: #f9f6f1;
-      color: #2e2e2e;
       margin: 0;
-      padding: 2rem;
-      line-height: 1.7;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f5f2;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    h1 {
-      text-align: center;
-      color: #4a2e1e;
-    }
-    section {
+    header {
+  background-color: #f5efe6;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 👈 Centre horizontalement sur PC */
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header nav {
+  display: flex;
+  justify-content: center; /* 👈 Centre les liens */
+  flex-wrap: wrap;
+}
+
+header nav a {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem 0.5rem;
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+    main {
+      flex: 1;
+      padding: 3rem 2rem;
       max-width: 900px;
       margin: 0 auto;
-    }
-    .retour {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .retour a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #3b2618;
-      font-weight: bold;
-    }
-    .retour a:hover {
-      text-decoration: underline;
     }
     footer {
       background-color: #f0e9e0;
@@ -43,6 +58,88 @@
       color: #666;
       border-top: 1px solid #ccc;
     }
+    #burgerBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* === Spécifique au mobile (<= 768px) === */
+@media (max-width: 768px) {
+  header {
+    justify-content: space-between; /* 👈 sur mobile : burger à gauche, nav à droite (ou caché) */
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    background: #f5efe6;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  header nav.show {
+    max-height: 500px;
+  }
+
+  #burgerBtn {
+    display: block; /* 👈 visible sur mobile seulement */
+  }
+}
+button {
+      padding: 0.7rem 1.5rem;
+      background-color: #3b6a9a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #345b85;
+    }
+    #resultats > div {
+      flex: 1 1 250px;
+      max-width: 300px;
+      text-align: center;
+      border: 1px solid #b8a998;
+      border-radius: 8px;
+      background-color: #fdfdfd;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+   .btn-retour {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  background-color: #3b6a9a;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-retour:hover {
+  background-color: #345b85;
+}
+@media (max-width: 768px) {
+    button {
+      margin-bottom: 0.5rem;
+      display: block;
+      width: 100%;
+    }
+  }
   </style>
   <script type="application/ld+json">
 {
@@ -67,7 +164,9 @@
 
     <p>Heka repose sur une structure rigoureuse : 85 cartes réparties en 9 familles numérologiques (de 1 à 9). Chaque famille est associée à une planète, une divinité égyptienne et une dynamique intérieure spécifique. Les cartes 1 à 9 forment les matrices originelles, et les cartes suivantes prolongent ces axes jusqu’à la 81e selon une logique cyclique et symbolique cohérente.</p>
 
-    <p>Pour découvrir en détail les 9 familles, leurs planètes, leurs divinités et les cartes correspondantes, consultez la page dédiée : <a href="familles_heka.html">Les 9 familles et leurs cartes</a>.</p>
+    <p>Pour découvrir en détail les 9 familles, leurs planètes, leurs divinités et les cartes correspondantes, consultez la page dédiée : </p>
+      
+      <a href="familles_heka.html" class="btn-retour">Les 9 familles et leurs cartes</a>
 
     <p>Quatre cartes hors-familles viennent clore le cycle : la carte 82 (Croix de Vie – Ankh), la 83 (l’Homme), la 84 (la Femme), et la 85 (Heka). Elles incarnent le passage, la polarité et la vie incarnée. Ces cartes parlent depuis un autre plan : celui de l’être et du souffle vital, au-delà de la structure des familles.</p>
 
@@ -80,9 +179,10 @@
     <p><strong>Heka est un miroir. Un initiateur. Un souffle. Il est maintenant entre vos mains.</strong></p>
   </section>
 
-  <div class="retour">
-    <a href="decouverte.html">← Retour à la page Découverte</a>
-    <a href="index.html">🏠 Accueil</a>
+  
+    <a href="decouverte.html" class="btn-retour" >← Retour à la page Découverte</a>
+     <div class="retour">
+    <a href="index.html" class="btn-retour">Retour à l'Accueil</a>
   </div>
 <footer style="text-align:center; margin-top: 2rem; padding: 1rem; font-size: 0.9rem;">
   Produit par <strong>OracleHeka</strong> —
