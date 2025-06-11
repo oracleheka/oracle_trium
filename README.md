@@ -30,9 +30,11 @@ Ce projet n’est **pas un outil de divination classique**, mais un **média d�
 - Tirage à 7 cartes
 - Approche numérologique (prénom + date de naissance)
 - Tirage par prénom
+- Tirage entre deux prénoms
+- Tirage entre trois prénoms
 - Méthode Tétraktys
 
-Toutes les méthodes sont accessibles depuis le site, avec tirage interactif en ligne.
+Toutes les méthodes sont accessibles depuis le site, avec tirage interactif gratuit en ligne.
 
 ---
 
