@@ -1,0 +1,35 @@
+name: Forcer IndexNow pour toutes les pages
+
+on:
+  workflow_dispatch:  # exécution manuelle depuis l'onglet "Actions"
+
+jobs:
+  force_notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Lister toutes les pages HTML
+        id: list_urls
+        run: |
+          echo "Récupération de toutes les pages HTML..."
+          ALL_HTML=$(find . -name '*.html' | sed 's|^\./||')
+          echo "Fichiers trouvés : $ALL_HTML"
+          URLS=$(echo "$ALL_HTML" | sed 's|^|https://oracleheka.github.io/oracle_trium/|' | jq -R -s -c 'split("\n")[:-1]')
+          echo "urlList=$URLS" >> $GITHUB_OUTPUT
+
+      - name: Envoyer à IndexNow
+        run: |
+          echo "Envoi à Bing de toutes les pages HTML..."
+          URLS='${{ steps.list_urls.outputs.urlList }}'
+
+          curl -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"host\": \"oracleheka.github.io\",
+              \"key\": \"94e5ba5ecaa5405a84176494f03fe0b0\",
+              \"keyLocation\": \"https://oracleheka.github.io/oracle_trium/94e5ba5ecaa5405a84176494f03fe0b0.txt\",
+              \"urlList\": $URLS
+            }"
