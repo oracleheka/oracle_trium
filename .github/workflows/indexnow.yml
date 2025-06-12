@@ -3,7 +3,7 @@ name: Notify IndexNow (only modified HTML pages)
 on:
   push:
     branches:
-      - main  # adapte si tu as une autre branche de prod
+      - main  # adapte si ta branche de prod a un autre nom
 
 jobs:
   notify:
@@ -27,13 +27,13 @@ jobs:
         if: steps.get_changes.outputs.urls != '[]'
         run: |
           echo "Envoi des pages modifiées à Bing..."
+          URLS='${{ steps.get_changes.outputs.urls }}'
+
           curl -X POST "https://api.indexnow.org/indexnow" \
-          -H "Content-Type: application/json" \
-          -d "{
-            \"host\": \"oracleheka.github.io\",
-            \"key\": \"94e5ba5ecaa5405a84176494f03fe0b0\",
-            \"keyLocation\": \"https://oracleheka.github.io/oracle_trium/94e5ba5ecaa5405a84176494f03fe0b0.txt\",
-            \"urlList\": ${{
-              steps.get_changes.outputs.urls
-            }}
-          }"
+            -H "Content-Type: application/json" \
+            -d "{
+              \"host\": \"oracleheka.github.io\",
+              \"key\": \"94e5ba5ecaa5405a84176494f03fe0b0\",
+              \"keyLocation\": \"https://oracleheka.github.io/oracle_trium/94e5ba5ecaa5405a84176494f03fe0b0.txt\",
+              \"urlList\": $URLS
+            }"
