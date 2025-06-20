@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Famille 5 – Oracle Seshat : Mercure et Thot. Explorez le pouvoir de la parole, la quête de vérité, et la manière dont vos mots façonnent votre réalité.">
+  <title>Famille 5 – Oracle Seshat</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f5f2;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #f5efe6;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header nav a {
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      margin: 0.25rem 0.5rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
+    #burgerBtn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #333;
+    }
+    #burgerBtn:hover {
+      color: #000;
+    }
+    @media (max-width: 768px) {
+      #burgerBtn {
+        display: block;
+      }
+      header nav {
+        display: none;
+        flex-direction: column;
+        background: #f5efe6;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+      }
+      header nav.show {
+        display: flex;
+      }
+    }
+    footer {
+      background-color: #f0e9e0;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #ccc;
+    }  
+    main {
+      flex: 1;
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    nav a {
+      display: inline-block;
+      padding: 0.5rem;
+      text-decoration: none;
+      color: #3b6a9a;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .bouton {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin-top: 2rem;
+      background-color: #3b6a9a;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .bouton:hover {
+      background-color: #345b85;
+    }
+    img.carte-visuelle {
+      max-width: 220px;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Famille 5 – Oracle Seshat",
+  "description": "Famille 5 – Oracle Seshat : Mercure et Thot. Explorez le pouvoir de la parole, la quête de vérité, et la manière dont vos mots façonnent votre réalité.",
+  "url": "https://oracleheka.github.io/oracle_trium/seshat_famille5.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Oracle Heka",
+    "url": "https://oracleheka.github.io/oracle_trium/"
+  },
+  "inLanguage": "fr",
+  "about": {
+    "@type": "CreativeWorkSeries",
+    "name": "Trilogie Oraculaire Heka, Sia, Seshat"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OracleHeka"
+  }
+}
+</script>
+  </head>
+<body>
+  <header>
+    <button id="burgerBtn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="heka.html">Oracle Heka</a>
+      <a href="familles_heka.html">Les familles</a>
+      <a href="decouverte.html">Découverte</a>
+    </nav>
+  </header>
+  <main>
+    <a id="top"></a>
+    <h1>Famille 5 – Thot (Mercure)</h1>
+<p>Reliée à Mercure et à Thot, la famille 5 de l’oracle Seshat interroge notre rapport à la parole, à la loi intérieure et à la cohérence entre pensée, vérité et expression.</p>
+
+    <nav id="menu">
+      <strong>Navigation dans la famille :</strong>
+      <ul>
+        <li><a href="#carte5">Carte 5 – Présence</a></li>
+        <li><a href="#carte14">Carte 14 – Voix</a></li>
+        <li><a href="#carte23">Carte 23 – Autoritaire</a></li>
+        <li><a href="#carte32">Carte 32 – Emprise</a></li>
+        <li><a href="#carte41">Carte 41 – Isolement</a></li>
+        <li><a href="#carte50">Carte 50 – Engagement</a></li>
+        <li><a href="#carte59">Carte 59 – Promesse</a></li>
+        <li><a href="#carte68">Carte 68 – Mensonge</a></li>
+        <li><a href="#carte77">Carte 77 – Retenue</a></li>
+      </ul>
+    </nav>
+
+    <section id="carte5">
+      <h2>Carte 5 – Présence</h2>
+      <img src="images/seshat/seshat_5_presence.png" alt="Carte 5 - Présence" class="carte-visuelle">
+
+      <p><strong>Mots-clés :</strong> présence intérieure, rayonnement silencieux, confiance en soi, être sans agir, autorité naturelle<br>
+      <p><strong>Chiffre caché :</strong> 194<br>
+     <strong>Lecture inversée :</strong> 4 → 9 → 1</p>
+      <strong>Planète principale :</strong> Mercure<br>
+      <strong>Divinité principale :</strong> Thot<br>
+      <strong>Planète secondaire :</strong> Soleil<br>
+      <strong>Divinité secondaire :</strong> Râ</p>
+
+      <h3>Interprétation de la carte 5 : Présence (droite)</h3>
+      <h4>Lecture intuitive rapide</h4>
+      <p>Il n’y a rien à dire. Juste être là, entier, sans performance. Le monde te perçoit sans que tu t’exprimes. Ta seule présence modifie déjà l’espace. Avant le geste, avant la parole, il y a cette qualité invisible qui dit que tu es là, conscient d’être là. Ce n’est pas encore une posture, ni un rôle. Ce n’est même pas un choix. C’est l’instant où tu prends forme dans le silence, et où ce silence, par lui-même, communique.</p>
+
+      <h4>1. Caractère de la personne</h4>
+      <p>Tu n’as rien à faire pour être là. Ta présence suffit. Elle pose un espace, une gravité douce. Ce que tu portes parle de toi, même si tu ne dis rien.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu n’as pas besoin de plaire, ni de t’effacer. Ta simple présence peut être un lien, si tu l’assumes sans masque. C’est le début de l’ouverture : l’autre te sent, avant de te connaître.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Le verbe n’est pas encore né, mais l’être est là. Tu portes en toi la lumière d’avant le mot. C’est une autorité silencieuse, une posture non posée, un rayonnement sans discours.</p>
+
+      <h3>Carte 5 : Présence (inversée)</h3> 
+      <h4>1. Caractère de la personne</h4>
+       <p>Tu doutes de ta légitimité à exister sans faire. Alors tu compenses, tu t’agites, tu cherches à être vu. Mais plus tu cherches à prouver ta place, plus tu te retires de toi-même.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu crois devoir séduire ou t’excuser d’être là. Mais l’amour ne commence pas dans la stratégie. Il commence dans l’acceptation d’être senti, sans artifice.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu veux comprendre avant de rayonner. Mais ta lumière ne naît pas d’un concept. Elle naît de ta simple disponibilité au réel. Reviens à cette simplicité.</p>
+
+      <h3>Résumé de la carte 5 : Présence</h3>
+      <p>Présence est l’état d’être perçu avant d’agir. C’est ce que ton être communique,sans mots, sans effort, sans volonté. C’est le seuil silencieux d’où naît toute parole juste. Être là suffit.</p<
+
+      <div style="margin-top: 2rem;">
+  <a class="bouton" href="#menu">↩ Revenir au menu</a>
+  <a class="bouton" href="familles_seshat.html" style="margin-left: 1rem;">↩ Revenir aux familles</a>
+</div>
+    </section>
+    
+    <section id="carte14">
+    <h2>Carte 14 – Voix</h2>
+     <img src="images/seshat/seshat_14_voix.png" alt="Carte 14 - Voix" class="carte-visuelle">
+     
+     <p><strong>Mots-clés :</strong> : parole intérieure, expression de soi, trouver sa voix, communication authentique, vérité personnelle<br>
+      <p><strong>Chiffre caché :</strong> 221<br>
+     <strong>Lecture inversée :</strong> 1 → 2 → 2</p>
+      <strong>Planète principale :</strong> Mercure<br>
+      <strong>Divinité principale :</strong> Thot<br>
+      <strong>Planète secondaire :</strong> Terre<br>
+      <strong>Divinité secondaire :</strong> Geb</p>
+      
+    <h3>Interprétation de la carte 14 : Voix (droite)</h3>
+      <h4>Lecture intuitive rapide</h4>
+      <p>Tu n’as plus envie de te taire. Tu n’as peut-être pas les mots justes, ni le ton parfait — mais ce n’est plus le plus important. Tu veux dire. Laisser passer ta vibration, même fragile. Parce que cette voix, c’est toi. Et tant que tu ne l’honores pas, tu restes en dehors. Parle. Même tremblant, même brouillon. Car c’est dans l’expression que tu reprends forme.</p>
+
+      <h4>1. Caractère de la personne</h4>
+      <p>Tu prends la parole. Pas pour convaincre, ni pour expliquer, mais pour affirmer que tu es là. Ce premier mot, brut, imparfait, te constitue déjà.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu commences à dire ce que tu ressens. Peut-être maladroitement, mais sincèrement. C’est un seuil : celui où ta vérité cherche un passage.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>C’est le moment où ta voix sort du silence. Elle ne porte pas encore un enseignement, mais elle trace ton existence dans l’espace. Tu ne répètes pas : tu dis.</p>
+
+      <h3>Carte 14 : Voix (inversée)</h3>
+     
+      <h4>1. Caractère de la personne</h4>
+       <h4>1. Caractère de la personne</h4>
+      <p>Tu retiens ta voix. Par peur d’être mal compris, ou de ne pas “bien” dire. Mais ne pas parler, c’est déjà s’effacer. Tu as le droit de tâtonner.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu ravales ce qui monte. Tu penses que ce n’est pas le bon moment. Pourtant, ce que tu contiens pèse davantage que ce que tu pourrais dire.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu attends que les mots soient parfaits avant de les dire. Mais l’âme ne parle pas en formules : elle parle quand elle doit. Laisse passer la voix, même si elle tremble.</p>
+
+      <h4>Résumé de la carte 14 : Voix</h4>
+      <p>Voix est la carte de la parole naissante. C’est le moment où la vérité prend forme dans le son, où l’on commence à dire “je”, sans encore tout comprendre. Elle ne demande pas de convaincre : seulement de dire, de faire entendre sa vibration. Elle dit : “Parle. Même si ce n’est pas encore clair, ta voix a déjà sa justesse.”</p>
+
+      <div style="margin-top: 2rem;">
+  <a class="bouton" href="#menu">↩ Revenir au menu</a>
+  <a class="bouton" href="familles_seshat.html" style="margin-left: 1rem;">↩ Revenir aux familles</a>
+</div>
+    </section>
+
+  <section id="carte23">
+    <h2>Carte 23 – Autoritaire</h2>
+     <img src="images/seshat/seshat_23_autoritaire.png" alt="Carte 23 - Autoritaire" class="carte-visuelle">
+     
+     <p><strong>Mots-clés :</strong> : parole imposée, rigidité relationnelle, autorité verbale, décalage parole/vérité, transmission sans alignement<br>
+      <p><strong>Chiffre caché :</strong> 185<br>
+     <strong>Lecture inversée :</strong> 5 → 8 → 1</p>
+      <strong>Planète principale :</strong> Mercure<br>
+      <strong>Divinité principale :</strong> Thot<br>
+      <strong>Planète secondaire :</strong> Jupiter<br>
+      <strong>Divinité secondaire :</strong> Amon-Rê</p>
+      
+    <h3>Interprétation de la carte 23 : Autoritaire (droite)</h3>
+      <h4>Lecture intuitive rapide</h4>
+      <p>Tu dis ce qu’il faut faire. Tu affirmes des vérités, tu transmets des règles. Mais ce que tu exprimes n’est pas toujours ce que tu vis.
+Ce n’est pas un mensonge : c’est un écart entre le mot et le feu qui devrait l’habiter.
+Tu veux guider, cadrer, enseigner — mais parfois, tu t’imposes plus que tu ne transmets.
+Et ce que tu dis devient Loi, même si toi-même n’y es plus connecté.
+</p>
+
+      <h4>1. Caractère de la personne</h4>
+      <p>Tu parles fort. Tu parles juste, parfois. Mais tu ne vérifies plus si ce que tu dis vient encore de toi. Tu cites des principes, tu poses des cadres — mais est-ce que tu les vis ?</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu veux aider. Tu veux bien faire. Mais ta manière d’exprimer les choses peut blesser. Tu imposes ton rythme, ton système. Et cela empêche le lien de respirer.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu crois incarner une voix, un message. Mais tu parles parfois plus fort que ton feu. La transmission ne suffit pas. Il faut redevenir canal, pas écho de sa propre certitude.</p>
+
+      <h3>Carte 23 : Autoritaire (inversée)</h3>
+
+      <h4>1. Caractère de la personne</h4>
+      <p>Tu ne vois plus l’écart entre ce que tu es et ce que tu affirmes. Tu répètes des règles, tu parles avec aplomb, mais ton centre est absent. C’est ton rôle qui parle, pas toi.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu veux être entendu, reconnu, respecté. Mais ta parole devient dure, coupante, impérieuse. Tant que tu ne te confrontes pas à toi-même, tu restes dans la domination verbale.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu crois enseigner, mais tu imposes. Tu penses guider, mais tu assènes. Tu t’es coupé de la source — reconnecte-toi au feu vivant, pas à sa forme fossilisée.</p>
+
+      <h4>Résumé de la carte 23 : Autoritaire</h4>
+      <p>Autoritaire est la carte de la parole figée en Loi, du message transmis sans conscience vivante. Elle dit : “Ce que tu dis est peut-être vrai. Mais si tu ne le vis pas, tu oppresses au lieu d’ouvrir.”</p>
+
+      <div style="margin-top: 2rem;">
+  <a class="bouton" href="#menu">↩ Revenir au menu</a>
+  <a class="bouton" href="familles_seshat.html" style="margin-left: 1rem;">↩ Revenir aux familles</a>
+</div>
+    </section>
+
+    <section id="carte32">
+    <h2>Carte 32 – Emprise</h2>
+     <img src="images/seshat/seshat_32_emprise.png" alt="Carte 32 - Emprise" class="carte-visuelle">
+     
+     <p><strong>Mots-clés :</strong> : rapport de force psychologique, sortir d’une relation toxique, emprise mentale et verbale, influence destructrice, retrouver sa voix intérieure<br>
+      <p><strong>Chiffre caché :</strong> 212<br>
+     <strong>Lecture inversée :</strong> 2 → 1 → 2</p>
+      <strong>Planète principale :</strong> Mercure<br>
+      <strong>Divinité principale :</strong> Thot<br>
+      <strong>Planète secondaire :</strong> Mars<br>
+      <strong>Divinité secondaire :</strong> Sekhmet</p>
+      
+    <h3>Interprétation de la carte 32 : Emprise (droite)</h3>
+        <h4>Lecture intuitive rapide</h4>
+      <p>Tu te crois inférieur. Tu crois que l’autre a raison, parce qu’il parle fort. Parce qu’il impose. Parce qu’il accuse. Mais ce n’est pas la vérité que tu entends : c’est une projection, un poison, une peur. Et tu la laisses entrer.
+Tu te fais petit, tu retiens ta voix, tu crois que tu mérites cette tension. Mais ce regard n’est pas le tien. Il est temps de sortir de ce miroir faussé.
+</p>
+
+      <h4>1. Caractère de la personne</h4>
+      <p>Tu perçois la colère ou l’autorité de l’autre, mais tu ne t’y perds pas. Tu sens que ce n’est pas toi qu’il attaque, mais une image projetée. Tu tiens ta posture sans plier.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu es face à un lien inégal. L’autre impose, juge, prend l’espace. Mais tu ne te laisses pas écraser. Tu vois la manipulation, la pression, et tu ne rentres pas dedans.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu discernes ce qui vient de l’autre et ce qui t’appartient. Tu ne confonds plus regard extérieur et vérité intérieure. Tu t’extrais du pouvoir de l’image imposée.</p>
+
+      <h3>Carte 32 : Emprise (inversée)</h3>
+      
+      <h4>1. Caractère de la personne</h4>
+     <h4>1. Caractère de la personne</h4>
+      <p>Tu plies face à ce que l’on attend de toi. Tu crois les jugements, les accusations, les critiques. Tu te soumets à des paroles qui ne te définissent pas, mais tu les intègres malgré toi.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu restes dans un lien injuste. Tu crois que tu n’as pas voix au chapitre. Tu acceptes la colère de l’autre comme s’il avait raison, et tu t’effaces pour ne pas faire pire.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu es pris dans un jeu de pouvoir. Tu crois encore que la voix la plus forte dit vrai. Mais ton silence te coûte plus que la rupture. Il est temps de te relever.</p>
+
+      <h4>Résumé de la carte 32 : Emprise</h4>
+      <p>Emprise est la carte du pouvoir faussé. Elle montre le poids du regard de l’autre, et la confusion entre perception et vérité. Elle dit : “Ce que l’autre affirme n’est pas forcément juste. Ce que tu ressens n’est pas toujours ce qui t’appartient. Sors de ce miroir brisé.”</p>
+
+     <div style="margin-top: 2rem;">
+  <a class="bouton" href="#menu">↩ Revenir au menu</a>
+  <a class="bouton" href="familles_seshat.html" style="margin-left: 1rem;">↩ Revenir aux familles</a>
+</div>
+    </section>
+
+   <section id="carte41">
+    <h2>Carte 41 – Isolement</h2>
+     <img src="images/seshat/seshat_41_isolement.png" alt="Carte 41 - Isolement" class="carte-visuelle">
+     <p><strong>Mots-clés :</strong> : repli sur soi, isolement émotionnel, silence intérieur figé, coupure du lien affectif, enfermement mental<br>
+       <p><strong>Chiffre caché :</strong> 167<br>
+     <strong>Lecture inversée :</strong> 7 → 6 → 1</p>
+      <strong>Planète principale :</strong> Mercure<br>
+      <strong>Divinité principale :</strong> Thot<br>
+      <strong>Planète secondaire :</strong> Mercure<br>
+      <strong>Divinité secondaire :</strong> Thot</p>
+      
+    <h3>Interprétation de la carte 41 : Isolement (droite)</h3>
+       <h4>Lecture intuitive rapide</h4>
+      <p>Tu t’es retiré. Pas pour te protéger : pour ne plus sentir. Tu te tiens à distance, même de toi. Tu refuses le lien, tu refuses la tension. Tu veux comprendre, analyser, structurer. Mais ce n’est plus de la clarté — c’est un mur. Tu dis que tu observes. Mais ce que tu regardes, tu ne le touches plus. Et à force de vouloir rester droit, tu te figes.</p>
+
+      <h4>1. Caractère de la personne</h4>
+      <p>Tu te retires pour te retrouver. Tu observes à distance. Mais si tu restes figé, tu perds aussi le lien à toi-même. Ce retrait est un passage, pas une issue.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu as fermé la porte. Tu as voulu faire le tri seul, en silence. Mais tu n’es pas absent pour te guérir : tu es absent pour ne plus avoir à ressentir.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu crois que la clarté vient du silence. Mais ce silence est devenu vide. Ce n’est pas un espace de recentrage, c’est une séparation intérieure.</p>
+
+      <h3>Carte 41 : Isolement (inversée)</h3>
+     <h4>1. Caractère de la personne</h4>
+      <p>Tu t’es coupé de tout, même de toi. Tu es dans la forme, dans la logique, dans la tenue. Mais plus rien ne circule. Tu ne vis plus : tu tiens.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu es là, mais absent. Tu parles, mais tu n’es pas dans la parole. Tu n’as pas quitté l’autre : tu t’es retiré de toi-même. Et le lien s’efface avec toi.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu penses que rester seul t’élèvera. Mais tu as fermé la porte à ce qui pourrait traverser. Tu n’es pas en silence : tu es en suspension.</p>
+
+      <h4>Résumé de la carte 41 : Isolement</h4>
+      <p>Isolement est la carte du retrait figé, du repli qui ne régénère plus. Elle parle d’un silence qui n’écoute plus, d’un retrait devenu enfermement. Elle dit : “Ce que tu appelles paix est peut-être juste une coupure. Et ce que tu crois tenir… est peut-être déjà vide.”</p>
+
+      <div style="margin-top: 2rem;">
+  <a class="bouton" href="#menu">↩ Revenir au menu</a>
+  <a class="bouton" href="familles_seshat.html" style="margin-left: 1rem;">↩ Revenir aux familles</a>
+</div>
+    </section>
+
+   <section id="carte50">
+    <h2>Carte 50 – Engagement</h2>
+     <img src="images/seshat/seshat_50_engagement.png" alt="Carte 50 - Engagement" class="carte-visuelle">
+     
+     <p><strong>Mots-clés :</strong> : engagement verbal, parole alignée, vérité intérieure, communication sincère, responsabilité de la parole<br>
+      <p><strong>Chiffre caché :</strong> 176<br>
+     <strong>Lecture inversée :</strong> 6 → 7 → 1</p>
+      <strong>Planète principale :</strong> Mercure<br>
+      <strong>Divinité principale :</strong> Thot<br>
+      <strong>Planète secondaire :</strong> Vénus<br>
+      <strong>Divinité secondaire :</strong> Hathor</p>
+      
+    <h3>Interprétation de la carte 50 : Engagement (droite)</h3>
+      <h4>Lecture intuitive rapide</h4>
+      <p>Tu dis des choses. Tu les penses peut-être. Mais les vis-tu vraiment ? Chaque mot posé est une empreinte. Et plus encore : une direction. Une vibration. Une trace. Tu ne peux pas dire à moitié. Pas ici. Ce que tu dis t’engage. Et ce que tu ne dis pas, aussi.</p>
+
+      <h4>1. Caractère de la personne</h4>
+      <p>Tu ne parles plus pour combler. Tu dis pour bâtir. Et chaque mot devient un point d’appui : stable, vrai, vivant.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu n’adaptes plus ton discours pour être aimé. Tu choisis la parole qui respecte ton cœur. Et tu assumes ce qu’elle révèle.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Ta parole n’est pas un outil. Elle est une présence agissante. Chaque mot qui vient de toi est une forme de serment. Dis ce qui t’aligne.</p>
+
+      <h3>Carte 50 : Engagement (inversée)</h3>
+      <h4>1. Caractère de la personne</h4>
+      <p>Tu dis ce qu’on attend. Tu ajustes pour ne pas déranger. Mais ce jeu de surface te divise. Et ton axe se trouble.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu veux le lien, mais tu trahis ton cœur pour le préserver. Tu tais ce qui est juste pour maintenir la paix — mais c’est une paix vide.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Ta parole flotte, sans ancrage. Tu évites de t’engager, par peur de figer. Mais c’est l’absence d’engagement qui te disperse.</p>
+
+      <h4>Résumé de la carte 50 : Engagement</h4>
+      <p>Engagement est la carte de la parole incarnée. Elle te rappelle que ce que tu dis te construit. Que le langage est un acte d’alignement, pas un masque. Elle t’invite à ne plus parler à moitié, à ne plus chercher l’approbation, mais à dire depuis ton centre, avec vérité douce, conscience entière. Elle dit : “Ta parole est un pont. Mais c’est à toi d’y poser chaque pierre avec présence, ou de te taire en conscience.”</p>
+
+      <div style="margin-top: 2rem;">
+  <a class="bouton" href="#menu">↩ Revenir au menu</a>
+  <a class="bouton" href="familles_seshat.html" style="margin-left: 1rem;">↩ Revenir aux familles</a>
+</div>
+    </section>
+
+    <section id="carte59">
+    <h2>Carte 59 – Promesse</h2>
+     <img src="images/seshat/seshat_59_promesse.png" alt="Carte 59 - Promesse" class="carte-visuelle">
+     
+     <p><strong>Mots-clés :</strong> : parole vivante, fidélité intérieure, engagement évolutif, réajustement sincère, promesse personnelle<br>
+      <p><strong>Chiffre caché :</strong> 239<br>
+     <strong>Lecture inversée :</strong> 9 → 3 → 2</p>
+      <strong>Planète principale :</strong> Mercure<br>
+      <strong>Divinité principale :</strong> Thot<br>
+      <strong>Planète secondaire :</strong> Saturne<br>
+      <strong>Divinité secondaire :</strong> Osiris</p>
+      
+    <h3>Interprétation de la carte 59 : Promesse (droite)</h3>
+      <h4>Lecture intuitive rapide</h4>
+      <p>Tu as dit. Tu as voulu. Et cette promesse, à un moment, t’a tenu debout. Mais aujourd’hui, tu changes. Tu vois plus loin. Et ce que tu as promis ne peut plus être récité à l’identique. Ce n’est pas une trahison. C’est une mise à jour de ta fidélité. Reviens à ce que tu voulais vraiment dire. Et dis-le, à nouveau.</p>
+
+      <h4>1. Caractère de la personne</h4>
+      <p>Tu veux rester fidèle à ce que tu as dit. Mais la vraie fidélité, ce n’est pas répéter : c’est réajuster sans trahir. Sois vrai avec ce que tu sais aujourd’hui.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu avais dit "oui". Tu avais cru pouvoir. Mais ce que tu ressens maintenant te parle autrement. Et tu ne trahis rien si tu parles depuis là où tu en es.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu as tenu un serment, un engagement, un idéal. Mais ce que tu vis aujourd’hui t’invite à réécrire ta parole, sans renier ton chemin.</p>
+
+      <h3>Carte 59 : Promesse (inversée)</h3>
+
+       <h4>1. Caractère de la personne</h4>
+      <p>Tu t’accroches à une parole ancienne. Mais elle ne te soutient plus : elle te fige. Cesse de répéter. Reviens à ce qui est juste maintenant.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu crois que tenir un mot suffit. Mais si ton cœur n’y est plus, tu mens — même en silence. Ta parole doit te ressembler.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu as sacralisé une phrase, un accord, une croyance. Mais l’âme vivante te parle autrement aujourd’hui. Et c’est en réajustant que tu honores le chemin.</p>
+
+      <h4>Résumé de la carte 59 : Promesse</h4>
+      <p>Promesse est la carte de la parole engageante, mais vivante. Elle ne dit pas : “tiens coûte que coûte”, Elle dit : “reviens à ce que tu voulais vraiment dire, et ajuste sans trahir.” Elle invite à réexaminer les liens, les serments, les accords, et à les renouer avec sincérité, plutôt que de les figer ou les rompre. Elle dit : “Ce que tu as promis t’a fondé. Ce que tu rediras, depuis qui tu es maintenant, te libérera.”</p>
+
+      <div style="margin-top: 2rem;">
+  <a class="bouton" href="#menu">↩ Revenir au menu</a>
+  <a class="bouton" href="familles_seshat.html" style="margin-left: 1rem;">↩ Revenir aux familles</a>
+</div>
+    </section>
+
+  <section id="carte68">
+    <h2>Carte 68 – Mensonge</h2>
+     <img src="images/seshat/seshat_68_mensonge.png" alt="Carte 68 - Mensonge" class="carte-visuelle">
+     
+     <p><strong>Mots-clés :</strong> : dissonance intérieure, parole déconnectée, vérité étouffée, faux discours, lucidité intuitive<br>
+     <p><strong>Chiffre caché :</strong> 230<br>
+     <strong>Lecture inversée :</strong> 0 → 3 → 2</p>
+      <strong>Planète principale :</strong> Mercure<br>
+      <strong>Divinité principale :</strong> Thot<br>
+      <strong>Planète secondaire :</strong> Uranus<br>
+      <strong>Divinité secondaire :</strong> Maât</p>
+      
+    <h3>Interprétation de la carte 68 : Mensonge (droite)</h3>
+       <h4>Lecture intuitive rapide</h4>
+      <p>Ce n’est pas forcément un acte volontaire. Ce n’est pas un piège. Mais quelque chose sonne faux — en toi, ou dans ce que l’on te dit. La parole ne tient plus. Les mots passent, les promesses sont dites… mais le cœur n’y est pas. Et ce vide finit par peser. Car même si tu veux croire — tu sais. Et ce que tu sais ne se dit pas. Mais il t’appelle à ne plus faire semblant.</p>
+
+      <h4>1. Caractère de la personne</h4>
+      <p>Tu dis ce qu’on attend. Tu répètes une vérité apprise. Mais ce n’est pas (ou plus) toi. Et même si personne ne te corrige… tu t’éloignes.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu veux être clair. Tu veux croire. Mais tu sens que quelque chose sonne faux. Peut-être que ce n’est pas ce que tu entends — mais ce que tu crois vouloir entendre.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Le mensonge n’est pas un péché. C’est une discordance entre la forme et l’élan. Mais Maât finit toujours par le pointer — silencieusement, mais implacablement.</p>
+
+      <h3>Carte 68 : Mensonge (inversée)</h3>
+      <h4>1. Caractère de la personne</h4>
+      <p>Tu continues à parler. Mais la parole sonne creux. Et ce que tu racontes n’est plus une histoire — c’est une fuite.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu entretiens un lien en mots. Mais pas en vérité. Et tu sens bien que l’autre… n’y croit plus non plus. Il est temps d’arrêter la mise en scène.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu espères que le verbe suffira. Mais le verbe sans justesse désaligne l’âme. Et plus tu parles, plus tu t’éloignes de toi.</p>
+
+      <h4>Résumé de la carte 68 : Mensonge</h4>
+      <p>Mensonge n’est pas une trahison : c’est une discordance entre ce que tu dis et ce que tu es. Et plus tu insistes… plus le lien se brouille. Elle t’invite à revenir à l’alignement.
+À faire silence, s’il le faut. Elle dit : “Tu n’as pas besoin d’avoir raison. Tu as besoin que tes mots soient vrais. Et parfois, cela commence par ne plus rien dire.”</p>
+
+      <div style="margin-top: 2rem;">
+  <a class="bouton" href="#menu">↩ Revenir au menu</a>
+  <a class="bouton" href="familles_seshat.html" style="margin-left: 1rem;">↩ Revenir aux familles</a>
+</div>
+    </section>
+
+  <section id="carte77">
+    <h2>Carte 77 – Retenue</h2>
+     <img src="images/seshat/seshat_77_retenue.png" alt="Carte 77 - Retenue" class="carte-visuelle">
+     
+     <p><strong>Mots-clés :</strong> : silence intérieur, parole maîtrisée, écoute profonde, retenue consciente, présence sans mot<br>
+      <p><strong>Chiffre caché :</strong> 203<br>
+     <strong>Lecture inversée :</strong> 3 → 0 → 2</p>
+      <strong>Planète principale :</strong> Mercure<br>
+      <strong>Divinité principale :</strong> Thot<br>
+      <strong>Planète secondaire :</strong> Planète inconnue<br>
+      <strong>Divinité secondaire :</strong> Sia</p>
+      
+    <h3>Interprétation de la carte 77 : Retenue (droite)</h3>
+     <h4>Lecture intuitive rapide</h4>
+      <p>Tu pourrais parler. Tu pourrais répondre, promettre, affirmer. Mais tu ne le fais pas.
+Car ce que tu sais ne demande plus à être dit. Tu retiens ton mot, ton jugement, ta vérité… non par peur, mais par intégrité. Tu sais que la parole n’est juste que lorsqu’elle vient de l’écoute. Et parfois, la posture la plus vraie, c’est de ne pas dire.
+</p>
+
+      <h4>1. Caractère de la personne</h4>
+      <p>Tu retiens ton mot, ton geste, ton impulsion. Et dans ce silence intérieur, ta posture devient plus forte que tes paroles.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu ne réponds pas tout de suite. Tu laisses du vide, un espace. C’est cette retenue volontaire qui permet au lien de reprendre une forme plus juste.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu renonces à affirmer ce que tu crois savoir. Et dans cette retenue, tu entres dans une parole plus vaste, qui ne passe plus forcément par ta voix.</p>
+
+      <h3>Carte 77 : Retenue (inversée)</h3>
+     <h4>1. Caractère de la personne</h4>
+      <p>Tu parles trop vite. Ou tu veux tout dire pour ne rien perdre. Mais cette parole est pleine de tension. Elle masque l’essentiel.</p>
+
+      <h4>2. Plan affectif</h4>
+      <p>Tu réagis, tu sur-réagis. Mais tu ne donnes pas d’espace à l’autre, ni à toi. Le lien a besoin d’un silence nourricier, pas d’un flot.</p>
+
+       <h4>5. Plan spirituel</h4>
+      <p>Tu confonds vérité et démonstration. Mais ta parole n’est pas claire tant qu’elle n’a pas traversé le silence.</p>
+
+      <h4>Résumé de la carte 77 : Retenue</h4>
+      <p>Retenue est la carte du silence choisi, de la parole contenue par intégrité, de la pause intérieure avant de dire, faire, répondre. Elle ne parle pas de peur. Elle parle de maîtrise vibratoire. Elle dit : “La parole juste ne cherche pas à s’imposer. Elle surgit… quand le silence a fait son œuvre.”</p>
+
+      <div style="margin-top: 2rem;">
+  <a class="bouton" href="#menu">↩ Revenir au menu</a>
+  <a class="bouton" href="familles_seshat.html" style="margin-left: 1rem;">↩ Revenir aux familles</a>
+</div>
+    </section>
+
+  </main>
+<footer>
+  Produit par <strong>OracleHeka</strong> —
+  <a href="mentions-legales.html">Mentions légales</a> —
+  <a href="mailto:heka.sia.seshat@gmail.com">Contact</a> —
+  <a href="faq.html">FAQ</a>
+</footer>
+
+<script>
+  const burgerBtn = document.getElementById("burgerBtn");
+  const nav = document.querySelector("header nav");
+
+  burgerBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+</script>
+</body>
+</html>
