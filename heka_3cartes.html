@@ -82,15 +82,13 @@ footer {
 
 /* Affichage du bouton burger en mobile */
 @media (max-width: 768px) {
- #burgerBtn {
-        display: block;
-    margin-right: auto; /* pour le coller à gauche si besoin */
-      }
+  header {
+    justify-content: flex-start; /* ⬅️ Pour coller tout à gauche */
+  }
 
   #burgerBtn {
     display: block;
-    margin-left: 0;
-    margin-right: auto;
+    margin-right: auto; /* ⬅️ Et ça pousse nav à droite */
   }
 
   header nav {
