@@ -34,6 +34,29 @@
       flex-direction: column;
       min-height: 100vh;
     }
+    .tirage-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+    .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #3b6a9a; /* bleu-grisé plus doux */
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: #345b85; /* bleu-grisé plus foncé au survol */
+}
+    .no-margin {
+  margin-bottom: 0;
+}
     header {
       background-color: #f5efe6;
       padding: 1rem 2rem;
