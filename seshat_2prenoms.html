@@ -18,54 +18,57 @@
     "url": "https://oracleheka.github.io/oracle_trium/"
   }
 }
-</script>
-  
+</script>  
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8f5f2;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    header {
-      background-color: #f5efe6;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f5f2;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* Header */
+header {
+  background-color: #f5efe6;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between; /* Ajoute de l’espace pour le burger */
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
     header nav a {
-      display: inline-block;
-      padding: 0.75rem 1rem;
-      margin: 0.25rem 0.5rem;
-      text-decoration: none;
-      color: #444;
-      font-weight: bold;
-      font-size: 1rem;
+     display: inline-block;
+  padding: 0.75rem 1rem; /* agrandit la zone cliquable */
+  margin: 0.5rem 0.75rem; /* espace entre les liens */
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+  font-size: 1rem; /* assure lisibilité */
     }
     header nav a:hover {
       text-decoration: underline;
-    }
-    main {
-      flex: 1;
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    footer {
-      background-color: #e8e0d8;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      border-top: 1px solid #b8a998;
-    }
-    #burgerBtn {
+}
+/* Main */
+main {
+  flex: 1;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  background-color: #e8e0d8; /* ton plus marqué */
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #222;
+  border-top: 1px solid #b8a998; /* bordure plus chaude */
+}
+   #burgerBtn {
       display: none;
       background: none;
       border: none;
@@ -81,7 +84,7 @@
         display: block;
       }
       header nav {
-        display: none;
+        display: flex;
         flex-direction: column;
         background: #f5efe6;
         position: absolute;
@@ -90,53 +93,83 @@
         width: 100%;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         z-index: 1000;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
       }
       header nav.show {
-        display: flex;
+        max-height: 500px;
       }
     }
-    button {
-      padding: 0.7rem 1.5rem;
+
+/* Boutons */
+button {
+  padding: 0.7rem 1.5rem;
+  background-color: #3b6a9a; /* bleu-grisé plus doux */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #345b85; /* bleu-grisé plus foncé au survol */
+}
+
+/* Cadres des cartes */
+#resultats > div {
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  border: 1px solid #b8a998; /* bordure beige/brun plus chaude */
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Ajustement pour PC */
+@media (min-width: 768px) {
+  #resultats img {
+    width: 180px;
+  }
+}
+.btn-retour {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin-top: 2rem;
       background-color: #3b6a9a;
       color: white;
-      border: none;
+      font-weight: bold;
       border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
     }
-    button:hover {
+    .btn-retour:hover {
       background-color: #345b85;
     }
-    #resultats > div {
-      flex: 1 1 250px;
-      max-width: 300px;
-      text-align: center;
-      border: 1px solid #b8a998;
-      border-radius: 8px;
-      background-color: #fdfdfd;
-      padding: 1rem;
-      margin-bottom: 1rem;
-    }
-   .btn-retour {
+  /* Améliore la zone tactile des boutons radio */
+  fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+fieldset label {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  margin-top: 2rem;
-  background-color: #3b6a9a;
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+  cursor: pointer;
 }
-.btn-retour:hover {
-  background-color: #345b85;
-}
-@media (max-width: 768px) {
-    button {
-      margin-bottom: 0.5rem;
-      display: block;
-      width: 100%;
+fieldset input[type="radio"] {
+  margin-right: 0.5rem;
+  transform: scale(1); /* agrandit légèrement la pastille radio */}
     }
+  @media (max-width: 768px) {
+  fieldset label {
+    display: block;
+    width: 100%;
+  }
   }
   </style>
 </head>
@@ -186,10 +219,18 @@
   <div id="resultats" style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;"></div>
   <button id="btnSynthese" style="display:none; margin-top: 1rem;">Découvrez la synthèse guidante de votre tirage Seshat</button>
   <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez l’Oracle Seshat vous guider.</p>
+  <div style="text-align:center; margin-top:2rem;">
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
-  <button id="tirerBtn" onclick="tirageCroise()">Tirer les cartes</button>
+   </div>
+  <div style="text-align:center; margin-top:2rem;">
+  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  </div>
+  <div style="text-align:center; margin-top:2rem;">
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
-  <button onclick="réinitialiser()">Réinitialiser</button>
+  </div>
+  <div style="text-align:center; margin-top:2rem;">
+  <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
+  </div>
   <h2>Interprétation du tirage</h2>
 <p>Chaque lettre de chaque prénom reçoit une carte, dévoilant :</p>
 <ul>
@@ -423,7 +464,7 @@ window.onload = function () {
     </div>
   </div>
 </div>
-  <script src="data/synthese.js"></script>
+  <script src="data/synthese.js" defer></script>
   <script>
   const burgerBtn = document.getElementById("burgerBtn");
   const nav = document.querySelector("header nav");
@@ -432,7 +473,7 @@ window.onload = function () {
     nav.classList.toggle("show");
   });
 </script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 
 <script>
   // Fonction pour nettoyer les caractères parasites
