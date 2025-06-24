@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -18,8 +19,7 @@
     "name": "Roland Alberolla"
   }
 }
-</script>
-  
+</script> 
   <style>
     body {
   margin: 0;
@@ -30,7 +30,6 @@
   flex-direction: column;
   min-height: 100vh;
 }
-
 /* Header */
 header {
   background-color: #f5efe6;
@@ -44,7 +43,7 @@ header {
     header nav a {
      display: inline-block;
   padding: 0.75rem 1rem; /* agrandit la zone cliquable */
-  margin: 0.25rem 0.5rem; /* espace entre les liens */
+  margin: 0.5rem 0.75rem; /* espace entre les liens */
   text-decoration: none;
   color: #444;
   font-weight: bold;
@@ -53,7 +52,6 @@ header {
     header nav a:hover {
       text-decoration: underline;
 }
-
 /* Main */
 main {
   flex: 1;
@@ -68,46 +66,42 @@ footer {
   padding: 1rem;
   text-align: center;
   font-size: 0.9rem;
-  color: #666;
+  color: #222;
   border-top: 1px solid #b8a998; /* bordure plus chaude */
 }
-    #burgerBtn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-   color: #333; /* 👈 Ajoute cette ligne pour forcer la couleur */
-}
+   #burgerBtn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #333;
+    }
     #burgerBtn:hover {
-  color: #000; /* couleur encore plus foncée au survol */
-}
-    /* Affichage du bouton burger en mobile */
-@media (max-width: 768px) {
-  #burgerBtn {
-    display: block; /* rends le bouton burger visible sur mobile */
-  }
-
-  header nav {
-    display: flex;
-    flex-direction: column;
-    background: #f5efe6;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-  }
-
-  header nav.show {
-    max-height: 500px; /* ajuste à la hauteur de ton menu */
-  }
-}
+      color: #000;
+    }
+    @media (max-width: 768px) {
+      #burgerBtn {
+        display: block;
+      }
+      header nav {
+        display: flex;
+        flex-direction: column;
+        background: #f5efe6;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      header nav.show {
+        max-height: 500px;
+      }
+    }
 
 /* Boutons */
 button {
@@ -124,9 +118,9 @@ button:hover {
 }
 
 /* Cadres des cartes */
-.ligneTetraktys > div {
-  flex: 1 1 150px;
-  max-width: 200px;
+#resultats > div {
+  flex: 1 1 250px;
+  max-width: 300px;
   text-align: center;
   border: 1px solid #b8a998; /* bordure beige/brun plus chaude */
   border-radius: 8px;
@@ -137,42 +131,46 @@ button:hover {
 
 /* Ajustement pour PC */
 @media (min-width: 768px) {
-  .ligneTetraktys > div img {
+  #resultats img {
     width: 180px;
   }
 }
-
-/* Les lignes de la pyramide */
-.ligneTetraktys {
-  display: flex;
-  justify-content: center; /* centre les cartes horizontalement */
-  gap: 1rem;
-  margin-bottom: 1rem;
-  width: auto;
-  border: none;
-  background: transparent;
-  box-sizing: content-box;
-}
 .btn-retour {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin-top: 2rem;
-  background-color: #3b6a9a;
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-.btn-retour:hover {
-  background-color: #345b85;
-}
-@media (max-width: 768px) {
-    button {
-      margin-bottom: 0.5rem;
-      display: block;
-      width: 100%;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin-top: 2rem;
+      background-color: #3b6a9a;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
     }
+    .btn-retour:hover {
+      background-color: #345b85;
+    }
+  /* Améliore la zone tactile des boutons radio */
+  fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+fieldset label {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+fieldset input[type="radio"] {
+  margin-right: 0.5rem;
+  transform: scale(1); /* agrandit légèrement la pastille radio */}
+    }
+  @media (max-width: 768px) {
+  fieldset label {
+    display: block;
+    width: 100%;
+  }
   }
   </style>
 </head>
@@ -223,10 +221,18 @@ button:hover {
 <button id="btnSynthese" style="display:none; margin-top: 0.5rem;">Découvrez la synthèse guidante de votre tirage</button>
 </div>
   <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Heka  vous guider.</p>
+  <div style="text-align:center; margin-top:2rem;">
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
+   </div>
+  <div style="text-align:center; margin-top:2rem;">
   <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  </div>
+  <div style="text-align:center; margin-top:2rem;">
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
+  </div>
+  <div style="text-align:center; margin-top:2rem;">
   <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
+  </div>
   <h2>Interprétation du tirage</h2>
   <p>Le Tétraktys se structure en 4 niveaux symboliques :</p>
   <ul>
@@ -506,7 +512,7 @@ window.onload = function () {
     </div>
   </div>
 </div>
-  <script src="data/synthese.js"></script>
+  <script src="data/synthese.js" defer></script>
   <script>
   const burgerBtn = document.getElementById("burgerBtn");
   const nav = document.querySelector("header nav");
@@ -515,7 +521,7 @@ window.onload = function () {
     nav.classList.toggle("show");
   });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 
 <script>
   // Fonction pour nettoyer les caractères parasites
