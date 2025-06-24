@@ -15,40 +15,58 @@
       flex-direction: column;
       min-height: 100vh;
     }
-    header {
-  background-color: #f5efe6;
-  padding: 1rem 2rem;
+    .tirage-buttons {
   display: flex;
-  align-items: center;
-  justify-content: center; /* 👈 Centre horizontalement sur PC */
-  position: relative;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-header nav {
-  display: flex;
-  justify-content: center; /* 👈 Centre les liens */
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
   flex-wrap: wrap;
 }
-
-header nav a {
+    .btn {
   display: inline-block;
-  padding: 0.75rem 1rem;
-  margin: 0.25rem 0.5rem;
-  text-decoration: none;
-  color: #444;
+  padding: 0.75rem 1.5rem;
+  background-color: #3b6a9a; /* bleu-grisé plus doux */
+  color: white;
   font-weight: bold;
-  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
-
-header nav a:hover {
-  text-decoration: underline;
+.btn:hover {
+  background-color: #345b85; /* bleu-grisé plus foncé au survol */
 }
+    .no-margin {
+  margin-bottom: 0;
+}
+    header {
+      background-color: #f5efe6;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header nav a {
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      margin: 0.25rem 0.5rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
     main {
       flex: 1;
       padding: 3rem 2rem;
       max-width: 900px;
       margin: 0 auto;
+    }
+    main p {
+      margin-bottom: 1rem;
     }
     footer {
       background-color: #f0e9e0;
@@ -57,104 +75,54 @@ header nav a:hover {
       font-size: 0.9rem;
       color: #666;
       border-top: 1px solid #ccc;
-    }
+    }  
     #burgerBtn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: #333;
-}
-
-/* === Spécifique au mobile (<= 768px) === */
-@media (max-width: 768px) {
-  header {
-    justify-content: space-between; /* 👈 sur mobile : burger à gauche, nav à droite (ou caché) */
-  }
-
-  header nav {
-    display: flex;
-    flex-direction: column;
-    background: #f5efe6;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-  }
-
-  header nav.show {
-    max-height: 500px;
-  }
-
-  #burgerBtn {
-    display: block; /* 👈 visible sur mobile seulement */
-  }
-}
-button {
-      padding: 0.7rem 1.5rem;
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #333;
+    }
+    #burgerBtn:hover {
+      color: #000;
+    }
+    @media (max-width: 768px) {
+      #burgerBtn {
+        display: block;
+      }
+      header nav {
+        display: flex;
+        flex-direction: column;
+        background: #f5efe6;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      header nav.show {
+        max-height: 500px;
+      }
+    }
+    .btn-retour {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin-top: 2rem;
       background-color: #3b6a9a;
       color: white;
-      border: none;
+      font-weight: bold;
       border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
     }
-    button:hover {
+    .btn-retour:hover {
       background-color: #345b85;
     }
-    #resultats > div {
-      flex: 1 1 250px;
-      max-width: 300px;
-      text-align: center;
-      border: 1px solid #b8a998;
-      border-radius: 8px;
-      background-color: #fdfdfd;
-      padding: 1rem;
-      margin-bottom: 1rem;
-    }
-   .btn-retour {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin-top: 2rem;
-  background-color: #3b6a9a;
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-.btn-retour:hover {
-  background-color: #345b85;
-}
-@media (max-width: 768px) {
-    button {
-      margin-bottom: 0.5rem;
-      display: block;
-      width: 100%;
-    }
-  }
-   ul {
-    list-style-type: none; /* Supprime les puces si tu le souhaites */
-    padding: 0;
-  }
-
-  ul li {
-    margin-bottom: 1rem; /* Ajoute un espace de 1rem (environ 16px) entre chaque élément */
-  }
-
-  /* Pour ajuster spécifiquement sur mobile (optionnel) */
-  @media (max-width: 600px) {
-    ul li {
-      margin-bottom: 1.5rem; /* Plus d’espace sur petit écran si nécessaire */
-    }
-  }
   </style>
   <script type="application/ld+json">
 {
