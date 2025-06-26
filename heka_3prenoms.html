@@ -337,6 +337,7 @@ function tirageTriangulaire() {
   }
 
   document.getElementById("btnSynthese").style.display = "inline-block";
+  document.getElementById("ajouterBtn").disabled = false;
 }
 
 function creerCarteDiv(prenom, lettre, carte, sens, aspect) {
@@ -366,7 +367,7 @@ function ajouterUneCarte() {
   const nom1 = document.getElementById("prenom1").value.trim().toUpperCase();
   const nom2 = document.getElementById("prenom2").value.trim().toUpperCase();
   const nom3 = document.getElementById("prenom3").value.trim().toUpperCase();
-  const totalLettres = nom1.length + nom2.length; +
+  const totalLettres = nom1.length + nom2.length + nom3.length;
   const maxCartes = totalLettres + 3;
 
   if (cartesTirees.length >= maxCartes) {
