@@ -492,10 +492,17 @@ function afficherSynthese3Prenoms() {
 
   // Ajoute chaque carte visuellement (images + texte)
   cartesTirees.forEach(({ carte, sens }) => {
-    const imageSrc = carte.image;
-    const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
-    const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
-    
+  const imageSrc = carte.image;
+  const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
+  const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+  const carteHtml = `
+    <div style="margin-bottom: 1rem;">
+      <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+      <p>${titre} → ${texte}</p>
+    </div>`;
+  contenuDiv.innerHTML += carteHtml;
+}); // ← CE bloc est maintenant FERMÉ
+
 // ➤ Ajoute les cartes complémentaires dans la modale
 if (window.cartesSupp && window.cartesSupp.length > 0) {
   contenuDiv.innerHTML += `<h4 style="margin-top: 1rem;">Cartes complémentaires</h4>`;
