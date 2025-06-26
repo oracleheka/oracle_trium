@@ -364,11 +364,14 @@ function ajouterUneCarte() {
     return;
   }
 
-  const nom1 = document.getElementById("prenom1").value.trim().toUpperCase();
-  const nom2 = document.getElementById("prenom2").value.trim().toUpperCase();
-  const nom3 = document.getElementById("prenom3").value.trim().toUpperCase();
-  const totalLettres = nom1.length + nom2.length + nom3.length;
-  const maxCartes = totalLettres + 3;
+  const champ = document.getElementById("champPrenom");
+  let nom = champ.value.trim().toUpperCase();
+  if (!nom) {
+    alert("Veuillez entrer un prénom.");
+    return;
+  }
+
+  const maxCartes = nom.length + 3;
 
   if (cartesTirees.length >= maxCartes) {
     alert(`Nombre maximum de cartes atteint (${maxCartes}).`);
@@ -383,7 +386,7 @@ function ajouterUneCarte() {
   const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
-  const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+  const texte = carte[sens][aspect]?.texte || "(Message manquant)";
 
   cartesTirees.push({ carte: carte, sens: sens });
 
@@ -392,8 +395,8 @@ function ajouterUneCarte() {
   div.innerHTML = `
     <strong>Carte supplémentaire</strong><br>
     <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
-    <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:100px"><br>
-    <p style="margin-top:0.5rem;">${texte}</p>
+    <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Seshat" style="width:100px"><br>
+    <p style="margin-top:0.5rem;">${interpretation}</p>
   `;
   styleCarte(div);
   affichageZone.appendChild(div);
