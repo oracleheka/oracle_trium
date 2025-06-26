@@ -356,7 +356,7 @@ function tirage7Cartes() {
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
 
   const interpretation = carte[sens][aspect]?.texte || "Interprétation manquante.";
-  cartesTirees.push({ carte: carte, sens: sens });
+  cartesTirees.push({ carte: carte, sens: sens, code: "extra" });
 
   const div = document.createElement("div");
   div.innerHTML = `
@@ -396,7 +396,9 @@ function tirage7Cartes() {
   }
 
   // Résumé textuel structuré
-  const phrases = cartesTirees.map(({ carte, sens }) => {
+  const cartesInitiales = cartesTirees.filter(c => !c.code);
+const cartesSupp = cartesTirees.filter(c => c.code === "extra");
+  const phrases = cartesInitiales.map(({ carte, sens }) => {
     const contenu = carte[sens]?.[aspect];
     let texte = "(Message absent)";
 
@@ -419,6 +421,14 @@ function tirage7Cartes() {
 
   const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
   resume += `→ Synthèse guidée :\n\n${synthese}`;
+
+if (cartesSupp.length > 0) {
+  resume += `\n--- Cartes complémentaires ---\n\n`;
+  cartesSupp.forEach(({ carte, sens }) => {
+    const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+    resume += `→ Carte ${carte.id} - ${carte.nom} (${sens}) [${aspect}]\n→ ${texte}\n\n`;
+  });
+}
 
   // Prépare l’affichage visuel
   const contenuDiv = document.getElementById("contenuSynthese");
