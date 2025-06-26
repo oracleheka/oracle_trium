@@ -473,32 +473,32 @@ function afficherSynthese3Prenoms() {
     resume += `--- Zone silencieuse ---\n\n` + zoneSilencieuse.join("\n") + "\n\n";
   }
 
-  // 🛠 AJOUT ICI → on inclut les cartesSupp dans la synthèse globale
-  const toutesLesCartes = [
-    ...cartesPrenom1,
-    ...cartesPrenom2,
-    ...cartesPrenom3,
-    ...(window.cartesSupp || [])
-  ];
-
+  const toutesLesCartes = [...cartesPrenom1, ...cartesPrenom2, ...cartesPrenom3];
   resume += `--- Synthèse individuelle de ${nom1} ---\n\n`;
   resume += genererSyntheseGuidante(cartesPrenom1, aspect, { question, prenom: nom1 });
   resume += `\n\n--- Synthèse individuelle de ${nom2} ---\n\n`;
   resume += genererSyntheseGuidante(cartesPrenom2, aspect, { question, prenom: nom2 });
   resume += `\n\n--- Synthèse individuelle de ${nom3} ---\n\n`;
   resume += genererSyntheseGuidante(cartesPrenom3, aspect, { question, prenom: nom3 });
-
   resume += `\n\n→ Synthèse globale des 3 prénoms :\n\n`;
   resume += genererSyntheseGuidante(toutesLesCartes, aspect, {
     question,
     prenom: `${nom1}, ${nom2} et ${nom3}`,
-    mode: "lien"
+    mode: "lien",
   });
+
+  // ➤ Ajout synthèse des cartes complémentaires
+  if (window.cartesSupp && window.cartesSupp.length > 0) {
+    resume += `\n\n--- Cartes complémentaires ---\n\n`;
+    window.cartesSupp.forEach(({ carte, sens }) => {
+      const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+      resume += `Carte ${carte.id} - ${carte.nom} (${sens}) [${aspect}]\n${texte}\n\n`;
+    });
+  }
 
   const contenuDiv = document.getElementById("contenuSynthese");
   contenuDiv.innerHTML = "";
 
-  // Ajoute visuellement les cartes tirées
   cartesTirees.forEach(({ carte, sens }) => {
     const imageSrc = carte.image;
     const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
@@ -511,7 +511,6 @@ function afficherSynthese3Prenoms() {
     contenuDiv.innerHTML += carteHtml;
   });
 
-  // ➤ Ajoute les cartes complémentaires
   if (window.cartesSupp && window.cartesSupp.length > 0) {
     contenuDiv.innerHTML += `<h4 style="margin-top: 1rem;">Cartes complémentaires</h4>`;
     window.cartesSupp.forEach(({ carte, sens }) => {
@@ -527,7 +526,7 @@ function afficherSynthese3Prenoms() {
     });
   }
 
-  // Stocke les données pour le PDF
+  // ➤ Stockage pour PDF
   window.nom1 = nom1;
   window.nom2 = nom2;
   window.nom3 = nom3;
@@ -543,15 +542,17 @@ function afficherSynthese3Prenoms() {
     ...cartesTirees.map(({ carte, sens }) => ({
       imageSrc: carte.image,
       nom: carte.nom,
+      id: carte.id,
       sens: sens,
-      texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
+      texte: carte[sens]?.[aspect]?.texte || "(Message manquant)",
     })),
     ...(window.cartesSupp || []).map(({ carte, sens }) => ({
       imageSrc: carte.image,
       nom: carte.nom,
+      id: carte.id,
       sens: sens,
-      texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
-    }))
+      texte: carte[sens]?.[aspect]?.texte || "(Message manquant)",
+    })),
   ];
   window.cartesTireesPDF = cartesPDF;
 
