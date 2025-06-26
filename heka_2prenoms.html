@@ -377,20 +377,26 @@ function ajouterUneCarte() {
   const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
- const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+  const interpretation = carte[sens]?.[aspect]?.texte || "(Message manquant)";
 
-  cartesTirees.push({ carte: carte, sens: sens });
+  // Ajoute avec structure complète nécessaire à la synthèse (lettre + prénom fictif)
+  cartesTirees.push({
+    carte: carte,
+    sens: sens,
+    lettre: `+${cartesTirees.length + 1}`,
+    prenom: "SUPPL"
+  });
 
-  const affichageZone = document.getElementById("resultats");
+  const affichage = document.getElementById("resultats");
   const div = document.createElement("div");
   div.innerHTML = `
     <strong>Carte supplémentaire</strong><br>
     <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
-    <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:100px"><br>
-    <p style="margin-top:0.5rem;">${texte}</p>
+    <img src="${carte.image.replace('180.webp', '270.webp')}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" width="150" loading="lazy"><br>
+    <p style="margin-top:0.5rem;">${interpretation}</p>
   `;
   styleCarte(div);
-  affichageZone.appendChild(div);
+  affichage.appendChild(div);
 }
 function afficherSynthese2Prenoms() {
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
