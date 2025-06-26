@@ -495,7 +495,14 @@ function afficherSynthese3Prenoms() {
     const imageSrc = carte.image;
     const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
     const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
-
+    
+// ➤ Ajoute les cartes complémentaires dans la modale
+if (window.cartesSupp && window.cartesSupp.length > 0) {
+  contenuDiv.innerHTML += `<h4 style="margin-top: 1rem;">Cartes complémentaires</h4>`;
+  window.cartesSupp.forEach(({ carte, sens }) => {
+    const imageSrc = carte.image;
+    const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
+    const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
     const carteHtml = `
       <div style="margin-bottom: 1rem;">
         <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
@@ -503,6 +510,7 @@ function afficherSynthese3Prenoms() {
       </div>`;
     contenuDiv.innerHTML += carteHtml;
   });
+}
 
   // Stocke les variables globales pour l'export PDF
   window.nom1 = nom1;
@@ -517,11 +525,20 @@ function afficherSynthese3Prenoms() {
   window.cartesSupp = window.cartesSupp || [];
   
   // Prépare pour l'export PDF
-  const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
+  const cartesPDF = [
+  ...cartesTirees.map(({ carte, sens }) => ({
     imageSrc: carte.image,
     nom: carte.nom,
-    sens: sens
-  }));
+    sens: sens,
+    texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
+  })),
+  ...(window.cartesSupp || []).map(({ carte, sens }) => ({
+    imageSrc: carte.image,
+    nom: carte.nom,
+    sens: sens,
+    texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
+  }))
+];
   window.cartesTireesPDF = cartesPDF;
 
   // Ajoute la synthèse finale (bloc texte propre)
@@ -621,67 +638,78 @@ window.onload = function () {
     pdf.text(titrePrincipal, (pageWidth - titreWidth) / 2, y);
     y += 15;
 
-    // ➜ Fonction pour imprimer les cartes d’un prénom
-    async function imprimerCartes(cartes, prenom) {
-      pdf.setFontSize(13);
-      pdf.setFont("Times", "bold");
-      pdf.text(`--- Cartes pour ${prenom} ---`, 10, y);
-      y += 8;
+    async function imprimerCartes(cartes, titre) {
+  const margePage = 10;
+  const hauteurPage = 297 - margePage;
 
-      for (const { carte, sens } of cartes) {
-        const carteImg = await loadImage(carte.image);
-        pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+  pdf.setFontSize(13);
+  pdf.setFont("Times", "bold");
+  pdf.text(`--- Cartes pour ${titre} ---`, 10, y);
+  y += 8;
 
-        pdf.setFontSize(12);
-        pdf.setFont("Times", "bold");
-        pdf.text(`${carte.id} : (${carte.nom}) : (${sens})`, 55, y + 6);
+  for (const { carte, sens } of cartes) {
+    const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+    const lignesCarte = pdf.splitTextToSize(nettoyerTexte(texte), 135);
+    const hauteurTexte = lignesCarte.length * 5;
+    const hauteurBloc = Math.max(55, 12 + hauteurTexte);
 
-        const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
-        pdf.setFontSize(11);
-        pdf.setFont("Times", "normal");
-        const lignesCarte = pdf.splitTextToSize(texte, 135);
-
-        let yy = y + 12;
-        for (const ligne of lignesCarte) {
-          if (yy > 280) { pdf.addPage(); yy = 10; }
-          pdf.text(ligne, 55, yy);
-          yy += 5;
-        }
-
-        const hauteurBloc = Math.max(55, yy - y);
-        y += hauteurBloc + 5;
-        if (y > 260) { pdf.addPage(); y = 10; }
-      }
-      y += 4;
+    if (y + hauteurBloc > hauteurPage) {
+      pdf.addPage();
+      y = 10;
     }
 
-    // ➜ Imprimer les cartes des trois prénoms
-    await imprimerCartes(cartesPrenom1, nom1);
-    await imprimerCartes(cartesPrenom2, nom2);
-    await imprimerCartes(cartesPrenom3, nom3);
+    const carteImg = await loadImage(carte.image.replace("180.webp", "270.webp"));
+    pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
 
-    if (window.cartesSupp && window.cartesSupp.length > 0) {
-  await imprimerCartes(window.cartesSupp, "Cartes complémentaires");
+    pdf.setFontSize(12);
+    pdf.setFont("Times", "bold");
+    pdf.text(`${carte.id} : (${carte.nom}) : (${sens})`, 55, y + 6);
+
+    pdf.setFontSize(11);
+    pdf.setFont("Times", "normal");
+    let yy = y + 12;
+    for (const ligne of lignesCarte) {
+      if (yy > hauteurPage) {
+        pdf.addPage();
+        yy = 10;
+      }
+      pdf.text(ligne, 55, yy);
+      yy += 5;
+    }
+
+    y += hauteurBloc + 5;
+  }
+
+  y += 4;
 }
 
-    // ➜ Zone silencieuse (si elle existe)
-    if (zoneSilencieuse.length > 0) {
-      pdf.setFontSize(13);
-      pdf.setFont("Times", "bold");
-      pdf.text("--- Zone silencieuse ---", 10, y);
-      y += 8;
+// ➤ Impression cartes prénoms
+await imprimerCartes(cartesPrenom1, nom1);
+await imprimerCartes(cartesPrenom2, nom2);
+await imprimerCartes(cartesPrenom3, nom3);
 
-      pdf.setFontSize(11);
-      pdf.setFont("Times", "normal");
-      const lignes = pdf.splitTextToSize(zoneSilencieuse.join("\n"), 190);
-      for (const ligne of lignes) {
-        if (y > 280) { pdf.addPage(); y = 10; }
-        pdf.text(ligne, 10, y);
-        y += 5;
-      }
-      y += 4;
-    }
+// ➤ Impression cartes complémentaires
+if (cartesSupp.length > 0) {
+  await imprimerCartes(cartesSupp, "Cartes complémentaires");
+}
 
+// ➤ Zone silencieuse
+if (zoneSilencieuse.length > 0) {
+  pdf.setFontSize(13);
+  pdf.setFont("Times", "bold");
+  pdf.text("--- Zone silencieuse ---", 10, y);
+  y += 8;
+
+  pdf.setFontSize(11);
+  pdf.setFont("Times", "normal");
+  const lignes = pdf.splitTextToSize(zoneSilencieuse.join("\n"), 190);
+  for (const ligne of lignes) {
+    if (y > 280) { pdf.addPage(); y = 10; }
+    pdf.text(ligne, 10, y);
+    y += 5;
+  }
+  y += 4;
+}
     // ➜ Ajoute la synthèse finale (une seule fois, proprement)
     const resumeNettoye = nettoyerTexte(window.resume);
     const lignesResume = pdf.splitTextToSize(resumeNettoye, 190);
