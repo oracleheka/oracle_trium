@@ -381,11 +381,12 @@ function ajouterUneCarte() {
 
   // Ajoute avec structure complète nécessaire à la synthèse (lettre + prénom fictif)
   cartesTirees.push({
-    carte: carte,
-    sens: sens,
-    lettre: `+${cartesTirees.length + 1}`,
-    prenom: "SUPPL"
-  });
+  carte: carte,
+  sens: sens,
+  lettre: `+${cartesTirees.length + 1}`,
+  prenom: "SUPPL",
+  code: "extra"
+});
 
   const affichage = document.getElementById("resultats");
   const div = document.createElement("div");
