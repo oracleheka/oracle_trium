@@ -566,9 +566,12 @@ fieldset input[type="radio"] {
       pdf.text(ligne, 10, y);
       y += 5;
     }
-
     // ➜ Téléchargement du PDF
-    pdf.save(`tirage_3_cartes_Seshat_${window.nom1 || 'tirage'}.pdf`);
+    if (y > 270) pdf.addPage();
+      pdf.setFontSize(10);
+      pdf.setFont("Times", "italic");
+      pdf.textWithLink("https://oracleheka.github.io/oracle_trium/", 10, 290, { url: "https://oracleheka.github.io/oracle_trium/" });
+    pdf.save(`tirage_croise_Heka_${nom1}_${nom2}.pdf`);
   });
 </script>
 </body>
