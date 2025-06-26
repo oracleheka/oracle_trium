@@ -595,37 +595,48 @@ window.onload = function () {
 
   // Fonction d'impression
   async function imprimerCartes(cartes, prenom) {
-    pdf.setFontSize(13);
-    pdf.setFont("Times", "bold");
-    pdf.text(`--- Cartes pour ${prenom} ---`, 10, y);
-    y += 8;
+  pdf.setFontSize(13);
+  pdf.setFont("Times", "bold");
+  pdf.text(`--- Cartes pour ${prenom} ---`, 10, y);
+  y += 8;
 
-    for (const { carte, sens } of cartes) {
-      const carteImg = await loadImage(carte.image.replace("180.webp", "270.webp"));
-      pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+  for (const { carte, sens } of cartes) {
+    const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+    const lignesCarte = pdf.splitTextToSize(texte, 135);
+    const hauteurTexte = lignesCarte.length * 5;
+    const hauteurBloc = Math.max(55, 12 + hauteurTexte); // bloc = image (50) + texte
 
-      pdf.setFontSize(12);
-      pdf.setFont("Times", "bold");
-      pdf.text(`${carte.id} : (${carte.nom}) : (${sens})`, 55, y + 6);
-
-      const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
-      pdf.setFontSize(11);
-      pdf.setFont("Times", "normal");
-      const lignesCarte = pdf.splitTextToSize(texte, 135);
-
-      let yy = y + 12;
-      for (const ligne of lignesCarte) {
-        if (yy > 280) { pdf.addPage(); yy = 10; }
-        pdf.text(ligne, 55, yy);
-        yy += 5;
-      }
-
-      const hauteurBloc = Math.max(55, yy - y);
-      y += hauteurBloc + 5;
-      if (y > 260) { pdf.addPage(); y = 10; }
+    // ➜ Vérifier si tout tient sur la page avant de commencer
+    if (y + hauteurBloc > 280) {
+      pdf.addPage();
+      y = 10;
     }
-    y += 4;
+
+    const carteImg = await loadImage(carte.image.replace("180.webp", "270.webp"));
+    pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+
+    pdf.setFontSize(12);
+    pdf.setFont("Times", "bold");
+    pdf.text(`${carte.id} : (${carte.nom}) : (${sens})`, 55, y + 6);
+
+    pdf.setFontSize(11);
+    pdf.setFont("Times", "normal");
+
+    let yy = y + 12;
+    for (const ligne of lignesCarte) {
+      if (yy > 280) {
+        pdf.addPage();
+        yy = 10;
+      }
+      pdf.text(ligne, 55, yy);
+      yy += 5;
+    }
+
+    y += hauteurBloc + 5; // espace après le bloc
   }
+
+  y += 4;
+}
 
   // ➤ Impression cartes prénoms
   await imprimerCartes(cartesPrenom1, nom1);
