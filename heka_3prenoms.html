@@ -364,17 +364,9 @@ function ajouterUneCarte() {
     return;
   }
 
-  const champ = document.getElementById("champPrenom");
-  let nom = champ.value.trim().toUpperCase();
-  if (!nom) {
-    alert("Veuillez entrer un prénom.");
-    return;
-  }
-
-  const maxCartes = nom.length + 3;
-
-  if (cartesTirees.length >= maxCartes) {
-    alert(`Nombre maximum de cartes atteint (${maxCartes}).`);
+  if (!window.cartesSupp) window.cartesSupp = [];
+  if (window.cartesSupp.length >= 3) {
+    alert("Vous avez déjà tiré 3 cartes complémentaires.");
     return;
   }
 
@@ -386,16 +378,16 @@ function ajouterUneCarte() {
   const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
-  const texte = carte[sens][aspect]?.texte || "(Message manquant)";
+  const interpretation = carte[sens]?.[aspect]?.texte || "(Message manquant)";
 
-  cartesTirees.push({ carte: carte, sens: sens });
+  window.cartesSupp.push({ carte: carte, sens: sens });
 
-  const affichageZone = document.getElementById("resultats");
+  const affichageZone = document.getElementById("contenuSynthese");
   const div = document.createElement("div");
   div.innerHTML = `
-    <strong>Carte supplémentaire</strong><br>
+    <strong>Carte complémentaire</strong><br>
     <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
-    <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Seshat" style="width:100px"><br>
+    <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom}" style="width:100px"><br>
     <p style="margin-top:0.5rem;">${interpretation}</p>
   `;
   styleCarte(div);
@@ -513,7 +505,8 @@ function afficherSynthese3Prenoms() {
   window.cartesPrenom2 = cartesPrenom2;
   window.cartesPrenom3 = cartesPrenom3;
   window.zoneSilencieuse = zoneSilencieuse;
-
+  window.cartesSupp = window.cartesSupp || [];
+  
   // Prépare pour l'export PDF
   const cartesPDF = cartesTirees.map(({ carte, sens }) => ({
     imageSrc: carte.image,
@@ -658,6 +651,10 @@ window.onload = function () {
     await imprimerCartes(cartesPrenom2, nom2);
     await imprimerCartes(cartesPrenom3, nom3);
 
+    if (window.cartesSupp && window.cartesSupp.length > 0) {
+  await imprimerCartes(window.cartesSupp, "Cartes complémentaires");
+}
+
     // ➜ Zone silencieuse (si elle existe)
     if (zoneSilencieuse.length > 0) {
       pdf.setFontSize(13);
@@ -692,6 +689,10 @@ window.onload = function () {
     }
 
     // ➜ Téléchargement du PDF
+    if (y > 270) pdf.addPage();
+      pdf.setFontSize(10);
+      pdf.setFont("Times", "italic");
+      pdf.textWithLink("https://oracleheka.github.io/oracle_trium/", 10, 290, { url: "https://oracleheka.github.io/oracle_trium/" });
     pdf.save(`tirage_triangulaire_Heka_${nom1}_${nom2}_${nom3}.pdf`);
   });
 </script>
