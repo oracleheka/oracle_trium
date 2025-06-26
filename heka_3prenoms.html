@@ -442,7 +442,6 @@ function afficherSynthese3Prenoms() {
       cartesPrenom3.push({ carte: carteP3.carte, sens: carteP3.sens });
     }
 
-    // Liens 2 à 2
     if (carteP1 && carteP2) {
       const texte1 = carteP1.carte[carteP1.sens][aspect]?.texte || "(Message manquant)";
       const texte2 = carteP2.carte[carteP2.sens][aspect]?.texte || "(Message manquant)";
@@ -465,7 +464,6 @@ function afficherSynthese3Prenoms() {
       resume += `→ Carte ${carteP3.carte.id} - ${carteP3.carte.nom} (${carteP3.sens}) [${aspect}]\n→ ${texte3}\n\n`;
     }
 
-    // Zones silencieuses (si aucune paire pour la lettre)
     if (carteP1 && !carteP2 && !carteP3) zoneSilencieuse.push(`${carteP1.lettre} (${nom1}) sans miroir → Pas de résonance`);
     if (carteP2 && !carteP1 && !carteP3) zoneSilencieuse.push(`${carteP2.lettre} (${nom2}) sans miroir → Pas de résonance`);
     if (carteP3 && !carteP1 && !carteP2) zoneSilencieuse.push(`${carteP3.lettre} (${nom3}) sans miroir → Pas de résonance`);
@@ -475,7 +473,14 @@ function afficherSynthese3Prenoms() {
     resume += `--- Zone silencieuse ---\n\n` + zoneSilencieuse.join("\n") + "\n\n";
   }
 
-  const toutesLesCartes = [...cartesPrenom1, ...cartesPrenom2, ...cartesPrenom3];
+  // 🛠 AJOUT ICI → on inclut les cartesSupp dans la synthèse globale
+  const toutesLesCartes = [
+    ...cartesPrenom1,
+    ...cartesPrenom2,
+    ...cartesPrenom3,
+    ...(window.cartesSupp || [])
+  ];
+
   resume += `--- Synthèse individuelle de ${nom1} ---\n\n`;
   resume += genererSyntheseGuidante(cartesPrenom1, aspect, { question, prenom: nom1 });
   resume += `\n\n--- Synthèse individuelle de ${nom2} ---\n\n`;
@@ -484,29 +489,17 @@ function afficherSynthese3Prenoms() {
   resume += genererSyntheseGuidante(cartesPrenom3, aspect, { question, prenom: nom3 });
 
   resume += `\n\n→ Synthèse globale des 3 prénoms :\n\n`;
-  resume += genererSyntheseGuidante(toutesLesCartes, aspect, { question, prenom: `${nom1}, ${nom2} et ${nom3}`, mode: "lien" });
+  resume += genererSyntheseGuidante(toutesLesCartes, aspect, {
+    question,
+    prenom: `${nom1}, ${nom2} et ${nom3}`,
+    mode: "lien"
+  });
 
-  // Vide le contenu précédent
   const contenuDiv = document.getElementById("contenuSynthese");
   contenuDiv.innerHTML = "";
 
-  // Ajoute chaque carte visuellement (images + texte)
+  // Ajoute visuellement les cartes tirées
   cartesTirees.forEach(({ carte, sens }) => {
-  const imageSrc = carte.image;
-  const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
-  const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
-  const carteHtml = `
-    <div style="margin-bottom: 1rem;">
-      <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
-      <p>${titre} → ${texte}</p>
-    </div>`;
-  contenuDiv.innerHTML += carteHtml;
-}); // ← CE bloc est maintenant FERMÉ
-
-// ➤ Ajoute les cartes complémentaires dans la modale
-if (window.cartesSupp && window.cartesSupp.length > 0) {
-  contenuDiv.innerHTML += `<h4 style="margin-top: 1rem;">Cartes complémentaires</h4>`;
-  window.cartesSupp.forEach(({ carte, sens }) => {
     const imageSrc = carte.image;
     const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
     const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
@@ -517,9 +510,24 @@ if (window.cartesSupp && window.cartesSupp.length > 0) {
       </div>`;
     contenuDiv.innerHTML += carteHtml;
   });
-}
 
-  // Stocke les variables globales pour l'export PDF
+  // ➤ Ajoute les cartes complémentaires
+  if (window.cartesSupp && window.cartesSupp.length > 0) {
+    contenuDiv.innerHTML += `<h4 style="margin-top: 1rem;">Cartes complémentaires</h4>`;
+    window.cartesSupp.forEach(({ carte, sens }) => {
+      const imageSrc = carte.image;
+      const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
+      const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+      const carteHtml = `
+        <div style="margin-bottom: 1rem;">
+          <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+          <p>${titre} → ${texte}</p>
+        </div>`;
+      contenuDiv.innerHTML += carteHtml;
+    });
+  }
+
+  // Stocke les données pour le PDF
   window.nom1 = nom1;
   window.nom2 = nom2;
   window.nom3 = nom3;
@@ -530,32 +538,28 @@ if (window.cartesSupp && window.cartesSupp.length > 0) {
   window.cartesPrenom3 = cartesPrenom3;
   window.zoneSilencieuse = zoneSilencieuse;
   window.cartesSupp = window.cartesSupp || [];
-  
-  // Prépare pour l'export PDF
+
   const cartesPDF = [
-  ...cartesTirees.map(({ carte, sens }) => ({
-    imageSrc: carte.image,
-    nom: carte.nom,
-    sens: sens,
-    texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
-  })),
-  ...(window.cartesSupp || []).map(({ carte, sens }) => ({
-    imageSrc: carte.image,
-    nom: carte.nom,
-    sens: sens,
-    texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
-  }))
-];
+    ...cartesTirees.map(({ carte, sens }) => ({
+      imageSrc: carte.image,
+      nom: carte.nom,
+      sens: sens,
+      texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
+    })),
+    ...(window.cartesSupp || []).map(({ carte, sens }) => ({
+      imageSrc: carte.image,
+      nom: carte.nom,
+      sens: sens,
+      texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
+    }))
+  ];
   window.cartesTireesPDF = cartesPDF;
 
-  // Ajoute la synthèse finale (bloc texte propre)
   contenuDiv.innerHTML += `<pre style="white-space: pre-wrap; margin-top: 1rem;">${resume}</pre>`;
   window.resume = resume;
 
-  // Affiche la modale
   document.getElementById("syntheseModal").style.display = "flex";
 }
-
   function fermerSynthese() {
   document.getElementById("syntheseModal").style.display = "none";
 }
