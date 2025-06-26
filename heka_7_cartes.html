@@ -590,9 +590,12 @@ window.onload = function () {
     pdf.text(ligne, 10, y);
     y += 5;
   }
-
-  pdf.save(`tirage_7_cartes_Heka.pdf`);
-});
+if (y > 270) pdf.addPage();
+      pdf.setFontSize(10);
+      pdf.setFont("Times", "italic");
+      pdf.textWithLink("https://oracleheka.github.io/oracle_trium/", 10, 290, { url: "https://oracleheka.github.io/oracle_trium/" });
+    pdf.save(`tirage_croise_Heka_${nom1}_${nom2}.pdf`);
+  });
   </script>
 </body>
 </html>
