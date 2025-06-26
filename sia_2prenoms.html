@@ -224,7 +224,7 @@ fieldset input[type="radio"] {
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
    </div>
   <div style="text-align:center; margin-top:2rem;">
-  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  <button id="tirerBtn" onclick="tirageCroise()">Tirer les cartes</button>
   </div>
   <div style="text-align:center; margin-top:2rem;">
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
@@ -316,6 +316,7 @@ function tirageCroise() {
     }
   }
   document.getElementById("btnSynthese").style.display = "inline-block";
+  document.getElementById("ajouterBtn").disabled = false;
 }
 
 function creerCarteDiv(prenom, lettre, carte, sens, aspect) {
@@ -334,6 +335,52 @@ function styleCarte(el) {
   el.style.borderRadius = "8px";
   el.style.backgroundColor = "#fdfdfd";
   el.style.textAlign = "center";
+}
+
+function ajouterUneCarte() {
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
+  }
+
+  const nom1 = document.getElementById("prenom1").value.trim().toUpperCase();
+  const nom2 = document.getElementById("prenom2").value.trim().toUpperCase();
+  const totalLettres = nom1.length + nom2.length;
+  const maxCartes = totalLettres + 3;
+
+  if (cartesTirees.length >= maxCartes) {
+    alert(`Nombre maximum de cartes atteint (${maxCartes}).`);
+    return;
+  }
+
+  if (cartesDisponibles.length === 0) {
+    alert("Le jeu est vide !");
+    return;
+  }
+
+  const carte = cartesDisponibles.shift();
+  const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+  const interpretation = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+
+  // Ajoute avec structure complète nécessaire à la synthèse (lettre + prénom fictif)
+  cartesTirees.push({
+    carte: carte,
+    sens: sens,
+    lettre: `+${cartesTirees.length + 1}`,
+    prenom: "SUPPL"
+  });
+
+  const affichage = document.getElementById("resultats");
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <strong>Carte supplémentaire</strong><br>
+    <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
+    <img src="${carte.image.replace('180.webp', '270.webp')}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" width="150" loading="lazy"><br>
+    <p style="margin-top:0.5rem;">${interpretation}</p>
+  `;
+  styleCarte(div);
+  affichage.appendChild(div);
 }
 
 function afficherSynthese2Prenoms() {
