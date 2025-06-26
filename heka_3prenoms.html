@@ -382,7 +382,7 @@ function ajouterUneCarte() {
   const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
-  const interpretation = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+  const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
 
   cartesTirees.push({ carte: carte, sens: sens });
 
@@ -392,7 +392,7 @@ function ajouterUneCarte() {
     <strong>Carte supplémentaire</strong><br>
     <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
     <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:100px"><br>
-    <p style="margin-top:0.5rem;">${interpretation}</p>
+    <p style="margin-top:0.5rem;">${texte}</p>
   `;
   styleCarte(div);
   affichageZone.appendChild(div);
