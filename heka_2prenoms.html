@@ -595,6 +595,9 @@ window.onload = function () {
 
   // Fonction d'impression
   async function imprimerCartes(cartes, prenom) {
+  const margePage = 10;
+  const hauteurPage = 297 - margePage;
+
   pdf.setFontSize(13);
   pdf.setFont("Times", "bold");
   pdf.text(`--- Cartes pour ${prenom} ---`, 10, y);
@@ -604,10 +607,9 @@ window.onload = function () {
     const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
     const lignesCarte = pdf.splitTextToSize(texte, 135);
     const hauteurTexte = lignesCarte.length * 5;
-    const hauteurBloc = Math.max(55, 12 + hauteurTexte); // bloc = image (50) + texte
+    const hauteurBloc = Math.max(55, 12 + hauteurTexte);
 
-    // ➜ Vérifier si tout tient sur la page avant de commencer
-    if (y + hauteurBloc > 280) {
+    if (y + hauteurBloc > hauteurPage) {
       pdf.addPage();
       y = 10;
     }
@@ -624,7 +626,7 @@ window.onload = function () {
 
     let yy = y + 12;
     for (const ligne of lignesCarte) {
-      if (yy > 280) {
+      if (yy > hauteurPage) {
         pdf.addPage();
         yy = 10;
       }
@@ -632,7 +634,7 @@ window.onload = function () {
       yy += 5;
     }
 
-    y += hauteurBloc + 5; // espace après le bloc
+    y += hauteurBloc + 5;
   }
 
   y += 4;
