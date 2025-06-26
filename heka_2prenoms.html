@@ -233,7 +233,7 @@ fieldset input[type="radio"] {
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
    </div>
   <div style="text-align:center; margin-top:2rem;">
-  <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
+  <button id="tirerBtn" onclick="tirageCroise()">Tirer les cartes</button>
   </div>
   <div style="text-align:center; margin-top:2rem;">
   <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
@@ -350,6 +350,50 @@ function styleCarte(el) {
   el.style.borderRadius = "8px";
   el.style.backgroundColor = "#fdfdfd";
   el.style.textAlign = "center";
+}
+
+function ajouterUneCarte() {
+  if (!jeuPrepare) {
+    alert("Veuillez d'abord mélanger le jeu.");
+    return;
+  }
+
+  const champ = document.getElementById("champPrenom");
+  let nom = champ.value.trim().toUpperCase();
+  if (!nom) {
+    alert("Veuillez entrer un prénom.");
+    return;
+  }
+
+  const maxCartes = nom.length + 3;
+
+  if (cartesTirees.length >= maxCartes) {
+    alert(`Nombre maximum de cartes atteint (${maxCartes}).`);
+    return;
+  }
+
+  if (cartesDisponibles.length === 0) {
+    alert("Le jeu est vide !");
+    return;
+  }
+
+  const carte = cartesDisponibles.shift();
+  const sens = Math.random() < 0.5 ? "endroit" : "inversé";
+  const aspect = document.querySelector('input[name="aspect"]:checked').value;
+  const texte = carte[sens][aspect]?.texte || "(Message manquant)";
+
+  cartesTirees.push({ carte: carte, sens: sens });
+
+  const affichageZone = document.getElementById("resultats");
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <strong>Carte supplémentaire</strong><br>
+    <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
+    <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:100px"><br>
+    <p style="margin-top:0.5rem;">${interpretation}</p>
+  `;
+  styleCarte(div);
+  affichageZone.appendChild(div);
 }
 
 function afficherSynthese2Prenoms() {
