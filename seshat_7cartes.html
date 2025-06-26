@@ -311,7 +311,12 @@ function tirage7Cartes() {
 
     div.innerHTML = `
       <h3>${carte.id} : (${carte.nom}) : (${sens})</h3>
-      <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Seshat" style="width:150px">
+      <img 
+      src="${carte.image}" 
+      alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+      width="150" 
+      loading="lazy" 
+    style="display: block; margin: 0 auto;">
       <p>${interpretation}</p>
     `;
 
@@ -349,12 +354,17 @@ function tirage7Cartes() {
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
 
   const interpretation = carte[sens][aspect]?.texte || "Interprétation manquante.";
-  cartesTirees.push({ carte: carte, sens: sens });
+  cartesTirees.push({ carte: carte, sens: sens, code: "extra" });
 
   const div = document.createElement("div");
   div.innerHTML = `
     <h3>Carte supplémentaire :${carte.id} : (${carte.nom}) : (${sens})</h3>
-      <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Seshat" style="width:150px">
+      <img 
+      src="${carte.image}" 
+      alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+      width="150" 
+    loading="lazy" 
+    style="display: block; margin: 0 auto;">
       <p>${interpretation}</p>
   `;
 
@@ -371,7 +381,7 @@ function tirage7Cartes() {
   }
 }
  
-   function afficherSynthese7Cartes() {
+  function afficherSynthese7Cartes() {
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
 
   const question = document.getElementById("question")?.value || "";
@@ -384,7 +394,9 @@ function tirage7Cartes() {
   }
 
   // Résumé textuel structuré
-  const phrases = cartesTirees.map(({ carte, sens }) => {
+  const cartesInitiales = cartesTirees.filter(c => !c.code);
+const cartesSupp = cartesTirees.filter(c => c.code === "extra");
+  const phrases = cartesInitiales.map(({ carte, sens }) => {
     const contenu = carte[sens]?.[aspect];
     let texte = "(Message absent)";
 
@@ -407,6 +419,14 @@ function tirage7Cartes() {
 
   const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
   resume += `→ Synthèse guidée :\n\n${synthese}`;
+
+if (cartesSupp.length > 0) {
+  resume += `\n--- Cartes complémentaires ---\n\n`;
+  cartesSupp.forEach(({ carte, sens }) => {
+    const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+    resume += `→ Carte ${carte.id} - ${carte.nom} (${sens}) [${aspect}]\n→ ${texte}\n\n`;
+  });
+}
 
   // Prépare l’affichage visuel
   const contenuDiv = document.getElementById("contenuSynthese");
@@ -520,7 +540,7 @@ window.onload = function () {
   y += 30;
 
   // Titre
-  const titre = `Tirage à 7 cartes - Oracle Seshat`;
+  const titre = `Tirage à 7 cartes - Oracle Heka`;
   const titreWidth = pdf.getTextWidth(titre);
   pdf.setFontSize(14);
   pdf.setFont("Times", "bold");
@@ -569,8 +589,11 @@ window.onload = function () {
     pdf.text(ligne, 10, y);
     y += 5;
   }
-
-  pdf.save(`tirage_7_cartes_Seshat.pdf`);
+if (y > 270) pdf.addPage();
+      pdf.setFontSize(10);
+      pdf.setFont("Times", "italic");
+      pdf.textWithLink("https://oracleheka.github.io/oracle_trium/", 10, 290, { url: "https://oracleheka.github.io/oracle_trium/" });
+  pdf.save(`tirage_7_cartes_Seshat_${window.nom1 || 'tirage'}.pdf`);
 });
   </script>
 </body>
