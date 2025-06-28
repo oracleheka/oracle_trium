@@ -172,7 +172,15 @@ fieldset input[type="radio"] {
     width: 100%;
   }
   }
-    .ligneTetraktys {
+    #resultats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Chaque ligne du Tétraktys */
+.ligneTetraktys {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
@@ -183,22 +191,32 @@ fieldset input[type="radio"] {
 
 /* Décalages pour effet pyramide */
 .ligneTetraktys[data-niveau="1"] {
-  justify-content: center;
+  transform: translateX(0%);
 }
 .ligneTetraktys[data-niveau="2"] {
-  justify-content: center;
   transform: translateX(5%);
 }
 .ligneTetraktys[data-niveau="3"] {
-  justify-content: center;
   transform: translateX(10%);
 }
 .ligneTetraktys[data-niveau="4"] {
-  justify-content: center;
   transform: translateX(15%);
 }
 
-/* Responsive annule le décalage sur petit écran */
+/* Cartes à l'intérieur de chaque ligne */
+.ligneTetraktys > div {
+  max-width: 200px;
+  width: 100%;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  background: #fdfdfd;
+  padding: 1rem;
+  border: 1px solid #b8a998;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Responsive : annule le décalage sur petits écrans */
 @media (max-width: 768px) {
   .ligneTetraktys {
     flex-wrap: wrap;
