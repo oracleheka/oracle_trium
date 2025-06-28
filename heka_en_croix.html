@@ -558,11 +558,6 @@ window.onload = function () {
 
   // ➤ Fonction d’impression des cartes
   async function imprimerCartes(cartes) {
-    pdf.setFontSize(13);
-    pdf.setFont("Times", "bold");
-    pdf.text("--- Cartes du tirage en croix ---", 10, y);
-    y += 8;
-
     for (let i = 0; i < cartes.length; i++) {
       const { carte, sens } = cartes[i];
       const carteImg = await loadImage(carte.image);
@@ -603,13 +598,18 @@ window.onload = function () {
   const cartesSupplementaires = cartesPrenom.slice(5);
 
   // ➤ Imprimer les cartes principales
+  pdf.setFontSize(13);
+  pdf.setFont("Times", "bold");
+  pdf.text("--- Cartes du tirage en croix ---", 10, y);
+  y += 8;
   await imprimerCartes(cartesPrincipales);
 
   // ➤ Si cartes supplémentaires, on les affiche clairement
   if (cartesSupplementaires.length > 0) {
+    if (y > 270) { pdf.addPage(); y = 10; }
+    y += 10;
     pdf.setFontSize(13);
     pdf.setFont("Times", "bold");
-    if (y > 270) { pdf.addPage(); y = 10; }
     pdf.text("--- Cartes complémentaires ---", 10, y);
     y += 8;
     await imprimerCartes(cartesSupplementaires);
@@ -627,6 +627,11 @@ window.onload = function () {
   }
   y += 10;
 
+  pdf.setFont("Times", "bold");
+  pdf.text("→ Synthèse guidée :", 10, y);
+  y += 8;
+  pdf.setFont("Times", "normal");
+
   for (const ligne of lignesResume) {
     if (y > 280) {
       pdf.addPage();
@@ -635,13 +640,19 @@ window.onload = function () {
     pdf.text(ligne, 10, y);
     y += 5;
   }
-    // ➜ Téléchargement du PDF
-    if (y > 270) pdf.addPage();
-      pdf.setFontSize(10);
-      pdf.setFont("Times", "italic");
-      pdf.textWithLink("https://oracleheka.github.io/oracle_trium/", 10, 290, { url: "https://oracleheka.github.io/oracle_trium/" });
-    pdf.save(`tirage_croix_Heka.pdf`);
+
+  // ➤ Lien vers le site
+  if (y > 270) pdf.addPage();
+  pdf.setFontSize(10);
+  pdf.setFont("Times", "italic");
+  pdf.textWithLink("https://oracleheka.github.io/oracle_trium/", 10, 290, {
+    url: "https://oracleheka.github.io/oracle_trium/"
   });
+
+  // ➤ Nom de fichier avec date
+  const date = new Date().toISOString().split("T")[0];
+  pdf.save(`tirage_croix_Heka_${date}.pdf`);
+});
 </script>
 </body>
 </html>
