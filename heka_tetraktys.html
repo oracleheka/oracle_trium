@@ -177,44 +177,45 @@ fieldset input[type="radio"] {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding-bottom: 2rem;
   width: 100%;
+  padding-bottom: 2rem;
 }
 
-.container-niveau {
+/* Conteneur de chaque ligne (niveau) */
+.ligneTetraktys {
+  display: flex;
+  justify-content: center;         /* centre les cartes dans la ligne */
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0 auto;                  /* centre la ligne elle-même */
+  width: fit-content;              /* largeur auto adaptée aux cartes */
   background-color: #fdfdfd;
   border: 2px solid #b8a998;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  flex-wrap: nowrap;
-  box-sizing: border-box;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-.container-niveau > .carte {
+/* Style de chaque carte */
+.ligneTetraktys > div {
+  flex: 0 0 auto;
+  width: 220px;
+  padding: 1rem;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 1rem;
-  width: 220px;
   text-align: center;
   box-sizing: border-box;
 }
 
+/* Responsive : passage en colonne si petit écran */
 @media (max-width: 768px) {
-  .container-niveau {
+  .ligneTetraktys {
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
   }
 
-  .container-niveau > .carte {
+  .ligneTetraktys > div {
     width: 100%;
     max-width: 300px;
   }
