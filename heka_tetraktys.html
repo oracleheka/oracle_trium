@@ -172,45 +172,32 @@ fieldset input[type="radio"] {
     width: 100%;
   }
   }
-    /* Résultat global : structure verticale */
+    /* Conteneur global */
 #resultats {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
   padding-bottom: 2rem;
 }
 
-/* Cadre contenant chaque ligne de niveau */
+/* Chaque ligne de niveau */
 .ligneTetraktys {
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
   gap: 1rem;
-  padding: 1.5rem;
+  padding: 1rem;
   background-color: #fdfdfd;
   border: 2px solid #b8a998;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  position: relative;
-  width: max-content;
-  margin-left: auto;
-  margin-right: auto;
+  width: fit-content;
+  margin: 0 auto;
+  flex-wrap: nowrap;
 }
 
-/* Décalages pyramidaux */
-.ligneTetraktys[data-niveau="2"] {
-  margin-left: 5%;
-}
-.ligneTetraktys[data-niveau="3"] {
-  margin-left: 10%;
-}
-.ligneTetraktys[data-niveau="4"] {
-  margin-left: 15%;
-}
-
-/* Carte individuelle dans un niveau */
+/* Cartes dans chaque ligne */
 .ligneTetraktys > div {
   flex: 0 0 auto;
   width: 220px;
@@ -222,12 +209,11 @@ fieldset input[type="radio"] {
   box-sizing: border-box;
 }
 
-/* Responsive mobile : ligne = colonne */
+/* Responsive : tout repasse en colonne centrée */
 @media (max-width: 768px) {
   .ligneTetraktys {
     flex-wrap: wrap;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    justify-content: center;
     width: 100%;
   }
 
