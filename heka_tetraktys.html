@@ -176,60 +176,45 @@ fieldset input[type="radio"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  width: 100%;
+  gap: 2rem;
   padding-bottom: 2rem;
+  width: 100%;
 }
 
-/* Conteneur de chaque ligne */
-.ligneTetraktys {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  gap: 1rem;
-  padding: 1rem;
+.container-niveau {
   background-color: #fdfdfd;
   border: 2px solid #b8a998;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  margin: 0 auto;
-  position: relative;
-}
-
-/* Largeurs fixes selon le nombre de cartes */
-.ligneTetraktys[data-niveau="1"] {
-  width: 250px;
-}
-.ligneTetraktys[data-niveau="2"] {
-  width: 520px;
-}
-.ligneTetraktys[data-niveau="3"] {
-  width: 790px;
-}
-.ligneTetraktys[data-niveau="4"] {
-  width: 1060px;
-}
-
-/* Cartes dans une ligne */
-.ligneTetraktys > div {
-  flex: 0 0 auto;
-  width: 220px;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+
+.container-niveau > .carte {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
+  padding: 1rem;
+  width: 220px;
   text-align: center;
   box-sizing: border-box;
 }
 
-/* Responsive */
-@media (max-width: 1100px) {
-  .ligneTetraktys {
+@media (max-width: 768px) {
+  .container-niveau {
     flex-wrap: wrap;
+    width: 100%;
     justify-content: center;
-    width: 100% !important;
   }
-  .ligneTetraktys > div {
+
+  .container-niveau > .carte {
     width: 100%;
     max-width: 300px;
   }
@@ -352,20 +337,17 @@ function tirerLesCartes() {
   const champ = document.getElementById("champPrenom");
   const nomSymbolique = champ.value.trim();
   if (!nomSymbolique) {
-    alert("Veuillez entrer un prénom (même symbolique).");
+    alert("Veuillez entrer un prénom (même symbolique).”);
     return;
   }
-
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
     return;
   }
-
   if (cartesTirees.length > 0) {
     alert("Tirage déjà effectué. Utilisez 'Ajouter une carte'.");
     return;
   }
-
   if (cartesDisponibles.length < 10) {
     alert("Pas assez de cartes pour un tirage Tétraktys.");
     return;
@@ -393,10 +375,9 @@ function tirerLesCartes() {
     titre.style.textAlign = "center";
     affichage.appendChild(titre);
 
-    const ligne = document.createElement("div");
-    ligne.classList.add("ligneTetraktys");
-    ligne.dataset.niveau = niveau.nb; // ← ajoute cette ligne
-    affichage.appendChild(ligne);
+    const container = document.createElement("div");
+    container.className = "container-niveau";
+    affichage.appendChild(container);
 
     for (let i = 0; i < niveau.nb; i++) {
       const carte = tirage[idx];
@@ -404,12 +385,15 @@ function tirerLesCartes() {
       cartesTirees.push({ carte, sens });
 
       const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
-      const div = document.createElement("div");
-      div.innerHTML = `
+
+      const carteDiv = document.createElement("div");
+      carteDiv.className = "carte";
+      carteDiv.innerHTML = `
         <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
         <img src="${carte.image}" alt="Carte ${carte.id}" style="width:100px"><br>
         <p style="margin-top:0.5rem;">${interpretation}</p>`;
-      ligne.appendChild(div);
+
+      container.appendChild(carteDiv);
       idx++;
     }
   });
