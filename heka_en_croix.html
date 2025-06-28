@@ -411,7 +411,16 @@ function afficherSyntheseCroix() {
     resume += `${position} :\n${carte.carte.id} : (${carte.carte.nom}) : (${carte.sens})\n→ ${interpretation}\n\n`;
   });
 
-  // Synthèse finale
+  // ➤ Ajout des cartes complémentaires dans le résumé
+  if (cartesTirees.length > 5) {
+    resume += "Cartes complémentaires :\n\n";
+    cartesTirees.slice(5).forEach(({ carte, sens }) => {
+      const interpretation = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+      resume += `${carte.id} : (${carte.nom}) : (${sens}) → ${interpretation}\n\n`;
+    });
+  }
+
+  // ➤ Synthèse finale
   const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
   resume += `→ Synthèse guidée :\n\n${synthese}`;
 
@@ -453,20 +462,19 @@ function afficherSyntheseCroix() {
   window.cartesPrenom1 = cartesTirees;
   window.zoneSilencieuse = [];
   window.resume = resume;
- window.cartesTireesPDF = cartesTirees.map(({ carte, sens }) => ({
-  imageSrc: carte.image,
-  id: carte.id,
-  nom: carte.nom,
-  sens: sens,
-  texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
-}));
+  window.cartesTireesPDF = cartesTirees.map(({ carte, sens }) => ({
+    imageSrc: carte.image,
+    id: carte.id,
+    nom: carte.nom,
+    sens: sens,
+    texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
+  }));
 
   document.getElementById("syntheseModal").style.display = "flex";
 }
-
 function fermerSynthese() {
-  document.getElementById("syntheseModal").style.display = "none";
-}
+    document.getElementById("syntheseModal").style.display = "none";
+  }
 function réinitialiser() {
   location.reload();
 }
