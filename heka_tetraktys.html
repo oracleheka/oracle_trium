@@ -172,35 +172,33 @@ fieldset input[type="radio"] {
     width: 100%;
   }
   }
-    #resultats {
+    /* Résultat global */
+#resultats {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-/* Chaque ligne du Tétraktys */
+/* Ligne Tétraktys : 1, 2, 3, 4 cartes avec décalages */
 .ligneTetraktys {
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   padding: 1rem;
+  background-color: #fdfdfd;
   border: 1px solid #b8a998;
   border-radius: 12px;
-  background-color: #fdfdfd;
-  position: relative;
-  flex-wrap: nowrap;
-  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  width: max-content;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: relative;
 }
 
-/* Décalages pour effet pyramide */
-.ligneTetraktys[data-niveau="1"] {
-  transform: translateX(0%);
-}
+/* Décalages pyramide */
 .ligneTetraktys[data-niveau="2"] {
   transform: translateX(5%);
 }
@@ -211,25 +209,25 @@ fieldset input[type="radio"] {
   transform: translateX(15%);
 }
 
-/* Cartes à l'intérieur de chaque ligne */
+/* Cartes dans les lignes */
 .ligneTetraktys > div {
-  max-width: 200px;
-  width: 100%;
   flex: 0 0 auto;
-  box-sizing: border-box;
-  background: #fdfdfd;
-  padding: 1rem;
-  border: 1px solid #b8a998;
-  border-radius: 8px;
+  width: 220px;
   text-align: center;
+  box-sizing: border-box;
 }
 
-/* Responsive : annule le décalage sur petits écrans */
+/* Responsive mobile : annule les effets pyramidaux */
 @media (max-width: 768px) {
   .ligneTetraktys {
     flex-wrap: wrap;
+    transform: none !important;
     width: 100%;
     justify-content: center;
+  }
+  .ligneTetraktys > div {
+    width: 100%;
+    max-width: 300px;
   }
 }
   </style>
