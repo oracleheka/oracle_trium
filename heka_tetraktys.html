@@ -175,39 +175,37 @@ fieldset input[type="radio"] {
     #resultats {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 2rem;
+  align-items: center;
   width: 100%;
-  padding-bottom: 2rem;
 }
 
-/* Conteneur de chaque ligne (niveau) */
+/* Cadre de chaque ligne : largeur auto-adaptée, centrée */
 .ligneTetraktys {
   display: flex;
-  justify-content: center;         /* centre les cartes dans la ligne */
+  justify-content: center;
   gap: 1rem;
   padding: 1rem;
-  margin: 0 auto;                  /* centre la ligne elle-même */
-  width: fit-content;              /* largeur auto adaptée aux cartes */
   background-color: #fdfdfd;
   border: 2px solid #b8a998;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  width: fit-content;
+  margin: 0 auto;
 }
 
-/* Style de chaque carte */
+/* Carte individuelle */
 .ligneTetraktys > div {
-  flex: 0 0 auto;
   width: 220px;
   padding: 1rem;
-  background-color: #fff;
+  background: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
-  text-align: center;
   box-sizing: border-box;
+  text-align: center;
 }
 
-/* Responsive : passage en colonne si petit écran */
+/* Responsive */
 @media (max-width: 768px) {
   .ligneTetraktys {
     flex-wrap: wrap;
