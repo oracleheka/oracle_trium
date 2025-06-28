@@ -172,45 +172,45 @@ fieldset input[type="radio"] {
     width: 100%;
   }
   }
-    /* Résultat global : chaque niveau verticalement */
+    /* Résultat global : structure verticale */
 #resultats {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
   padding-bottom: 2rem;
 }
 
-/* Cadre de chaque ligne (niveau 1 à 4) */
+/* Cadre contenant chaque ligne de niveau */
 .ligneTetraktys {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: #fdfdfd;
   border: 2px solid #b8a998;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  width: fit-content;
+  position: relative;
+  width: max-content;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
 }
 
-/* Décalage pour effet pyramide */
+/* Décalages pyramidaux */
 .ligneTetraktys[data-niveau="2"] {
-  transform: translateX(5%);
+  margin-left: 5%;
 }
 .ligneTetraktys[data-niveau="3"] {
-  transform: translateX(10%);
+  margin-left: 10%;
 }
 .ligneTetraktys[data-niveau="4"] {
-  transform: translateX(15%);
+  margin-left: 15%;
 }
 
-/* Style individuel des cartes */
+/* Carte individuelle dans un niveau */
 .ligneTetraktys > div {
   flex: 0 0 auto;
   width: 220px;
@@ -222,13 +222,13 @@ fieldset input[type="radio"] {
   box-sizing: border-box;
 }
 
-/* Responsive : les lignes redeviennent classiques en colonne */
+/* Responsive mobile : ligne = colonne */
 @media (max-width: 768px) {
   .ligneTetraktys {
     flex-wrap: wrap;
-    transform: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     width: 100%;
-    justify-content: center;
   }
 
   .ligneTetraktys > div {
