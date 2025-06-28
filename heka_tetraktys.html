@@ -172,45 +172,61 @@ fieldset input[type="radio"] {
     width: 100%;
   }
   }
-    #resultats {
+    /* Résultat global : chaque niveau verticalement */
+#resultats {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.5rem;
   width: 100%;
+  padding-bottom: 2rem;
 }
 
-/* Conteneur de chaque niveau */
+/* Cadre de chaque ligne (niveau 1 à 4) */
 .ligneTetraktys {
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap;
   gap: 1rem;
   padding: 1rem;
-  margin: 1rem auto;
-  border: 1px solid #b8a998;
-  border-radius: 12px;
   background-color: #fdfdfd;
+  border: 2px solid #b8a998;
+  border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  box-sizing: border-box;
-  /* 👇 rend la largeur de la ligne égale au nombre de cartes */
   width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 
-/* Carte individuelle */
+/* Décalage pour effet pyramide */
+.ligneTetraktys[data-niveau="2"] {
+  transform: translateX(5%);
+}
+.ligneTetraktys[data-niveau="3"] {
+  transform: translateX(10%);
+}
+.ligneTetraktys[data-niveau="4"] {
+  transform: translateX(15%);
+}
+
+/* Style individuel des cartes */
 .ligneTetraktys > div {
   flex: 0 0 auto;
   width: 220px;
-  box-sizing: border-box;
   padding: 1rem;
+  background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #fff;
   text-align: center;
+  box-sizing: border-box;
 }
 
-/* Mobile */
+/* Responsive : les lignes redeviennent classiques en colonne */
 @media (max-width: 768px) {
   .ligneTetraktys {
     flex-wrap: wrap;
+    transform: none !important;
     width: 100%;
     justify-content: center;
   }
