@@ -175,26 +175,36 @@ fieldset input[type="radio"] {
     .ligneTetraktys {
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap;
+  margin-bottom: 1.5rem;
   gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
+  position: relative;
 }
 
-.ligneTetraktys > div {
-  flex: 0 1 150px;
-  max-width: 160px;
-  background-color: #fdfdfd;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 0.5rem;
-  box-sizing: border-box;
-  text-align: center;
+/* Décalages pour effet pyramide */
+.ligneTetraktys[data-niveau="1"] {
+  justify-content: center;
+}
+.ligneTetraktys[data-niveau="2"] {
+  justify-content: center;
+  transform: translateX(5%);
+}
+.ligneTetraktys[data-niveau="3"] {
+  justify-content: center;
+  transform: translateX(10%);
+}
+.ligneTetraktys[data-niveau="4"] {
+  justify-content: center;
+  transform: translateX(15%);
 }
 
-.ligneTetraktys img {
-  width: 100%;
-  height: auto;
-  max-width: 100px;
+/* Responsive annule le décalage sur petit écran */
+@media (max-width: 768px) {
+  .ligneTetraktys {
+    flex-wrap: wrap;
+    transform: none !important;
+    justify-content: center;
+  }
 }
   </style>
 </head>
@@ -357,6 +367,7 @@ function tirerLesCartes() {
 
     const ligne = document.createElement("div");
     ligne.classList.add("ligneTetraktys");
+    ligne.dataset.niveau = niveau.nb; // ← ajoute cette ligne
     affichage.appendChild(ligne);
 
     for (let i = 0; i < niveau.nb; i++) {
