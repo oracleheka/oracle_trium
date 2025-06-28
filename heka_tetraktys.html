@@ -172,16 +172,29 @@ fieldset input[type="radio"] {
     width: 100%;
   }
   }
-    /* Disposition en pyramide pour le Tétraktys */
-.ligneTetraktys {
+    .ligneTetraktys {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
   margin-bottom: 1rem;
 }
 
 .ligneTetraktys > div {
-  min-width: 120px;
+  flex: 0 1 150px;
+  max-width: 160px;
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.ligneTetraktys img {
+  width: 100%;
+  height: auto;
+  max-width: 100px;
 }
   </style>
 </head>
