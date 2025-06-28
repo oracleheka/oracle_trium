@@ -334,30 +334,33 @@ function tirerParPrenom() {
     }
 
     const sens = Math.random() < 0.5 ? "endroit" : "inversé";
-    cartesTirees.push({ carte: carte, sens: sens }); // ← AJOUT ICI ✅
-    const interpretation = carte[sens]?.[aspect]?.texte;
+    cartesTirees.push({ carte, sens });
 
-    if (!interpretation) {
-      console.warn(`⚠️ Aucune interprétation pour la carte ${carte.nom} [${sens}] - [${aspect}]`);
-    }
+    const interpretation = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+    console.log(`✅ Carte pour ${lettre} :`, carte.nom, "|", sens, "|", interpretation);
 
-    const texte = interpretation || "(Message manquant)";
-    console.log(`✅ Carte pour ${lettre} :`, carte.nom, "|", sens, "|", texte);
+    const divCarte = document.createElement("div");
+    divCarte.classList.add("carte-container");
 
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <strong>Lettre : ${lettre}</strong><br>
-      <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
-      <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Sia" style="width:100px"><br>
-      <p style="margin-top:0.5rem;">${interpretation}</p>
+    divCarte.innerHTML = `
+      <h3>${carte.id} : (${carte.nom}) : (${sens})</h3>
+      <img 
+        src="${carte.image.replace('180.webp', '270.webp')}" 
+        alt="Carte ${carte.id} – ${carte.nom}" 
+        width="150" 
+        loading="lazy"
+        style="display: block; margin: 0 auto;">
+      <p>${interpretation}</p>
     `;
-    styleCarte(div);
-    affichage.appendChild(div);
+    styleCarte(divCarte);
+    affichage.appendChild(divCarte);
   }
+
   document.getElementById("btnSynthese").style.display = "inline-block";
-  
+  document.getElementById("ajouterBtn").disabled = false;
+
   console.log("✅ Fin du tirage prénom");
-  }   
+}   
 function ajouterUneCarte() {
   if (!jeuPrepare) {
     alert("Veuillez d'abord mélanger le jeu.");
@@ -372,8 +375,7 @@ function ajouterUneCarte() {
   }
 
   const maxCartes = nom.length + 3;
-
-  if (cartesTirees.length >= maxCartes) {
+  if (cartesTirees.length + (window.cartesSupp?.length || 0) >= maxCartes) {
     alert(`Nombre maximum de cartes atteint (${maxCartes}).`);
     return;
   }
@@ -386,17 +388,25 @@ function ajouterUneCarte() {
   const carte = cartesDisponibles.shift();
   const sens = Math.random() < 0.5 ? "endroit" : "inversé";
   const aspect = document.querySelector('input[name="aspect"]:checked').value;
-  const texte = carte[sens][aspect]?.texte || "(Message manquant)";
+  const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
 
-  cartesTirees.push({ carte: carte, sens: sens });
+  // ➤ Stocker dans cartesSupp
+  window.cartesSupp = window.cartesSupp || [];
+  window.cartesSupp.push({ carte, sens });
 
+  // ➤ Affichage dans la zone principale
   const affichageZone = document.getElementById("resultats");
   const div = document.createElement("div");
+  div.classList.add("carte-container");
   div.innerHTML = `
-    <strong>Carte supplémentaire</strong><br>
-    <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
-    <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Sia" style="width:100px"><br>
-    <p style="margin-top:0.5rem;">${interpretation}</p>
+    <h3>Carte complémentaire</h3>
+    <img 
+      src="${carte.image.replace('180.webp', '270.webp')}" 
+      alt="Carte ${carte.id} – ${carte.nom}" 
+      width="150" 
+      loading="lazy"
+      style="display: block; margin: 0 auto;">
+    <p>${carte.id} : (${carte.nom}) : (${sens})<br>${texte}</p>
   `;
   styleCarte(div);
   affichageZone.appendChild(div);
@@ -412,57 +422,87 @@ function ajouterUneCarte() {
     return;
   }
 
-  // Résumé lisible
+  const cartesSupp = window.cartesSupp || [];
+  const question = document.getElementById("question")?.value || "";
+  const mode = "normal";
+
+  // ➤ Résumé textuel principal
   let resume = `--- Synthèse du prénom ---\n\n`;
+
   cartesTirees.forEach(({ carte, sens }) => {
     const interpretation = carte[sens][aspect]?.texte || "(Message manquant)";
     resume += `${carte.id} : (${carte.nom}) : (${sens}) → ${interpretation}\n`;
   });
 
-  // Synthèse globale
-  const question = document.getElementById("question")?.value || "";
-  const mode = "normal";
-  const synthese = genererSyntheseGuidante(cartesTirees, aspect, { question, prenom, mode });
+  if (cartesSupp.length > 0) {
+    resume += `\n--- Cartes complémentaires ---\n\n`;
+    cartesSupp.forEach(({ carte, sens }) => {
+      const interpretation = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+      resume += `${carte.id} : (${carte.nom}) : (${sens}) → ${interpretation}\n`;
+    });
+  }
 
+  const synthese = genererSyntheseGuidante([...cartesTirees, ...cartesSupp], aspect, { question, prenom, mode });
   resume += `\n→ Synthèse guidée :\n\n${synthese}`;
-// Prépare l’affichage visuel
+
+  // ➤ Affichage visuel
   const contenuDiv = document.getElementById("contenuSynthese");
   contenuDiv.innerHTML = "";
 
+  // Cartes du prénom (1 par lettre)
   cartesTirees.forEach(({ carte, sens }) => {
-    const imageSrc = carte.image;
+    const imageSrc = carte.image.replace("180.webp", "270.webp");
     const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
     const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
-
     const carteHtml = `
       <div style="margin-bottom: 1rem;">
         <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
         <p>${titre} → ${texte}</p>
       </div>`;
-
     contenuDiv.innerHTML += carteHtml;
   });
 
-  // Ajoute la synthèse finale (bloc texte propre)
+  // Cartes complémentaires
+  if (cartesSupp.length > 0) {
+    contenuDiv.innerHTML += `<h4 style="margin-top: 1rem;">Cartes complémentaires</h4>`;
+    cartesSupp.forEach(({ carte, sens }) => {
+      const imageSrc = carte.image.replace("180.webp", "270.webp");
+      const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
+      const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+      const carteHtml = `
+        <div style="margin-bottom: 1rem;">
+          <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+          <p>${titre} → ${texte}</p>
+        </div>`;
+      contenuDiv.innerHTML += carteHtml;
+    });
+  }
+
+  // Synthèse finale propre
   contenuDiv.innerHTML += `<pre style="white-space: pre-wrap; margin-top: 1rem;">${resume}</pre>`;
 
-  // Stocke les variables globales pour l’export PDF
-  window.nom1 = prenom;  // pour la compatibilité PDF
+  // ➤ Préparation pour PDF
+  window.nom1 = prenom;
   window.aspect = aspect;
   window.question = question;
+  window.resume = resume;
+  window.zoneSilencieuse = [];
+
+  // cartesPrenom1 = cartes principales ; cartesSupp = déjà globale
   window.cartesPrenom1 = cartesTirees;
-  window.zoneSilencieuse = []; // pas de zone silencieuse ici
-  window.resume = resume;      // stocke pour le PDF
-  window.cartesTireesPDF = cartesTirees.map(({ carte, sens }) => ({
+
+  // ➤ Pour PDF : toutes les cartes (ordonnées)
+  window.cartesTireesPDF = [...cartesTirees, ...cartesSupp].map(({ carte, sens }) => ({
     imageSrc: carte.image,
+    id: carte.id,
     nom: carte.nom,
-    sens: sens
+    sens: sens,
+    texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
   }));
 
-  // Affiche la modale
+  // ➤ Affiche la modale
   document.getElementById("syntheseModal").style.display = "flex";
 }
-
    function fermerSynthese() {
   document.getElementById("syntheseModal").style.display = "none";
 }
@@ -527,90 +567,102 @@ window.onload = function () {
 }
 
   document.getElementById('exportPDFBtn').addEventListener('click', async () => {
-    const prenom = window.nom1;
-    const aspect = window.aspect;
-    const question = window.question;
-    const cartesPrenom = window.cartesPrenom1;
+  const prenom = window.nom1;
+  const aspect = window.aspect;
+  const question = window.question;
+  const cartesPrenom = window.cartesPrenom1;
+  const cartesSupp = window.cartesSupp || [];
 
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    pdf.setFont("Times", "normal");
-    let y = 10;
-    const pageWidth = pdf.internal.pageSize.getWidth();
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF('p', 'mm', 'a4');
+  pdf.setFont("Times", "normal");
+  let y = 10;
+  const pageWidth = pdf.internal.pageSize.getWidth();
 
-    // Logo
-    const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
-    const loadImage = (src) => new Promise((resolve) => {
-      const img = new Image();
-      img.crossOrigin = 'Anonymous';
-      img.onload = () => resolve(img);
-      img.src = src;
-    });
-    const logoImg = await loadImage(logoUrl);
-    pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
-    y += 30;
+  // ➤ Logo
+  const logoUrl = 'https://oracleheka.github.io/oracle_trium/images/logoheka.png';
+  const loadImage = (src) => new Promise((resolve) => {
+    const img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = () => resolve(img);
+    img.src = src;
+  });
+  const logoImg = await loadImage(logoUrl);
+  pdf.addImage(logoImg, 'PNG', (pageWidth - 50) / 2, y, 50, 20);
+  y += 30;
 
-    // Titre principal (centré)
-    const titrePrincipal = `Tirage Sia pour ${prenom}`;
-    const titreWidth = pdf.getTextWidth(titrePrincipal);
-    pdf.setFontSize(14);
+  // ➤ Titre
+  const titrePrincipal = `Tirage Heka pour ${prenom}`;
+  pdf.setFontSize(14);
+  pdf.setFont("Times", "bold");
+  const titreWidth = pdf.getTextWidth(titrePrincipal);
+  pdf.text(titrePrincipal, (pageWidth - titreWidth) / 2, y);
+  y += 15;
+
+  // ➤ Fonction pour imprimer un ensemble de cartes
+  async function imprimerCartes(cartes, titreBloc) {
+    if (cartes.length === 0) return;
+
+    pdf.setFontSize(13);
     pdf.setFont("Times", "bold");
-    pdf.text(titrePrincipal, (pageWidth - titreWidth) / 2, y);
-    y += 15;
+    pdf.text(`--- ${titreBloc} ---`, 10, y);
+    y += 8;
 
-    // ➜ Fonction pour imprimer les cartes du prénom
-    async function imprimerCartes(cartes) {
-      pdf.setFontSize(13);
+    for (const { carte, sens } of cartes) {
+      const carteImg = await loadImage(carte.image);
+      pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+
+      pdf.setFontSize(12);
       pdf.setFont("Times", "bold");
-      pdf.text(`--- Cartes pour ${prenom} ---`, 10, y);
-      y += 8;
+      pdf.text(`${carte.id} : (${carte.nom}) : (${sens})`, 55, y + 6);
 
-      for (const { carte, sens } of cartes) {
-        const carteImg = await loadImage(carte.image);
-        pdf.addImage(carteImg, 'PNG', 10, y, 40, 50);
+      const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+      pdf.setFontSize(11);
+      pdf.setFont("Times", "normal");
+      const lignesCarte = pdf.splitTextToSize(texte, 135);
 
-        pdf.setFontSize(12);
-        pdf.setFont("Times", "bold");
-        pdf.text(`${carte.id} : (${carte.nom}) : (${sens})`, 55, y + 6);
-
-        const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
-        pdf.setFontSize(11);
-        pdf.setFont("Times", "normal");
-        const lignesCarte = pdf.splitTextToSize(texte, 135);
-
-        let yy = y + 12;
-        for (const ligne of lignesCarte) {
-          if (yy > 280) { pdf.addPage(); yy = 10; }
-          pdf.text(ligne, 55, yy);
-          yy += 5;
-        }
-
-        const hauteurBloc = Math.max(55, yy - y);
-        y += hauteurBloc + 5;
-        if (y > 260) { pdf.addPage(); y = 10; }
+      let yy = y + 12;
+      for (const ligne of lignesCarte) {
+        if (yy > 280) { pdf.addPage(); yy = 10; }
+        pdf.text(ligne, 55, yy);
+        yy += 5;
       }
-      y += 4;
+
+      const hauteurBloc = Math.max(55, yy - y);
+      y += hauteurBloc + 5;
+      if (y > 260) { pdf.addPage(); y = 10; }
     }
 
-    // ➜ Imprimer les cartes du prénom
-    await imprimerCartes(cartesPrenom);
+    y += 4;
+  }
 
-    // ➜ Ajoute la synthèse finale (une seule fois, proprement)
-    const resumeNettoye = nettoyerTexte(window.resume);
-    const lignesResume = pdf.splitTextToSize(resumeNettoye, 190);
-    pdf.setFontSize(11);
-    pdf.setFont("Times", "normal");
+  // ➤ Impression des cartes principales (prénom)
+  await imprimerCartes(cartesPrenom, `Cartes pour ${prenom}`);
 
+  // ➤ Impression des cartes complémentaires
+  if (cartesSupp.length > 0) {
+    await imprimerCartes(cartesSupp, "Cartes complémentaires");
+  }
+
+  // ➤ Synthèse finale
+  const resumeNettoye = nettoyerTexte(window.resume);
+  const lignesResume = pdf.splitTextToSize(resumeNettoye, 190);
+  pdf.setFontSize(11);
+  pdf.setFont("Times", "normal");
+
+  if (y > 280) { pdf.addPage(); y = 10; }
+  y += 10;
+
+  for (const ligne of lignesResume) {
     if (y > 280) { pdf.addPage(); y = 10; }
-    y += 10; // espace avant la synthèse finale
-
-    for (const ligne of lignesResume) {
-      if (y > 280) { pdf.addPage(); y = 10; }
-      pdf.text(ligne, 10, y);
-      y += 5;
-    }
-
+    pdf.text(ligne, 10, y);
+    y += 5;
+  }
     // ➜ Téléchargement du PDF
+    if (y > 270) pdf.addPage();
+      pdf.setFontSize(10);
+      pdf.setFont("Times", "italic");
+      pdf.textWithLink("https://oracleheka.github.io/oracle_trium/", 10, 290, { url: "https://oracleheka.github.io/oracle_trium/" });
     pdf.save(`tirage_prenom_Sia_${prenom}.pdf`);
   });
 </script>
