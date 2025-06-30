@@ -445,7 +445,7 @@ function afficherSyntheseCroix() {
     contenuDiv.innerHTML += `
       <div style="margin-bottom: 1rem;">
         <img 
-    src="${carte.image.replace('180.webp', '270.webp')}" 
+    src="${carte.carte.image?.replace('180.webp', '270.webp') || 'fallback.jpg'}"
     alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
     width="150" 
     loading="lazy" 
