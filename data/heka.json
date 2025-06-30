@@ -2,7 +2,7 @@
     {
         "id": 1,
         "nom": "Origine",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_01_origine.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_01_origine_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Personnalité rayonnante, encline à initier, créer, prendre les devants. L’énergie de départ est disponible, encore fraîche et structurant",
@@ -51,7 +51,7 @@
         {
         "id": 2,
         "nom": "Attente",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_2_attente.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_2_attente_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne réfléchie, ancrée, capable d'accepter les temps de pause sans les fuir. Elle sait qu’agir trop vite peut mener à l’erreur, et préfère observer, peser les options, laisser mûrir les choses avant d’agir.",
@@ -100,7 +100,7 @@
         {
         "id": 3,
         "nom": "Expansion",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_3_expansion.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_3_expansion_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne ouverte, ambitieuse et tournée vers la croissance. Elle possède une vision large, aime créer du lien, développer des projets et explorer de nouveaux horizons avec enthousiasme.",
@@ -149,7 +149,7 @@
         {
         "id": 4,
         "nom": "Conflit",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_4_conflit.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_4_conflit_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne intense, animée d’un fort tempérament qui entre facilement en confrontation avec son environnement. Elle affirme ses positions sans détour, ce qui peut provoquer des tensions fréquentes avec les autres.",
@@ -198,7 +198,7 @@
         {
         "id": 5,
         "nom": "Mensonge",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_5_mensonge.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_5_mensonge_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne habile avec les mots, capable de brouiller les pistes par instinct ou stratégie. Elle avance dans des zones grises, parfois pour se protéger, parfois pour influencer. Sa vérité intérieure reste floue, même pour elle.",
@@ -247,7 +247,7 @@
         {
         "id": 6,
         "nom": "Union",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_6_union.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_6_union_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne chaleureuse, bienveillante et naturellement tournée vers l’autre. Elle cherche l’harmonie dans chaque lien et cultive un équilibre stable entre amour, écoute et partage.",
@@ -296,7 +296,7 @@
         {
         "id": 7,
         "nom": "Discipline",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_7_discipline.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_7_discipline_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne rigoureuse, persévérante et profondément engagée dans ce qu’elle entreprend. Elle avance avec méthode, sait canaliser ses émotions et se fixe des objectifs élevés qu’elle atteint par la maîtrise et la constance.",
@@ -345,7 +345,7 @@
         {
         "id": 8,
         "nom": "Réveil",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_8_reveil.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_8_reveil_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne éveillée, ouverte aux transformations et capable de changer de cap avec lucidité. Elle accueille les révélations comme des tremplins vers une compréhension plus vaste d’elle-même.",
@@ -394,7 +394,7 @@
         {
         "id": 9,
         "nom": "Départ",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_9_depart.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_9_depart_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne en mouvement, tournée vers l’avenir, capable de quitter ce qui ne lui convient plus. Elle avance avec courage vers l’inconnu, portée par un besoin de vérité et de renouvellement.",
@@ -443,7 +443,7 @@
         {
         "id": 10,
         "nom": "Appel",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_10_appel.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_10_appel_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne inspirée, guidée par une force intérieure claire. Elle ressent profondément qu’elle a un rôle à jouer, et avance avec foi vers ce qu’elle sent juste et aligné.",
@@ -492,7 +492,7 @@
         {
         "id": 11,
         "nom": "Limite",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_11_limite.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_11_limite_180.webp",
             "endroit": {
                "personnalité": {
                     "texte": "Une personne confrontée à de fortes résistances, mais capable d’en faire un terrain d’apprentissage. Elle avance lentement, mais chaque obstacle renforce sa maturité et sa sagesse intérieure.",
@@ -541,7 +541,7 @@
         {
         "id": 12,
         "nom": "Sagesse",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_12_sagesse.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_12_sagesse_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne réfléchie, posée, en quête de compréhension profonde. Elle sait prendre du recul, observe avec discernement, et agit avec justesse.",
@@ -590,7 +590,7 @@
         {
         "id": 13,
         "nom": "Affrontement",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_13_affrontement.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_13_affrontement_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne combative, prête à faire face aux tensions pour se libérer de ce qui l’entrave. Elle agit avec force, parfois dans l’excès, mais son instinct la pousse à provoquer les changements nécessaires.",
@@ -639,7 +639,7 @@
         {
         "id": 14,
         "nom" : "Perception",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_14_perception.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_14_perception_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne vive d’esprit, mais sujette à des jugements biaisés. Elle croit voir clair, mais ses interprétations sont parfois faussées par ses émotions ou ses croyances.",
@@ -688,7 +688,7 @@
         {
         "id": 15,
         "nom": "Compromis",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_15_compromis.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_15_compromis_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne souple, ouverte et attentive aux besoins de chacun. Elle sait apaiser les tensions en trouvant des accords justes et réalistes.",
@@ -737,7 +737,7 @@
         {
         "id": 16,
         "nom": "Structure",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_16_structure.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_16_structure_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne structurée et réfléchie. Elle prend le temps de bâtir pas à pas, en veillant à la solidité de chaque fondation avant d’aller plus loin.",
@@ -786,7 +786,7 @@
         {
         "id": 17,
         "nom": "Libération",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_17_liberation.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_17_liberation_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne libre d’esprit, qui ne supporte plus les chaînes intérieures ou extérieures. Elle cherche à se redéfinir et à briser tout ce qui entrave son évolution.",
@@ -835,7 +835,7 @@
         {
         "id": 18,
         "nom": "Maladie",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_18_maladie.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_18_maladie_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne traversant une épreuve intérieure ou physique profonde, marquée par l’épuisement ou la fragilité.",
@@ -884,7 +884,7 @@
         {
         "id": 19,
         "nom": "Présence",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_19_presence.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_19_presence_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une énergie intérieure claire et centrée permet de traverser les situations avec intégrité et ouverture. La personne est ancrée dans l’instant et manifeste une lumière intérieure paisible.",
@@ -933,7 +933,7 @@
         {
         "id": 20,
         "nom": "Equilibre",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_20_equilibre.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_20_equilibre_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne trouve un point d’ancrage intérieur après une phase de déséquilibre. Une lucidité nouvelle émerge, permettant de se recentrer et de retrouver stabilité et cohérence.",
@@ -982,7 +982,7 @@
         {
         "id": 21,
         "nom": "Prospérité",
-        "image" : "https://oracleheka.github.io/oracle_trium/images/heka/heka_21_prosperite.png",
+        "image" : "https://oracleheka.github.io/oracle_trium/images/heka/heka_21_prosperite_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne rayonne de confiance et récolte les fruits d’un parcours fondé sur l’engagement et la vision. Chaque réussite vient consolider une confiance intérieure profondément enracinée.",
@@ -1031,7 +1031,7 @@
         {
         "id": 22,
         "nom": "Résistance",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_22_resistance.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_22_resistance_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une grande force intérieure permet de tenir debout malgré les obstacles. L’épreuve en cours renforce la solidité du caractère et forge une détermination inébranlable.",
@@ -1080,7 +1080,7 @@
         {
         "id": 23,
         "nom": "Doute",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_23_doute.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_23_doute_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne cérébrale, introspective, souvent tiraillée entre plusieurs options. Elle possède un esprit analytique affûté, mais son besoin de tout comprendre avant d’agir peut la rendre indécise. Elle doute facilement de ses propres choix et peut se montrer hésitante, voire instable, lorsqu’elle perd confiance en elle. Son entourage peut la percevoir comme prudente, voire distante, car elle se replie souvent sur elle-même pour réfléchir longuement avant toute prise de décision.",
@@ -1129,7 +1129,7 @@
         {
         "id": 24,
         "nom": "Attachement",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_24_attachement.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_24_attachement_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne loyale et affectueuse, qui construit ses relations avec constance et bienveillance. L’engagement et la stabilité émotionnelle sont au cœur de son identité.",
@@ -1178,7 +1178,7 @@
         {
         "id": 25,
         "nom": "Patience",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_25_patience.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_25_patience_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne réfléchie, capable d’attendre sans céder à la précipitation. Elle fait preuve d’une maturité émotionnelle rare, privilégiant la profondeur à l’instantané. Elle peut parfois sembler distante ou détachée, mais cette retenue cache une grande force intérieure. Elle sait que chaque chose vient à point et préfère bâtir patiemment que brûler les étapes.",
@@ -1227,7 +1227,7 @@
         {
         "id": 26,
         "nom": "Pardon",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_26_pardon.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_26_pardon_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne compatissante, capable d’embrasser les erreurs passées sans s’y attacher. Elle accorde une grande valeur à l’harmonie, à la réparation, et cherche instinctivement la réconciliation. Elle ne fuit pas la douleur, mais choisit de la transformer en paix. Derrière cette sagesse, on perçoit une force intérieure façonnée par des épreuves profondes. Sa clémence ne vient pas de la faiblesse, mais d’une compréhension élargie des lois de la vie.",
@@ -1276,7 +1276,7 @@
         {
         "id": 27,
         "nom": "Rupture",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_27_rupture.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_27_rupture_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne marquée par une expérience de séparation profonde. Elle porte en elle les traces d’un bouleversement qui l’a contrainte à se redéfinir. Ce détachement, douloureux mais nécessaire, l’a poussée à se recentrer. Derrière une apparente fragilité, elle développe une grande lucidité sur ce qui ne peut plus durer. Elle sait reconnaître la fin d’un cycle, même si cette reconnaissance coûte.",
@@ -1325,7 +1325,7 @@
         {
         "id": 28,
         "nom": "Initiation",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_28_initiation.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_28_initiation_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne en pleine transformation intérieure, prête à franchir un seuil important de conscience. Elle se tient à l’aube d’un cycle nouveau, portée par une énergie de renouveau et un désir d’alignement profond. Elle rayonne d’une clarté nouvelle, soutenue par une volonté solide d’évoluer. Son chemin est marqué par le courage d’embrasser l’inconnu et par une foi instinctive dans la lumière qui guide ses pas.",
@@ -1374,7 +1374,7 @@
         {
         "id":  29,
         "nom": "Solitude",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_29_solitude.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_29_solitude_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne intérieure, autonome, qui ressent le besoin de se retirer pour mieux se comprendre. Elle cherche à s’extraire du tumulte pour écouter sa propre voix. Elle n’évite pas la solitude : elle l’accueille comme un espace nécessaire à la clarté. Derrière ce silence apparent, une force discrète se construit. Son isolement n’est pas un repli, mais une recherche active de cohérence.",
@@ -1423,7 +1423,7 @@
         {
         "id": 30,
         "nom": "Joie",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_30_joie.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_30_joie_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne lumineuse, animée par une paix intérieure profonde. Elle sait savourer l’instant présent, trouver de la beauté dans la simplicité, et transmettre naturellement une énergie apaisante. Son bonheur ne dépend pas des circonstances, mais d’un équilibre intérieur qu’elle cultive avec constance. Une force tranquille l’habite, fruit d’une sagesse acquise et d’un regard ouvert sur le monde.",
@@ -1472,7 +1472,7 @@
         {
         "id": 31,
         "nom": "Colère",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_31_colere.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_31_colere_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne traversée par une force vive, parfois incontrôlable. Elle ne fuit pas la confrontation et réagit avec intensité lorsqu’elle se sent menacée ou trahie. Sa colère, bien que destructrice si elle n’est pas maîtrisée, est l’expression d’une grande sensibilité blessée. Une énergie puissante réside en elle, capable de renverser l’ordre établi, mais aussi de tout consumer si elle n’est pas dirigée consciemment.",
@@ -1521,7 +1521,7 @@
         {
         "id": 32,
         "nom": "Isolement",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_32_isolement.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_32_isolement_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne distante, lucide, plongée dans une phase de retrait volontaire ou subie. Elle observe plus qu’elle ne parle, repliée sur elle-même pour se protéger ou se reconstruire. Ce silence lui permet de trier, de comprendre, de se recentrer. Mais cette coupure prolongée peut devenir un mur si elle oublie de revenir au lien. Une intelligence intérieure vive la guide, mais la solitude qu’elle choisit peut se transformer en oubli d’autrui.",
@@ -1570,7 +1570,7 @@
         {
         "id": 33,
         "nom": "Repli",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_33_repli.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_33_repli_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne discrète, en retrait temporaire pour mieux se recentrer. Elle ressent le besoin de se protéger, de s’isoler du tumulte pour panser ses émotions. Ce repli n’est pas une fuite, mais une phase de maturation intérieure. Elle puise sa force dans le silence, dans l’écoute intime de ses besoins, et se prépare à renaître avec plus de clarté et de paix.",
@@ -1619,7 +1619,7 @@
         {
         "id": 34,
         "nom": "Protection",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_34_protection.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_34_protection_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne résiliente, ancrée, qui sait préserver son intégrité face aux épreuves. Elle dégage une force silencieuse, forgée par les épreuves traversées avec dignité. Sa stabilité intérieure repose sur un sens profond des limites. Elle ne se laisse pas facilement envahir, et sait créer un espace de sécurité autour d’elle, autant pour elle-même que pour les autres.",
@@ -1668,7 +1668,7 @@
         {
         "id": 35,
         "nom": "Désert",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_35_desert.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_35_desert_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne en retrait, confrontée à une phase de vide apparent. Elle traverse un espace intérieur dépouillé, où rien ne semble se mouvoir, mais où se prépare une métamorphose profonde. Son silence n’est pas un renoncement : c’est un terrain d’épreuve, une lente maturation. Elle tient bon, même si la lumière lui semble lointaine.",
@@ -1717,7 +1717,7 @@
         {
         "id": 36,
         "nom": "Enfermement",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_36_enfermement.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_36_enfermement_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne enfermée dans ses propres schémas, lucide mais paralysée. Elle ressent un profond tiraillement entre la volonté de se libérer et l’angoisse de l’inconnu. Ce blocage intérieur peut naître d’une peur ancienne, d’une loyauté invisible ou d’un conditionnement mental. La force est présente, mais dirigée contre elle-même tant que la conscience ne bascule pas vers l’action.",
@@ -1766,7 +1766,7 @@
         {
         "id": 37,
         "nom": "Guide",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_37_guide.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_37_guide_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne éclairée par une force intérieure stable. Elle suit sa route avec foi, même dans l’incertitude. Sa confiance dans la guidance qu’elle reçoit la rend paisible, alignée, disponible à la vie. Elle capte les signes, sait reconnaître les directions justes, et avance avec lucidité et foi mêlées.",
@@ -1815,7 +1815,7 @@
         {
         "id": 38,
         "nom": "Pause",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_38_pause.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_38_pause_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne prudente, en retrait temporaire. Elle sait s’arrêter quand le rythme devient flou, pour mieux écouter ce qui se joue en profondeur. Cette pause est choisie ou imposée, mais elle devient un moment fertile de réajustement. Elle observe, elle pèse, elle attend le bon moment pour repartir.",
@@ -1864,7 +1864,7 @@
         {
         "id": 39,
         "nom": "Succès",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_39_succes.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_39_succes_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne accomplie, ancrée dans sa valeur. Elle n’a pas brûlé les étapes : elle a construit, appris, ajusté. Son succès est le fruit d’une vision claire et d’un travail constant. Sa force réside dans sa constance et sa capacité à transformer l’effort en croissance tangible.",
@@ -1913,7 +1913,7 @@
         {
         "id": 40,
         "nom": "Combat",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_40_combat.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_40_combat_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne en lutte avec elle-même. Elle traverse une période d’affrontement intérieur où chaque décision exige courage. Elle sait que sa vérité ne se révèle qu’au prix de l’épreuve. Sa force ne vient pas d’un élan aveugle, mais d’un engagement profond à ne pas se trahir.",
@@ -1962,7 +1962,7 @@
         {
         "id": 41,
         "nom": "Manipulation",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_41_manipulation.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_41_manipulation_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne influençable, sensible aux discours bien formulés mais parfois trompeurs. Elle peut peiner à discerner la vérité lorsqu’elle est prise dans un flot de paroles ou de pensées confuses. Cette tendance à la mauvaise interprétation peut être exploitée par autrui, ou utilisée par elle-même pour justifier certaines décisions. Derrière cette fragilité mentale, se cache une capacité d’analyse encore endormie, qui demande à être éveillée pour sortir du labyrinthe.",
@@ -2011,7 +2011,7 @@
         {
         "id": 42,
         "nom": "Lutte",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_42_lutte.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_42_lutte_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne traversée par des contradictions intérieures, prise dans un tiraillement entre émotions et raison. Elle éprouve une tension persistante entre ce qu’elle souhaite ressentir et ce qu’elle vit réellement. Cette dissonance émotionnelle peut se manifester par une instabilité affective ou des difficultés à faire des choix clairs. Elle possède néanmoins une capacité de réflexion qui peut l’aider à retrouver l’équilibre.",
@@ -2060,7 +2060,7 @@
         {
         "id": 43,
         "nom": "Méditation",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_43_meditation.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_43_meditation_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne réfléchie, capable de prendre du recul avant d’agir. Elle traverse une phase de concentration intérieure, propice à l’introspection et à l’analyse lucide des situations. Son besoin de calme intérieur la pousse à peser ses choix avec prudence.",
@@ -2109,7 +2109,7 @@
         {
         "id": 44,
         "nom": "Oasis",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_44_oasis.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_44_oasis_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne en phase de récupération intérieure, qui retrouve peu à peu la paix après des épreuves. Elle fait preuve de sagesse en prenant le temps de se régénérer avant de repartir. Sa force réside dans sa capacité à se reconstruire avec douceur.",
@@ -2158,7 +2158,7 @@
         {
         "id": 45,
         "nom": "Deuil",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_45_deuil.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_45_deuil_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne marquée par une perte profonde, en pleine transition intérieure. Elle accepte peu à peu ce qui ne peut être changé et apprend à transformer sa douleur en sagesse.",
@@ -2207,7 +2207,7 @@
         {
         "id": 46,
         "nom": "Beauté",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_46_beaute.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_46_beaute_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne en paix avec elle-même, guidée par l’harmonie intérieure. Elle rayonne naturellement et sait créer autour d’elle un climat de douceur et d’équilibre.",
@@ -2256,7 +2256,7 @@
         {
         "id": 47,
         "nom": "Ancrage",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_47_ancrage.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_47_ancrage_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne stable et enracinée, qui avance avec assurance. Elle sait qui elle est, ce qu’elle veut, et construit sa vie sur des fondations solides et apaisantes.",
@@ -2305,7 +2305,7 @@
         {
         "id": 48,
         "nom": "Élévation",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_48_elevation.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_48_elevation_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne en pleine expansion intérieure, portée par un profond besoin d’évolution. Elle dépasse ses anciens schémas et s’ouvre à une conscience élargie, guidée par une sagesse en croissance.",
@@ -2354,7 +2354,7 @@
         {
         "id": 49,
         "nom": "Fracture",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_49_fracture.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_49_fracture_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne confrontée à un bouleversement venu de l’extérieur. Elle traverse une épreuve qu’elle n’a pas choisie, mais qui agit comme un catalyseur de transformation intérieure.",
@@ -2403,7 +2403,7 @@
         {
         "id": 50,
         "nom": "Perte",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_50_perte.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_50_perte_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne troublée par des pensées contradictoires ou instables. Son esprit perd le fil logique, et elle peine à maintenir la clarté face à un contexte chaotique.",
@@ -2452,7 +2452,7 @@
         {
         "id": 51,
         "nom": "Réconciliation",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_51_reconciliation.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_51_reconciliation_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne capable de reconnaître ses erreurs et de tendre la main pour apaiser les conflits. Elle cherche l’harmonie, même après la douleur.",
@@ -2501,7 +2501,7 @@
         {
         "id": 52,
         "nom": "Évolution",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_52_evolution.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_52_evolution_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne en pleine transformation, capable de se réinventer avec maturité. Elle avance vers une version plus consciente d’elle-même.",
@@ -2550,7 +2550,7 @@
         {
         "id": 53,
         "nom": "Lumière",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_53_lumiere.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_53_lumiere_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne éclairée par une vérité intérieure. Elle avance avec lucidité et rayonne d’une clarté inspirante pour son entourage.",
@@ -2599,7 +2599,7 @@
         {
         "id": 54,
         "nom": "Neheh",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_54_neheh.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_54_neheh_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne prête à tourner une page importante. Elle sait que pour avancer, certaines attaches doivent être définitivement rompues.",
@@ -2648,7 +2648,7 @@
         {
         "id": 55,
         "nom": "Vérité",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_55_verite.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_55_verite_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne est en quête d’une vérité intérieure profonde, forgée dans le silence et l’épreuve. Elle rayonne d’une clarté paisible, sans chercher à convaincre.",
@@ -2697,7 +2697,7 @@
         {
         "id": 56,
         "nom": "Incarnation",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_56_incarnation.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_56_incarnation_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne intuitive, en train de redescendre dans la matière. Elle apprend à habiter pleinement son corps et à faire de sa lucidité une force concrète.",
@@ -2746,7 +2746,7 @@
         {
         "id": 57,
         "nom": "Maîtrise",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_57_maitrise.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_57_maitrise_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Cette personne a vécu, traversé, compris. Elle n’est pas dans la théorie, mais dans la parole alignée à l’expérience. Elle dégage une forme d’autorité naturelle, souvent silencieuse, parce qu’elle n’a rien à prouver. Jupiter lui donne la vision. Amon-Rê la force solaire intérieure. Saturne et Osiris veillent à ce qu’elle parle depuis l’ombre traversée, et non depuis l’ego.",
@@ -2795,7 +2795,7 @@
         {
         "id": 58,
         "nom": "Construction",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_58_construction.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_58_construction_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Cette personne possède une énergie puissante, un feu intérieur capable de construire, bâtir, transformer durablement. Elle agit avec détermination, mais sait canaliser son élan pour créer dans la durée. Mars lui donne la force, Sekhmet la lucidité. Saturne impose la responsabilité, et Osiris veille à la légitimité de cette puissance.",
@@ -2844,7 +2844,7 @@
         {
         "id": 59,
         "nom": "Seuil",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_59_seuil.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_59_seuil_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne se tient dans un moment rare : elle sait que quelque chose est terminé, mais n’a pas encore franchi la porte. Elle est en suspension intérieure, dans une profonde lucidité. Son Verbe se tait. Elle observe, ressent, prépare sa mue. C’est une âme entre deux états, entre deux temps. Thot la soutient dans le silence. Saturne lui montre l’axe. Osiris attend.",
@@ -2893,7 +2893,7 @@
         {
         "id": 60,
         "nom": "Harmonie",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_60_harmonie.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_60_harmonie_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Cette personne est un reflet d’équilibre, une présence qui apaise, qui réunit. Elle porte en elle une douceur tranquille, une sagesse affective, une capacité naturelle à unir sans effort. Vénus rayonne, Hathor offre, Saturne structure cette paix, Osiris l’inscrit dans le temps sacré.",
@@ -2942,7 +2942,7 @@
         {
         "id": 61,
         "nom": "Respect",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_61_respect.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_61_respect_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne incarne une maturité relationnelle rare. Elle sait être présente sans dominer, aimer sans posséder, écouter sans juger. Son cœur est ouvert, mais ancré dans une conscience claire de soi et de l’autre. Hathor rayonne, mais Saturne lui donne forme. Osiris sanctifie son silence intérieur.",
@@ -2991,7 +2991,7 @@
         {
         "id": 62,
         "nom": "Décalage",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_62_decalage.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_62_decalage_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne est dans une dynamique de bonne volonté, d’harmonie intérieure, mais elle fait face à une réponse extérieure désajustée. Elle cherche la paix, mais doit affronter une dissonance subtile : l’autre ne répond pas de la même façon, ou pas depuis le même niveau de conscience. Uranus lui fait voir cela soudainement. Maât pèse cette vérité. Saturne l’invite à en tirer les conséquences. Osiris prépare le passage vers plus de vérité.",
@@ -3040,7 +3040,7 @@
         {
         "id": 63,
         "nom": "Présage",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_63_presage.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_63_presage_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne perçoit une vérité naissante au fond d’elle, sans en comprendre encore la forme. Elle ressent un appel, un changement en gestation, mais n’a pas les mots pour le nommer. Elle ne réagit pas : elle écoute, elle prépare, elle se pose. Sia active en elle une intelligence silencieuse. Saturne lui permet de ne pas fuir dans le mental. Osiris veille à la justesse de la transition.",
@@ -3089,7 +3089,7 @@
         {
         "id": 64,
         "nom": "Engagement",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_64_engagement.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_64_engagement_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne s’apprête à entrer dans une structure : nouveau travail, contrat, lien, choix formel. Elle est motivée par le besoin de paix, d’ordre, de sécurité, mais ce qu’elle rejoint est déjà structuré, fermé, encadré. Elle devra trouver sa lumière dans ce cadre sans se perdre.",
@@ -3138,7 +3138,7 @@
         {
         "id": 65,
         "nom":"Tension",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_65_tension.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_65_tension_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne est prise entre deux forces intérieures : d’un côté, le besoin de stabilité, d’harmonie, de continuité, de l’autre, une agitation croissante, un besoin de bouger, de libérer quelque chose. Elle tient encore, mais le corps, le cœur ou l’âme commencent à parler. Geb la retient au sol, mais Uranus commence à remuer sous ses pieds. Maât pèse silencieusement : “Est-ce encore juste ?”",
@@ -3187,7 +3187,7 @@
         {
         "id": 66,
         "nom": "Sacrifice",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_66_sacrifice.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_66_sacrifice_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne porte une charge invisible aux autres. Elle est perçue comme forte, rayonnante, inspirante, mais elle s’oublie en tenant son rôle. Elle donne, soutient, encadre… sans se plaindre. Mais au fond, elle s’efface, doucement, dans un sacrifice d’elle-même au nom de la paix. Jupiter lui donne la grandeur. Maât lui demande la vérité. Uranus pourrait bien tout faire exploser si elle ne revient pas à elle.",
@@ -3236,7 +3236,7 @@
         {
         "id": 67,
         "nom": "Damoclès",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_67_damocles.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_67_damocles_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne est consciente d’un désalignement majeur. Elle ressent qu’un choix s’impose, mais tarde à l’activer. Mars / Sekhmet la pousse à agir : “Coupe ce qui doit l’être. Fais-le maintenant.” Uranus prépare une révélation soudaine si elle tarde. Maât est en attente d’un geste juste. C’est une épée suspendue au-dessus de l’âme.",
@@ -3285,7 +3285,7 @@
         {
         "id": 68,
         "nom": "Bascule",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_68_bascule.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_68_bascule_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne est intelligente, structurée, verbale ou cérébrale. Elle a construit une forme solide de pensée, de discours, de vision du monde — mais cette forme vacille. Une vérité intérieure se glisse dans la faille. Thot murmure une nouvelle compréhension. Uranus prépare le retournement. Maât regarde : “Ton savoir est-il encore vivant ?”",
@@ -3334,7 +3334,7 @@
         {
         "id": 69,
         "nom": "Épilogue",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_69_epilogue.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_69_epilogue_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne est émotive, loyale, aimante. Elle a vécu une histoire riche, mais n’ose pas en sortir complètement. Elle continue “par douceur”, “par beauté”, “par respect”… Mais l’élan est éteint. Hathor la tient encore dans la beauté. Uranus murmure : “Tu peux partir maintenant.”",
@@ -3383,7 +3383,7 @@
         {
         "id": 70,
         "nom": "Érosion",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_70_erosion.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_70_erosion_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne est dans une phase de dépouillement intérieur. Elle perd ses repères, non par crise, mais par usure sacrée. Ce qu’elle croyait être s’efface lentement. Saturne l’initie à l’endurance nue. Osiris la guide dans l’invisible. Maât observe si elle résiste… ou si elle accepte de disparaître pour renaître.",
@@ -3432,7 +3432,7 @@
         {
         "id": 71,
         "nom": "Choix",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_71_choix.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_71_choix_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne est lucide, éveillée, prête… Mais elle ne bouge pas encore. Elle sent que le moment est là, mais hésite encore entre rester et oser. Uranus pousse, Maât observe, et l’univers attend : “Tu sais. Maintenant, choisis.”",
@@ -3481,7 +3481,7 @@
         {
         "id": 72,
         "nom": "Écoute",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_72_ecoute.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_72_ecoute_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne entre dans une phase d’intégration subtile. Elle n’a plus besoin d’agir, de savoir, ni d’expliquer. Elle est appelée à s’écouter vraiment, à entendre ce que son être murmure. Sia parle à travers les silences. Maât écoute les intentions profondes. Uranus est prêt à révéler, si l’espace est disponible.",
@@ -3530,7 +3530,7 @@
         {
         "id": 73,
         "nom": "Humilité",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_73_humilite.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_73_humilite_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne est dans une phase de retrait intérieur, non par peur, mais par conscience élevée. Elle a brillé, donné, guidé — et maintenant elle sait qu’il est temps de laisser place à plus grand qu’elle. Elle est sereine, épurée, alignée, et prête à se taire pour mieux entendre. Râ est devenu gardien du seuil. Sia l’attend dans le silence.",
@@ -3579,7 +3579,7 @@
         {
         "id": 74,
         "nom": "Héritage",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_74_heritage.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_74_heritage_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne est au seuil d’un grand dépouillement. Elle n’a plus à construire, à prouver, ni à posséder. Elle est appelée à reconnaître ce qu’elle transmet — consciemment ou non. Geb lui montre le chemin parcouru. Sia lui tend la main pour transmettre au silence.",
@@ -3628,7 +3628,7 @@
         {
         "id": 75,
         "nom": "Miroir",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_75_miroir.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_75_miroir_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "C’est un moment de vérité nue. La personne ne cherche plus à enseigner, ni à convaincre — elle cherche à se reconnaître dans ce qu’elle a été. A-t-elle été juste ? A-t-elle marqué ou récité ? Le miroir ne ment pas. Il montre, il révèle, et il invite à l’ultime alignement.",
@@ -3677,7 +3677,7 @@
         {
         "id": 76,
         "nom": "Karman",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_76_karman.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_76_karman_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "La personne connaît la puissance de ses actes. Elle ne se cache plus derrière l’impulsivité, ni la justification. Elle sait ce qu’elle a déclenché, et elle accueille pleinement le retour. Elle n’est plus dans la peur de payer — elle est dans la noblesse de répondre.",
@@ -3726,7 +3726,7 @@
         {
         "id": 77,
         "nom": "Abandon",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_77_abandon.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_77_abandon_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "C’est une période de lâcher profond. Tu ne te bats plus pour ce que tu as compris, su, transmis. Tu déposes tout, sans regret. Tu reconnais que le vrai savoir commence quand tu cesses de vouloir comprendre.",
@@ -3775,7 +3775,7 @@
         {
         "id": 78,
         "nom": "Amour",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_78_amour.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_78_amour_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Cette personne a aimé profondément, parfois sans limites, parfois sans retour. Elle porte l’amour comme vibration, non comme action. Elle est prête à offrir encore, mais sans s’y perdre. Elle apprend à s’aimer autant qu’elle a aimé les autres.",
@@ -3824,7 +3824,7 @@
         {
         "id": 79,
         "nom": "Kâ",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_79_ka.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_79_ka_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Cette personne a tout accompli. Elle n’a plus rien à prouver, à comprendre, à porter. Elle arrive au seuil… et accepte de disparaître. C’est un dépouillement absolu, mais libre. Elle rejoint son Kâ, et laisse l’histoire s’effacer derrière elle.",
@@ -3873,7 +3873,7 @@
         {
         "id": 80,
         "nom": "Cycle",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_80_cycle.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_80_cycle_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Tu arrives à la fin d’un fonctionnement intérieur, d’un ordre que tu as tenu, maîtrisé, structuré. Mais il ne te sert plus. Tu n’as pas échoué. Tu es simplement au bout du cycle. Ce qui était juste ne l’est plus. Et ce n’est pas une erreur. C’est un passage.",
@@ -3922,7 +3922,7 @@
         {
         "id": 81,
         "nom": "L’inconnue",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_81_inconnue.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_81_inconnue_180.webp",
             "endroit": {
                 "personnalité": {
                    "texte": "Il n’y a plus d’histoire à raconter. La personne est vide de projection, pleine de présence. Elle est devant le mystère, non pour le percer, mais pour s’y dissoudre avec humilité.",
@@ -3971,7 +3971,7 @@
         {
         "id": 82, 
         "nom": "Ankh",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_82_ankh.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_82_ankh_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne habitée par une sagesse ancienne, guidée par une intelligence supérieure. Elle incarne l’union du visible et de l’invisible, et porte en elle la mémoire des cycles de la vie.",
@@ -4020,7 +4020,7 @@
         {
         "id": 83,
         "nom": "L'Homme",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_83_homme.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_83_homme_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne forte, posée, en pleine possession de ses choix. Elle incarne la responsabilité consciente et agit avec maîtrise pour guider sa propre destinée.",
@@ -4069,7 +4069,7 @@
         {
         "id": 84,
         "nom": "La Femme",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_84_lafemme.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_84_lafemme_180.webp",
             "endroit": {
                 "personnalité": { 
                     "texte": "Une personne en pleine maturité intérieure, capable de transformer ses expériences en sagesse fertile.",
@@ -4118,7 +4118,7 @@
         {
         "id": 85,
         "nom": "HEKA",
-        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_85_heka.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/heka/heka_85_heka_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une personne en pleine émergence, sensible et intuitive, qui commence à se découvrir au-delà des repères habituels.",
