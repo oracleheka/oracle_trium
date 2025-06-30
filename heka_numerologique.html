@@ -348,16 +348,17 @@ function tirerNumerologique() {
       zone.innerHTML = "";
 
       const div1 = document.createElement("div");
-      div1.innerHTML = `
-        <strong>Identité (${nom})</strong><br>
-      <strong>${carte1.id} : (${carte1.nom}) : (${sens1})</strong><br>
-      src="${carte.image.replace('180.webp', '270.webp')}" 
-    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+div1.innerHTML = `
+  <strong>Identité (${nom})</strong><br>
+  <strong>${carte1.id} : (${carte1.nom}) : (${sens1})</strong><br>
+  <img 
+    src="${carte1.image.replace('180.webp', '270.webp')}" 
+    alt="Carte ${carte1.id} – ${carte1.nom} de l’Oracle Heka" 
     width="150" 
     loading="lazy" 
-    style="display: block; margin: 0 auto;"> 
-      <p style="margin-top:0.5rem;">${texte1}</p>
-      `;
+    style="display: block; margin: 0 auto;">
+  <p style="margin-top:0.5rem;">${texte1}</p>
+`;
       styleCarte(div1);
       zone.appendChild(div1);
 
@@ -365,6 +366,7 @@ function tirerNumerologique() {
       div2.innerHTML = `
         <strong>Chemin (${date})</strong><br>
       <strong>${carte2.id} : (${carte2.nom}) : (${sens2})</strong><br>
+      <img
      src="${carte.image.replace('180.webp', '270.webp')}" 
     alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
     width="150" 
@@ -420,6 +422,7 @@ function tirerNumerologique() {
 
     const carteHtml = `
       <div style="margin-bottom: 1rem;">
+      <img
         src="${carte.image.replace('180.webp', '270.webp')}" 
     alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
     width="150" 
