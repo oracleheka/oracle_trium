@@ -363,19 +363,19 @@ div1.innerHTML = `
       zone.appendChild(div1);
 
       const div2 = document.createElement("div");
-      div2.innerHTML = `
-        <strong>Chemin (${date})</strong><br>
-      <strong>${carte2.id} : (${carte2.nom}) : (${sens2})</strong><br>
-      <img
-     src="${carte.image.replace('180.webp', '270.webp')}" 
-    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+div2.innerHTML = `
+  <strong>Chemin (${date})</strong><br>
+  <strong>${carte2.id} : (${carte2.nom}) : (${sens2})</strong><br>
+  <img
+    src="${carte2.image.replace('180.webp', '270.webp')}" 
+    alt="Carte ${carte2.id} – ${carte2.nom} de l’Oracle Heka" 
     width="150" 
     loading="lazy" 
-    style="display: block; margin: 0 auto;"> 
-      <p style="margin-top:0.5rem;">${texte2}</p>
-      `;
-      styleCarte(div2);
-      zone.appendChild(div2);
+    style="display: block; margin: 0 auto;">
+  <p style="margin-top:0.5rem;">${texte2}</p>
+`;
+styleCarte(div2);
+zone.appendChild(div2);
 
       cartesTirees = [
         { carte: carte1, sens: sens1 },
