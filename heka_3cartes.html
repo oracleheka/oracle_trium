@@ -164,7 +164,7 @@ fieldset label {
 fieldset input[type="radio"] {
   margin-right: 0.5rem;
   transform: scale(1); /* agrandit légèrement la pastille radio */}
-    }
+    
   @media (max-width: 768px) {
   fieldset label {
     display: block;
@@ -319,11 +319,11 @@ fieldset input[type="radio"] {
      div.innerHTML = `
   <h3>${carte.id} : (${carte.nom}) : (${sens})</h3>
   <img 
-    src="${carte.image}" 
-    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
-    width="150" 
-    loading="lazy" 
-    style="display: block; margin: 0 auto;">
+  src="${carte.image.replace('180.webp', '270.webp')}" 
+  alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+  width="150" 
+  loading="lazy" 
+  style="display: block; margin: 0 auto;">
   <p>${interpretation}</p>
 `;
       div.style.padding = "1rem";
@@ -367,11 +367,11 @@ fieldset input[type="radio"] {
 div.innerHTML = `
   <h3>Carte supplémentaire : ${carte.id} : (${carte.nom}) : (${sens})</h3>
   <img 
-    src="${carte.image}" 
-    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
-    width="150" 
-    loading="lazy" 
-    style="display: block; margin: 0 auto;">
+  src="${carte.image.replace('180.webp', '270.webp')}" 
+  alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+  width="150" 
+  loading="lazy" 
+  style="display: block; margin: 0 auto;">
   <p>${interpretation}</p>
 `;
     div.style.padding = "1rem";
@@ -421,7 +421,12 @@ div.innerHTML = `
 
     const carteHtml = `
       <div style="margin-bottom: 1rem;">
-        <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+        <img 
+  src="${carte.image.replace('180.webp', '270.webp')}" 
+  alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+  width="150" 
+  loading="lazy" 
+  style="display: block; margin: 0 auto;">
         <p>${titre} → ${texte}</p>
       </div>`;
     
@@ -439,10 +444,12 @@ div.innerHTML = `
   window.zoneSilencieuse = []; // Pas de zone silencieuse pour ce tirage
   window.resume = resume;
   window.cartesTireesPDF = cartesTirees.map(({ carte, sens }) => ({
-    imageSrc: carte.image,
-    nom: carte.nom,
-    sens: sens
-  }));
+    id: carte.id,
+  imageSrc: carte.image.replace('180.webp', '270.webp'), // important
+  nom: carte.nom,
+  sens: sens,
+  texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
+}));
 
   // Affiche la modale
   document.getElementById("syntheseModal").style.display = "flex";
