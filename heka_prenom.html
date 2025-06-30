@@ -497,7 +497,7 @@ function ajouterUneCarte() {
 
   // ➤ Pour PDF : toutes les cartes (ordonnées)
   window.cartesTireesPDF = [...cartesTirees, ...cartesSupp].map(({ carte, sens }) => ({
-    imageSrc: carte.image,
+    imageSrc: carte.image.replace("180.webp", "270.webp"),
     id: carte.id,
     nom: carte.nom,
     sens: sens,
