@@ -217,14 +217,11 @@ fieldset input[type="radio"] {
 <button id="btnSynthese" style="display:none; margin-top: 1rem;">Voir la synthèse guidante de votre tirage</button>
   </div> 
 <p><strong>Prêt à découvrir vos liens ?</strong> Lancez le tirage et laissez la voix de l'Oracle Seshat  vous guider.</p>
- <div style="text-align:center; margin-top:2rem;">
+  <div style="text-align:center; margin-top:2rem;">
   <button id="melangerBtn" onclick="melangerEtCouper()">Mélanger et couper le jeu</button>
    </div>
   <div style="text-align:center; margin-top:2rem;">
   <button id="tirerBtn" onclick="tirerLesCartes()">Tirer les cartes</button>
-  </div>
-  <div style="text-align:center; margin-top:2rem;">
-  <button id="ajouterBtn" onclick="ajouterUneCarte()">Ajouter une carte</button>
   </div>
   <div style="text-align:center; margin-top:2rem;">
   <button id="réinitialiserBtn" onclick="réinitialiser()">Réinitialiser</button>
@@ -349,24 +346,34 @@ function tirerNumerologique() {
       zone.innerHTML = "";
 
       const div1 = document.createElement("div");
-      div1.innerHTML = `
-        <strong>Identité (${nom})</strong><br>
-      <strong>${carte1.id} : (${carte1.nom}) : (${sens1})</strong><br>
-      <img src="${carte1.image}" alt="Carte ${carte1.id} – ${carte1.nom} de l’Oracle Seshat" style="width:100px"><br>
-      <p style="margin-top:0.5rem;">${texte1}</p>
-      `;
+div1.innerHTML = `
+  <strong>Identité (${nom})</strong><br>
+  <strong>${carte1.id} : (${carte1.nom}) : (${sens1})</strong><br>
+  <img 
+    src="${carte1.image.replace('180.webp', '270.webp')}" 
+    alt="Carte ${carte1.id} – ${carte1.nom} de l’Oracle Heka" 
+    width="150" 
+    loading="lazy" 
+    style="display: block; margin: 0 auto;">
+  <p style="margin-top:0.5rem;">${texte1}</p>
+`;
       styleCarte(div1);
       zone.appendChild(div1);
 
       const div2 = document.createElement("div");
-      div2.innerHTML = `
-        <strong>Chemin (${date})</strong><br>
-      <strong>${carte2.id} : (${carte2.nom}) : (${sens2})</strong><br>
-      <img src="${carte2.image}" alt="Carte ${carte2.id} – ${carte2.nom} de l’Oracle Seshat" style="width:100px"><br>
-      <p style="margin-top:0.5rem;">${texte2}</p>
-      `;
-      styleCarte(div2);
-      zone.appendChild(div2);
+div2.innerHTML = `
+  <strong>Chemin (${date})</strong><br>
+  <strong>${carte2.id} : (${carte2.nom}) : (${sens2})</strong><br>
+  <img
+    src="${carte2.image.replace('180.webp', '270.webp')}" 
+    alt="Carte ${carte2.id} – ${carte2.nom} de l’Oracle Heka" 
+    width="150" 
+    loading="lazy" 
+    style="display: block; margin: 0 auto;">
+  <p style="margin-top:0.5rem;">${texte2}</p>
+`;
+styleCarte(div2);
+zone.appendChild(div2);
 
       cartesTirees = [
         { carte: carte1, sens: sens1 },
@@ -413,7 +420,12 @@ function tirerNumerologique() {
 
     const carteHtml = `
       <div style="margin-bottom: 1rem;">
-        <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+      <img
+        src="${carte.image.replace('180.webp', '270.webp')}" 
+    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+    width="150" 
+    loading="lazy" 
+    style="display: block; margin: 0 auto;"> 
         <p>${titre} → ${texte}</p>
       </div>`;
 
@@ -431,7 +443,7 @@ function tirerNumerologique() {
   window.zoneSilencieuse = []; // pas de zone silencieuse ici
   window.resume = resume;      // texte complet pour le PDF
   window.cartesTireesPDF = cartesTirees.map(({ carte, sens }) => ({
-    imageSrc: carte.image,
+    imageSrc: carte.image.replace("180.webp", "270.webp"),
     nom: carte.nom,
     sens: sens
   }));
@@ -464,7 +476,6 @@ function tirerNumerologique() {
 
   window.onload = function () {
     document.getElementById("tirerBtn").disabled = true;
-    document.getElementById("ajouterBtn").disabled = true;
     document.getElementById("btnSynthese").onclick = afficherSyntheseNumerologique;
   };
  </script>
@@ -531,7 +542,7 @@ function tirerNumerologique() {
     y += 30;
 
     // Titre principal (centré)
-    const titrePrincipal = `Tirage en croix Seshat – ${prenom}`;
+    const titrePrincipal = `Tirage en croix Heka – ${prenom}`;
     const titreWidth = pdf.getTextWidth(titrePrincipal);
     pdf.setFontSize(14);
     pdf.setFont("Times", "bold");
@@ -599,7 +610,11 @@ function tirerNumerologique() {
       y += 5;
     }
 
-    // ➜ Téléchargement du PDF
+     // ➜ Téléchargement du PDF
+    if (y > 270) pdf.addPage();
+      pdf.setFontSize(10);
+      pdf.setFont("Times", "italic");
+      pdf.textWithLink("https://oracleheka.github.io/oracle_trium/", 10, 290, { url: "https://oracleheka.github.io/oracle_trium/" });
     pdf.save(`tirage_numerologique_Seshat_${prenom}.pdf`);
   });
 </script>
