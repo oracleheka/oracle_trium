@@ -308,11 +308,16 @@ fieldset input[type="radio"] {
       const interpretation = carte[sens][aspect]?.texte || "Interprétation manquante.";
 
       const div = document.createElement("div");
-      div.innerHTML = `
-        <h3>${carte.id} : (${carte.nom}) : (${sens})</h3>
-        <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Sia" style="width:150px">
-        <p>${interpretation}</p>
-      `;
+     div.innerHTML = `
+  <h3>${carte.id} : (${carte.nom}) : (${sens})</h3>
+  <img 
+  src="${carte.image.replace('180.webp', '270.webp')}" 
+  alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+  width="150" 
+  loading="lazy" 
+  style="display: block; margin: 0 auto;">
+  <p>${interpretation}</p>
+`;
       div.style.padding = "1rem";
       div.style.border = "1px solid #ccc";
       div.style.borderRadius = "8px";
@@ -351,11 +356,16 @@ fieldset input[type="radio"] {
     const affichage = document.getElementById("resultats");
 
     const div = document.createElement("div");
-    div.innerHTML = `
-      <h3>Carte supplémentaire :${carte.id} : (${carte.nom}) : (${sens})</h3>
-      <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Seshat" style="width:150px">
-      <p>${interpretation}</p>
-    `;
+div.innerHTML = `
+  <h3>Carte supplémentaire : ${carte.id} : (${carte.nom}) : (${sens})</h3>
+  <img 
+  src="${carte.image.replace('180.webp', '270.webp')}" 
+  alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+  width="150" 
+  loading="lazy" 
+  style="display: block; margin: 0 auto;">
+  <p>${interpretation}</p>
+`;
     div.style.padding = "1rem";
     div.style.border = "1px solid #ccc";
     div.style.borderRadius = "8px";
@@ -403,7 +413,12 @@ fieldset input[type="radio"] {
 
     const carteHtml = `
       <div style="margin-bottom: 1rem;">
-        <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+        <img 
+  src="${carte.image.replace('180.webp', '270.webp')}" 
+  alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+  width="150" 
+  loading="lazy" 
+  style="display: block; margin: 0 auto;">
         <p>${titre} → ${texte}</p>
       </div>`;
     
@@ -421,10 +436,12 @@ fieldset input[type="radio"] {
   window.zoneSilencieuse = []; // Pas de zone silencieuse pour ce tirage
   window.resume = resume;
   window.cartesTireesPDF = cartesTirees.map(({ carte, sens }) => ({
-    imageSrc: carte.image,
-    nom: carte.nom,
-    sens: sens
-  }));
+    id: carte.id,
+  imageSrc: carte.image.replace('180.webp', '270.webp'), // important
+  nom: carte.nom,
+  sens: sens,
+  texte: carte[sens]?.[aspect]?.texte || "(Message manquant)"
+}));
 
   // Affiche la modale
   document.getElementById("syntheseModal").style.display = "flex";
