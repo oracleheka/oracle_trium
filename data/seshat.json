@@ -497,7 +497,7 @@
     {
         "id": 16,
     "nom": "Incarné",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_16_incarne_180.webp",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_16_Incarne_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ressens ce que tu es devenu. Ce n’est pas à juger : c’est à reconnaître, dans ta forme, dans ton corps.",
@@ -2675,7 +2675,7 @@
     {
         "id": 82,
     "nom": "Akh",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_81_akh_180.webp",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_82_akh_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu n’as rien à jouer. Rien à défendre. Tu es. Et cela suffit.",
