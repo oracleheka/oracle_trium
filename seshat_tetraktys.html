@@ -22,7 +22,7 @@
     }
   </script>
   <style>
-    body {
+   body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #f8f5f2;
@@ -388,9 +388,14 @@ function tirerLesCartes() {
       carteDiv.className = "carte";
       carteDiv.innerHTML = `
         <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
-        <img src="${carte.image}" alt="Carte ${carte.id}" style="width:100px"><br>
+        <img 
+          src="${carte.image.replace('180.webp', '270.webp')}" 
+          alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+          width="100" 
+          loading="lazy" 
+          style="display: block; margin: 0 auto;"><br>
         <p style="margin-top:0.5rem;">${interpretation}</p>`;
-
+      styleCarte(carteDiv);
       container.appendChild(carteDiv);
       idx++;
     }
@@ -426,7 +431,12 @@ function ajouterUneCarte() {
   const div = document.createElement("div");
   div.innerHTML = `
     <strong>Carte supplémentaire :</strong> ${carte.id} : (${carte.nom}) : (${sens})<br>
-    <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" style="width:100px"><br>
+    <img 
+      src="${carte.image.replace('180.webp', '270.webp')}" 
+      alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+      width="100" 
+      loading="lazy" 
+      style="display: block; margin: 0 auto;"><br>
     <p style="margin-top:0.5rem;">${interpretation}</p>`;
   styleCarte(div);
   affichageZone.appendChild(div);
@@ -496,16 +506,21 @@ function afficherSyntheseTetraktys() {
   contenuDiv.innerHTML = "";
 
   cartesTirees.forEach(({ carte, sens }) => {
-    const imageSrc = carte.image;
+    const imageSrc = carte.image.replace('180.webp', '270.webp');
     const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
     const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
-    contenuDiv.innerHTML += `
+    const carteHtml = `
       <div style="margin-bottom: 1rem;">
-        <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+        <img 
+          src="${imageSrc}" 
+          alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+          width="150" 
+          loading="lazy" 
+          style="display: block; margin: 0 auto;">
         <p>${titre} → ${texte}</p>
       </div>`;
+    contenuDiv.innerHTML += carteHtml;
   });
-
   contenuDiv.innerHTML += `<pre style="white-space: pre-wrap; margin-top: 1rem;">${resume}</pre>`;
 
   window.nom1 = prenom;
@@ -515,7 +530,7 @@ function afficherSyntheseTetraktys() {
   window.zoneSilencieuse = [];
   window.resume = resume;
   window.cartesTireesPDF = cartesTirees.map(({ carte, sens }) => ({
-    imageSrc: carte.image,
+    imageSrc: carte.image.replace("180.webp", "270.webp"),
     id: carte.id,
     nom: carte.nom,
     sens: sens,
