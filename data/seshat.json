@@ -2,7 +2,7 @@
     {
         "id": 1,
         "nom": "Essence",
-        "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_1_essence.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_1_essence_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme s’éveille sans forme ni histoire. Elle est pleinement là, consciente, mais sans tension ni attente. Elle existe, simplement.",
@@ -35,7 +35,7 @@
         {
         "id": 2,
         "nom": "Naissance",
-        "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_2_naissance.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_2_naissance_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’esprit entre dans la forme sans rôle ni objectif. Il apprend à être là, simplement. L’ego doit sentir son poids, sa densité, sans chercher encore à définir qui il est.",
@@ -68,7 +68,7 @@
     {
     "id": 3,
     "nom": "Ouverture",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_3_ouverture.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_3_ouverture_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu entres dans la lumière sans l’avoir cherchée. Tu n’as pas à savoir quoi montrer : seulement à laisser ton être devenir visible, doucement.",
@@ -101,7 +101,7 @@
     {
     "id": 4,
     "nom": "Eveil",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_4_eveil.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_4_eveil_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Une tension monte. Ce n’est pas encore une réaction, mais un frémissement intérieur. Tu sens que quelque chose cherche à naître en toi.",
@@ -134,7 +134,7 @@
     {
         "id": 5,
     "nom": "Présence",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_5_presence.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_5_presence_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu es là, et cela suffit. Ce que tu es parle avant toi. Tu n’as pas besoin de faire pour être reconnu.",
@@ -167,7 +167,7 @@
     {
         "id": 6,
     "nom": "Frisson",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_6_frisson.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_6_frisson_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Une sensation t’effleure. Elle ne demande pas à être expliquée, seulement accueillie. C’est le début d’un lien intérieur.",
@@ -200,7 +200,7 @@
     {
         "id": 7,
     "nom": "Fissure",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_7_fissure.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_7_fissure_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Une tension monte en toi. Tu reconnais que quelque chose ne peut plus tenir comme avant. Ce n’est pas encore une chute, mais un appel à l’authenticité.",
@@ -233,7 +233,7 @@
     {
         "id": 8,
     "nom": "Conscience",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_8_conscience.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_8_conscience_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu sais. Et tu sais que tu sais. La conscience ne te demande pas d’agir, mais de reconnaître ce qui est là.",
@@ -266,7 +266,7 @@
     {
         "id": 9,
     "nom": "Vide",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_9_vide.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_9_vide_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Ce que tu étais s’efface. Rien ne reste, et c’est juste. Ce vide n’est pas une perte : c’est l’espace nécessaire à ce que tu ignores encore.",
@@ -299,7 +299,7 @@
     {
         "id": 10,
     "nom": "Emergence",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_10_emergence.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_10_emergence_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu sens que tu es là, même si tu ne sais pas encore comment l’être. Ton centre s’élève, sans bruit, sans besoin d’être vu.",
@@ -332,7 +332,7 @@
     {
         "id": 11,
     "nom": "Limite",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_11_limite.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_11_limite_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu te heurtes à ta propre densité. Ce n’est pas un blocage : c’est un rappel. Tu tiens dans une forme. Et cela suffit pour aujourd’hui.",
@@ -365,7 +365,7 @@
     {
         "id": 12,
     "nom": "Posture",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_12_posture.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_12_posture_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu es là, et l’autre le sent. Ce n’est pas ce que tu dis qui compte, mais comment tu tiens ta place dans l’espace partagé.",
@@ -398,7 +398,7 @@
     {
         "id": 13,
     "nom": "Tension",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_13_tension.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_13_tension_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Une pression intérieure monte sans issue. Tu n’as pas à la contrôler. Tu dois d’abord la laisser exister.",
@@ -431,7 +431,7 @@
     {
         "id": 14,
     "nom": "Voix",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_14_voix.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_14_voix_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu prends la parole. Pas pour convaincre, mais pour exister dans ce que tu dis, même si c’est encore brut.",
@@ -464,7 +464,7 @@
     {
         "id": 15,
     "nom": "Contact",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_15_contact.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_15_contact_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Un lien naît en toi. Tu ressens une présence, un frémissement. Ce n’est pas encore défini, mais c’est réel.",
@@ -497,7 +497,7 @@
     {
         "id": 16,
     "nom": "Incarné",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_16_Incarne.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_16_incarne_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ressens ce que tu es devenu. Ce n’est pas à juger : c’est à reconnaître, dans ta forme, dans ton corps.",
@@ -530,7 +530,7 @@
     {
         "id": 17,
     "nom": "Alignement",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_17_alignement.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_17_alignement_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu es en accord avec toi-même si ce que tu fais résonne avec ce que tu sais vrai. Tu n’as rien à justifier.",
@@ -563,7 +563,7 @@
     {
         "id": 18,
     "nom": "Pulsation",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_18_pulsation.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_18_pulsation_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Quelque chose en toi recommence à battre. Ce n’est pas une décision, c’est un fait. Accueille ce mouvement sans lui chercher de sens.",
@@ -596,7 +596,7 @@
     {
         "id": 19,
     "nom": "Projection",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_19_projection.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_19_projection_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu émets une image, que tu as construite ou laissée naître. Elle rayonne, mais ce n’est pas forcément toi. Observe ce que tu projettes, et pourquoi.",
@@ -629,7 +629,7 @@
     {
         "id": 20,
     "nom": "Friction",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_20_friction.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_20_friction_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ressens une tension constante dans ton corps. Même sans violence, ta manière d’habiter l’espace crée un inconfort autour de toi. C’est une pression que tu subis, et que tu transmets sans le vouloir.",
@@ -662,7 +662,7 @@
     {
         "id": 21,
     "nom": "Prestance",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_21_prestance.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_21_prestance_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu tiens ton rôle avec force. Mais ce que tu montres n’est pas toujours ce que tu ressens. La forme devient façade si tu ne l’habites pas vraiment.",
@@ -695,7 +695,7 @@
     {
         "id": 22,
     "nom": "Exigence",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_22_exigence.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_22_exigence_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu vis avec une tension sourde. Tu veux bien faire, mais tu ne te laisses aucun droit à l’erreur. Et cette pression que tu vis, tu la fais peser sur les autres, sans t’en rendre compte.",
@@ -728,7 +728,7 @@
     {
         "id": 23,
     "nom": "Autoritaire",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_23_autoritaire.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_23_autoritaire_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu affirmes des vérités, mais sans toujours vérifier si elles sont encore vivantes en toi. Tu veux cadrer, guider, mais ta parole peut devenir forme vide.",
@@ -761,7 +761,7 @@
     {
         "id": 24,
     "nom" :"Attente",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_24_attente.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_24_attente_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu es présent, aimant, mais tu espères un retour. Ton amour contient une attente silencieuse. Et cela t’expose à l’incompréhension.",
@@ -794,7 +794,7 @@
     {
         "id": 25,
     "nom": "Inflexible",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_25_inflexible.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_25_inflexible_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu es présent, aimant, mais tu espères un retour. Ton amour contient une attente silencieuse. Et cela t’expose à l’incompréhension.",
@@ -827,7 +827,7 @@
     {
         "id": 26,
     "nom": "Désaligné",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_26_desaligne.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_26_desaligne_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu te crois en accord avec tes principes, mais tu as figé ton image. Tu montres une cohérence qui ne vient plus du cœur.",
@@ -860,7 +860,7 @@
     {
         "id": 27,
     "nom": "Orgeuil",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_27_orgeuil.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_27_orgeuil_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu veux montrer que tu as traversé l’épreuve, que tu es revenu transformé. Mais ce que tu montres est encore une image. Le vrai feu n’est pas encore remonté.",
@@ -893,7 +893,7 @@
     {
         "id": 28,
     "nom" : "Abandon",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_28_abandon.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_28_abandon_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ne veux plus te porter. Tu refuses le feu, tu éteins ton élan. Ce n’est pas une chute : c’est une démission intérieure.",
@@ -926,7 +926,7 @@
     {
         "id": 29,
     "nom": "Douleur",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_29_douleur.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_29_douleur_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu fais semblant de tenir, mais ton corps ne suit plus. Ce que tu retiens devient tension. Ton énergie se fige au lieu de circuler.",
@@ -959,7 +959,7 @@
     {
         "id": 30,
     "nom" : "Reproche",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_30_reproche.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_30_reproche_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu accuses l’autre, mais ce que tu ressens vient de toi. C’est ton propre feu que tu refuses de regarder. Le reproche te protège de ta vérité.",
@@ -992,7 +992,7 @@
     {
         "id": 31,
     "nom": "Phoenix",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_31_phoenix.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_31_phoenix_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu as laissé la forme s’effondrer. Tu as choisi la fin, non par faiblesse, mais pour revenir à toi. Ce feu était nécessaire.",
@@ -1025,7 +1025,7 @@
     {
         "id": 32,
     "nom": "Emprise",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_32_emprise.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_32_emprise_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu reconnais la colère de l’autre, mais tu ne l’intègres pas. Tu sais que ce qu’il projette ne t’appartient pas. Tu restes centré.",
@@ -1058,7 +1058,7 @@
     {
         "id": 33,
     "nom": "Jalousie",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_33_jalousie.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_33_jalousie_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ressens la jalousie, tu la reconnais. Tu as peur de perdre, peur d’être remplacé. Mais tu nommes enfin ce qui te brûle.",
@@ -1091,7 +1091,7 @@
     {
         "id": 34,
     "nom" :"Lâcher-prise",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_34_lacherprise.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_34_lacherprise_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu arrives au bout de ta tension. Tu choisis de ne plus tenir. Ce n’est pas une faiblesse : c’est la fin d’une illusion de contrôle.",
@@ -1124,7 +1124,7 @@
     {
         "id": 35,
     "nom": "Arme",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_35_arme.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_35_arme_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu sais que tu tiens l’arme. Tu reconnais la tension, la dureté. Et tu es prêt à la déposer. C’est le début d’une autre force.",
@@ -1157,7 +1157,7 @@
     {
         "id": 36,
     "nom": "Résurgence",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_36_resurgence.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_36_resurgence_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ressens un feu ancien en toi. Ce n’est pas une mémoire : c’est ta forme neuve qui cherche à passer. Tu ne peux plus l’arrêter.",
@@ -1190,7 +1190,7 @@
     {
         "id": 37,
     "nom": "Mirage",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_37_mirage.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_37_mirage_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu commences à voir que l’image que tu portes ne te correspond plus. Ce que tu appelais toi glisse. Et tu es prêt à regarder.",
@@ -1223,7 +1223,7 @@
     {
         "id": 38,
     "nom": "Entrave",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_38_entrave.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_38_entrave_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu sens le blocage. Il ne vient pas de l’extérieur. Ce que tu ressens est un seuil. Et tu peux le traverser si tu t’y autorises.",
@@ -1256,7 +1256,7 @@
     {
         "id": 39,
     "nom": "Notoriété",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_39_notoriete.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_39_notoriete_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu veux occuper ta place, être visible. Tant que tu restes aligné, ce rayonnement est juste. Tu peux briller sans te trahir.",
@@ -1289,7 +1289,7 @@
     {
         "id": 40,
     "nom": "Domination",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_40_domination.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_40_domination_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu veux tenir les choses en place. Tu imposes ta volonté, peut-être pour protéger. Mais c’est souvent la peur de perdre qui gouverne.",
@@ -1322,7 +1322,7 @@
     {
         "id": 41,
     "nom": "Isolement",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_41_isolement.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_41_isolement_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu t’es retiré pour te retrouver. Mais ce silence devient coupure si tu refuses de revenir. L’écart te montre ce qu’il manque.",
@@ -1355,7 +1355,7 @@
     {
         "id": 42,
     "nom": "Offrande",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_42_offrande.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_42_offrande_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ouvres, tu tends, tu offres. Même sans retour, ce geste te relie à toi. Il est juste, même s’il reste sans écho.",
@@ -1388,7 +1388,7 @@
     {
         "id": 43,
     "nom": "Echo",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_43_echo.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_43_echo_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu vois les effets de tes actes. Ce n’est pas une attaque : c’est un miroir. Tu peux choisir de le regarder, ou de t’en détourner.",
@@ -1421,7 +1421,7 @@
     {
         "id": 44,
     "nom": "Certitude",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_44_certitude.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_44_certitude_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu affirmes avec force. Tu tiens ta parole. Mais si tu n’écoutes plus, tu transformes ta clarté en posture.",
@@ -1454,7 +1454,7 @@
     {
         "id": 45,
     "nom": "Lutte",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_45_lutte.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_45_lutte_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu veux incarner une nouvelle version de toi. Mais l’ancienne résiste. Ce tiraillement est normal. Il fait partie de la naissance.",
@@ -1487,7 +1487,7 @@
     {
         "id": 46,
     "nom": "Clarté",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_46_clarte.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_46_clarte_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu veux exprimer ce que tu es sans forcer. Ta vérité ne cherche pas à briller — elle cherche à exister, simplement.",
@@ -1520,7 +1520,7 @@
     {
         "id": 47,
     "nom": "Peau",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_47_peau.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_47_peau_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu apprends à habiter ta forme. Tu cesses de fuir ton corps, non par fierté, mais parce qu’il est temps d’exister en entier.",
@@ -1553,7 +1553,7 @@
     {
         "id": 48,
     "nom": "Don",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_48_don.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_48_don_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu offres ce que tu es, sans chercher à convaincre. Tu n’as rien à prouver. Ta présence suffit.",
@@ -1586,7 +1586,7 @@
     {
         "id": 49,
     "nom": "Flamme",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_49_flamme.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_49_flamme_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu sens le feu en toi, mais tu ne le crains plus. Tu commences à comprendre qu’il ne vient pas te détruire, mais te révéler.",
@@ -1619,7 +1619,7 @@
     {
         "id": 50,
     "nom": "Engagement",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_50_engagement.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_50_engagement_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu choisis maintenant de parler vrai. Tes mots ne couvrent plus : ils révèlent. Ils te relient à ton axe.",
@@ -1652,7 +1652,7 @@
     {
         "id": 51,
     "nom": "Grâce",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_51_grace.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_51_grace_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu t’acceptes enfin tel que tu es. Tu ne corriges plus. Et dans cette paix, ta lumière se pose sans bruit.",
@@ -1685,7 +1685,7 @@
     {
         "id": 52,
     "nom": "Regard",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_52_regard.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_52_regard_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu poses un regard sincère sur toi. Ce n’est pas confortable, mais c’est le début de ton alignement.",
@@ -1718,7 +1718,7 @@
     {
         "id": 53,
     "nom": "Silence",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_53_silence.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_53_silence_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu n’as plus besoin d’avoir raison. Tu t’ouvres au réel sans tension. Et dans ce silence, tu trouves ta paix.",
@@ -1751,7 +1751,7 @@
     {
         "id": 54,
     "nom": "Seuil",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_54_seuil.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_54_seuil_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu n’es plus ce que tu étais, et tu ne sais pas encore ce que tu deviens. Ce flottement n’est pas un problème : c’est le passage.",
@@ -1784,7 +1784,7 @@
     {
         "id": 55,
     "nom": "Révélation",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_55_revelation.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_55_revelation_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu vois clair en toi. Ce que tu pensais être un rôle était un masque. Et ce qui reste, maintenant, est vrai.",
@@ -1817,7 +1817,7 @@
     {
         "id": 56,
     "nom": "Chair",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_56_chair.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_56_chair_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ressens fortement ce que ton corps veut te dire. Tu n’as pas à l’apaiser : tu as à l’écouter.",
@@ -1850,7 +1850,7 @@
     {
         "id": 57,
     "nom": "Centre",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_57_centre.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_57_centre_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ne dépends plus du regard extérieur. Tu tiens ton axe, et cette posture rayonne sans forcer.",
@@ -1883,7 +1883,7 @@
     {
         "id": 58,
     "nom": "Volonté",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_58_volonte.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_58_volonte_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu veux agir. Mais ce feu n’est pas pour réagir : il est là pour t’aligner. Ta volonté trace la ligne.",
@@ -1916,7 +1916,7 @@
     {
         "id": 59,
     "nom": "Promesse",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_59_promesse.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_59_promesse_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu veux être fidèle à ce que tu as dit. Mais la fidélité vraie, c’est oser ajuster sans trahir.",
@@ -1949,7 +1949,7 @@
     {
         "id": 60,
     "nom": "Absence",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_60_absence.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_60_absence_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu avances, mais une partie de toi reste absente. Tu veux être là, mais tu ne ressens pas encore ce que tu espérais.",
@@ -1982,7 +1982,7 @@
     {
         "id": 61,
     "nom": "Masque",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_61_masque.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_61_masque_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu veux être vrai, mais tu portes encore un rôle. Ce masque t’a servi. Mais il ne t’aide plus. Il est temps de le déposer.",
@@ -2015,7 +2015,7 @@
     {
         "id": 62,
     "nom" : "Epreuve",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_62_epreuve.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_62_epreuve_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Ce moment est une vérification. L’univers ne te teste pas : il te montre où tu en es. Ta réponse sera un choix de cohérence.",
@@ -2048,7 +2048,7 @@
     {
         "id": 63,
     "nom": "Effacement",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_63_effacement.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_63_effacement_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Ce que tu croyais être est en train de s’éteindre. Tu n’as pas à résister. Tu as à t’effacer, pour laisser advenir.",
@@ -2081,7 +2081,7 @@
     {
         "id": 64,
     "nom": "Eclipse",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_64_eclipse.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_64_eclipse_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu vis un retrait de clarté. Ce n’est pas une perte : c’est un moment d’ajustement entre toi et ce qui t’entoure.",
@@ -2114,7 +2114,7 @@
     {
         "id": 65,
     "nom": "Coquille",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_65_coquille.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_65_coquille_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu continues d’avancer, mais ton élan n’y est plus. Tu habites encore la forme — mais ta présence, elle, s’est retirée.",
@@ -2147,7 +2147,7 @@
     {
         "id": 66,
     "nom": "Décalage",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_66_decalage.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_66_decalage_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu prends ta place, tu joues ton rôle. Mais ce que tu montres n’est plus pleinement aligné avec ce que tu ressens.",
@@ -2180,7 +2180,7 @@
     {
         "id": 67,
     "nom": "Débordement",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_67_debordement.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_67_debordement_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ressens une tension intérieure. Ce n’est pas une faiblesse : c’est un feu qui n’a plus d’espace. Il est temps d’écouter ce qui pousse.",
@@ -2213,7 +2213,7 @@
     {
         "id": 68,
     "nom" : "Mensonge",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_68_mensonge.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_68_mensonge_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu parles, tu expliques, tu promets. Mais les mots ne vibrent plus. Ce que tu dis n’est plus relié à ce que tu vis.",
@@ -2246,7 +2246,7 @@
     {
         "id": 69,
     "nom": "Appel",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_69_appel.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_69_appel_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu veux le lien. Et tu l’appelles de toutes tes forces. Mais ce cri ne sera entendu que s’il part d’un lieu vrai.",
@@ -2279,7 +2279,7 @@
     {
         "id": 70,
     "nom": "Fermeture",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_70_fermeture.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_70_fermeture_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu veux avancer. Mais tu rencontres un seuil. Ce n’est pas un mur : c’est une question intérieure que tu n’as pas encore posée.",
@@ -2312,7 +2312,7 @@
     {
         "id": 71,
     "nom": "Pesée",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_71_pesee.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_71_pesee_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu es dans un moment suspendu. Ce n’est pas un blocage : c’est une pesée. Et ce qui n’est pas vrai ne passera pas.",
@@ -2345,7 +2345,7 @@
     {
         "id": 72,
     "nom": "Chute",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_72_chute.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_72_chute_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ne peux plus te retenir. La chute est inévitable. Ce n’est pas une fin : c’est une libération silencieuse.",
@@ -2378,7 +2378,7 @@
     {
         "id": 73,
     "nom": "Transparence",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_73_transparence.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_73_transparence_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ne cherches plus à briller. Ta lumière ne passe plus par l’image, mais par ta clarté intérieure.",
@@ -2411,7 +2411,7 @@
     {
         "id": 74,
     "nom": "Ancrage",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_74_ancrage.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_74_ancrage_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu es revenu en toi. Le corps n’est plus un poids : il devient espace d’habitation. Tu es là, vraiment.",
@@ -2444,7 +2444,7 @@
     {
         "id": 75,
     "nom": "Justesse",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_75_justesse.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_75_justesse_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu es à ta place. Tu ne sur-joues plus, tu ne retiens plus. Ce que tu es, dans cet état, est exactement ce qu’il faut.",
@@ -2477,7 +2477,7 @@
     {
         "id": 76,
     "nom" : "Trêve",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_76_treve.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_76_treve_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu n’es plus en lutte. Tu ne réagis plus. Et c’est dans ce silence que tu peux enfin t’écouter.",
@@ -2510,7 +2510,7 @@
     {
         "id": 77,
     "nom": "Retenue",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_77_retenue.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_77_retenue_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu pourrais répondre, mais tu ne le fais pas. Cette retenue n’est pas une faiblesse : c’est une force claire.",
@@ -2543,7 +2543,7 @@
     {
         "id": 78,
     "nom" : "Sacrifice",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_78_sacrifice.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_78_sacrifice_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu renonces à plaire. Tu ne donnes plus pour être aimé. Tu offres ce que tu es, et cela suffit.",
@@ -2576,7 +2576,7 @@
     {
         "id": 79,
     "nom": "Dépouillement",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_79_depouillement.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_79_depouillement_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu fais face à toi sans détour. Ce n’est pas un échec, c’est un seuil. Ce que tu vois maintenant est fondamental.",
@@ -2609,7 +2609,7 @@
     {
         "id": 80,
     "nom": "Equité",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_80_equite.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_80_equite_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ne veux plus faire semblant. Tu sais ce qui sonne juste, et tu ne peux plus tricher avec toi-même.",
@@ -2642,7 +2642,7 @@
     {
         "id": 81,
     "nom": "Origine",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_81_origine.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_81_origine_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu ne portes plus rien. Tu ne prouves plus rien. Tu es juste là. Et cela suffit.",
@@ -2675,7 +2675,7 @@
     {
         "id": 82,
     "nom": "Akh",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_82_akh.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_81_akh_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu n’as rien à jouer. Rien à défendre. Tu es. Et cela suffit.",
@@ -2708,7 +2708,7 @@
     {
         "id": 83,
     "nom": "L'homme",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_83_homme.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_83_homme_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu es là pour être clair. Ta posture n’a pas besoin d’être parfaite, mais elle doit être tenue.",
@@ -2741,7 +2741,7 @@
     {
         "id": 84,
     "nom": "La Femme",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_84_lafemme.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_84_lafemme_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu n’as pas besoin d’expliquer. Ce que tu es se perçoit dans ton silence.",
@@ -2774,7 +2774,7 @@
     {
         "id": 85,
     "nom": "L'enfant",
-    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_85_lenfant.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/seshat/seshat_85_lenfant_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "Tu n’as pas de masque. Ce que tu es sort sans détour. Et c’est ta vérité.",
@@ -2805,6 +2805,3 @@
         }
     }
 ]
-
-
-
