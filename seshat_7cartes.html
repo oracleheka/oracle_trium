@@ -312,10 +312,10 @@ function tirage7Cartes() {
     div.innerHTML = `
       <h3>${carte.id} : (${carte.nom}) : (${sens})</h3>
       <img 
-      src="${carte.image}" 
-      alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
-      width="150" 
-      loading="lazy" 
+    src="${carte.image.replace('180.webp', '270.webp')}" 
+    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+    width="150" 
+    loading="lazy" 
     style="display: block; margin: 0 auto;">
       <p>${interpretation}</p>
     `;
@@ -360,9 +360,9 @@ function tirage7Cartes() {
   div.innerHTML = `
     <h3>Carte supplémentaire :${carte.id} : (${carte.nom}) : (${sens})</h3>
       <img 
-      src="${carte.image}" 
-      alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
-      width="150" 
+    src="${carte.image.replace('180.webp', '270.webp')}" 
+    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+    width="150" 
     loading="lazy" 
     style="display: block; margin: 0 auto;">
       <p>${interpretation}</p>
@@ -439,7 +439,12 @@ if (cartesSupp.length > 0) {
 
     const carteHtml = `
       <div style="margin-bottom: 1rem;">
-        <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+        <img 
+    src="${carte.image.replace('180.webp', '270.webp')}" 
+    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+    width="150" 
+    loading="lazy" 
+    style="display: block; margin: 0 auto;">
         <p>${titre} → ${texte}</p>
       </div>`;
     contenuDiv.innerHTML += carteHtml;
@@ -468,7 +473,6 @@ window.cartesTireesPDF = cartesTirees.map(({ carte, sens }) => ({
    function fermerSynthese() {
     document.getElementById("syntheseModal").style.display = "none";
   }
-
    function réinitialiser() {
     location.reload();
   }
