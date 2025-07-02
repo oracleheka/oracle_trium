@@ -326,7 +326,12 @@ function tirerLesCartes() {
     div.innerHTML = `
       <strong>${labels[i]}</strong><br>
       <strong>${carte.id} : (${carte.nom}) : ${sens}</strong><br>
-      <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom}" style="width:150px">
+      <img 
+    src="${carte.image.replace('180.webp', '270.webp')}" 
+    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+    width="150" 
+    loading="lazy" 
+    style="display: block; margin: 0 auto;">
       <p>${interpretation}</p>
     `;
     styleCarte(div);
@@ -366,7 +371,12 @@ function ajouterUneCarte() {
   div.innerHTML = `
     <strong>Carte supplémentaire :</strong><br>
     <strong>${carte.id} : (${carte.nom}) : ${sens}</strong><br>
-    <img src="${carte.image}" alt="Carte ${carte.id} – ${carte.nom}" style="width:150px">
+    <img 
+    src="${carte.image.replace('180.webp', '270.webp')}" 
+    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+    width="150" 
+    loading="lazy" 
+    style="display: block; margin: 0 auto;">
     <p>${interpretation}</p>
   `;
   styleCarte(div);
@@ -431,7 +441,12 @@ function afficherSyntheseCroix() {
     const texte = carte.carte[carte.sens]?.[aspect]?.texte || "(Message manquant)";
     contenuDiv.innerHTML += `
       <div style="margin-bottom: 1rem;">
-        <img src="${imageSrc}" alt="Carte ${carte.carte.id} - ${carte.carte.nom}" style="width: 50px; height: auto;">
+        <img 
+    src="${carte.carte.image?.replace('180.webp', '270.webp') || 'fallback.jpg'}"
+    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+    width="150" 
+    loading="lazy" 
+    style="display: block; margin: 0 auto;">
         <p>${titre} → ${texte}</p>
       </div>`;
   });
@@ -445,7 +460,12 @@ function afficherSyntheseCroix() {
       const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
       contenuDiv.innerHTML += `
         <div style="margin-bottom: 1rem;">
-          <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+          <img 
+    src="${carte.image.replace('180.webp', '270.webp')}" 
+    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+    width="150" 
+    loading="lazy" 
+    style="display: block; margin: 0 auto;">
           <p>${titre} → ${texte}</p>
         </div>`;
     });
