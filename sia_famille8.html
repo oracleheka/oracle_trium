@@ -602,6 +602,13 @@ et aux autres. Ce n’est pas un jugement. C’est un écho lucide, un regard sa
   burgerBtn.addEventListener("click", () => {
     nav.classList.toggle("show");
   });
+   document.querySelectorAll("img.carte-visuelle").forEach(img => {
+    const src = img.getAttribute("src");
+    if (src.includes("_180.webp")) {
+      const base = src.replace("_180.webp", "");
+      img.setAttribute("srcset", `${src} 1x, ${base}_270.webp 1.5x`);
+    }
+  });
 </script>
 </body>
 </html>
