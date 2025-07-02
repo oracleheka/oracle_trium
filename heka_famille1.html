@@ -664,6 +664,17 @@ Elle est motivée par le besoin de paix, d’ordre, de sécurité (6), mais ce q
   burgerBtn.addEventListener("click", () => {
     nav.classList.toggle("show");
   });
+  // Injection automatique des images 270.webp pour l’indexation
+  document.querySelectorAll("img.carte-visuelle").forEach(img => {
+    const grande = document.createElement("img");
+    grande.src = img.src.replace("_180.webp", "_270.webp");
+    grande.alt = img.alt + " (grande taille)";
+    grande.width = 270;
+    grande.height = 405;
+    grande.loading = "lazy";
+    grande.style.display = "none";
+    document.body.appendChild(grande);
+  });
 </script>
 </body>
 </html>
