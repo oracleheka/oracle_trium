@@ -321,10 +321,16 @@ function tirageCroise() {
 
 function creerCarteDiv(prenom, lettre, carte, sens, aspect) {
   const div = document.createElement("div");
-  div.innerHTML = `<strong>${prenom} - Lettre ${lettre}</strong><br>
+  div.innerHTML = `
+    <strong>${prenom} - Lettre ${lettre}</strong><br>
     <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
-    <img src="${carte.image}" style="width:100px"><br>
-    <p>${carte[sens][aspect]?.texte || "(Message manquant)"}</p>`;
+    <img 
+      src="${carte.image.replace('180.webp', '270.webp')}" 
+      alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+      width="150" 
+      loading="lazy" 
+      style="display: block; margin: 0 auto;"><br>
+    <p style="margin-top:0.5rem;">${carte[sens][aspect]?.texte || "(Message manquant)"}</p>`;
   styleCarte(div);
   return div;
 }
