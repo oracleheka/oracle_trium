@@ -2,7 +2,7 @@
     {
         "id": 1,
         "nom": "Lat",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_1_lat.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_1_lat_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une âme nue, surgissant du silence cosmique. Elle existe sans repères, bercée par l'élan invisible de la pure conscience.",
@@ -35,7 +35,7 @@
         {
         "id": 2,
         "nom": "Densité",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_2_densite.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_2_densite_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une âme frémissante, consciente du voile léger de la matière qui l’enveloppe encore sans l’enchaîner.",
@@ -68,7 +68,7 @@
         {
         "id": 3,
         "nom": "Etincelle",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_3_etincelle.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_3_etincelle_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une âme qui perçoit en elle un foyer silencieux. Elle pressent la lumière qui attend de s’épanouir, consciente de son pouvoir latent.",
@@ -101,7 +101,7 @@
         {
         "id": 4,
         "nom": "Tension",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_4_tension.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_4_tension_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une âme chargée d’une force non exprimée. Elle ressent un orage intérieur, une pression qui demande à être transformée.",
@@ -134,7 +134,7 @@
         {
         "id": 5,
         "nom": "Murmure",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_5_murmure.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_5_murmure_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme perçoit des pensées intérieures, comme des échos flous. Elle entend sans encore comprendre.",
@@ -167,7 +167,7 @@
         {
         "id": 6,
         "nom": "Caresse",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_6_caresse.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_6_caresse_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme ressent une douceur subtile. Une trace d’amour circule en elle, sans nom ni souvenir.",
@@ -200,7 +200,7 @@
         {
         "id": 7,
         "nom": "Chambre",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_7_chambre.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_7_chambre_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme entre dans une pièce silencieuse. Elle attend dans l’inconnu, au seuil d’une révélation.",
@@ -233,7 +233,7 @@
         {
         "id": 8,
         "nom": "Nu",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_8_nu.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_8_nu_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme est face à elle-même sans filtre. Tout en elle devient visible, sans défense ni justification.",
@@ -266,7 +266,7 @@
         {
         "id": 9,
         "nom": "Nuit",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_9_nuit.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_9_nuit_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme s’efface doucement dans l’espace sacré. Elle devient présence sans identité.",
@@ -299,7 +299,7 @@
         {
         "id": 10,
         "nom": "Empreinte",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_10_empreinte.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_10_empreinte_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme ressent la trace de son passage. La mémoire du corps persiste sans l’enchaîner.",
@@ -332,7 +332,7 @@
         {
         "id": 11,
         "nom": "Regard",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_11_regard.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_11_regard_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme observe le corps qu’elle vient de quitter. Le regard est silencieux, lucide, irrévocable.",
@@ -365,7 +365,7 @@
         {
         "id": 12,
         "nom": "Reflet",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_12_reflet.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_12_reflet_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme entre en résonance avec ce qu’elle a été. Elle capte une image vibratoire douce, sans la juger.",
@@ -398,7 +398,7 @@
         {
         "id": 13,
         "nom": "Brèche",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_13_breche.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_13_breche_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Quelque chose s’ouvre en l’âme sans qu’elle l’ait choisi. Une faille invisible laisse passer une onde vibratoire intense.",
@@ -431,7 +431,7 @@
         {
         "id": 14,
         "nom": "Livre de vie",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_14_livrevie.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_14_livrevie_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme entre dans la mémoire de ce qu’elle a inscrit. Chaque pensée ou parole résonne encore.",
@@ -465,7 +465,7 @@
         {
         "id": 15,
         "nom": "Vibration",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_15_vibration.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_15_vibration_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme sent l’écho d’un lien passé. Une vibration douce remonte, porteuse de tendresse.",
@@ -498,7 +498,7 @@
         {
         "id": 16,
         "nom": "Appel",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_16_appel.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_16_appel_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme sent l’appel intérieur. Elle perçoit qu’un passage commence.",
@@ -531,7 +531,7 @@
         {
         "id": 17,
         "nom": "Révélation",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_17_revelation.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_17_revelation_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme est totalement visible. Elle ne peut rien cacher de ce qu’elle a été.",
@@ -564,7 +564,7 @@
         {
         "id": 18,
         "nom": "Etoile",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_18_etoile.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_18_etoile_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "Une lumière douce veille dans la nuit. L’âme sent qu’elle n’est pas seule.",
@@ -597,7 +597,7 @@
         {
         "id": 19,
         "nom": "Exposition",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_19_exposition.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_19_exposition_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme se sent visible dans la lumière. Elle perçoit que ses actes comptent.",
@@ -630,7 +630,7 @@
         {
         "id": 20,
         "nom": "Souvenir",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_20_souvenir.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_20_souvenir_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme s’attarde sur ce qu’elle a vécu. Elle cherche à comprendre à travers ses souvenirs.",
@@ -663,7 +663,7 @@
         {
         "id": 21,
         "nom": "Evidence",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_21_evidence.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_21_evidence_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme voit son histoire révélée. Elle accepte d’en reconnaître chaque ligne.",
@@ -696,7 +696,7 @@
         {
         "id": 22,
         "nom": "Déchirure",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_22_dechirure.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_22_dechirure_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme ressent une cassure en elle. Une tension ancienne s’ouvre en douleur.",
@@ -729,7 +729,7 @@
         {
         "id": 23,
         "nom": "Histoire",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_23_histoire.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_23_histoire_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme lit le récit de ce qu’elle a été. Elle découvre son propre chemin sans commentaire.",
@@ -762,7 +762,7 @@
         {
         "id": 24,
         "nom": "Sentiment",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_24_sentiment.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_24_sentiment_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme sent quelque chose s’ouvrir en elle. Une émotion ancienne revient sans mot.",
@@ -795,7 +795,7 @@
         {
         "id": 25,
         "nom": "Traversée",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_25_traversee.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_25_traversee_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme ressent qu’un passage commence. Elle ne peut plus rester en dehors.",
@@ -828,7 +828,7 @@
         {
         "id": 26,
         "nom": "Silence",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_26_silence.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_26_silence_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme reste immobile. Elle accepte de ne pas comprendre tout de suite.",
@@ -861,7 +861,7 @@
         {
         "id": 27,
         "nom": "Suspension",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_27_suspension.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_27_suspension_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme entre dans un état de présence pure. Elle ne sait pas ce qui va suivre.",
@@ -894,7 +894,7 @@
         {
         "id": 28,
         "nom": "Moi",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_28_moi.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_28_moi_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme accueille ce que la matière lui a permis d’être. Elle ne s’y accroche plus.",
@@ -927,7 +927,7 @@
         {
         "id": 29,
         "nom": "Incarnation",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_29_incarnation.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_29_incarnation_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme se voit telle qu’elle est devenue. Elle accepte ce premier regard intérieur.",
@@ -960,7 +960,7 @@
         {
         "id": 30,
         "nom": "Lumière",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_30_lumiere.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_30_lumiere_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme fait face à la lumière qu’elle a portée. Elle la reconnaît sans détour.",
@@ -993,7 +993,7 @@
         {
         "id": 31,
         "nom": "Douleur",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_31_douleur.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_31_douleur_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme reconnaît une douleur profonde. Elle accepte de la regarder sans fuir.",
@@ -1026,7 +1026,7 @@
         {
         "id": 32,
         "nom": "Ecriture",
-        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_32_ecriture.png",
+        "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_32_ecriture_180.webp",
             "endroit": {
                 "personnalité": {
                     "texte": "L’âme reconnaît ce qu’elle a pensé et affirmé. Elle accepte sa propre trace vibratoire.",
@@ -1059,7 +1059,7 @@
         {
         "id" : 33,
         "nom": "Beauté",
-        "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_33_beaute.png",
+        "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_33_beaute_180.webp",
             "endroit": {
                "personnalité": {
                    "texte": "L’âme reconnaît la lumière qu’elle a portée. Elle a cherché à rendre les liens plus beaux.",
@@ -1092,7 +1092,7 @@
     {
     "id": 34,
     "nom": "Epreuve",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_34_epreuve.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_34_epreuve_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme entre dans la zone de vérité. Elle accepte de commencer l’épreuve.",
@@ -1125,7 +1125,7 @@
     {
     "id": 35,
     "nom": "Doute",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_35_doute.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_35_doute_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît un déséquilibre intérieur. Elle accepte de revoir sa position.",
@@ -1158,7 +1158,7 @@
     {
     "id": 36,
     "nom": "Faille",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_36_faille.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_36_faille_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît ce qu’elle n’a jamais osé voir. Elle accueille ce vide sans le fuir.",
@@ -1191,7 +1191,7 @@
     {
     "id": 37,
     "nom": "Voile",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_37_voile.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_37_voile_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme perçoit ce qui agit encore en elle. Le voile n’est pas un obstacle, mais une clarté douce.",
@@ -1224,7 +1224,7 @@
     {
     "id": 38,
     "nom": "Perception",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_38_perception.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_38_perception_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme perçoit une forme ancienne en elle. Elle l’observe sans la suivre.",
@@ -1257,7 +1257,7 @@
     {
     "id": 39,
     "nom": "Ego",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_39_ego.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_39_ego_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme observe les gestes de son ego. Elle ne s’y identifie plus.",
@@ -1290,7 +1290,7 @@
     {
     "id": 40,
     "nom": "Eclat",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_40_eclat.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_40_eclat_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme sent la tension monter. Elle choisit de regarder ce feu avant qu’il ne jaillisse.",
@@ -1323,7 +1323,7 @@
     {
     "id": 41,
     "nom": "Toi",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_41_toi.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_41_toi_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît le mot qu’elle a porté. Elle sent qu’il agit encore.",
@@ -1356,7 +1356,7 @@
     {
     "id": 42,
     "nom": "Liens",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_42_liens.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_42_liens_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme observe les liens qu’elle a créés. Elle voit là où elle s’est adaptée par amour.",
@@ -1389,7 +1389,7 @@
     {
     "id": 43,
     "nom": "Poids",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_43_poids.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_43_poids_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme sent ce qu’elle porte encore. Elle regarde ce poids sans jugement.",
@@ -1422,7 +1422,7 @@
     {
     "id": 44,
     "nom":" Projection",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_44_projection.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_44_projection_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme voit ce qu’elle projette subtilement. Elle rectifie son regard.",
@@ -1455,7 +1455,7 @@
     {
     "id": 45,
     "nom": "Persistance",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_45_persistance.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_45_persistance_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme ressent une vibration ancienne. Elle l’observe sans s’y attacher.",
@@ -1488,7 +1488,7 @@
     {
     "id": 46,
     "nom": "Contradiction",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_46_contradiction.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_46_contradiction_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît une incohérence entre ce qu’elle a voulu et ce qu’elle a fait.",
@@ -1521,7 +1521,7 @@
     {
     "id": 47,
     "nom": "Désirs",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_47_desirs.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_47_desirs_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme voit ce qu’elle a réellement cherché. Elle reconnaît ses désirs essentiels.",
@@ -1554,7 +1554,7 @@
     {
     "id": 48,
     "nom": "Justesse",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_48_justesse.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_48_justesse_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît ce qui, dans son affirmation, manquait d’équilibre.",
@@ -1587,7 +1587,7 @@
     {
     "id": 49,
     "nom": "Colère",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_49_colere.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_49_colere_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît sa réactivité. Elle comprend ce que la colère recouvrait.",
@@ -1620,7 +1620,7 @@
     {
     "id": 50,
     "nom": "Parole", 
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_50_parole.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_50_parole_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme regarde la forme qu’ont pris ses mots. Elle en cherche la cohérence.",
@@ -1653,7 +1653,7 @@
     {
     "id": 51,
     "nom": "Illusion",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_51_illusion.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_51_illusion_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme voit ce qu’elle a projeté. Elle revient à une image claire du lien.",
@@ -1686,7 +1686,7 @@
     {
     "id": 52,
     "nom": "Masque",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_52_masque.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_52_masque_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme voit la posture qu’elle a tenue. Elle distingue forme et vérité.",
@@ -1719,7 +1719,7 @@
     {
         "id": 53,
     "nom": "Posture",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_53_posture.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_53_posture_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît la forme rigide qu’elle a tenue. Elle relâche la pression.",
@@ -1752,7 +1752,7 @@
     {
         "id": 54,
     "nom": "Narration",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_54_narration.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_54_narration_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît le récit qu’elle s’est construit. Elle revient à ce qu’elle a vraiment vécu.",
@@ -1785,7 +1785,7 @@
     {
         "id": 55,
     "nom" :" Clarté",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_55_clarte.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_55_clarte_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme distingue ce qu’elle a porté avec justesse de ce qui brillait sans racine.",
@@ -1818,7 +1818,7 @@
     {
         "id": 56,
     "nom" : "Rôle",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_56_role.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_55_role_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît le rôle qu’elle a tenu pour survivre. Elle revient à sa vérité.",
@@ -1851,7 +1851,7 @@
     {
         "id": 57,
     "nom" : "Influence",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_57_influence.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_57_influence_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît la portée de ce qu’elle a affirmé. Elle prend conscience de sa trace.",
@@ -1884,7 +1884,7 @@
     {
         "id": 58,
     "nom": "Protection",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_58_protection.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_58_protection_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît ce qu’elle a tenu pour se protéger. Elle honore cette force sans s’y attacher.",
@@ -1917,7 +1917,7 @@
     {
         "id": 59,
     "nom" :" Posture",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_59_posture.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_59_posture_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme voit la forme qu’elle a tenue pour parler ou penser. Elle revient à ce qu’elle sent.",
@@ -1950,7 +1950,7 @@
     {
         "id": 60,
     "nom": "Amour",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_60_amour.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_60_amour_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît ce qu’elle a su aimer sincèrement. Elle honore cette ouverture.",
@@ -1983,7 +1983,7 @@
     {
         "id": 61,
     "nom": "Chemin",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_61_chemin.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_61_chemin_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît la route qu’elle a tenue. Elle revient à ce qui la mettait en mouvement.",
@@ -2016,7 +2016,7 @@
     {
         "id": 62,
     "nom": "Sincérité",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_62_sincerite.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_62_sincerite_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme regarde ce qu’elle a dit et tenu. Elle reconnaît ce qui vibrait vrai.",
@@ -2049,7 +2049,7 @@
     {
         "id": 63,
     "nom" : "Schéma",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_63_schema.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_63_schema_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît les choix répétés. Elle voit ce qu’elle a su transformer.",
@@ -2082,7 +2082,7 @@
     {
         "id": 64,
     "nom": "Engagement",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_64_engagement.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_64_engagement_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît ce qu’elle a tenu fidèlement. Elle n’a pas trahi son axe.",
@@ -2115,7 +2115,7 @@
     {
         "id": 65,
     "nom": "Vie",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_65_vie.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_65_vie_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme voit ce qu’elle a incarné. Elle reconnaît une vie tenue avec justesse.",
@@ -2148,7 +2148,7 @@
     {
         "id": 66,
     "nom": "Alliance",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_66_alliance.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_66_alliance_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme voit ce qu’elle a lié. Elle reconnaît les alliances justes.",
@@ -2181,7 +2181,7 @@
     {
         "id": 67,
     "nom": "Libération",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_67_liberation.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_67_liberation_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît ce qui l’a fait brûler. Elle choisit de s’en délester.",
@@ -2214,7 +2214,7 @@
     {
         "id": 68,
     "nom": "Rayonnement",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_68_rayonnement.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_68_rayonnement_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme voit l’effet réel de ce qu’elle a transmis. Elle a éclairé sans illusion.",
@@ -2247,7 +2247,7 @@
     {
         "id": 69,
     "nom": "Coeur",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_69_coeur.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_69_coeur_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme reconnaît ce qu’elle a donné avec vérité. Son cœur a été sincère.",
@@ -2280,7 +2280,7 @@
     {
         "id": 70,
     "nom": "Âme",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_70_ame.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_70_ame_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme se montre telle qu’elle est. Il n’y a plus de masque.",
@@ -2313,7 +2313,7 @@
     {
         "id": 71,
     "nom": "Equilibre",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_71_equilibre.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_71_equilibre_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme est en accord avec ce qu’elle a été. Son cœur est juste.",
@@ -2346,7 +2346,7 @@
     {
         "id": 72,
     "nom": "Porte",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_72_porte.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_72_porte_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme s’approche du seuil. Elle est prête à quitter le connu.",
@@ -2379,7 +2379,7 @@
     {
         "id": 73,
     "nom": "Acceptation",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_73_acceptation.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_73_acceptation_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme accueille ce qu’elle est devenue. Elle ne fuit plus sa vérité.",
@@ -2412,7 +2412,7 @@
     {
         "id": 74,
     "nom": "Cycles",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_74_cycles.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_74_cycles_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme a vécu pleinement. Elle n’a fui aucun passage terrestre.",
@@ -2445,7 +2445,7 @@
     {
         "id": 75,
     "nom": "Aura",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_75_aura.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_75_aura_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme diffuse une présence claire. Son aura est stable et vraie.",
@@ -2478,7 +2478,7 @@
     {
         "id": 76,
     "nom": "Guérison",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_76_guerison.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_76_guerison_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme n’a plus besoin de s’imposer. Elle transforme la force en clarté.",
@@ -2511,7 +2511,7 @@
     {
         "id": 77,
     "nom": "Loi",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_77_loi.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_77_loi_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme a suivi des lois justes. Sa rigueur a révélé sa lumière.",
@@ -2544,7 +2544,7 @@
     {
         "id": 78,
     "nom" : "Ouverture",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_78_ouverture.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_78_ouverture_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme s’est laissée toucher. Elle n’a pas eu peur d’aimer.",
@@ -2577,7 +2577,7 @@
     {
         "id": 79,
     "nom" : "Echo",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_79_echo.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_79_echo_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme porte encore l’écho des épreuves, mais elle ne s’y attache plus.",
@@ -2610,7 +2610,7 @@
     {
         "id": 80,
     "nom": "Passage",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_80_passage.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_80_passage_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme est alignée avec elle-même. Rien ne retient le passage.",
@@ -2643,7 +2643,7 @@
     {
         "id": 81,
     "nom": "Union",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_81_union.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_81_union_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme n’est plus séparée. Tout ce qu’elle est se fond dans l’unité.",
@@ -2676,7 +2676,7 @@
     {
         "id": 82,
     "nom": "Noun",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_82_noun.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_82_noun_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme est portée par le champ universel. Elle reçoit un souffle vivant.",
@@ -2709,7 +2709,7 @@
     {
         "id": 83,
     "nom": "L'homme",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_83_homme.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_83_homme_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme est stable, droite, présente. La force n’a plus besoin de se justifier.",
@@ -2742,7 +2742,7 @@
     {
         "id": 84,
     "nom": "La femme",
-    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_84_lafemme.png",
+    "image": "https://oracleheka.github.io/oracle_trium/images/sia/sia_84_lafemme_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme est ouverte et sensible. Elle ne cherche plus à séduire pour exister.",
@@ -2775,7 +2775,7 @@
     {
         "id": 85,
     "nom": "L'enfant",
-    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_85_lenfant.png",
+    "image":"https://oracleheka.github.io/oracle_trium/images/sia/sia_85_lenfant_180.webp",
         "endroit": {
             "personnalité": {
                 "texte": "L’âme est simple et entière. Elle n’a plus peur d’être vue dans sa clarté.",
@@ -2806,5 +2806,3 @@
         }
     }
 ]
-
-
