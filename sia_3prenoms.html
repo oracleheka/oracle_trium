@@ -333,10 +333,17 @@ function tirageTriangulaire() {
 
 function creerCarteDiv(prenom, lettre, carte, sens, aspect) {
   const div = document.createElement("div");
-  div.innerHTML = `<strong>${prenom} - Lettre ${lettre}</strong><br>
+  div.innerHTML = `
+    <strong>${prenom} - Lettre ${lettre}</strong><br>
     <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
-    <img src="${carte.image}" style="width:100px"><br>
-    <p>${carte[sens][aspect]?.texte || "(Message manquant)"}</p>`;
+    <img 
+      src="${carte.image.replace('180.webp', '270.webp')}" 
+      alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+      width="150" 
+      loading="lazy" 
+      style="display: block; margin: 0 auto;">
+    <p>${carte[sens][aspect]?.texte || "(Message manquant)"}</p>
+  `;
   styleCarte(div);
   return div;
 }
@@ -375,11 +382,16 @@ function ajouterUneCarte() {
   window.cartesSupp.push({ carte: carte, sens: sens });
 
   const contenuHTML = `
-    <strong>Carte complémentaire</strong><br>
-    <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
-    <img src="${imageSrc}" alt="Carte ${carte.id} – ${carte.nom}" style="width:100px"><br>
-    <p style="margin-top:0.5rem;">${interpretation}</p>
-  `;
+  <strong>Carte complémentaire</strong><br>
+  <strong>${carte.id} : (${carte.nom}) : (${sens})</strong><br>
+  <img 
+    src="${carte.image.replace('180.webp', '270.webp')}" 
+    alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+    width="150" 
+    loading="lazy" 
+    style="display: block; margin: 0 auto;">
+  <p style="margin-top:0.5rem;">${interpretation}</p>
+`;
 
   // ➤ Page web (zone principale)
   const divPage = document.createElement("div");
@@ -491,31 +503,41 @@ function afficherSynthese3Prenoms() {
   contenuDiv.innerHTML = "";
 
   cartesTirees.forEach(({ carte, sens }) => {
-    const imageSrc = carte.image;
+  const imageSrc = carte.image.replace("180.webp", "270.webp");
+  const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
+  const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
+  const carteHtml = `
+    <div style="margin-bottom: 1rem;">
+      <img 
+        src="${imageSrc}" 
+        alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+        width="150" 
+        loading="lazy" 
+        style="display: block; margin: 0 auto;">
+      <p>${titre} → ${texte}</p>
+    </div>`;
+  contenuDiv.innerHTML += carteHtml;
+});
+
+  if (window.cartesSupp && window.cartesSupp.length > 0) {
+  contenuDiv.innerHTML += `<h4 style="margin-top: 1rem;">Cartes complémentaires</h4>`;
+  window.cartesSupp.forEach(({ carte, sens }) => {
+    const imageSrc = carte.image.replace("180.webp", "270.webp");
     const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
     const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
     const carteHtml = `
       <div style="margin-bottom: 1rem;">
-        <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
+        <img 
+          src="${imageSrc}" 
+          alt="Carte ${carte.id} – ${carte.nom} de l’Oracle Heka" 
+          width="150" 
+          loading="lazy" 
+          style="display: block; margin: 0 auto;">
         <p>${titre} → ${texte}</p>
       </div>`;
     contenuDiv.innerHTML += carteHtml;
   });
-
-  if (window.cartesSupp && window.cartesSupp.length > 0) {
-    contenuDiv.innerHTML += `<h4 style="margin-top: 1rem;">Cartes complémentaires</h4>`;
-    window.cartesSupp.forEach(({ carte, sens }) => {
-      const imageSrc = carte.image;
-      const titre = `${carte.id} : (${carte.nom}) : (${sens})`;
-      const texte = carte[sens]?.[aspect]?.texte || "(Message manquant)";
-      const carteHtml = `
-        <div style="margin-bottom: 1rem;">
-          <img src="${imageSrc}" alt="Carte ${carte.id} - ${carte.nom}" style="width: 50px; height: auto;">
-          <p>${titre} → ${texte}</p>
-        </div>`;
-      contenuDiv.innerHTML += carteHtml;
-    });
-  }
+}
 
   // ➤ Stockage pour PDF
   window.nom1 = nom1;
@@ -530,22 +552,22 @@ function afficherSynthese3Prenoms() {
   window.cartesSupp = window.cartesSupp || [];
 
   const cartesPDF = [
-    ...cartesTirees.map(({ carte, sens }) => ({
-      imageSrc: carte.image,
-      nom: carte.nom,
-      id: carte.id,
-      sens: sens,
-      texte: carte[sens]?.[aspect]?.texte || "(Message manquant)",
-    })),
-    ...(window.cartesSupp || []).map(({ carte, sens }) => ({
-      imageSrc: carte.image,
-      nom: carte.nom,
-      id: carte.id,
-      sens: sens,
-      texte: carte[sens]?.[aspect]?.texte || "(Message manquant)",
-    })),
-  ];
-  window.cartesTireesPDF = cartesPDF;
+  ...cartesTirees.map(({ carte, sens }) => ({
+    imageSrc: carte.image.replace("180.webp", "270.webp"),
+    nom: carte.nom,
+    id: carte.id,
+    sens: sens,
+    texte: carte[sens]?.[aspect]?.texte || "(Message manquant)",
+  })),
+  ...(window.cartesSupp || []).map(({ carte, sens }) => ({
+    imageSrc: carte.image.replace("180.webp", "270.webp"),
+    nom: carte.nom,
+    id: carte.id,
+    sens: sens,
+    texte: carte[sens]?.[aspect]?.texte || "(Message manquant)",
+  })),
+];
+window.cartesTireesPDF = cartesPDF;
 
   contenuDiv.innerHTML += `<pre style="white-space: pre-wrap; margin-top: 1rem;">${resume}</pre>`;
   window.resume = resume;
@@ -555,7 +577,6 @@ function afficherSynthese3Prenoms() {
   function fermerSynthese() {
   document.getElementById("syntheseModal").style.display = "none";
 }
-
 function réinitialiser() {
   location.reload();
 }
